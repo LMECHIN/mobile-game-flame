@@ -1,0 +1,21 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+    },
+    "last.imagePath": "/home/lmechin/delivery/myproject/game2d/assets/images/Sprites/14-TileSets",
+    "map.height": 23,
+    "map.lastUsedFormat": "tmx",
+    "map.width": 40,
+    "openFiles": [
+    ],
+    "project": "Pixel Game.tiled-project",
+    "recentFiles": [
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}
