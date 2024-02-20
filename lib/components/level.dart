@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flame/components.dart';
 import 'package:flame_tiled/flame_tiled.dart';
-import 'package:flutter_application_1/actors/player.dart';
+import 'package:flutter_application_1/components/player.dart';
 
 class Level extends World {
   final String levelName;
