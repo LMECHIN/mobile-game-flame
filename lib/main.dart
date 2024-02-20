@@ -4,10 +4,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Flame.device.fullScreen();
-  Flame.device.setLandscape();
+  await Flame.device.fullScreen();
+  await Flame.device.setLandscape();
 
   PixelGame game = PixelGame();
   runApp(GameWidget(game: kDebugMode ? PixelGame() : game));
