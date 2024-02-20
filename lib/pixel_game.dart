@@ -13,7 +13,7 @@ class PixelGame extends FlameGame
   late CameraComponent cam;
   Player player = Player(character: '01-King Human');
   late JoystickComponent joystick;
-  bool showJoystick = true;
+  bool showJoystick = false;
 
   @override
   FutureOr<void> onLoad() async {

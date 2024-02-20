@@ -3,19 +3,42 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "Level01.tmx",
     "expandedProjectPaths": [
+        "."
     ],
     "fileStates": {
+        "DLevel01.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Level01.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 620,
+                "y": 549.3333333333333
+            }
+        },
+        "Pixel Game.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
     },
     "last.imagePath": "/home/lmechin/delivery/myproject/game2d/assets/images/Sprites/14-TileSets",
     "map.height": 23,
     "map.lastUsedFormat": "tmx",
     "map.width": 40,
     "openFiles": [
+        "Pixel Game.tsx",
+        "Level01.tmx",
+        "DLevel01.tsx"
     ],
     "project": "Pixel Game.tiled-project",
     "recentFiles": [
+        "Pixel Game.tsx",
+        "DLevel01.tsx",
+        "Level01.tmx"
     ],
     "tileset.lastUsedFormat": "tsx"
 }
