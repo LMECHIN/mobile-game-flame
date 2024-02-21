@@ -46,7 +46,7 @@ class Level extends World {
             collisionsBlock.add(platform);
             break;
           default:
-          final block = CollisionsBlock(
+            final block = CollisionsBlock(
               position: Vector2(collision.x, collision.y),
               size: Vector2(collision.width, collision.height),
             );

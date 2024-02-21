@@ -3,6 +3,7 @@ import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_application_1/components/button_jump.dart';
 import 'package:flutter_application_1/components/level.dart';
 import 'package:flutter_application_1/components/player.dart';
 
@@ -13,7 +14,7 @@ class PixelGame extends FlameGame
   late CameraComponent cam;
   Player player = Player(character: '01-King Human');
   late JoystickComponent joystick;
-  bool showJoystick = false;
+  bool showControls = true;
 
   @override
   FutureOr<void> onLoad() async {
@@ -29,8 +30,9 @@ class PixelGame extends FlameGame
     cam.viewfinder.anchor = Anchor.topLeft;
     cam.priority = 0;
 
-    if (showJoystick) {
+    if (showControls) {
       addJoystick();
+      add(ButtonJump());
     }
     addAll([cam, world]);
 
@@ -39,7 +41,7 @@ class PixelGame extends FlameGame
 
   @override
   void update(double dt) {
-    if (showJoystick) {
+    if (showControls) {
       updateJoystick();
     }
     super.update(dt);
