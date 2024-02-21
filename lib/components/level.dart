@@ -10,6 +10,7 @@ class Level extends World {
   Level({required this.levelName, required this.player});
   late TiledComponent level;
   List<CollisionsBlock> collisionsBlock = [];
+  late CameraComponent cam;
 
   @override
   FutureOr<void> onLoad() async {

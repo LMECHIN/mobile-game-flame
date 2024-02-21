@@ -16,12 +16,12 @@ class Player extends SpriteAnimationGroupComponent
   Vector2 textureSize;
   Player({
     this.character = '01-King Human',
-    this.sizeCharacter = '32x32',
+    this.sizeCharacter = '2048x2048',
     Vector2? textureSize,
     super.position,
-  }) : textureSize = textureSize ?? Vector2(32, 32);
+  }) : textureSize = textureSize ?? Vector2(2048, 2048);
 
-  final double stepTime = 0.05;
+  final double stepTime = 0.1;
   late final SpriteAnimation idleAnimation;
   late final SpriteAnimation runningAnimation;
   late final SpriteAnimation jumpingAnimation;
@@ -30,6 +30,7 @@ class Player extends SpriteAnimationGroupComponent
   final double _gravity = 9.8;
   final double _jumpForce = 260;
   final double _terminalVelocity = 300;
+  double scaleFactor = 0.05;
 
   double horizontalMovement = 0;
   double moveSpeed = 100;
@@ -38,8 +39,8 @@ class Player extends SpriteAnimationGroupComponent
   bool hasJumped = false;
   List<CollisionsBlock> collisionsBlock = [];
   PlayerHitbox hitbox = PlayerHitbox(
-    offsetX: 10,
-    offsetY: 4,
+    offsetX: 50,
+    offsetY: 62,
     width: 14,
     height: 28,
   );
@@ -47,11 +48,12 @@ class Player extends SpriteAnimationGroupComponent
   @override
   FutureOr<void> onLoad() {
     _loadAllAnimations();
-    // debugMode = true;
+    debugMode = true;
     add(RectangleHitbox(
       position: Vector2(hitbox.offsetX, hitbox.offsetY),
       size: Vector2(hitbox.width, hitbox.height),
     ));
+    scale = Vector2(scaleFactor, scaleFactor);
     return super.onLoad();
   }
 
@@ -83,16 +85,16 @@ class Player extends SpriteAnimationGroupComponent
 
   void _loadAllAnimations() {
     idleAnimation = _spriteAnimation(
-        "Sprites/$character/Idle ($sizeCharacter).png", 11, textureSize);
+        "Sprites/$character/Idle ($sizeCharacter).png", 6, textureSize);
 
     runningAnimation = _spriteAnimation(
-        "Sprites/$character/Run ($sizeCharacter).png", 12, textureSize);
+        "Sprites/$character/Run ($sizeCharacter).png", 8, textureSize);
 
     jumpingAnimation = _spriteAnimation(
-        "Sprites/$character/Jump ($sizeCharacter).png", 1, textureSize);
+        "Sprites/$character/Jump ($sizeCharacter).png", 5, textureSize);
 
     fallingAnimation = _spriteAnimation(
-        "Sprites/$character/Fall ($sizeCharacter).png", 1, textureSize);
+        "Sprites/$character/Fall ($sizeCharacter).png", 4, textureSize);
 
     animations = {
       PlayerState.idle: idleAnimation,
