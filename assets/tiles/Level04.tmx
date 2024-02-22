@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="80" height="23" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="52">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="80" height="23" tilewidth="32" tileheight="32" infinite="0" nextlayerid="4" nextobjectid="56">
  <tileset firstgid="1" source="Pixel Game.tsx"/>
  <tileset firstgid="248" source="Map (32x32).tsx"/>
  <layer id="1" name="Background" width="80" height="23">
@@ -49,5 +49,6 @@
  </objectgroup>
  <objectgroup id="2" name="Spawnpoints">
   <object id="8" name="Player" type="Player" x="574.083" y="572.584" width="36" height="34.6667"/>
+  <object id="55" type="Checkpoint" x="1470.67" y="445.333" width="128" height="161.333"/>
  </objectgroup>
 </map>

@@ -28,6 +28,8 @@ class Level extends World {
             player.position = Vector2(spawnPoint.x, spawnPoint.y);
             add(player);
             break;
+          case 'Checkpoint':
+            break;
           default:
         }
       }

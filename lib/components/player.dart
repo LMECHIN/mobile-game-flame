@@ -32,10 +32,10 @@ class Player extends SpriteAnimationGroupComponent
   final double _jumpForce = 280;
   final double _terminalVelocity = 300;
   double scaleFactor = 0.05;
-
   double horizontalMovement = 0;
   double moveSpeed = 100;
   double normalMoveSpeed = 100;
+
   Vector2 velocity = Vector2.zero();
   bool isOnGround = false;
   bool hasJumped = false;
