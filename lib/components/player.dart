@@ -29,7 +29,7 @@ class Player extends SpriteAnimationGroupComponent
   late final SpriteAnimation slidingAnimation;
 
   final double _gravity = 9.8;
-  final double _jumpForce = 280;
+  final double _jumpForce = 440;
   final double _terminalVelocity = 300;
   double scaleFactor = 0.05;
   double horizontalMovement = 0;
@@ -52,7 +52,7 @@ class Player extends SpriteAnimationGroupComponent
   @override
   FutureOr<void> onLoad() {
     _loadAllAnimations();
-    debugMode = true;
+    // debugMode = true;
     add(RectangleHitbox(
       position: Vector2(hitbox.offsetX, hitbox.offsetY),
       size: Vector2(hitbox.width, hitbox.height),
@@ -184,7 +184,7 @@ class Player extends SpriteAnimationGroupComponent
   void _playSlide() {
     normalMoveSpeed = moveSpeed;
     moveSpeed = 260;
-    Future.delayed(const Duration(seconds: 1), () {
+    Future.delayed(const Duration(milliseconds: 500), () {
       moveSpeed = 100;
     });
     hasSlide = false;
