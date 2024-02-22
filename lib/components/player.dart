@@ -7,7 +7,7 @@ import 'package:flutter_application_1/components/player_hitbox.dart';
 import 'package:flutter_application_1/components/utils.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 
-enum PlayerState { idle, running, jumping, falling }
+enum PlayerState { idle, running, jumping, falling, sliding }
 
 class Player extends SpriteAnimationGroupComponent
     with HasGameRef<PixelGame>, KeyboardHandler {
@@ -26,17 +26,21 @@ class Player extends SpriteAnimationGroupComponent
   late final SpriteAnimation runningAnimation;
   late final SpriteAnimation jumpingAnimation;
   late final SpriteAnimation fallingAnimation;
+  late final SpriteAnimation slidingAnimation;
 
   final double _gravity = 9.8;
-  final double _jumpForce = 260;
+  final double _jumpForce = 280;
   final double _terminalVelocity = 300;
   double scaleFactor = 0.05;
 
   double horizontalMovement = 0;
   double moveSpeed = 100;
+  double normalMoveSpeed = 100;
   Vector2 velocity = Vector2.zero();
   bool isOnGround = false;
   bool hasJumped = false;
+  bool hasSlide = false;
+
   List<CollisionsBlock> collisionsBlock = [];
   PlayerHitbox hitbox = PlayerHitbox(
     offsetX: 50,
@@ -79,6 +83,11 @@ class Player extends SpriteAnimationGroupComponent
     horizontalMovement += isRightKeyPressed ? 1 : 0;
 
     hasJumped = keysPressed.contains(LogicalKeyboardKey.space);
+    if (keysPressed.contains(LogicalKeyboardKey.arrowDown)) {
+      hasSlide = true;
+    } else {
+      hasSlide = false;
+    }
 
     return super.onKeyEvent(event, keysPressed);
   }
@@ -96,11 +105,15 @@ class Player extends SpriteAnimationGroupComponent
     fallingAnimation = _spriteAnimation(
         "Sprites/$character/Fall ($sizeCharacter).png", 4, textureSize);
 
+    slidingAnimation = _spriteAnimation(
+        "Sprites/$character/Slide ($sizeCharacter).png", 5, textureSize);
+
     animations = {
       PlayerState.idle: idleAnimation,
       PlayerState.running: runningAnimation,
       PlayerState.jumping: jumpingAnimation,
       PlayerState.falling: fallingAnimation,
+      PlayerState.sliding: slidingAnimation,
     };
 
     current = PlayerState.idle;
@@ -127,17 +140,33 @@ class Player extends SpriteAnimationGroupComponent
       flipHorizontallyAroundCenter();
     }
 
-    if (velocity.x > 0 || velocity.x < 0) playerState = PlayerState.running;
+    // if (velocity.x > 0 || velocity.x < 0) playerState = PlayerState.sliding;
+    if (moveSpeed > 100) {
+      playerState = PlayerState.sliding;
+    } else if ((velocity.x > 0 || velocity.x < 0) && !hasSlide) {
+      hasSlide = false;
+      playerState = PlayerState.running;
+    }
+    if (moveSpeed > 100) {
+      playerState = PlayerState.sliding;
+    } else if (velocity.y < 0) {
+      playerState = PlayerState.jumping;
+    }
 
-    if (velocity.y < 0) playerState = PlayerState.jumping;
-
-    if (velocity.y > 0) playerState = PlayerState.falling;
+    if (moveSpeed > 100) {
+      playerState = PlayerState.sliding;
+    } else if (velocity.y > 0) {
+      playerState = PlayerState.falling;
+    }
 
     current = playerState;
   }
 
   void _updatePlayerMovement(double dt) {
     if (hasJumped && isOnGround) _playJump(dt);
+    if (hasSlide) {
+      _playSlide();
+    }
 
     // if (velocity.y > _gravity) isOnGround = false; // optional
 
@@ -150,6 +179,15 @@ class Player extends SpriteAnimationGroupComponent
     position.y += velocity.y * dt;
     isOnGround = false;
     hasJumped = false;
+  }
+
+  void _playSlide() {
+    normalMoveSpeed = moveSpeed;
+    moveSpeed = 260;
+    Future.delayed(const Duration(seconds: 1), () {
+      moveSpeed = 100;
+    });
+    hasSlide = false;
   }
 
   void _checkHorizontalCollisions() {

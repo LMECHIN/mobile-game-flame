@@ -27,18 +27,17 @@ class PixelGame extends FlameGame
 
     final world = Level(
       player: player,
-      levelName: 'Level02',
+      levelName: 'Level04',
     );
     cam = CameraComponent.withFixedResolution(
-        world: world, width: 1280, height: 720);
+        world: world, width: 1900, height: 920);
     cam.follow(
       player,
       maxSpeed: 200,
       snap: true,
     );
-    // cam.viewfinder.zoom = 2;
-    setZoom(2);
-    cam.viewfinder.anchor = Anchor.center;
+    cam.viewfinder.anchor = const Anchor(0.35, 0.5);
+    setZoom(2.4);
     cam.priority = 0;
     if (showControls) {
       addJoystick();
