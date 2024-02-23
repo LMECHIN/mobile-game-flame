@@ -28,13 +28,13 @@ class Player extends SpriteAnimationGroupComponent
   late final SpriteAnimation fallingAnimation;
   late final SpriteAnimation slidingAnimation;
 
-  final double _gravity = 9.8;
-  final double _jumpForce = 440;
-  final double _terminalVelocity = 300;
-  double scaleFactor = 0.05;
+  final double _gravity = 24.5;
+  final double _jumpForce = 1880;
+  final double _terminalVelocity = 1600;
+  double scaleFactor = 0.3;
   double horizontalMovement = 0;
-  double moveSpeed = 100;
-  double normalMoveSpeed = 100;
+  double moveSpeed = 450;
+  double normalMoveSpeed = 450;
 
   Vector2 velocity = Vector2.zero();
   bool isOnGround = false;
@@ -43,10 +43,10 @@ class Player extends SpriteAnimationGroupComponent
 
   List<CollisionsBlock> collisionsBlock = [];
   PlayerHitbox hitbox = PlayerHitbox(
-    offsetX: 50,
-    offsetY: 62,
-    width: 14,
-    height: 28,
+    offsetX: 300,
+    offsetY: 475,
+    width: 65,
+    height: 65,
   );
 
   @override
@@ -141,19 +141,19 @@ class Player extends SpriteAnimationGroupComponent
     }
 
     // if (velocity.x > 0 || velocity.x < 0) playerState = PlayerState.sliding;
-    if (moveSpeed > 100) {
+    if (moveSpeed > 450) {
       playerState = PlayerState.sliding;
     } else if ((velocity.x > 0 || velocity.x < 0) && !hasSlide) {
       hasSlide = false;
       playerState = PlayerState.running;
     }
-    if (moveSpeed > 100) {
+    if (moveSpeed > 450) {
       playerState = PlayerState.sliding;
     } else if (velocity.y < 0) {
       playerState = PlayerState.jumping;
     }
 
-    if (moveSpeed > 100) {
+    if (moveSpeed > 450) {
       playerState = PlayerState.sliding;
     } else if (velocity.y > 0) {
       playerState = PlayerState.falling;
@@ -183,9 +183,9 @@ class Player extends SpriteAnimationGroupComponent
 
   void _playSlide() {
     normalMoveSpeed = moveSpeed;
-    moveSpeed = 260;
+    moveSpeed = 600;
     Future.delayed(const Duration(milliseconds: 500), () {
-      moveSpeed = 100;
+      moveSpeed = 450;
     });
     hasSlide = false;
   }

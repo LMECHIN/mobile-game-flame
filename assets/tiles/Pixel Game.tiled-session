@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Level02.tmx",
+    "activeFile": "",
     "expandedProjectPaths": [
         "."
     ],
@@ -12,21 +12,53 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "Ground_01.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
         "Level01.tmx": {
             "scale": 0.75,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 620,
-                "y": 549.3333333333333
+                "x": 640,
+                "y": 367.3333333333333
             }
         },
         "Level02.tmx": {
-            "scale": 1.5,
+            "scale": 1,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 706,
-                "y": 536.6666666666667
+                "x": 658.5,
+                "y": 527
             }
+        },
+        "Level04.tmx": {
+            "expandedObjectLayers": [
+                2,
+                3
+            ],
+            "scale": 0.417109375,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1003.3339576699756,
+                "y": 362.0153586814008
+            }
+        },
+        "Level05.tmx": {
+            "expandedObjectLayers": [
+                4,
+                3
+            ],
+            "scale": 0.0625,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 2744,
+                "y": 5216
+            }
+        },
+        "Map (32x32).tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "Pixel Game.tsx": {
             "scaleInDock": 1,
@@ -36,19 +68,31 @@
     "last.imagePath": "/home/lmechin/delivery/myproject/game2d/assets/images/Sprites/14-TileSets",
     "map.height": 23,
     "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 227,
+    "map.tileWidth": 227,
     "map.width": 40,
     "openFiles": [
         "Pixel Game.tsx",
         "Level01.tmx",
         "DLevel01.tsx",
-        "Level02.tmx"
+        "Level02.tmx",
+        "Level04.tmx",
+        "Map (32x32).tsx",
+        "Ground_01.tsx"
     ],
     "project": "Pixel Game.tiled-project",
     "recentFiles": [
+        "Ground_01.tsx",
         "Pixel Game.tsx",
         "Level01.tmx",
         "DLevel01.tsx",
-        "Level02.tmx"
+        "Level02.tmx",
+        "Level04.tmx",
+        "Map (32x32).tsx"
     ],
-    "tileset.lastUsedFormat": "tsx"
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 227,
+        "width": 227
+    }
 }

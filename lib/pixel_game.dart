@@ -16,10 +16,10 @@ class PixelGame extends FlameGame
   late CameraComponent cam;
   Player player = Player(character: '01-King Human');
   late JoystickComponent joystick;
-  bool showControls = false;
+  bool showControls = true;
   int horizontalMovementTotal = 0;
   late double targetZoom = 1.0;
-  static const double zoomSpeed = 0.5;
+  static const double zoomSpeed = 0.9;
 
   @override
   FutureOr<void> onLoad() async {
@@ -27,13 +27,14 @@ class PixelGame extends FlameGame
 
     final world = Level(
       player: player,
-      levelName: 'Level04',
+      levelName: 'Level05',
     );
     cam = CameraComponent.withFixedResolution(
-        world: world, width: 1900, height: 920);
+        // world: world, width: 1900, height: 920);
+        world: world, width: 9080, height: 5221);
     cam.follow(
       player,
-      maxSpeed: 200,
+      maxSpeed: 800,
       snap: true,
     );
     cam.viewfinder.anchor = const Anchor(0.35, 0.5);
