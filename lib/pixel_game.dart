@@ -5,6 +5,7 @@ import 'package:flame/game.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/components/button_jump.dart';
+import 'package:flutter_application_1/components/button_slide.dart';
 import 'package:flutter_application_1/components/level.dart';
 import 'package:flutter_application_1/components/player.dart';
 
@@ -16,7 +17,7 @@ class PixelGame extends FlameGame
   late CameraComponent cam;
   Player player = Player(character: '01-King Human');
   late JoystickComponent joystick;
-  bool showControls = true;
+  bool showControls = false;
   int horizontalMovementTotal = 0;
   late double targetZoom = 1.0;
   static const double zoomSpeed = 0.9;
@@ -43,6 +44,7 @@ class PixelGame extends FlameGame
     if (showControls) {
       addJoystick();
       add(ButtonJump());
+      add(ButtonSlide());
     }
     addAll([cam, world]);
 

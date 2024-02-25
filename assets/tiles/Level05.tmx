@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" width="40" height="23" tilewidth="227" tileheight="227" infinite="0" nextlayerid="5" nextobjectid="8">
+<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" width="40" height="23" tilewidth="230" tileheight="230" infinite="0" nextlayerid="5" nextobjectid="14">
  <tileset firstgid="1" source="Ground_05.tsx"/>
  <tileset firstgid="2" source="Ground_03.tsx"/>
  <tileset firstgid="3" source="Ground_02.tsx"/>
+ <tileset firstgid="4" source="Ground_06.tsx"/>
  <layer id="1" name="Background" width="40" height="23">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -19,7 +20,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,1,1,1,3,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,3,0,0,0,3,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,4,4,0,0,0,0,0,0,0,3,0,0,0,3,0,0,0,3,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -34,6 +35,10 @@
   <object id="2" x="1" y="5033.64" width="9072" height="224.485"/>
   <object id="4" x="2518.03" y="4577.18" width="477.455" height="463.879"/>
   <object id="7" x="3439.27" y="4352.06" width="465.455" height="683.879"/>
+  <object id="9" type="Platforms" x="5719.27" y="3657.06" width="697.455" height="219.879"/>
+  <object id="10" type="Platforms" x="6877.27" y="3171.06" width="209.455" height="491.879"/>
+  <object id="11" type="Platforms" x="7780.27" y="2942.06" width="1145.46" height="507.879"/>
+  <object id="13" x="4362.27" y="3899.06" width="689.455" height="251.879"/>
  </objectgroup>
  <objectgroup id="3" name="Spawnpoints">
   <object id="1" name="Player" type="Player" x="1142" y="4543.33" width="222" height="222.667"/>

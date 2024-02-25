@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "Level05.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -13,6 +13,34 @@
             "scaleInEditor": 1
         },
         "Ground_01.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Ground_02.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Ground_03.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Ground_05.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Ground_06.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Ground_07.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Ground_08.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Ground_4.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
@@ -28,20 +56,28 @@
             "scale": 1,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 658.5,
-                "y": 527
+                "x": 640,
+                "y": 367.5
+            }
+        },
+        "Level03.tmx": {
+            "scale": 0.6672265625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 640.7119021134595,
+                "y": 400.16392482875716
             }
         },
         "Level04.tmx": {
             "expandedObjectLayers": [
-                2,
-                3
+                3,
+                2
             ],
-            "scale": 0.417109375,
-            "selectedLayer": 0,
+            "scale": 0.75,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 1003.3339576699756,
-                "y": 362.0153586814008
+                "x": 1586,
+                "y": 353.3333333333333
             }
         },
         "Level05.tmx": {
@@ -49,11 +85,11 @@
                 4,
                 3
             ],
-            "scale": 0.0625,
+            "scale": 0.125,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 2744,
-                "y": 5216
+                "x": 4068,
+                "y": 5192
             }
         },
         "Map (32x32).tsx": {
@@ -78,17 +114,31 @@
         "Level02.tmx",
         "Level04.tmx",
         "Map (32x32).tsx",
-        "Ground_01.tsx"
+        "Ground_01.tsx",
+        "Level05.tmx",
+        "Ground_02.tsx",
+        "Ground_03.tsx",
+        "Ground_4.tsx",
+        "Ground_05.tsx",
+        "Ground_06.tsx",
+        "Ground_07.tsx",
+        "Ground_08.tsx",
+        "Level03.tmx"
     ],
     "project": "Pixel Game.tiled-project",
     "recentFiles": [
-        "Ground_01.tsx",
         "Pixel Game.tsx",
         "Level01.tmx",
         "DLevel01.tsx",
         "Level02.tmx",
         "Level04.tmx",
-        "Map (32x32).tsx"
+        "Map (32x32).tsx",
+        "Ground_01.tsx",
+        "Level03.tmx",
+        "Ground_08.tsx",
+        "Ground_07.tsx",
+        "Ground_06.tsx",
+        "Ground_05.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

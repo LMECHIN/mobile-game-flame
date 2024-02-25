@@ -28,13 +28,15 @@ class Player extends SpriteAnimationGroupComponent
   late final SpriteAnimation fallingAnimation;
   late final SpriteAnimation slidingAnimation;
 
-  final double _gravity = 24.5;
-  final double _jumpForce = 1880;
-  final double _terminalVelocity = 1600;
+  final double _gravity = 5;
+  final double _jumpForce = 1800;
+  final double _terminalVelocity = 2000;
   double scaleFactor = 0.3;
   double horizontalMovement = 0;
-  double moveSpeed = 450;
-  double normalMoveSpeed = 450;
+  double moveSpeed = 800;
+  double normalMoveSpeed = 800;
+  double fixedDeltaTime = 0.1 / 60;
+  double accumulatedTime = 0;
 
   Vector2 velocity = Vector2.zero();
   bool isOnGround = false;
@@ -52,7 +54,7 @@ class Player extends SpriteAnimationGroupComponent
   @override
   FutureOr<void> onLoad() {
     _loadAllAnimations();
-    // debugMode = true;
+    debugMode = true;
     add(RectangleHitbox(
       position: Vector2(hitbox.offsetX, hitbox.offsetY),
       size: Vector2(hitbox.width, hitbox.height),
@@ -63,11 +65,19 @@ class Player extends SpriteAnimationGroupComponent
 
   @override
   void update(double dt) {
-    _updatePlayerState();
-    _updatePlayerMovement(dt);
-    _checkHorizontalCollisions();
-    _applyGravity(dt);
-    _checkVerticalCollisions();
+    accumulatedTime += dt;
+
+    while (accumulatedTime >= fixedDeltaTime) {
+      _updatePlayerState();
+      _updatePlayerMovement(fixedDeltaTime);
+      _checkHorizontalCollisions();
+      _applyGravity(fixedDeltaTime);
+      _checkVerticalCollisions();
+
+      accumulatedTime -= fixedDeltaTime;
+    }
+
+
     super.update(dt);
   }
 
@@ -141,19 +151,19 @@ class Player extends SpriteAnimationGroupComponent
     }
 
     // if (velocity.x > 0 || velocity.x < 0) playerState = PlayerState.sliding;
-    if (moveSpeed > 450) {
+    if (moveSpeed > 800) {
       playerState = PlayerState.sliding;
     } else if ((velocity.x > 0 || velocity.x < 0) && !hasSlide) {
       hasSlide = false;
       playerState = PlayerState.running;
     }
-    if (moveSpeed > 450) {
+    if (moveSpeed > 800) {
       playerState = PlayerState.sliding;
     } else if (velocity.y < 0) {
       playerState = PlayerState.jumping;
     }
 
-    if (moveSpeed > 450) {
+    if (moveSpeed > 800) {
       playerState = PlayerState.sliding;
     } else if (velocity.y > 0) {
       playerState = PlayerState.falling;
@@ -183,9 +193,9 @@ class Player extends SpriteAnimationGroupComponent
 
   void _playSlide() {
     normalMoveSpeed = moveSpeed;
-    moveSpeed = 600;
+    moveSpeed = 1000;
     Future.delayed(const Duration(milliseconds: 500), () {
-      moveSpeed = 450;
+      moveSpeed = 800;
     });
     hasSlide = false;
   }
@@ -234,7 +244,7 @@ class Player extends SpriteAnimationGroupComponent
             isOnGround = true;
             break;
           }
-          if (velocity.y > 0) {
+          if (velocity.y < 0) {
             velocity.y = 0;
             position.y = block.y + block.height - hitbox.offsetY;
           }
