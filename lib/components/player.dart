@@ -36,10 +36,10 @@ class Player extends SpriteAnimationGroupComponent
   double horizontalMovement = 0;
   double moveSpeed = 800;
   double normalMoveSpeed = 800;
-  double fixedDeltaTime = 0.1 / 60;
-  double accumulatedTime = 0;
   Vector2 startingPosition = Vector2.zero();
   Vector2 velocity = Vector2.zero();
+  double fixedDeltaTime = 0.1 / 60;
+  double accumulatedTime = 0;
   bool isOnGround = false;
   bool hasJumped = false;
   bool hasSlide = false;
@@ -56,12 +56,14 @@ class Player extends SpriteAnimationGroupComponent
   FutureOr<void> onLoad() {
     _loadAllAnimations();
     debugMode = true;
+
     startingPosition = Vector2(position.x, position.y);
+
+    scale = Vector2(scaleFactor, scaleFactor);
     add(RectangleHitbox(
       position: Vector2(hitbox.offsetX, hitbox.offsetY),
       size: Vector2(hitbox.width, hitbox.height),
     ));
-    scale = Vector2(scaleFactor, scaleFactor);
     return super.onLoad();
   }
 
@@ -104,12 +106,13 @@ class Player extends SpriteAnimationGroupComponent
 
   @override
   void onCollisionStart(
-      Set<Vector2> intersectionPoints, PositionComponent other) {
+    Set<Vector2> intersectionPoints,
+    PositionComponent other,
+  ) {
+    super.onCollisionStart(intersectionPoints, other);
     if (other is Obstacle) {
       _respawn();
     }
-    print("cc");
-    super.onCollisionStart(intersectionPoints, other);
   }
 
   void _loadAllAnimations() {
@@ -187,7 +190,6 @@ class Player extends SpriteAnimationGroupComponent
     if (hasSlide) {
       _playSlide();
     }
-
     // if (velocity.y > _gravity) isOnGround = false; // optional
 
     velocity.x = horizontalMovement * moveSpeed;
@@ -195,7 +197,6 @@ class Player extends SpriteAnimationGroupComponent
   }
 
   void _playJump(double dt) {
-    print("jump");
     velocity.y = -_jumpForce;
     position.y += velocity.y * dt;
     isOnGround = false;
@@ -264,8 +265,7 @@ class Player extends SpriteAnimationGroupComponent
     }
   }
 
-  void _respawn() async {
-    print("cc");
+  void _respawn() {
     position = startingPosition;
   }
 }

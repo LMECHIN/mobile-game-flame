@@ -65,7 +65,7 @@
             "selectedLayer": 0,
             "viewCenter": {
                 "x": 640.7119021134595,
-                "y": 400.16392482875716
+                "y": 368.6903577073941
             }
         },
         "Level04.tmx": {
@@ -76,8 +76,8 @@
             "scale": 0.75,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1586,
-                "y": 353.3333333333333
+                "x": 1280,
+                "y": 368.66666666666663
             }
         },
         "Level05.tmx": {
@@ -88,8 +88,16 @@
             "scale": 0.125,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 4068,
-                "y": 5192
+                "x": 4052,
+                "y": 5176
+            }
+        },
+        "Level06.tmx": {
+            "scale": 0.0625,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 4232,
+                "y": 3904
             }
         },
         "Map (32x32).tsx": {
@@ -126,6 +134,7 @@
         "Level03.tmx"
     ],
     "project": "Pixel Game.tiled-project",
+    "property.type": "float",
     "recentFiles": [
         "Pixel Game.tsx",
         "Level01.tmx",

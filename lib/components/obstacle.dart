@@ -5,23 +5,74 @@ import 'package:flame/components.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 
 class Obstacle extends SpriteAnimationComponent with HasGameRef<PixelGame> {
+  final bool isVertical;
+  final double offNeg;
+  final double offPos;
   Obstacle({
+    this.isVertical = false,
+    this.offNeg = 0,
+    this.offPos = 0,
     position,
     size,
   }) : super(
           position: position,
           size: size,
-        ) {
-          debugMode = true;
-        }
+        );
+
+  static const double sawSpeed = 0.03;
+  static const moveSpeed = 50;
+  static const tileSize = 264;
+  double moveDirection = 1;
+  double rangeNeg = 0;
+  double rangePos = 0;
 
   @override
   FutureOr<void> onLoad() {
-    priority = 0;
-    print(position);
-    add(RectangleHitbox());
-
+    priority = -1;
+    add(CircleHitbox());
+    debugMode = true;
+    if (isVertical) {
+      rangeNeg = position.y - offNeg * tileSize;
+      rangePos = position.y + offPos * tileSize;
+    } else {
+      rangeNeg = position.x - offNeg * tileSize;
+      rangePos = position.x + offPos * tileSize;
+    }
+    animation = SpriteAnimation.fromFrameData(
+        game.images.fromCache('Obstacles/Obstacle_01.png'),
+        SpriteAnimationData.sequenced(
+          amount: 1,
+          stepTime: sawSpeed,
+          textureSize: Vector2.all(264),
+        ));
+    // scale = Vector2(0.3, 0.3);
     return super.onLoad();
   }
+  @override
+  void update(double dt) {
+    if (isVertical) {
+      _moveVertically(dt);
+    } else {
+      _moveHorizontally(dt);
+    }
+    super.update(dt);
+  }
 
+  void _moveVertically(double dt) {
+    if (position.y >= rangePos) {
+      moveDirection = -1;
+    } else if (position.y <= rangeNeg) {
+      moveDirection = 1;
+    }
+    position.y += moveDirection * moveSpeed * dt;
+  }
+
+  void _moveHorizontally(double dt) {
+    if (position.x >= rangePos) {
+      moveDirection = -1;
+    } else if (position.x <= rangeNeg) {
+      moveDirection = 1;
+    }
+    position.x += moveDirection * moveSpeed * dt;
+  }
 }

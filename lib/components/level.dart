@@ -62,14 +62,21 @@ class Level extends World with HasGameRef<PixelGame> {
             player.position = Vector2(spawnPoint.x, spawnPoint.y);
             add(player);
             break;
-          case 'Checkpoint':
-            break;
           case 'Obstacle':
+            final isVertical = spawnPoint.properties.getValue('isVertical');
+            final offNeg = spawnPoint.properties.getValue('offNeg');
+            final offPos = spawnPoint.properties.getValue('offPos');
             final obstacle = Obstacle(
+              isVertical: isVertical,
+              offNeg: offNeg,
+              offPos: offPos,
               position: Vector2(spawnPoint.x, spawnPoint.y),
               size: Vector2(spawnPoint.width, spawnPoint.height),
             );
+            print(obstacle.position);
             add(obstacle);
+            break;
+          case 'Checkpoint':
             break;
           default:
         }
