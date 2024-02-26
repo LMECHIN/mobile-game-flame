@@ -28,7 +28,7 @@ class PixelGame extends FlameGame
 
     final world = Level(
       player: player,
-      levelName: 'Level05',
+      levelName: 'Level06',
     );
     cam = CameraComponent.withFixedResolution(
         // world: world, width: 1900, height: 920);

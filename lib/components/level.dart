@@ -3,6 +3,7 @@ import 'package:flame/components.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flutter_application_1/components/background_tile.dart';
 import 'package:flutter_application_1/components/collisions_block.dart';
+import 'package:flutter_application_1/components/obstacle.dart';
 import 'package:flutter_application_1/components/player.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 
@@ -16,7 +17,7 @@ class Level extends World with HasGameRef<PixelGame> {
 
   @override
   FutureOr<void> onLoad() async {
-    level = await TiledComponent.load("$levelName.tmx", Vector2.all(229));
+    level = await TiledComponent.load("$levelName.tmx", Vector2.all(264));
 
     add(level);
 
@@ -62,6 +63,13 @@ class Level extends World with HasGameRef<PixelGame> {
             add(player);
             break;
           case 'Checkpoint':
+            break;
+          case 'Obstacle':
+            final obstacle = Obstacle(
+              position: Vector2(spawnPoint.x, spawnPoint.y),
+              size: Vector2(spawnPoint.width, spawnPoint.height),
+            );
+            add(obstacle);
             break;
           default:
         }

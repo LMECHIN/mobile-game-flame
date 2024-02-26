@@ -3,6 +3,7 @@ import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/components/collisions_block.dart';
+import 'package:flutter_application_1/components/obstacle.dart';
 import 'package:flutter_application_1/components/player_hitbox.dart';
 import 'package:flutter_application_1/components/utils.dart';
 import 'package:flutter_application_1/pixel_game.dart';
@@ -10,7 +11,7 @@ import 'package:flutter_application_1/pixel_game.dart';
 enum PlayerState { idle, running, jumping, falling, sliding }
 
 class Player extends SpriteAnimationGroupComponent
-    with HasGameRef<PixelGame>, KeyboardHandler {
+    with HasGameRef<PixelGame>, KeyboardHandler, CollisionCallbacks {
   String character;
   String sizeCharacter;
   Vector2 textureSize;
@@ -37,7 +38,7 @@ class Player extends SpriteAnimationGroupComponent
   double normalMoveSpeed = 800;
   double fixedDeltaTime = 0.1 / 60;
   double accumulatedTime = 0;
-
+  Vector2 startingPosition = Vector2.zero();
   Vector2 velocity = Vector2.zero();
   bool isOnGround = false;
   bool hasJumped = false;
@@ -55,6 +56,7 @@ class Player extends SpriteAnimationGroupComponent
   FutureOr<void> onLoad() {
     _loadAllAnimations();
     debugMode = true;
+    startingPosition = Vector2(position.x, position.y);
     add(RectangleHitbox(
       position: Vector2(hitbox.offsetX, hitbox.offsetY),
       size: Vector2(hitbox.width, hitbox.height),
@@ -76,8 +78,6 @@ class Player extends SpriteAnimationGroupComponent
 
       accumulatedTime -= fixedDeltaTime;
     }
-
-
     super.update(dt);
   }
 
@@ -100,6 +100,16 @@ class Player extends SpriteAnimationGroupComponent
     }
 
     return super.onKeyEvent(event, keysPressed);
+  }
+
+  @override
+  void onCollisionStart(
+      Set<Vector2> intersectionPoints, PositionComponent other) {
+    if (other is Obstacle) {
+      _respawn();
+    }
+    print("cc");
+    super.onCollisionStart(intersectionPoints, other);
   }
 
   void _loadAllAnimations() {
@@ -185,6 +195,7 @@ class Player extends SpriteAnimationGroupComponent
   }
 
   void _playJump(double dt) {
+    print("jump");
     velocity.y = -_jumpForce;
     position.y += velocity.y * dt;
     isOnGround = false;
@@ -251,5 +262,10 @@ class Player extends SpriteAnimationGroupComponent
         }
       }
     }
+  }
+
+  void _respawn() async {
+    print("cc");
+    position = startingPosition;
   }
 }
