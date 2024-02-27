@@ -12,7 +12,7 @@ import 'package:flutter_application_1/components/player.dart';
 class PixelGame extends FlameGame
     with HasKeyboardHandlerComponents, DragCallbacks, HasCollisionDetection, TapCallbacks {
   @override
-  Color backgroundColor() => const Color.fromARGB(255, 63, 56, 81);
+  Color backgroundColor() => const Color.fromARGB(255, 0, 0, 0);
 
   late CameraComponent cam;
   Player player = Player(character: '01-King Human');

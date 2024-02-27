@@ -8,7 +8,7 @@ import 'package:flutter_application_1/components/player_hitbox.dart';
 import 'package:flutter_application_1/components/utils.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 
-enum PlayerState { idle, running, jumping, falling, sliding }
+enum PlayerState { idle, running, jumping, falling, sliding, death, appearing }
 
 class Player extends SpriteAnimationGroupComponent
     with HasGameRef<PixelGame>, KeyboardHandler, CollisionCallbacks {
@@ -28,6 +28,8 @@ class Player extends SpriteAnimationGroupComponent
   late final SpriteAnimation jumpingAnimation;
   late final SpriteAnimation fallingAnimation;
   late final SpriteAnimation slidingAnimation;
+  late final SpriteAnimation deathAnimation;
+  late final SpriteAnimation appearingAnimation;
 
   final double _gravity = 5;
   final double _jumpForce = 1800;
@@ -43,6 +45,7 @@ class Player extends SpriteAnimationGroupComponent
   bool isOnGround = false;
   bool hasJumped = false;
   bool hasSlide = false;
+  bool hasDie = false;
 
   List<CollisionsBlock> collisionsBlock = [];
   PlayerHitbox hitbox = PlayerHitbox(
@@ -55,15 +58,15 @@ class Player extends SpriteAnimationGroupComponent
   @override
   FutureOr<void> onLoad() {
     _loadAllAnimations();
-    debugMode = true;
+    // debugMode = true;
 
     startingPosition = Vector2(position.x, position.y);
 
     scale = Vector2(scaleFactor, scaleFactor);
-    add(RectangleHitbox(
-      position: Vector2(hitbox.offsetX, hitbox.offsetY),
-      size: Vector2(hitbox.width, hitbox.height),
-    ));
+    Vector2 sizeHitbox = Vector2(size.x / 4.8, size.y / 3);
+    Vector2 positionHitbox = Vector2(position.x / 1.6, position.y / 5);
+
+    add(RectangleHitbox(size: sizeHitbox, position: positionHitbox));
     return super.onLoad();
   }
 
@@ -72,12 +75,13 @@ class Player extends SpriteAnimationGroupComponent
     accumulatedTime += dt;
 
     while (accumulatedTime >= fixedDeltaTime) {
-      _updatePlayerState();
-      _updatePlayerMovement(fixedDeltaTime);
-      _checkHorizontalCollisions();
-      _applyGravity(fixedDeltaTime);
-      _checkVerticalCollisions();
-
+      if (!hasDie) {
+        _updatePlayerState();
+        _updatePlayerMovement(fixedDeltaTime);
+        _checkHorizontalCollisions();
+        _applyGravity(fixedDeltaTime);
+        _checkVerticalCollisions();
+      }
       accumulatedTime -= fixedDeltaTime;
     }
     super.update(dt);
@@ -131,12 +135,21 @@ class Player extends SpriteAnimationGroupComponent
     slidingAnimation = _spriteAnimation(
         "Sprites/$character/Slide ($sizeCharacter).png", 5, textureSize);
 
+    deathAnimation = _spriteAnimation(
+        "Sprites/$character/Death ($sizeCharacter).png", 8, textureSize)
+      ..loop = false;
+
+    appearingAnimation = _reanimationSpriteAnimation(
+        "Sprites/$character/Appearing ($sizeCharacter).png", 3, textureSize);
+
     animations = {
       PlayerState.idle: idleAnimation,
       PlayerState.running: runningAnimation,
       PlayerState.jumping: jumpingAnimation,
       PlayerState.falling: fallingAnimation,
       PlayerState.sliding: slidingAnimation,
+      PlayerState.death: deathAnimation,
+      PlayerState.appearing: appearingAnimation,
     };
 
     current = PlayerState.idle;
@@ -150,6 +163,19 @@ class Player extends SpriteAnimationGroupComponent
         amount: amount,
         stepTime: stepTime,
         textureSize: textureSize,
+      ),
+    );
+  }
+
+  SpriteAnimation _reanimationSpriteAnimation(
+      String sprite, int amount, Vector2 textureSize) {
+    return SpriteAnimation.fromFrameData(
+      game.images.fromCache(sprite),
+      SpriteAnimationData.sequenced(
+        amount: amount,
+        stepTime: stepTime,
+        textureSize: textureSize,
+        loop: false,
       ),
     );
   }
@@ -205,8 +231,8 @@ class Player extends SpriteAnimationGroupComponent
 
   void _playSlide() {
     normalMoveSpeed = moveSpeed;
-    moveSpeed = 1000;
-    Future.delayed(const Duration(milliseconds: 500), () {
+    moveSpeed = 4000;
+    Future.delayed(const Duration(milliseconds: 100), () {
       moveSpeed = 800;
     });
     hasSlide = false;
@@ -265,7 +291,26 @@ class Player extends SpriteAnimationGroupComponent
     }
   }
 
-  void _respawn() {
-    position = startingPosition;
+  void _respawn() async {
+    const canMoveDuration = Duration(milliseconds: 400);
+    hasDie = true;
+    current = PlayerState.death;
+
+    await animationTicker?.completed;
+    animationTicker?.reset();
+
+    // position = startingPosition;
+    position = Vector2(startingPosition.x, startingPosition.y - 20);
+
+    // position = startingPosition;
+    current = PlayerState.appearing;
+
+    await animationTicker?.completed;
+    animationTicker?.reset();
+
+    velocity = Vector2.zero();
+    position = Vector2(startingPosition.x, startingPosition.y - 20);
+    _updatePlayerState();
+    Future.delayed(canMoveDuration, () => hasDie = false);
   }
 }
