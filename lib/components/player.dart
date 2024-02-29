@@ -310,7 +310,9 @@ class Player extends SpriteAnimationGroupComponent
 
     velocity = Vector2.zero();
     position = Vector2(startingPosition.x, startingPosition.y - 20);
-    _updatePlayerState();
-    Future.delayed(canMoveDuration, () => hasDie = false);
+    // _updatePlayerState();
+    Future.delayed(canMoveDuration, () => {
+      hasDie = false,
+    });
   }
 }

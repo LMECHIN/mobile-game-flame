@@ -10,11 +10,16 @@ import 'package:flutter_application_1/components/level.dart';
 import 'package:flutter_application_1/components/player.dart';
 
 class PixelGame extends FlameGame
-    with HasKeyboardHandlerComponents, DragCallbacks, HasCollisionDetection, TapCallbacks {
+    with
+        HasKeyboardHandlerComponents,
+        DragCallbacks,
+        HasCollisionDetection,
+        TapCallbacks {
   @override
   Color backgroundColor() => const Color.fromARGB(255, 0, 0, 0);
 
   late CameraComponent cam;
+  double camSpeed = 800;
   Player player = Player(character: '01-King Human');
   late JoystickComponent joystick;
   bool showControls = false;
@@ -28,17 +33,15 @@ class PixelGame extends FlameGame
 
     final world = Level(
       player: player,
-      levelName: 'Level06',
+      levelName: 'Level08',
     );
     cam = CameraComponent.withFixedResolution(
         // world: world, width: 1900, height: 920);
-        world: world, width: 9080, height: 5221);
-    cam.follow(
-      player,
-      maxSpeed: 800,
-      snap: true,
-    );
-    cam.viewfinder.anchor = const Anchor(0.35, 0.5);
+        world: world,
+        width: 9080,
+        height: 5221);
+
+    cam.viewfinder.anchor = const Anchor(0.29, 0.5);
     setZoom(2.4);
     cam.priority = 0;
     if (showControls) {
@@ -56,8 +59,21 @@ class PixelGame extends FlameGame
     if (showControls) {
       updateJoystick();
     }
+    if (player.velocity.x < 0) {
+      cam.viewfinder.anchor = const Anchor(0.45, 0.5);
+    } else if (player.velocity.x > 0) {
+      cam.viewfinder.anchor = const Anchor(0.29, 0.5);
+    }
+    cam.follow(
+      player,
+      maxSpeed: camSpeed,
+      snap: true,
+    );
     updateZoom(dt);
     super.update(dt);
+    if (player.hasSlide) {
+      camSpeed = 4000;
+    }
   }
 
   void setZoom(double zoom) {
