@@ -15,8 +15,6 @@ class PixelGame extends FlameGame
         DragCallbacks,
         HasCollisionDetection,
         TapCallbacks {
-  @override
-  Color backgroundColor() => const Color.fromARGB(255, 0, 0, 0);
 
   late CameraComponent cam;
   double camSpeed = 800;
@@ -26,6 +24,19 @@ class PixelGame extends FlameGame
   int horizontalMovementTotal = 0;
   late double targetZoom = 1.0;
   static const double zoomSpeed = 0.9;
+
+  Color color = const Color.fromARGB(255, 0, 0, 0);
+
+  void updateBackgroundColor(Color newColor) {
+    color = newColor;
+  }
+
+  @override
+  void render(Canvas canvas) {
+    canvas.drawRect(Rect.fromLTWH(0, 0, size.x, size.y),
+        Paint()..color = color);
+    super.render(canvas);
+  }
 
   @override
   FutureOr<void> onLoad() async {

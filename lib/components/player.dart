@@ -31,6 +31,8 @@ class Player extends SpriteAnimationGroupComponent
   late final SpriteAnimation deathAnimation;
   late final SpriteAnimation appearingAnimation;
 
+  Color color = const Color.fromARGB(255, 0, 0, 0);
+
   final double _gravity = 5;
   final double _jumpForce = 1800;
   final double _terminalVelocity = 2000;
@@ -63,8 +65,8 @@ class Player extends SpriteAnimationGroupComponent
     startingPosition = Vector2(position.x, position.y);
 
     scale = Vector2(scaleFactor, scaleFactor);
-    Vector2 sizeHitbox = Vector2(size.x / 4.8, size.y / 3);
-    Vector2 positionHitbox = Vector2(position.x / 1.6, position.y / 5);
+    Vector2 sizeHitbox = Vector2(size.x / 4.5, size.y / 3);
+    Vector2 positionHitbox = Vector2(position.x / 1.7, position.y / 5);
 
     add(RectangleHitbox(size: sizeHitbox, position: positionHitbox));
     return super.onLoad();
@@ -212,7 +214,9 @@ class Player extends SpriteAnimationGroupComponent
   }
 
   void _updatePlayerMovement(double dt) {
-    if (hasJumped && isOnGround) _playJump(dt);
+    if (hasJumped && isOnGround) {
+      _playJump(dt);
+    }
     if (hasSlide) {
       _playSlide();
     }
@@ -220,6 +224,11 @@ class Player extends SpriteAnimationGroupComponent
 
     velocity.x = horizontalMovement * moveSpeed;
     position.x += velocity.x * dt;
+  }
+
+  void _updatePlayerColor(Color newColor) {
+    color = newColor;
+    gameRef.updateBackgroundColor(newColor);
   }
 
   void _playJump(double dt) {
@@ -295,7 +304,12 @@ class Player extends SpriteAnimationGroupComponent
     const canMoveDuration = Duration(milliseconds: 400);
     hasDie = true;
     current = PlayerState.death;
-
+    Future.delayed(
+        const Duration(milliseconds: 400),
+        () => {
+              _updatePlayerColor(const Color.fromARGB(255, 0, 0, 0)),
+            });
+    _updatePlayerColor(const Color.fromARGB(255, 250, 250, 250));
     await animationTicker?.completed;
     animationTicker?.reset();
 
@@ -311,8 +325,10 @@ class Player extends SpriteAnimationGroupComponent
     velocity = Vector2.zero();
     position = Vector2(startingPosition.x, startingPosition.y - 20);
     // _updatePlayerState();
-    Future.delayed(canMoveDuration, () => {
-      hasDie = false,
-    });
+    Future.delayed(
+        canMoveDuration,
+        () => {
+              hasDie = false,
+            });
   }
 }
