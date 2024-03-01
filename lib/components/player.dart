@@ -33,7 +33,7 @@ class Player extends SpriteAnimationGroupComponent
 
   Color color = const Color.fromARGB(255, 0, 0, 0);
 
-  final double _gravity = 5;
+  double _gravity = 5;
   final double _jumpForce = 1800;
   final double _terminalVelocity = 2000;
   double scaleFactor = 0.3;
@@ -48,6 +48,7 @@ class Player extends SpriteAnimationGroupComponent
   bool hasJumped = false;
   bool hasSlide = false;
   bool hasDie = false;
+  bool test = false;
 
   List<CollisionsBlock> collisionsBlock = [];
   PlayerHitbox hitbox = PlayerHitbox(
@@ -66,7 +67,7 @@ class Player extends SpriteAnimationGroupComponent
 
     scale = Vector2(scaleFactor, scaleFactor);
     Vector2 sizeHitbox = Vector2(size.x / 4.5, size.y / 3);
-    Vector2 positionHitbox = Vector2(position.x / 1.7, position.y / 5);
+    Vector2 positionHitbox = Vector2(position.x / 1, position.y / 5);
 
     add(RectangleHitbox(size: sizeHitbox, position: positionHitbox));
     return super.onLoad();
@@ -80,9 +81,10 @@ class Player extends SpriteAnimationGroupComponent
       if (!hasDie) {
         _updatePlayerState();
         _updatePlayerMovement(fixedDeltaTime);
-        _checkHorizontalCollisions();
+        _checkHorizontalCollisions(fixedDeltaTime);
         _applyGravity(fixedDeltaTime);
-        _checkVerticalCollisions();
+        _checkVerticalCollisions(fixedDeltaTime);
+        // _checkBoosts();
       }
       accumulatedTime -= fixedDeltaTime;
     }
@@ -98,6 +100,12 @@ class Player extends SpriteAnimationGroupComponent
         keysPressed.contains(LogicalKeyboardKey.arrowRight);
 
     horizontalMovement += isLeftKeyPressed ? -1 : 0;
+    if (isLeftKeyPressed) {
+      test = true;
+    }
+    if (isRightKeyPressed) {
+      test = false;
+    }
     horizontalMovement += isRightKeyPressed ? 1 : 0;
 
     hasJumped = keysPressed.contains(LogicalKeyboardKey.space);
@@ -115,9 +123,9 @@ class Player extends SpriteAnimationGroupComponent
     Set<Vector2> intersectionPoints,
     PositionComponent other,
   ) {
-    super.onCollisionStart(intersectionPoints, other);
     if (other is Obstacle) {
       _respawn();
+      super.onCollisionStart(intersectionPoints, other);
     }
   }
 
@@ -239,7 +247,7 @@ class Player extends SpriteAnimationGroupComponent
   }
 
   void _playSlide() {
-    normalMoveSpeed = moveSpeed;
+    // normalMoveSpeed = moveSpeed;
     moveSpeed = 4000;
     Future.delayed(const Duration(milliseconds: 100), () {
       moveSpeed = 800;
@@ -247,7 +255,24 @@ class Player extends SpriteAnimationGroupComponent
     hasSlide = false;
   }
 
-  void _checkHorizontalCollisions() {
+  void _checkBoosts(double dt) {
+    // for (final block in collisionsBlock) {
+    //   if (block.isBoost) {
+    //     if (checkCollision(this, block)) {
+    // const canBoostDuration = Duration(milliseconds: 100);
+    // Future.delayed(
+    //     canBoostDuration,
+    //     () => {
+    //           _gravity = 5,
+    //         });
+    _playJump(dt);
+      
+  }
+  //   }
+  // }
+  // }
+
+  void _checkHorizontalCollisions(double dt) {
     for (final block in collisionsBlock) {
       if (!block.isPlatform) {
         if (checkCollision(this, block)) {
@@ -261,6 +286,20 @@ class Player extends SpriteAnimationGroupComponent
             position.x = block.x + block.width + hitbox.width + hitbox.offsetX;
             break;
           }
+          if (block.isBoost) {
+            if (velocity.x > 0) {
+              velocity.x = 0;
+              position.x = block.x - hitbox.offsetX - hitbox.width;
+              break;
+            }
+            if (velocity.x < 0) {
+              velocity.x = 0;
+              position.x =
+                  block.x + block.width + hitbox.width + hitbox.offsetX;
+              break;
+            }
+            _checkBoosts(dt);
+          }
         }
       }
     }
@@ -272,14 +311,16 @@ class Player extends SpriteAnimationGroupComponent
     position.y += velocity.y * dt;
   }
 
-  void _checkVerticalCollisions() {
+  void _checkVerticalCollisions(double dt) {
     for (final block in collisionsBlock) {
-      if (block.isPlatform) {
+      if (block.isBoost) {
         if (checkCollision(this, block)) {
           if (velocity.y > 0) {
             velocity.y = 0;
-            position.y = block.y - hitbox.height - hitbox.offsetY;
+            position.y = block.y - (hitbox.height) - hitbox.offsetY;
             isOnGround = true;
+            // _checkBoosts(dt);
+            // hasJumped = true;
             break;
           }
         }
@@ -301,11 +342,12 @@ class Player extends SpriteAnimationGroupComponent
   }
 
   void _respawn() async {
+    print(position);
     const canMoveDuration = Duration(milliseconds: 400);
     hasDie = true;
     current = PlayerState.death;
     Future.delayed(
-        const Duration(milliseconds: 400),
+        canMoveDuration,
         () => {
               _updatePlayerColor(const Color.fromARGB(255, 0, 0, 0)),
             });
@@ -313,18 +355,22 @@ class Player extends SpriteAnimationGroupComponent
     await animationTicker?.completed;
     animationTicker?.reset();
 
-    // position = startingPosition;
-    position = Vector2(startingPosition.x, startingPosition.y - 20);
+    if (velocity.x < 0 && scale.x < 0) {
+      position = Vector2(startingPosition.x + 660, startingPosition.y - 20);
+    } else {
+      position = Vector2(startingPosition.x, startingPosition.y - 20);
+    }
 
-    // position = startingPosition;
     current = PlayerState.appearing;
 
     await animationTicker?.completed;
     animationTicker?.reset();
 
-    velocity = Vector2.zero();
-    position = Vector2(startingPosition.x, startingPosition.y - 20);
-    // _updatePlayerState();
+    if (velocity.x < 0 && scale.x < 0) {
+      position = Vector2(startingPosition.x + 660, startingPosition.y - 20);
+    } else {
+      position = Vector2(startingPosition.x, startingPosition.y - 20);
+    }
     Future.delayed(
         canMoveDuration,
         () => {

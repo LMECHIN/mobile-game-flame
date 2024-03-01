@@ -15,7 +15,6 @@ class PixelGame extends FlameGame
         DragCallbacks,
         HasCollisionDetection,
         TapCallbacks {
-
   late CameraComponent cam;
   double camSpeed = 800;
   Player player = Player(character: '01-King Human');
@@ -33,8 +32,8 @@ class PixelGame extends FlameGame
 
   @override
   void render(Canvas canvas) {
-    canvas.drawRect(Rect.fromLTWH(0, 0, size.x, size.y),
-        Paint()..color = color);
+    canvas.drawRect(
+        Rect.fromLTWH(0, 0, size.x, size.y), Paint()..color = color);
     super.render(canvas);
   }
 
@@ -75,6 +74,10 @@ class PixelGame extends FlameGame
     } else if (player.velocity.x > 0) {
       cam.viewfinder.anchor = const Anchor(0.29, 0.5);
     }
+    // else if (player.velocity.x == 0 && !player.test) {
+    //   cam.viewfinder.anchor = const Anchor(0.29, 0.5);
+    // }
+
     cam.follow(
       player,
       maxSpeed: camSpeed,
@@ -82,7 +85,7 @@ class PixelGame extends FlameGame
     );
     updateZoom(dt);
     super.update(dt);
-    if (player.hasSlide) {
+    if (player.hasSlide && !player.hasDie) {
       camSpeed = 4000;
     }
   }
