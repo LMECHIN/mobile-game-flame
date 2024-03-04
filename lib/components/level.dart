@@ -97,11 +97,20 @@ class Level extends World with HasGameRef<PixelGame> {
             );
             collisionsBlock.add(platform);
             break;
-          case 'Boosts':
+          case 'BoostsV':
             final boost = CollisionsBlock(
               position: Vector2(collision.x, collision.y),
               size: Vector2(collision.width, collision.height),
-              isBoost: true,
+              isBoostV: true,
+            );
+            collisionsBlock.add(boost);
+            // add(block);
+            break;
+          case 'BoostsH':
+            final boost = CollisionsBlock(
+              position: Vector2(collision.x, collision.y),
+              size: Vector2(collision.width, collision.height),
+              isBoostH: true,
             );
             collisionsBlock.add(boost);
             // add(block);

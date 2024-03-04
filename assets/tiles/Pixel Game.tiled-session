@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Level06.tmx",
+    "activeFile": "Level08.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -49,6 +49,20 @@
         "Ground_10.tsx": {
             "scaleInDock": 1
         },
+        "Ground_11.tsx": {
+            "scaleInDock": 1
+        },
+        "Ground_13.tsx": {
+            "scaleInDock": 0.75,
+            "scaleInEditor": 1
+        },
+        "Ground_14.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Ground_15.tsx": {
+            "scaleInDock": 1
+        },
         "Ground_16.tsx": {
             "scaleInDock": 1
         },
@@ -60,7 +74,7 @@
             "scale": 0.75,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 640,
+                "x": 639.3333333333333,
                 "y": 367.3333333333333
             }
         },
@@ -68,7 +82,7 @@
             "scale": 1,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 640,
+                "x": 639.5,
                 "y": 367.5
             }
         },
@@ -77,7 +91,7 @@
             "selectedLayer": 0,
             "viewCenter": {
                 "x": 639.9625314677127,
-                "y": 367.94098706164743
+                "y": 366.44224577015405
             }
         },
         "Level04.tmx": {
@@ -88,8 +102,8 @@
             "scale": 0.75,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1280,
-                "y": 368.66666666666663
+                "x": 1279.3333333333333,
+                "y": 367.3333333333333
             }
         },
         "Level05.tmx": {
@@ -100,7 +114,7 @@
             "scale": 0.125,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 4600,
+                "x": 4596,
                 "y": 2636
             }
         },
@@ -111,8 +125,16 @@
             "scale": 0.125,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 2980,
-                "y": 3872
+                "x": 9256,
+                "y": 4616
+            }
+        },
+        "Level08.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 472,
+                "y": 4976
             }
         },
         "Map (32x32).tsx": {
@@ -120,11 +142,52 @@
             "scaleInEditor": 1
         },
         "Obstacle_01.tsx": {
-            "scaleInDock": 1
-        },
-        "Pixel Game.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
+        },
+        "Pixel Game.tsx": {
+            "scaleInDock": 0.25,
+            "scaleInEditor": 1
+        },
+        "corner_down_left.tsx": {
+            "scaleInDock": 1
+        },
+        "corner_down_right.tsx": {
+            "scaleInDock": 1
+        },
+        "corner_up_left.tsx": {
+            "scaleInDock": 1
+        },
+        "corner_up_right.tsx": {
+            "scaleInDock": 1
+        },
+        "down.tsx": {
+            "scaleInDock": 1
+        },
+        "ground.tsx": {
+            "scaleInDock": 0.25
+        },
+        "left.tsx": {
+            "scaleInDock": 1
+        },
+        "light.tsx": {
+            "scaleInDock": 0.25
+        },
+        "light2.tsx": {
+            "scaleInDock": 0.25
+        },
+        "neon_effect_use (264x264).tsx": {
+            "scaleInDock": 1
+        },
+        "neon_effect_use.tsx": {
+            "scaleInDock": 1
+        },
+        "right.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "up.tsx": {
+            "scaleInDock": 1
         }
     },
     "last.imagePath": "/home/lmechin/delivery/myproject/game2d/assets/images/Sprites/14-TileSets",
@@ -140,7 +203,6 @@
         "Level02.tmx",
         "Level04.tmx",
         "Map (32x32).tsx",
-        "Ground_01.tsx",
         "Level05.tmx",
         "Ground_02.tsx",
         "Ground_03.tsx",
@@ -149,12 +211,17 @@
         "Ground_07.tsx",
         "Ground_08.tsx",
         "Level03.tmx",
-        "Level06.tmx"
+        "Level06.tmx",
+        "Level08.tmx",
+        "Ground_14.tsx",
+        "Obstacle_01.tsx",
+        "right.tsx",
+        "Ground_13.tsx",
+        "Ground_01.tsx"
     ],
     "project": "Pixel Game.tiled-project",
     "property.type": "float",
     "recentFiles": [
-        "Ground_01.tsx",
         "Pixel Game.tsx",
         "Level01.tmx",
         "DLevel01.tsx",
@@ -165,7 +232,8 @@
         "Ground_02.tsx",
         "Ground_03.tsx",
         "Ground_05.tsx",
-        "Ground_06.tsx"
+        "Ground_06.tsx",
+        "Ground_07.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

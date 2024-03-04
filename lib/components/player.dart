@@ -226,7 +226,7 @@ class Player extends SpriteAnimationGroupComponent
       _playJump(dt);
     }
     if (hasSlide) {
-      _playSlide();
+      _playSlide(dt);
     }
     // if (velocity.y > _gravity) isOnGround = false; // optional
 
@@ -246,34 +246,19 @@ class Player extends SpriteAnimationGroupComponent
     hasJumped = false;
   }
 
-  void _playSlide() {
+  void _playSlide(double dt) {
     // normalMoveSpeed = moveSpeed;
-    moveSpeed = 4000;
+    moveSpeed = (4000000 * dt) / 1.68;
+    print(moveSpeed);
     Future.delayed(const Duration(milliseconds: 100), () {
       moveSpeed = 800;
     });
     hasSlide = false;
   }
 
-  void _checkBoosts(double dt) {
-    // for (final block in collisionsBlock) {
-    //   if (block.isBoost) {
-    //     if (checkCollision(this, block)) {
-    // const canBoostDuration = Duration(milliseconds: 100);
-    // Future.delayed(
-    //     canBoostDuration,
-    //     () => {
-    //           _gravity = 5,
-    //         });
-    _playJump(dt);
-  }
-  //   }
-  // }
-  // }
-
   void _checkHorizontalCollisions(double dt) {
     for (final block in collisionsBlock) {
-      if (!block.isBoost) {
+      if (!block.isBoostV && !block.isBoostH) {
         if (checkCollision(this, block)) {
           if (velocity.x > 0) {
             velocity.x = 0;
@@ -287,9 +272,15 @@ class Player extends SpriteAnimationGroupComponent
           }
         }
       }
-      if (block.isBoost) {
+      if (block.isBoostV) {
         if (checkCollision(this, block)) {
           _playJump(dt);
+        }
+      }
+      if (block.isBoostH) {
+        if (checkCollision(this, block)) {
+          _playJump(dt);
+          _playSlide(dt);
         }
       }
     }
@@ -303,14 +294,20 @@ class Player extends SpriteAnimationGroupComponent
 
   void _checkVerticalCollisions(double dt) {
     for (final block in collisionsBlock) {
-      if (block.isBoost) {
+      if (block.isBoostV) {
         if (checkCollision(this, block)) {
           if (velocity.y < 0) {
             velocity.y = 0;
-            // position.y = block.y - hitbox.height - hitbox.offsetY;
-            // _checkBoosts(dt);
-            // hasJumped = true;
             _playJump(dt);
+            break;
+          }
+        }
+      } else if (block.isBoostH) {
+        if (checkCollision(this, block)) {
+          if (velocity.y < 0) {
+            velocity.y = 0;
+            _playJump(dt);
+            _playSlide(dt);
             break;
           }
         }
@@ -332,7 +329,6 @@ class Player extends SpriteAnimationGroupComponent
   }
 
   void _respawn() async {
-    print(position);
     const canMoveDuration = Duration(milliseconds: 400);
     hasDie = true;
     current = PlayerState.death;
