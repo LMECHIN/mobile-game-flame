@@ -266,7 +266,6 @@ class Player extends SpriteAnimationGroupComponent
     //           _gravity = 5,
     //         });
     _playJump(dt);
-      
   }
   //   }
   // }
@@ -274,7 +273,7 @@ class Player extends SpriteAnimationGroupComponent
 
   void _checkHorizontalCollisions(double dt) {
     for (final block in collisionsBlock) {
-      if (!block.isPlatform) {
+      if (!block.isBoost) {
         if (checkCollision(this, block)) {
           if (velocity.x > 0) {
             velocity.x = 0;
@@ -286,20 +285,11 @@ class Player extends SpriteAnimationGroupComponent
             position.x = block.x + block.width + hitbox.width + hitbox.offsetX;
             break;
           }
-          if (block.isBoost) {
-            if (velocity.x > 0) {
-              velocity.x = 0;
-              position.x = block.x - hitbox.offsetX - hitbox.width;
-              break;
-            }
-            if (velocity.x < 0) {
-              velocity.x = 0;
-              position.x =
-                  block.x + block.width + hitbox.width + hitbox.offsetX;
-              break;
-            }
-            _checkBoosts(dt);
-          }
+        }
+      }
+      if (block.isBoost) {
+        if (checkCollision(this, block)) {
+          _playJump(dt);
         }
       }
     }
@@ -315,12 +305,12 @@ class Player extends SpriteAnimationGroupComponent
     for (final block in collisionsBlock) {
       if (block.isBoost) {
         if (checkCollision(this, block)) {
-          if (velocity.y > 0) {
+          if (velocity.y < 0) {
             velocity.y = 0;
-            position.y = block.y - (hitbox.height) - hitbox.offsetY;
-            isOnGround = true;
+            // position.y = block.y - hitbox.height - hitbox.offsetY;
             // _checkBoosts(dt);
             // hasJumped = true;
+            _playJump(dt);
             break;
           }
         }

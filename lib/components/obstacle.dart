@@ -21,7 +21,7 @@ class Obstacle extends SpriteAnimationComponent with HasGameRef<PixelGame> {
       Vector2(size.x, size.y),
     ]);
     add(hitboxShape);
-    // debugMode = true;
+    // debugMode = true
     return super.onLoad();
   }
 }

@@ -75,7 +75,7 @@
   <object id="66" type="Boosts" x="8184.5" y="3957" width="263" height="264"/>
   <object id="68" x="8970.32" y="3170.3" width="797.364" height="352.242"/>
   <object id="69" x="8968.32" y="3696.3" width="1329.36" height="267.394"/>
-  <object id="73" type="Boosts" x="1316.5" y="5280" width="263" height="72"/>
+  <object id="73" type="Boosts" x="1316.5" y="5280" width="263" height="256"/>
  </objectgroup>
  <layer id="32" name="Lights" width="40" height="23">
   <data encoding="csv">
