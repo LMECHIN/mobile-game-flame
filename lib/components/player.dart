@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/components/boost_up.dart';
 import 'package:flutter_application_1/components/collisions_block.dart';
 import 'package:flutter_application_1/components/obstacle.dart';
 import 'package:flutter_application_1/components/player_hitbox.dart';
@@ -48,7 +49,7 @@ class Player extends SpriteAnimationGroupComponent
   bool hasJumped = false;
   bool hasSlide = false;
   bool hasDie = false;
-  bool test = false;
+  late double _dt;
 
   List<CollisionsBlock> collisionsBlock = [];
   PlayerHitbox hitbox = PlayerHitbox(
@@ -76,6 +77,7 @@ class Player extends SpriteAnimationGroupComponent
   @override
   void update(double dt) {
     accumulatedTime += dt;
+    _dt = dt;
 
     while (accumulatedTime >= fixedDeltaTime) {
       if (!hasDie) {
@@ -100,12 +102,6 @@ class Player extends SpriteAnimationGroupComponent
         keysPressed.contains(LogicalKeyboardKey.arrowRight);
 
     horizontalMovement += isLeftKeyPressed ? -1 : 0;
-    if (isLeftKeyPressed) {
-      test = true;
-    }
-    if (isRightKeyPressed) {
-      test = false;
-    }
     horizontalMovement += isRightKeyPressed ? 1 : 0;
 
     hasJumped = keysPressed.contains(LogicalKeyboardKey.space);
@@ -123,10 +119,19 @@ class Player extends SpriteAnimationGroupComponent
     Set<Vector2> intersectionPoints,
     PositionComponent other,
   ) {
+    accumulatedTime += _dt;
     if (other is Obstacle) {
       _respawn();
-      super.onCollisionStart(intersectionPoints, other);
     }
+    if (other is BoostUp) {
+      while (accumulatedTime >= fixedDeltaTime) {
+        _playJump(fixedDeltaTime);
+        _playSlide(fixedDeltaTime);
+        accumulatedTime -= fixedDeltaTime;
+        break;
+      }
+    }
+    super.onCollisionStart(intersectionPoints, other);
   }
 
   void _loadAllAnimations() {
@@ -249,7 +254,6 @@ class Player extends SpriteAnimationGroupComponent
   void _playSlide(double dt) {
     // normalMoveSpeed = moveSpeed;
     moveSpeed = (4000000 * dt) / 1.68;
-    print(moveSpeed);
     Future.delayed(const Duration(milliseconds: 100), () {
       moveSpeed = 800;
     });
@@ -258,7 +262,7 @@ class Player extends SpriteAnimationGroupComponent
 
   void _checkHorizontalCollisions(double dt) {
     for (final block in collisionsBlock) {
-      if (!block.isBoostV && !block.isBoostH) {
+      if (!block.isBoostUp) {
         if (checkCollision(this, block)) {
           if (velocity.x > 0) {
             velocity.x = 0;
@@ -272,17 +276,13 @@ class Player extends SpriteAnimationGroupComponent
           }
         }
       }
-      if (block.isBoostV) {
-        if (checkCollision(this, block)) {
-          _playJump(dt);
-        }
-      }
-      if (block.isBoostH) {
-        if (checkCollision(this, block)) {
-          _playJump(dt);
-          _playSlide(dt);
-        }
-      }
+      // if (block.isBoostUp) {
+      //   if (checkCollision(this, block)) {
+      //     _playJump(dt);
+      //     _playSlide(dt);
+      //     break;
+      //   }
+      // }
     }
   }
 
@@ -294,15 +294,7 @@ class Player extends SpriteAnimationGroupComponent
 
   void _checkVerticalCollisions(double dt) {
     for (final block in collisionsBlock) {
-      if (block.isBoostV) {
-        if (checkCollision(this, block)) {
-          if (velocity.y < 0) {
-            velocity.y = 0;
-            _playJump(dt);
-            break;
-          }
-        }
-      } else if (block.isBoostH) {
+      if (block.isBoostUp) {
         if (checkCollision(this, block)) {
           if (velocity.y < 0) {
             velocity.y = 0;

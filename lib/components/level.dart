@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flame/components.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flutter_application_1/components/background_tile.dart';
+import 'package:flutter_application_1/components/boost_up.dart';
 import 'package:flutter_application_1/components/collisions_block.dart';
 import 'package:flutter_application_1/components/obstacle.dart';
 import 'package:flutter_application_1/components/player.dart';
@@ -63,17 +64,19 @@ class Level extends World with HasGameRef<PixelGame> {
             add(player);
             break;
           case 'Obstacle':
-            // final isVertical = spawnPoint.properties.getValue('isVertical');
-            // final offNeg = spawnPoint.properties.getValue('offNeg');
-            // final offPos = spawnPoint.properties.getValue('offPos');
             final obstacle = Obstacle(
-              // isVertical: isVertical,
-              // offNeg: offNeg,
-              // offPos: offPos,
               position: Vector2(spawnPoint.x, spawnPoint.y),
               size: Vector2(spawnPoint.width, spawnPoint.height),
             );
             add(obstacle);
+            break;
+          case 'BoostsUp':
+            final boost = BoostUp(
+              position: Vector2(spawnPoint.x, spawnPoint.y),
+              size: Vector2(spawnPoint.width, spawnPoint.height),
+              isBoostUp: true,
+            );
+            add(boost);
             break;
           case 'Checkpoint':
             break;
@@ -96,24 +99,6 @@ class Level extends World with HasGameRef<PixelGame> {
               isPlatform: true,
             );
             collisionsBlock.add(platform);
-            break;
-          case 'BoostsV':
-            final boost = CollisionsBlock(
-              position: Vector2(collision.x, collision.y),
-              size: Vector2(collision.width, collision.height),
-              isBoostV: true,
-            );
-            collisionsBlock.add(boost);
-            // add(block);
-            break;
-          case 'BoostsH':
-            final boost = CollisionsBlock(
-              position: Vector2(collision.x, collision.y),
-              size: Vector2(collision.width, collision.height),
-              isBoostH: true,
-            );
-            collisionsBlock.add(boost);
-            // add(block);
             break;
           default:
             final block = CollisionsBlock(
