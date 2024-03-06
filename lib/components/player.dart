@@ -32,9 +32,12 @@ class Player extends SpriteAnimationGroupComponent
   late final SpriteAnimation deathAnimation;
   late final SpriteAnimation appearingAnimation;
 
+  bool isLeftKeyPressed = false;
+  bool isRightKeyPressed = false;
+
   Color color = const Color.fromARGB(255, 0, 0, 0);
 
-  double _gravity = 5;
+  final double _gravity = 5;
   final double _jumpForce = 1800;
   final double _terminalVelocity = 2000;
   double scaleFactor = 0.3;
@@ -49,6 +52,7 @@ class Player extends SpriteAnimationGroupComponent
   bool hasJumped = false;
   bool hasSlide = false;
   bool hasDie = false;
+  int fixCam = 0;
   late double _dt;
 
   List<CollisionsBlock> collisionsBlock = [];
@@ -96,11 +100,17 @@ class Player extends SpriteAnimationGroupComponent
   @override
   bool onKeyEvent(RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
     horizontalMovement = 0;
-    final isLeftKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyQ) ||
+    isLeftKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyQ) ||
         keysPressed.contains(LogicalKeyboardKey.arrowLeft);
-    final isRightKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyD) ||
+    isRightKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyD) ||
         keysPressed.contains(LogicalKeyboardKey.arrowRight);
 
+    // if (isLeftKeyPressed) {
+    //   pressKey = true;
+    // }
+    // if (isRightKeyPressed) {
+    //   pressKey = false;
+    // }
     horizontalMovement += isLeftKeyPressed ? -1 : 0;
     horizontalMovement += isRightKeyPressed ? 1 : 0;
 
@@ -265,11 +275,13 @@ class Player extends SpriteAnimationGroupComponent
       if (!block.isBoostUp) {
         if (checkCollision(this, block)) {
           if (velocity.x > 0) {
+            fixCam = 1;
             velocity.x = 0;
             position.x = block.x - hitbox.offsetX - hitbox.width;
             break;
           }
           if (velocity.x < 0) {
+            fixCam = 2;
             velocity.x = 0;
             position.x = block.x + block.width + hitbox.width + hitbox.offsetX;
             break;

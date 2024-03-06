@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 import 'package:flutter_application_1/components/player.dart';
 
@@ -14,23 +15,25 @@ class Checkpoint extends SpriteAnimationComponent
           position: position,
           size: size,
         );
+  Color color = const Color.fromARGB(255, 0, 0, 0);
 
   @override
   FutureOr<void> onLoad() {
+    priority = -1;
+    final hitboxShape = PolygonHitbox([
+      Vector2(size.x / 3, size.y),
+      Vector2(size.x / 2, 0),
+      Vector2(size.x / 2, 0),
+    ]);
+    add(hitboxShape);
     // debugMode = true;
-    add(RectangleHitbox(
-      position: Vector2(18, 56),
-      size: Vector2(12, 8),
-      collisionType: CollisionType.passive,
-    ));
 
     animation = SpriteAnimation.fromFrameData(
-      game.images
-          .fromCache('Checkpoints/Checkpoint (No Flag)(64x64).png'),
+      game.images.fromCache('Checkpoints/Checkpoint (No Flag)(264x264).png'),
       SpriteAnimationData.sequenced(
         amount: 1,
         stepTime: 1,
-        textureSize: Vector2.all(64),
+        textureSize: Vector2.all(264),
       ),
     );
     return super.onLoad();
@@ -39,18 +42,25 @@ class Checkpoint extends SpriteAnimationComponent
   @override
   void onCollisionStart(
       Set<Vector2> intersectionPoints, PositionComponent other) {
-    if (other is Player) _reachedCheckpoint();
+    if (other is Player) {
+      _reachedCheckpoint();
+      _updatePlayerColor(const Color.fromARGB(255, 11, 3, 55));
+    }
     super.onCollisionStart(intersectionPoints, other);
+  }
+
+  void _updatePlayerColor(Color newColor) {
+    color = newColor;
+    gameRef.updateBackgroundColor(newColor);
   }
 
   void _reachedCheckpoint() async {
     animation = SpriteAnimation.fromFrameData(
-      game.images.fromCache(
-          'Checkpoints/Checkpoint (Flag Out)(64x64).png'),
+      game.images.fromCache('Checkpoints/Checkpoint (Flag Out)(264x264).png'),
       SpriteAnimationData.sequenced(
         amount: 26,
         stepTime: 0.05,
-        textureSize: Vector2.all(64),
+        textureSize: Vector2.all(264),
         loop: false,
       ),
     );
@@ -58,12 +68,11 @@ class Checkpoint extends SpriteAnimationComponent
     await animationTicker?.completed;
 
     animation = SpriteAnimation.fromFrameData(
-      game.images.fromCache(
-          'Checkpoints/Checkpoint (Flag Idle)(64x64).png'),
+      game.images.fromCache('Checkpoints/Checkpoint (Flag Idle)(264x264).png'),
       SpriteAnimationData.sequenced(
         amount: 10,
         stepTime: 0.05,
-        textureSize: Vector2.all(64),
+        textureSize: Vector2.all(264),
       ),
     );
   }

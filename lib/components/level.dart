@@ -3,6 +3,7 @@ import 'package:flame/components.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flutter_application_1/components/background_tile.dart';
 import 'package:flutter_application_1/components/boost_up.dart';
+import 'package:flutter_application_1/components/checkpoint.dart';
 import 'package:flutter_application_1/components/collisions_block.dart';
 import 'package:flutter_application_1/components/obstacle.dart';
 import 'package:flutter_application_1/components/player.dart';
@@ -79,6 +80,11 @@ class Level extends World with HasGameRef<PixelGame> {
             add(boost);
             break;
           case 'Checkpoint':
+            final checkpoint = Checkpoint(
+              position: Vector2(spawnPoint.x, spawnPoint.y),
+              size: Vector2(spawnPoint.width, spawnPoint.height),
+            );
+            add(checkpoint);
             break;
           default:
         }

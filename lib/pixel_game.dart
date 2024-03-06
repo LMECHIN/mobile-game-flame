@@ -69,14 +69,12 @@ class PixelGame extends FlameGame
     if (showControls) {
       updateJoystick();
     }
+
     if (player.velocity.x < 0) {
       cam.viewfinder.anchor = const Anchor(0.45, 0.5);
     } else if (player.velocity.x > 0) {
       cam.viewfinder.anchor = const Anchor(0.29, 0.5);
     }
-    // else if (player.velocity.x == 0 && !player.test) {
-    //   cam.viewfinder.anchor = const Anchor(0.29, 0.5);
-    // }
 
     cam.follow(
       player,
