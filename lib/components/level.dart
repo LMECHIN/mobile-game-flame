@@ -19,7 +19,8 @@ class Level extends World with HasGameRef<PixelGame> {
 
   @override
   FutureOr<void> onLoad() async {
-    level = await TiledComponent.load("$levelName.tmx", Vector2.all(264));
+    level = await TiledComponent.load("$levelName.tmx", Vector2.all(264),
+        prefix: 'assets/tiles/');
 
     add(level);
 

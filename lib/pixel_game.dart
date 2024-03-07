@@ -15,6 +15,8 @@ class PixelGame extends FlameGame
         DragCallbacks,
         HasCollisionDetection,
         TapCallbacks {
+  final String level;
+  PixelGame({required this.level});
   late CameraComponent cam;
   double camSpeed = 800;
   Player player = Player(character: '01-King Human');
@@ -42,8 +44,9 @@ class PixelGame extends FlameGame
     await images.loadAllImages();
 
     final world = Level(
+      // levels: levels,
       player: player,
-      levelName: 'Level08',
+      levelName: level,
     );
     cam = CameraComponent.withFixedResolution(
         // world: world, width: 1900, height: 920);
