@@ -1,14 +1,18 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/components/game_play.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter_application_1/pixel_game.dart';
 
-class LevelsMenu extends StatelessWidget {
-  const LevelsMenu({super.key});
+class SkinsMenu extends StatelessWidget {
+  final PixelGame game;
 
-  Future<List<String>> getFilesInAssetFolder(String folderPath) async {
-    List<String> fileList = [];
+  SkinsMenu({Key? key})
+      : game = PixelGame(),
+        super(key: key);
+
+  Future<List<String>> getFoldersInAssetFolder(String folderPath) async {
+    List<String> folderList = [];
 
     try {
       List<String> assetList = await rootBundle
@@ -17,37 +21,41 @@ class LevelsMenu extends StatelessWidget {
         Map<String, dynamic> manifestMap = json.decode(manifest);
         return manifestMap.keys
             .where((String key) =>
-                key.startsWith(folderPath) && key.endsWith('.tmx'))
+                key.startsWith(folderPath) &&
+                key.contains('/') &&
+                !key.endsWith('.'))
             .toList();
       });
 
       for (String assetPath in assetList) {
-        fileList.add(assetPath.split('/').last);
+        List<String> pathComponents = assetPath.split('/');
+        if (pathComponents.length > 1) {
+          String folderName = pathComponents[4];
+          if (!folderList.contains(folderName)) {
+            folderList.add(folderName);
+          }
+        }
       }
     } catch (e) {
-      print("Error retrieving asset files : $e");
+      print("Error retrieving asset folders: $e");
     }
 
-    return fileList;
+    return folderList;
   }
 
   @override
   Widget build(BuildContext context) {
-    String assetFolderPath = 'assets/tiles/';
+    String assetFolderPath = 'assets/images/Sprites/Skins/';
     return FutureBuilder<List<String>>(
-      future: getFilesInAssetFolder(assetFolderPath),
+      future: getFoldersInAssetFolder(assetFolderPath),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError) {
           return Center(child: Text("Error: ${snapshot.error}"));
         } else {
-          List<String>? levels = snapshot.data;
-          if (levels != null && levels.isNotEmpty) {
-            List<String> cleanedLevels = levels.map((level) {
-              return level.replaceAll('.tmx', '');
-            }).toList();
-
+          List<String>? skins = snapshot.data;
+          if (skins != null && skins.isNotEmpty) {
             return Scaffold(
               body: Center(
                 child: Column(
@@ -55,19 +63,13 @@ class LevelsMenu extends StatelessWidget {
                   children: [
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: cleanedLevels.map((level) {
+                      children: skins.map((skin) {
                         return ElevatedButton(
                           onPressed: () {
-                            Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                builder: (context) => GamePlay(
-                                  level: level,
-                                  character: '02-King Pig',
-                                ),
-                              ),
-                            );
+                            // Navigator.pop(context);
+                            game.player.character = skin;
                           },
-                          child: Text(level),
+                          child: Text(skin),
                         );
                       }).toList(),
                     ),
@@ -82,7 +84,7 @@ class LevelsMenu extends StatelessWidget {
               ),
             );
           } else {
-            return const Center(child: Text("No levels found."));
+            return const Center(child: Text("No skins found."));
           }
         }
       },

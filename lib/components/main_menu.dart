@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/levels_menu.dart';
+import 'package:flutter_application_1/components/skins_menu.dart';
 
 class MainMenu extends StatelessWidget {
   const MainMenu({Key? key}) : super(key: key);
@@ -24,6 +25,16 @@ class MainMenu extends StatelessWidget {
                 );
               },
               child: const Text('Play'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => SkinsMenu(),
+                  ),
+                );
+              },
+              child: const Text('Skin'),
             ),
           ],
         ),

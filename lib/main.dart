@@ -12,6 +12,6 @@ void main() {
     debugShowCheckedModeBanner: false,
     themeMode: ThemeMode.dark,
     darkTheme: ThemeData.dark(),
-    home: const MainMenu(),
+    home: MainMenu(),
   ));
 }

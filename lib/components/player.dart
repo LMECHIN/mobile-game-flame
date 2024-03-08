@@ -13,11 +13,11 @@ enum PlayerState { idle, running, jumping, falling, sliding, death, appearing }
 
 class Player extends SpriteAnimationGroupComponent
     with HasGameRef<PixelGame>, KeyboardHandler, CollisionCallbacks {
-  String character;
+  String? character;
   String sizeCharacter;
   Vector2 textureSize;
   Player({
-    this.character = '01-King Human',
+    this.character,
     this.sizeCharacter = '2048x2048',
     Vector2? textureSize,
     super.position,
@@ -146,26 +146,26 @@ class Player extends SpriteAnimationGroupComponent
 
   void _loadAllAnimations() {
     idleAnimation = _spriteAnimation(
-        "Sprites/$character/Idle ($sizeCharacter).png", 6, textureSize);
+        "Sprites/Skins/$character/Idle ($sizeCharacter).png", 6, textureSize);
 
     runningAnimation = _spriteAnimation(
-        "Sprites/$character/Run ($sizeCharacter).png", 8, textureSize);
+        "Sprites/Skins/$character/Run ($sizeCharacter).png", 8, textureSize);
 
     jumpingAnimation = _spriteAnimation(
-        "Sprites/$character/Jump ($sizeCharacter).png", 5, textureSize);
+        "Sprites/Skins/$character/Jump ($sizeCharacter).png", 5, textureSize);
 
     fallingAnimation = _spriteAnimation(
-        "Sprites/$character/Fall ($sizeCharacter).png", 4, textureSize);
+        "Sprites/Skins/$character/Fall ($sizeCharacter).png", 4, textureSize);
 
     slidingAnimation = _spriteAnimation(
-        "Sprites/$character/Slide ($sizeCharacter).png", 5, textureSize);
+        "Sprites/Skins/$character/Slide ($sizeCharacter).png", 5, textureSize);
 
     deathAnimation = _spriteAnimation(
-        "Sprites/$character/Death ($sizeCharacter).png", 8, textureSize)
+        "Sprites/Skins/$character/Death ($sizeCharacter).png", 8, textureSize)
       ..loop = false;
 
     appearingAnimation = _reanimationSpriteAnimation(
-        "Sprites/$character/Appearing ($sizeCharacter).png", 3, textureSize);
+        "Sprites/Skins/$character/Appearing ($sizeCharacter).png", 3, textureSize);
 
     animations = {
       PlayerState.idle: idleAnimation,

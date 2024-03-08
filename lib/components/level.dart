@@ -10,7 +10,7 @@ import 'package:flutter_application_1/components/player.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 
 class Level extends World with HasGameRef<PixelGame> {
-  final String levelName;
+  final String? levelName;
   final Player player;
   Level({required this.levelName, required this.player});
   late TiledComponent level;

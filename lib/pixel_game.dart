@@ -15,11 +15,14 @@ class PixelGame extends FlameGame
         DragCallbacks,
         HasCollisionDetection,
         TapCallbacks {
-  final String level;
-  PixelGame({required this.level});
+  String? character = '02-King Pig';
+  String? level;
+  PixelGame({this.level, this.character}){
+    player = Player(character: character);
+  }
   late CameraComponent cam;
   double camSpeed = 800;
-  Player player = Player(character: '01-King Human');
+  late Player player;
   late JoystickComponent joystick;
   bool showControls = false;
   int horizontalMovementTotal = 0;
