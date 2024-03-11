@@ -2,14 +2,11 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:flutter_application_1/pixel_game.dart';
+import 'package:flutter_application_1/components/player_data.dart';
+import 'package:provider/provider.dart';
 
 class SkinsMenu extends StatelessWidget {
-  final PixelGame game;
-
-  SkinsMenu({Key? key})
-      : game = PixelGame(),
-        super(key: key);
+  const SkinsMenu({super.key});
 
   Future<List<String>> getFoldersInAssetFolder(String folderPath) async {
     List<String> folderList = [];
@@ -45,6 +42,7 @@ class SkinsMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final playerData = Provider.of<PlayerData>(context);
     String assetFolderPath = 'assets/images/Sprites/Skins/';
     return FutureBuilder<List<String>>(
       future: getFoldersInAssetFolder(assetFolderPath),
@@ -66,8 +64,7 @@ class SkinsMenu extends StatelessWidget {
                       children: skins.map((skin) {
                         return ElevatedButton(
                           onPressed: () {
-                            // Navigator.pop(context);
-                            game.player.character = skin;
+                            playerData.selectSkin(skin);
                           },
                           child: Text(skin),
                         );

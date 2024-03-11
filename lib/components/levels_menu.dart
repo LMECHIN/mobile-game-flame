@@ -3,32 +3,33 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/game_play.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:path/path.dart' as p;
 
 class LevelsMenu extends StatelessWidget {
   const LevelsMenu({super.key});
 
+  static List<String> _assetList = [];
+
   Future<List<String>> getFilesInAssetFolder(String folderPath) async {
-    List<String> fileList = [];
+    if (_assetList.isNotEmpty) {
+      return _assetList;
+    }
 
     try {
-      List<String> assetList = await rootBundle
-          .loadString('AssetManifest.json')
-          .then((String manifest) {
-        Map<String, dynamic> manifestMap = json.decode(manifest);
-        return manifestMap.keys
-            .where((String key) =>
-                key.startsWith(folderPath) && key.endsWith('.tmx'))
-            .toList();
-      });
-
-      for (String assetPath in assetList) {
-        fileList.add(assetPath.split('/').last);
-      }
+      String manifest = await rootBundle.loadString('AssetManifest.json');
+      Map<String, dynamic> manifestMap = json.decode(manifest);
+      _assetList = manifestMap.keys
+          .where((String key) =>
+              key.startsWith(folderPath) && key.endsWith('.tmx'))
+          .map((String key) {
+        String fileName = p.basename(key);
+        return fileName;
+      }).toList();
     } catch (e) {
       print("Error retrieving asset files : $e");
     }
 
-    return fileList;
+    return _assetList;
   }
 
   @override
@@ -62,7 +63,6 @@ class LevelsMenu extends StatelessWidget {
                               MaterialPageRoute(
                                 builder: (context) => GamePlay(
                                   level: level,
-                                  character: '02-King Pig',
                                 ),
                               ),
                             );

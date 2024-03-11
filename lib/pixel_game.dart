@@ -8,6 +8,8 @@ import 'package:flutter_application_1/components/button_jump.dart';
 import 'package:flutter_application_1/components/button_slide.dart';
 import 'package:flutter_application_1/components/level.dart';
 import 'package:flutter_application_1/components/player.dart';
+import 'package:flutter_application_1/components/player_data.dart';
+import 'package:hive/hive.dart';
 
 class PixelGame extends FlameGame
     with
@@ -15,14 +17,13 @@ class PixelGame extends FlameGame
         DragCallbacks,
         HasCollisionDetection,
         TapCallbacks {
-  String? character = '02-King Pig';
   String? level;
-  PixelGame({this.level, this.character}){
-    player = Player(character: character);
-  }
+  PixelGame({this.level});
+
   late CameraComponent cam;
   double camSpeed = 800;
   late Player player;
+  // Player player = Player(character: character);
   late JoystickComponent joystick;
   bool showControls = false;
   int horizontalMovementTotal = 0;
@@ -42,9 +43,29 @@ class PixelGame extends FlameGame
     super.render(canvas);
   }
 
+  Future<PlayerData> getPlayerData() async {
+  // Ouvrez la boîte de données du joueur et lisez les données du joueur.
+  final box = await Hive.openBox<PlayerData>(PlayerData.playerDataBox);
+  final playerData = box.get(PlayerData.playerDataKey);
+
+  // Si les données du joueur sont null, cela signifie que c'est un lancement initial du jeu.
+  // Dans ce cas, nous stockons d'abord les données par défaut du joueur dans la boîte de données du joueur, puis nous les retournons.
+  if (playerData == null) {
+    box.put(
+      PlayerData.playerDataKey,
+      PlayerData('02-King Pig'),
+    );
+  }
+
+  return box.get(PlayerData.playerDataKey)!;
+}
+
+
   @override
   FutureOr<void> onLoad() async {
     await images.loadAllImages();
+    PlayerData playerData = await getPlayerData();
+    player = Player(character: playerData.selectedSkin);
 
     final world = Level(
       // levels: levels,
