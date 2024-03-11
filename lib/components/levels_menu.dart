@@ -3,7 +3,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/game_play.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter_application_1/models/level_data.dart';
 import 'package:path/path.dart' as p;
+import 'package:provider/provider.dart';
 
 class LevelsMenu extends StatelessWidget {
   const LevelsMenu({super.key});
@@ -34,6 +36,7 @@ class LevelsMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final levelData = Provider.of<LevelData>(context);
     String assetFolderPath = 'assets/tiles/';
     return FutureBuilder<List<String>>(
       future: getFilesInAssetFolder(assetFolderPath),
@@ -59,6 +62,7 @@ class LevelsMenu extends StatelessWidget {
                       children: cleanedLevels.map((level) {
                         return ElevatedButton(
                           onPressed: () {
+                            levelData.selectLevel(level);
                             Navigator.of(context).pushReplacement(
                               MaterialPageRoute(
                                 builder: (context) => GamePlay(

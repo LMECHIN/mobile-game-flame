@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:flutter_application_1/components/player_data.dart';
+import 'package:flutter_application_1/models/player_data.dart';
 import 'package:provider/provider.dart';
 
 class SkinsMenu extends StatelessWidget {
