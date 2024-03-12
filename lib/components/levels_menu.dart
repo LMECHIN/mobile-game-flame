@@ -40,7 +40,7 @@ class LevelsMenu extends StatelessWidget {
     String assetFolderPath = 'assets/tiles/';
     return FutureBuilder<List<String>>(
       future: getFilesInAssetFolder(assetFolderPath),
-      builder: (context, snapshot) {
+      builder: (context, AsyncSnapshot<List<String>> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError) {

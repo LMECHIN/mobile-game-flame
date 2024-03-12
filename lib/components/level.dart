@@ -64,6 +64,10 @@ class Level extends World with HasGameRef<PixelGame> {
           case 'Player':
             player.position = Vector2(spawnPoint.x, spawnPoint.y);
             add(player);
+            // final trail = Trail(
+            //     position: Vector2(spawnPoint.x, spawnPoint.y),
+            //     size: Vector2(spawnPoint.width, spawnPoint.height));
+            // add(trail);
             break;
           case 'Obstacle':
             final obstacle = Obstacle(

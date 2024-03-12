@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter_application_1/models/level_data.dart';
 import 'package:flutter_application_1/utils/get_level_data.dart';
 import 'package:flutter_application_1/utils/get_player_data.dart';
@@ -14,7 +17,10 @@ Future<void> main() async {
   Flame.device.setLandscape();
 
   await initHive();
-
+  FlutterError.onError = (details) {
+    FlutterError.presentError(details);
+    if (kReleaseMode) exit(1);
+  };
   runApp(
     MultiProvider(
       providers: [

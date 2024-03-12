@@ -3,7 +3,8 @@ import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 
-class ButtonJump extends SpriteComponent with HasGameRef<PixelGame>, TapCallbacks {
+class ButtonJump extends SpriteComponent
+    with HasGameRef<PixelGame>, TapCallbacks {
   ButtonJump();
   final margin = 32;
   final buttonSize = 64;

@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/overlays/end_game.dart';
+import 'package:flutter_application_1/overlays/pause_button.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 import 'package:flutter_application_1/components/player.dart';
 
@@ -44,7 +46,11 @@ class Checkpoint extends SpriteAnimationComponent
       Set<Vector2> intersectionPoints, PositionComponent other) {
     if (other is Player) {
       _reachedCheckpoint();
-      _updatePlayerColor(const Color.fromARGB(255, 11, 3, 55));
+      // _updatePlayerColor(const Color.fromARGB(255, 11, 3, 55));
+      other.hasDie = true;
+      other.current = PlayerState.idle;
+      game.overlays.remove(PauseButton.id);
+      game.overlays.add(EndGame.id);
     }
     super.onCollisionStart(intersectionPoints, other);
   }

@@ -12,7 +12,7 @@ class MainMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return FutureBuilder<LevelData>(
       future: getLevelData(),
-      builder: (context, snapshot) {
+      builder: (context, AsyncSnapshot<LevelData> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Scaffold(
             body: Center(

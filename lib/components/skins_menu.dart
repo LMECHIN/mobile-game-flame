@@ -46,7 +46,7 @@ class SkinsMenu extends StatelessWidget {
     String assetFolderPath = 'assets/images/Sprites/Skins/';
     return FutureBuilder<List<String>>(
       future: getFoldersInAssetFolder(assetFolderPath),
-      builder: (context, snapshot) {
+      builder: (context, AsyncSnapshot<List<String>> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError) {

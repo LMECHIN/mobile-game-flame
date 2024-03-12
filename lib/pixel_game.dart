@@ -82,7 +82,6 @@ class PixelGame extends FlameGame
     } else if (player.velocity.x > 0) {
       cam.viewfinder.anchor = const Anchor(0.29, 0.5);
     }
-
     cam.follow(
       player,
       maxSpeed: camSpeed,
@@ -93,6 +92,10 @@ class PixelGame extends FlameGame
     if (player.hasSlide && !player.hasDie) {
       camSpeed = 4000;
     }
+  }
+
+  void reset() {
+    player.reset();
   }
 
   void setZoom(double zoom) {
