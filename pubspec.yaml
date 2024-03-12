@@ -74,6 +74,7 @@ flutter:
     - assets/images/Sprites/Skins/01-King Human/
     - assets/images/Sprites/Skins/02-King Pig/
     - assets/images/HUD/
+    - assets/images/Background/
     - assets/images/Checkpoints/
 
   # An image asset can refer to one or more resolution-specific "variants", see

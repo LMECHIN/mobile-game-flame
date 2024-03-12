@@ -99,6 +99,7 @@ class Player extends SpriteAnimationGroupComponent
       }
       accumulatedTime -= fixedDeltaTime;
     }
+    // horizontalMovement = 1;
 
     super.update(dt);
   }
@@ -117,8 +118,9 @@ class Player extends SpriteAnimationGroupComponent
     // if (isRightKeyPressed) {
     //   pressKey = false;
     // }
-    horizontalMovement += isLeftKeyPressed ? -1 : 0;
-    horizontalMovement += isRightKeyPressed ? 1 : 0;
+    // horizontalMovement += isLeftKeyPressed ? -1 : 0;
+    // horizontalMovement += isRightKeyPressed ? 1 : 0;
+    horizontalMovement += 1;
 
     hasJumped = keysPressed.contains(LogicalKeyboardKey.space);
     if (keysPressed.contains(LogicalKeyboardKey.arrowDown)) {
@@ -253,7 +255,6 @@ class Player extends SpriteAnimationGroupComponent
       _playSlide(dt);
     }
     // if (velocity.y > _gravity) isOnGround = false; // optional
-
     velocity.x = horizontalMovement * moveSpeed;
     position.x += velocity.x * dt;
   }

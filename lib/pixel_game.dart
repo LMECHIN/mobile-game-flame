@@ -58,8 +58,8 @@ class PixelGame extends FlameGame
       height: 5221,
     );
 
-    cam.viewfinder.anchor = const Anchor(0.29, 0.5);
-    setZoom(2.4);
+    cam.viewfinder.anchor = const Anchor(0.30, 0.5);
+    setZoom(2.0);
     cam.priority = 0;
     if (showControls) {
       addJoystick();
@@ -77,11 +77,11 @@ class PixelGame extends FlameGame
       updateJoystick();
     }
 
-    if (player.velocity.x < 0) {
-      cam.viewfinder.anchor = const Anchor(0.45, 0.5);
-    } else if (player.velocity.x > 0) {
-      cam.viewfinder.anchor = const Anchor(0.29, 0.5);
-    }
+    // if (player.velocity.x < 0) {
+    //   cam.viewfinder.anchor = const Anchor(0.45, 0.5);
+    // } else if (player.velocity.x > 0) {
+    cam.viewfinder.anchor = const Anchor(0.30, 0.5);
+    // }
     cam.follow(
       player,
       maxSpeed: camSpeed,

@@ -87,35 +87,35 @@
             }
         },
         "Level03.tmx": {
-            "scale": 0.6672265625,
+            "scale": 1.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 639.9625314677127,
-                "y": 366.44224577015405
+                "x": 639,
+                "y": 366.66666666666663
             }
         },
         "Level04.tmx": {
             "expandedObjectLayers": [
-                2,
-                3
+                3,
+                2
             ],
             "scale": 0.75,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1279.3333333333333,
-                "y": 367.3333333333333
+                "x": 1278,
+                "y": 366.66666666666663
             }
         },
         "Level05.tmx": {
             "expandedObjectLayers": [
-                4,
-                3
+                3,
+                4
             ],
             "scale": 0.125,
-            "selectedLayer": 1,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 4596,
-                "y": 2636
+                "x": 2988,
+                "y": 2624
             }
         },
         "Level06.tmx": {
@@ -125,16 +125,32 @@
             "scale": 0.125,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 9256,
-                "y": 4616
+                "x": 1796,
+                "y": 4600
             }
         },
         "Level08.tmx": {
-            "scale": 0.25,
-            "selectedLayer": 0,
+            "expandedObjectLayers": [
+                3,
+                4
+            ],
+            "scale": 0.0625,
+            "selectedLayer": 5,
             "viewCenter": {
-                "x": 472,
-                "y": 4976
+                "x": 6072,
+                "y": 3792
+            }
+        },
+        "Level09.tmx": {
+            "expandedObjectLayers": [
+                3,
+                4
+            ],
+            "scale": 0.125,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 5280,
+                "y": 3036
             }
         },
         "Map (32x32).tsx": {
@@ -142,12 +158,18 @@
             "scaleInEditor": 1
         },
         "Obstacle_01.tsx": {
-            "scaleInDock": 1,
+            "scaleInDock": 0.75,
             "scaleInEditor": 1
         },
         "Pixel Game.tsx": {
             "scaleInDock": 0.25,
             "scaleInEditor": 1
+        },
+        "boost.tsx": {
+            "scaleInDock": 1
+        },
+        "boost_up.tsx": {
+            "scaleInDock": 1
         },
         "corner_down_left.tsx": {
             "scaleInDock": 1
@@ -212,15 +234,16 @@
         "Ground_08.tsx",
         "Level03.tmx",
         "Level06.tmx",
-        "Level08.tmx",
+        "Level09.tmx",
         "Ground_14.tsx",
         "Obstacle_01.tsx",
         "right.tsx",
         "Ground_13.tsx",
-        "Ground_01.tsx"
+        "Ground_01.tsx",
+        "Level08.tmx"
     ],
     "project": "Pixel Game.tiled-project",
-    "property.type": "float",
+    "property.type": "string",
     "recentFiles": [
         "Pixel Game.tsx",
         "Level01.tmx",

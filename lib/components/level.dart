@@ -24,7 +24,7 @@ class Level extends World with HasGameRef<PixelGame> {
 
     add(level);
 
-    // _scrollingBackground();
+    _scrollingBackground();
     _spawningObjects();
     _addCollisions();
 
@@ -32,26 +32,26 @@ class Level extends World with HasGameRef<PixelGame> {
   }
 
   void _scrollingBackground() {
-    final backgroundLayer = level.tileMap.getLayer('Background');
-    const tileSize = 264;
+    final backgroundLayer = level.tileMap.getLayer('Blocks');
+    // const tileSize = 264;
 
-    final numTilesY = (game.size.y / tileSize).floor();
-    final numTilesx = (game.size.x / tileSize).floor();
+    // final numTilesY = (game.size.y / tileSize).floor();
+    // final numTilesx = (game.size.x / tileSize).floor();
 
     if (backgroundLayer != null) {
       final backgroundColor =
           backgroundLayer.properties.getValue('BackgroundColor');
 
-      for (double y = 0; y < game.size.y / numTilesY; y++) {
-        for (double x = 0; x < numTilesx; x++) {
+      // for (double y = 0; y < game.size.y / numTilesY; y++) {
+      //   for (double x = 0; x < numTilesx; x++) {
           final backgroundFile = BackgroundTile(
-            color: backgroundColor ?? 'Grayy',
-            position: Vector2(x * tileSize, y * tileSize - tileSize),
+            color: backgroundColor ?? 'Gray',
+            position: Vector2(5000, 2000),
           );
           add(backgroundFile);
         }
-      }
-    }
+    //   }
+    // }
   }
 
   void _spawningObjects() {
@@ -64,10 +64,6 @@ class Level extends World with HasGameRef<PixelGame> {
           case 'Player':
             player.position = Vector2(spawnPoint.x, spawnPoint.y);
             add(player);
-            // final trail = Trail(
-            //     position: Vector2(spawnPoint.x, spawnPoint.y),
-            //     size: Vector2(spawnPoint.width, spawnPoint.height));
-            // add(trail);
             break;
           case 'Obstacle':
             final obstacle = Obstacle(
