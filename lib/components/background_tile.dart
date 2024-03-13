@@ -16,9 +16,9 @@ class BackgroundTile extends SpriteComponent with HasGameRef<PixelGame> {
 
   @override
   FutureOr<void> onLoad() {
-    priority = -1;
-    size = Vector2.all(264);
-    sprite = Sprite(game.images.fromCache('Background/$color.png'));
+    priority = 0;
+    size = Vector2.all(264.98);
+    sprite = Sprite(game.images.fromCache('Sprites/14-TileSets/$color.png'));
     return super.onLoad();
   }
 

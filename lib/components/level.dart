@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flame/components.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flutter_application_1/components/background_tile.dart';
+import 'package:flutter_application_1/components/blocks.dart';
 import 'package:flutter_application_1/components/boost_up.dart';
 import 'package:flutter_application_1/components/checkpoint.dart';
 import 'package:flutter_application_1/components/collisions_block.dart';
@@ -24,34 +25,65 @@ class Level extends World with HasGameRef<PixelGame> {
 
     add(level);
 
-    _scrollingBackground();
+    _changeColorBlocks();
     _spawningObjects();
     _addCollisions();
 
     return super.onLoad();
   }
 
-  void _scrollingBackground() {
+  @override
+  void update(double dt) {
+    // print(player.hasSlide);
+    super.update(dt);
+  }
+
+  void _changeColorBlocks() {
     final backgroundLayer = level.tileMap.getLayer('Blocks');
-    // const tileSize = 264;
 
-    // final numTilesY = (game.size.y / tileSize).floor();
-    // final numTilesx = (game.size.x / tileSize).floor();
-
-    if (backgroundLayer != null) {
-      final backgroundColor =
+    if (backgroundLayer != null && backgroundLayer is TileLayer) {
+      const tileSize = 264;
+      final groundColor =
           backgroundLayer.properties.getValue('BackgroundColor');
+      final frame = backgroundLayer.properties.getValue('Frame');
+      final mapWidth = backgroundLayer.width;
+      final mapHeight = backgroundLayer.height;
+      final tileData = backgroundLayer.data!;
+      final tilesToAdd = <BackgroundTile>[];
+      final lightToAdd = <BackgroundTile>[];
 
-      // for (double y = 0; y < game.size.y / numTilesY; y++) {
-      //   for (double x = 0; x < numTilesx; x++) {
-          final backgroundFile = BackgroundTile(
-            color: backgroundColor ?? 'Gray',
-            position: Vector2(5000, 2000),
-          );
-          add(backgroundFile);
+      for (int y = 0; y < mapHeight; y++) {
+        for (int x = 0; x < mapWidth; x++) {
+          final tileIndex = tileData[y * mapWidth + x];
+
+          if (tileIndex == 2) {
+            final position =
+                Vector2((x * tileSize).toDouble(), (y * tileSize).toDouble());
+            final back = BackgroundTile(
+              color: groundColor,
+              position: position,
+            );
+            final light = BackgroundTile(
+              color: 'neon/neon_effect_29',
+              position: position,
+            );
+            tilesToAdd.add(back);
+            lightToAdd.add(light);
+          }
         }
-    //   }
-    // }
+      }
+
+      Future.delayed(const Duration(seconds: 5), () {
+        for (int i = 0; i < tilesToAdd.length; i++) {
+          final tile = tilesToAdd[i];
+          final light = lightToAdd[i];
+          Future.delayed(Duration(milliseconds: frame * i), () {
+            add(tile);
+            add(light);
+          });
+        }
+      });
+    }
   }
 
   void _spawningObjects() {
@@ -60,6 +92,7 @@ class Level extends World with HasGameRef<PixelGame> {
 
     if (spawnPointsPlayer != null) {
       for (final spawnPoint in spawnPointsPlayer.objects) {
+        // switch (spawnPoint.)
         switch (spawnPoint.class_) {
           case 'Player':
             player.position = Vector2(spawnPoint.x, spawnPoint.y);
@@ -86,6 +119,22 @@ class Level extends World with HasGameRef<PixelGame> {
               size: Vector2(spawnPoint.width, spawnPoint.height),
             );
             add(checkpoint);
+            break;
+          case 'Blocks':
+            final blocksBlack = Blocks(
+              position: Vector2(spawnPoint.x, spawnPoint.y),
+              size: Vector2(spawnPoint.width, spawnPoint.height),
+              color: 1,
+            );
+            add(blocksBlack);
+          Future.delayed(const Duration(seconds: 5), () {
+            final blocksBlue = Blocks(
+              position: Vector2(spawnPoint.x, spawnPoint.y),
+              size: Vector2(spawnPoint.width, spawnPoint.height),
+              color: 2,
+            );
+            add(blocksBlue);
+          });
             break;
           default:
         }
