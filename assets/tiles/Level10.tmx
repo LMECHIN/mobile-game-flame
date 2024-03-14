@@ -411,7 +411,7 @@
    <properties>
     <property name="Color" type="int" value="11"/>
     <property name="Loop" type="bool" value="true"/>
-    <property name="Time" type="int" value="10"/>
+    <property name="Time" type="int" value="14"/>
    </properties>
   </object>
  </objectgroup>
