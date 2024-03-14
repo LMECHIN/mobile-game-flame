@@ -75,7 +75,7 @@ class Player extends SpriteAnimationGroupComponent
 
     scale = Vector2(scaleFactor, scaleFactor);
     Vector2 sizeHitbox = Vector2(size.x / 4.5, size.y / 3);
-    Vector2 positionHitbox = Vector2(position.x / 1, position.y / 5);
+    Vector2 positionHitbox = Vector2(position.x / 0.7, position.y / 5);
 
     add(RectangleHitbox(size: sizeHitbox, position: positionHitbox));
     trail = Trail(position: Vector2(position.x - 252, position.y - 4000));
