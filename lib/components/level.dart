@@ -22,6 +22,7 @@ class Level extends World with HasGameRef<PixelGame> {
   late Blocks blockUp;
   double fixedDeltaTime = 0.1 / 60;
   double accumulatedTime = 0;
+  List<Blocks> blocksList = [];
 
   @override
   FutureOr<void> onLoad() async {
@@ -40,9 +41,23 @@ class Level extends World with HasGameRef<PixelGame> {
   @override
   void update(double dt) {
     accumulatedTime += dt;
+
+    double fallSpeed = 50 * fixedDeltaTime;
+
     while (accumulatedTime >= fixedDeltaTime) {
-      if (blockUp.position.y < startingPosition.y) {
-        blockUp.position.y += 2000 * fixedDeltaTime;
+      if (player.horizontalMovement == 1) {
+        for (var i = 0; i < blocksList.length; i++) {
+          Blocks block = blocksList[i];
+          if (block.position.y < startingPosition.y) {
+            double speed = 80 * fixedDeltaTime * (blocksList.length - i);
+
+            block.position.y += (speed + fallSpeed);
+
+            if (block.position.y >= startingPosition.y) {
+              block.position.y = startingPosition.y;
+            }
+          }
+        }
       }
       accumulatedTime -= fixedDeltaTime;
     }
@@ -60,29 +75,36 @@ class Level extends World with HasGameRef<PixelGame> {
         final speedLoop = spawnBlock.properties.getValue('SpeedLoop') ?? 1;
         final int color = spawnBlock.properties.getValue('Color') ?? 1;
         final int nextColor = spawnBlock.properties.getValue('NextColor') ?? 1;
-        final String texture = spawnBlock.properties.getValue('Texture') ?? 'ground_blue_test(fix)';
+        final String texture = spawnBlock.properties.getValue('Texture') ??
+            'ground_blue_test(fix)';
+        final String textureAnimation =
+            spawnBlock.properties.getValue('TextureAnim') ?? 'ground_rotate_02';
         switch (spawnBlock.class_) {
           case 'Block-up':
-            startingPosition = Vector2(spawnBlock.x, spawnBlock.y);
-            blockUp = Blocks(
-              position: Vector2(spawnBlock.x, 0),
+            final blocksBlack = Blocks(
+              position: Vector2(spawnBlock.x, spawnBlock.y),
               size: Vector2(spawnBlock.width, spawnBlock.height),
-              color: color,
+              color: nextColor,
               texture: texture,
-              loop: loop,
-              speedLoop: speedLoop.toDouble(),
             );
-            add(blockUp);
-            Future.delayed(Duration(seconds: time), () {
-              // remove(blockUp);
-              final blocksBlack = Blocks(
-                position: Vector2(spawnBlock.x, spawnBlock.y),
-                size: Vector2(spawnBlock.width, spawnBlock.height),
-                color: nextColor,
-                texture: 'ground_blue_test(fix)',
-              );
-              add(blocksBlack);
-            });
+            add(blocksBlack);
+            if (time != 0) {
+              Future.delayed(Duration(seconds: time), () {
+                startingPosition = Vector2(spawnBlock.x, spawnBlock.y);
+                blockUp = Blocks(
+                  position: Vector2(spawnBlock.x, 0),
+                  size: Vector2(spawnBlock.width, spawnBlock.height),
+                  color: color,
+                  texture: texture,
+                  loop: true,
+                  speedLoop: speedLoop.toDouble(),
+                );
+                add(blockUp);
+                blocksList.add(blockUp);
+                // remove(blockUp);
+                // blocksList.remove(blockUp);
+              });
+            }
             break;
           case 'Block-corner-up-left':
             final blocksBlack = Blocks(
@@ -108,7 +130,7 @@ class Level extends World with HasGameRef<PixelGame> {
               position: Vector2(spawnBlock.x, spawnBlock.y),
               size: Vector2(spawnBlock.width, spawnBlock.height),
               color: color,
-              texture: 'ground_rotate_02',
+              texture: textureAnimation,
               speedLoop: [1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
               loop: loop,
               start: 0,
@@ -121,7 +143,7 @@ class Level extends World with HasGameRef<PixelGame> {
                 position: Vector2(spawnBlock.x, spawnBlock.y),
                 size: Vector2(spawnBlock.width, spawnBlock.height),
                 color: color,
-                texture: 'ground_rotate_02',
+                texture: textureAnimation,
                 speedLoop: [1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
                 loop: loop,
                 start: 7,
@@ -172,6 +194,8 @@ class Level extends World with HasGameRef<PixelGame> {
         switch (spawnPoint.class_) {
           case 'Player':
             player.position = Vector2(spawnPoint.x, spawnPoint.y);
+            player.widthMap = level.width;
+            player.heightMap = level.height;
             add(player);
             break;
           case 'Obstacle':

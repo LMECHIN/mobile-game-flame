@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="40" height="23" tilewidth="264" tileheight="264" infinite="0" nextlayerid="40" nextobjectid="125">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="40" height="23" tilewidth="264" tileheight="264" infinite="0" nextlayerid="40" nextobjectid="126">
  <tileset firstgid="1" source="ground.tsx"/>
  <tileset firstgid="10" source="light.tsx"/>
  <tileset firstgid="19" source="light2.tsx"/>
@@ -128,6 +128,13 @@
    </properties>
   </object>
   <object id="118" type="Block-up" x="1586.51" y="5278.76" width="266.258" height="263.332">
+   <properties>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="2"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="125" type="Block-up" x="1586.51" y="5014.76" width="266.258" height="263.332">
    <properties>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="2"/>

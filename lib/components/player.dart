@@ -43,6 +43,8 @@ class Player extends SpriteAnimationGroupComponent
   final double _jumpForce = 1800;
   final double _terminalVelocity = 2000;
   double scaleFactor = 0.3;
+  double widthMap = 0;
+  double heightMap = 0;
   double horizontalMovement = 0;
   double moveSpeed = 800;
   double normalMoveSpeed = 800;
@@ -70,16 +72,27 @@ class Player extends SpriteAnimationGroupComponent
   @override
   FutureOr<void> onLoad() {
     _loadAllAnimations();
-    // debugMode = true;
+    debugMode = true;
     startingPosition = Vector2(position.x, position.y);
-
     scale = Vector2(scaleFactor, scaleFactor);
+
     Vector2 sizeHitbox = Vector2(size.x / 4.5, size.y / 3);
-    Vector2 positionHitbox = Vector2(position.x / 0.7, position.y / 5);
+    double adjustementX = size.x / widthMap;
+    double adjustementY = size.y / heightMap;
+
+    Vector2 positionHitbox = Vector2(
+      ((position.x * adjustementX) + (size.x * 0.25)) -
+          ((sizeHitbox.x / 2) * (adjustementX - 1)),
+      position.y * adjustementY -
+          (size.y * 0.25) -
+          (sizeHitbox.y / 2) +
+          (sizeHitbox.y * (adjustementY - 0.1)),
+    );
 
     add(RectangleHitbox(size: sizeHitbox, position: positionHitbox));
     trail = Trail(position: Vector2(position.x - 252, position.y - 4000));
-    blood = Blood(position: Vector2(position.x - 400, position.y - 5000), size: size);
+    blood = Blood(
+        position: Vector2(position.x - 400, position.y - 5000), size: size);
     return super.onLoad();
   }
 

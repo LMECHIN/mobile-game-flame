@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="80" height="10" tilewidth="264" tileheight="264" infinite="0" nextlayerid="7" nextobjectid="91">
+ <tileset firstgid="1" source="light2.tsx"/>
+ <tileset firstgid="10" source="Obstacle_01.tsx"/>
+ <objectgroup id="4" name="Collisions" locked="1">
+  <object id="84" x="0" y="2376" width="21120" height="264"/>
+ </objectgroup>
+ <objectgroup id="2" name="Spawnpoints">
+  <object id="81" name="Player" type="Player" x="528" y="1847" width="264" height="264"/>
+  <object id="86" type="Obstacle" x="5544" y="2112" width="264" height="264"/>
+  <object id="88" type="Checkpoint" x="20592" y="2112" width="264" height="264"/>
+ </objectgroup>
+ <objectgroup id="3" name="SpawnBlocks">
+  <object id="1" type="Block-up" x="264" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="6" type="Block-up" x="1320" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="42" type="Block-up" x="7656" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="66" type="Block-up" x="13992" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="10" type="Block-up" x="2376" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="46" type="Block-up" x="8712" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="70" type="Block-up" x="15048" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="14" type="Block-up" x="3432" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="50" type="Block-up" x="9768" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="74" type="Block-up" x="16104" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="18" type="Block-up" x="4488" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="34" type="Block-up" x="10824" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="58" type="Block-up" x="17160" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="22" type="Block-up" x="5544" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="38" type="Block-up" x="11880" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="62" type="Block-up" x="18216" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="26" type="Block-up" x="6600" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="30" type="Block-up" x="12936" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="54" type="Block-up" x="19272" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="3" type="Block-up" x="528" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="7" type="Block-up" x="1584" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="43" type="Block-up" x="7920" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="67" type="Block-up" x="14256" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="11" type="Block-up" x="2640" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="47" type="Block-up" x="8976" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="71" type="Block-up" x="15312" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="15" type="Block-up" x="3696" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="51" type="Block-up" x="10032" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="75" type="Block-up" x="16368" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="19" type="Block-up" x="4752" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="35" type="Block-up" x="11088" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="59" type="Block-up" x="17424" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="23" type="Block-up" x="5808" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="39" type="Block-up" x="12144" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="63" type="Block-up" x="18480" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="27" type="Block-up" x="6864" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="31" type="Block-up" x="13200" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="55" type="Block-up" x="19536" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="80" type="Block-up" x="20328" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="2"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="4" type="Block-up" x="792" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="8" type="Block-up" x="1848" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="44" type="Block-up" x="8184" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="68" type="Block-up" x="14520" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="12" type="Block-up" x="2904" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="48" type="Block-up" x="9240" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="72" type="Block-up" x="15576" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="16" type="Block-up" x="3960" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="52" type="Block-up" x="10296" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="76" type="Block-up" x="16632" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="20" type="Block-up" x="5016" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="36" type="Block-up" x="11352" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="60" type="Block-up" x="17688" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="24" type="Block-up" x="6072" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="40" type="Block-up" x="12408" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="64" type="Block-up" x="18744" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="28" type="Block-up" x="7128" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="32" type="Block-up" x="13464" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="56" type="Block-up" x="19800" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="79" type="Block-up" x="20592" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="5" type="Block-up" x="1056" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="9" type="Block-up" x="2112" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="45" type="Block-up" x="8448" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="69" type="Block-up" x="14784" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="13" type="Block-up" x="3168" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="49" type="Block-up" x="9504" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="73" type="Block-up" x="15840" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="17" type="Block-up" x="4224" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="53" type="Block-up" x="10560" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="77" type="Block-up" x="16896" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="21" type="Block-up" x="5280" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="37" type="Block-up" x="11616" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="61" type="Block-up" x="17952" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="25" type="Block-up" x="6336" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="41" type="Block-up" x="12672" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="65" type="Block-up" x="19008" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="29" type="Block-up" x="7392" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="33" type="Block-up" x="13728" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="57" type="Block-up" x="20064" y="2376" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="Time" type="int" value="5"/>
+   </properties>
+  </object>
+  <object id="89" x="13312" y="4000"/>
+ </objectgroup>
+ <layer id="6" name="obstacles" width="80" height="10">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="5" name="lights" width="80" height="10">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,
+7,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,9
+</data>
+ </layer>
+</map>
