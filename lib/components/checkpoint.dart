@@ -28,7 +28,7 @@ class Checkpoint extends SpriteAnimationComponent
       Vector2(size.x / 2, 0),
     ]);
     add(hitboxShape);
-    debugMode = true;
+    // debugMode = true;
 
     animation = SpriteAnimation.fromFrameData(
       game.images.fromCache('Checkpoints/Checkpoint (No Flag)(264x264).png'),

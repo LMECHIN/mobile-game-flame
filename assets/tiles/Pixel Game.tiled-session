@@ -61,7 +61,7 @@
             "scaleInEditor": 1
         },
         "Ground_15.tsx": {
-            "scaleInDock": 1
+            "scaleInDock": 0.5
         },
         "Ground_16.tsx": {
             "scaleInDock": 1
@@ -131,31 +131,77 @@
         },
         "Level08.tmx": {
             "expandedObjectLayers": [
-                3,
+                4,
+                3
+            ],
+            "scale": 0.0625,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 5376,
+                "y": 3728
+            }
+        },
+        "Level09.tmx": {
+            "expandedObjectLayers": [
+                4,
+                3
+            ],
+            "scale": 0.125,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 5264,
+                "y": 3024
+            }
+        },
+        "Level10.tmx": {
+            "expandedObjectLayers": [
                 4
             ],
             "scale": 0.0625,
             "selectedLayer": 5,
             "viewCenter": {
-                "x": 6072,
-                "y": 3792
+                "x": 4624,
+                "y": 3024
             }
         },
-        "Level09.tmx": {
+        "Map (100x100).tmx": {
             "expandedObjectLayers": [
-                3,
-                4
+                3
             ],
-            "scale": 0.125,
-            "selectedLayer": 3,
+            "scale": 0.032242424242424246,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 5280,
-                "y": 3036
+                "x": 10390.03759398496,
+                "y": 27231.203007518794
+            }
+        },
+        "Map (100x23).tmx": {
+            "expandedObjectLayers": [
+                4,
+                3,
+                2
+            ],
+            "scale": 0.03125,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 3232,
+                "y": 3904
             }
         },
         "Map (32x32).tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
+        },
+        "Map (80x10).tmx": {
+            "expandedObjectLayers": [
+                3
+            ],
+            "scale": 0.03125,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 12992,
+                "y": 9984
+            }
         },
         "Obstacle_01.tsx": {
             "scaleInDock": 0.75,
@@ -217,7 +263,7 @@
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 227,
     "map.tileWidth": 227,
-    "map.width": 40,
+    "map.width": 100,
     "openFiles": [
         "Pixel Game.tsx",
         "Level01.tmx",
@@ -246,17 +292,17 @@
     "property.type": "string",
     "recentFiles": [
         "Pixel Game.tsx",
-        "Level01.tmx",
+        "Map (80x10).tmx",
+        "Ground_01.tsx",
+        "Ground_13.tsx",
+        "right.tsx",
+        "Obstacle_01.tsx",
+        "Ground_14.tsx",
+        "Ground_08.tsx",
+        "Ground_07.tsx",
         "DLevel01.tsx",
-        "Level02.tmx",
-        "Level04.tmx",
         "Map (32x32).tsx",
-        "Level05.tmx",
-        "Ground_02.tsx",
-        "Ground_03.tsx",
-        "Ground_05.tsx",
-        "Ground_06.tsx",
-        "Ground_07.tsx"
+        "Ground_02.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

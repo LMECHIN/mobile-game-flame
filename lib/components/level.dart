@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 import 'package:flame/components.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 // import 'package:flutter_application_1/components/background_tile.dart';
@@ -8,6 +9,7 @@ import 'package:flutter_application_1/components/boost_up.dart';
 import 'package:flutter_application_1/components/checkpoint.dart';
 import 'package:flutter_application_1/components/collisions_block.dart';
 import 'package:flutter_application_1/components/obstacle.dart';
+import 'package:flutter_application_1/components/particles.dart';
 import 'package:flutter_application_1/components/player.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 
@@ -19,10 +21,11 @@ class Level extends World with HasGameRef<PixelGame> {
   Vector2 startingPosition = Vector2.zero();
   List<CollisionsBlock> collisionsBlock = [];
   late CameraComponent cam;
-  late Blocks blockUp;
+  // late Blocks blockUp;
   double fixedDeltaTime = 0.1 / 60;
   double accumulatedTime = 0;
-  List<Blocks> blocksList = [];
+  // List<Blocks> blocksList = [];
+  List<Particles> particlesList = [];
 
   @override
   FutureOr<void> onLoad() async {
@@ -31,6 +34,7 @@ class Level extends World with HasGameRef<PixelGame> {
 
     add(level);
 
+    _spawningParticles();
     _spawningBlocks();
     _spawningObjects();
     _addCollisions();
@@ -38,30 +42,78 @@ class Level extends World with HasGameRef<PixelGame> {
     return super.onLoad();
   }
 
+  // @override
+  // void update(double dt) {
+  //   accumulatedTime += dt;
+
+  //   double fallSpeed = 50 * fixedDeltaTime;
+
+  //   while (accumulatedTime >= fixedDeltaTime) {
+  //     if (player.horizontalMovement == 1) {
+  //       for (var i = 0; i < blocksList.length; i++) {
+  //         Blocks block = blocksList[i];
+  //         if (block.position.y < startingPosition.y) {
+  //           double speed = 80 * fixedDeltaTime * (blocksList.length - i);
+
+  //           block.position.y += (speed + fallSpeed);
+
+  //           if (block.position.y >= startingPosition.y) {
+  //             block.position.y = startingPosition.y;
+  //           }
+  //         }
+  //       }
+  //     }
+  //     accumulatedTime -= fixedDeltaTime;
+  //   }
+  //   super.update(dt);
+  // }
+
   @override
   void update(double dt) {
     accumulatedTime += dt;
 
-    double fallSpeed = 50 * fixedDeltaTime;
+    double speed = 50;
 
     while (accumulatedTime >= fixedDeltaTime) {
-      if (player.horizontalMovement == 1) {
-        for (var i = 0; i < blocksList.length; i++) {
-          Blocks block = blocksList[i];
-          if (block.position.y < startingPosition.y) {
-            double speed = 80 * fixedDeltaTime * (blocksList.length - i);
+      Random random = Random();
 
-            block.position.y += (speed + fallSpeed);
+      for (var i = 0; i < particlesList.length; i++) {
+        Particles particle = particlesList[i];
 
-            if (block.position.y >= startingPosition.y) {
-              block.position.y = startingPosition.y;
-            }
-          }
-        }
+        double randomX = (random.nextDouble() * 2 - 1) * speed;
+        double randomY = (random.nextDouble() * 2 - 1) * speed;
+
+        particle.position += Vector2(randomX, randomY) * fixedDeltaTime;
+
+        particle.position.x = particle.position.x.clamp(0, level.width);
+        particle.position.y = particle.position.y.clamp(0, level.height);
       }
       accumulatedTime -= fixedDeltaTime;
     }
     super.update(dt);
+  }
+
+  void _spawningParticles() {
+    final spawnPointsParticles =
+        level.tileMap.getLayer<ObjectGroup>('SpawnParticles');
+
+    if (spawnPointsParticles != null) {
+      for (final spawnParticle in spawnPointsParticles.objects) {
+        switch (spawnParticle.class_) {
+          case 'Particle':
+            break;
+          default:
+            final particles = Particles(
+              position: Vector2(spawnParticle.x, spawnParticle.y),
+              size: Vector2(spawnParticle.width / 8, spawnParticle.height / 8),
+            );
+            add(particles);
+            particlesList.add(particles);
+            break;
+          // break;
+        }
+      }
+    }
   }
 
   void _spawningBlocks() {
@@ -91,7 +143,7 @@ class Level extends World with HasGameRef<PixelGame> {
             if (time != 0) {
               Future.delayed(Duration(seconds: time), () {
                 startingPosition = Vector2(spawnBlock.x, spawnBlock.y);
-                blockUp = Blocks(
+                final blockUp = Blocks(
                   position: Vector2(spawnBlock.x, 0),
                   size: Vector2(spawnBlock.width, spawnBlock.height),
                   color: color,
@@ -100,7 +152,7 @@ class Level extends World with HasGameRef<PixelGame> {
                   speedLoop: speedLoop.toDouble(),
                 );
                 add(blockUp);
-                blocksList.add(blockUp);
+                // blocksList.add(blockUp);
                 // remove(blockUp);
                 // blocksList.remove(blockUp);
               });

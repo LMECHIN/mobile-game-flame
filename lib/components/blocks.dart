@@ -27,11 +27,9 @@ class Blocks extends SpriteAnimationComponent
   FutureOr<void> onLoad() {
     priority = -1;
 
-    final hitboxShape = PolygonHitbox([
-      Vector2(0, size.y - 24),
-      Vector2(size.x / 2, 0 - 24),
-      Vector2(size.x, size.y - 24),
-    ]);
+    final hitboxShape = RectangleHitbox(
+      angle: -0.09,
+    );
     add(hitboxShape);
 
     // debugMode = true;
@@ -61,13 +59,22 @@ class Blocks extends SpriteAnimationComponent
     animation = SpriteAnimation.fromFrameData(
       game.images.fromCache('Sprites/14-TileSets/ground_player.png'),
       SpriteAnimationData.sequenced(
-        amount: 1,
-        stepTime: 1,
+        amount: 5,
+        stepTime: 0.05,
         textureSize: Vector2.all(264),
-        // loop: false,
+        loop: false,
       ),
     );
 
     await animationTicker?.completed;
+    animation = SpriteAnimation.fromFrameData(
+      game.images.fromCache('Sprites/14-TileSets/$texture.png'),
+      SpriteAnimationData.sequenced(
+        amount: color,
+        stepTime: speedLoop,
+        textureSize: Vector2(264, 264),
+        loop: loop,
+      ),
+    );
   }
 }

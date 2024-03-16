@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="40" height="23" tilewidth="264" tileheight="264" infinite="0" nextlayerid="8" nextobjectid="52">
+<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" width="40" height="23" tilewidth="264" tileheight="264" infinite="0" nextlayerid="9" nextobjectid="57">
  <tileset firstgid="1" source="Obstacle_01.tsx"/>
  <tileset firstgid="10" source="light2.tsx"/>
  <tileset firstgid="19" source="Ground_02.tsx"/>
@@ -84,7 +84,7 @@
 16,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,17,18
 </data>
  </layer>
- <objectgroup id="2" name="Collisions">
+ <objectgroup id="2" name="Collisions" locked="1">
   <object id="4" x="0" y="5808" width="10560" height="264"/>
   <object id="47" x="2112" y="5544" width="264" height="264"/>
   <object id="50" x="3960" y="5544" width="264" height="264"/>
@@ -98,306 +98,306 @@
  <objectgroup id="4" name="SpawnBlocks">
   <object id="8" type="Block-up" x="264" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="9" type="Block-up" x="528" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="10" type="Block-up" x="792" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="11" type="Block-up" x="1056" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="12" type="Block-up" x="1320" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="13" type="Block-up" x="1584" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="14" type="Block-up" x="1848" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="15" type="Block-up" x="2112" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="16" type="Block-up" x="2376" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="17" type="Block-up" x="2640" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="18" type="Block-up" x="2904" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="19" type="Block-up" x="3168" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="20" type="Block-up" x="3432" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="21" type="Block-up" x="3696" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="22" type="Block-up" x="3960" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="23" type="Block-up" x="4224" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="24" type="Block-up" x="4488" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="25" type="Block-up" x="4752" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="26" type="Block-up" x="5016" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="27" type="Block-up" x="5280" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="28" type="Block-up" x="5544" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="29" type="Block-up" x="5808" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="30" type="Block-up" x="6072" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="31" type="Block-up" x="6336" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="32" type="Block-up" x="6600" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="33" type="Block-up" x="6864" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="34" type="Block-up" x="7128" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="35" type="Block-up" x="7392" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="36" type="Block-up" x="7656" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="37" type="Block-up" x="7920" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="38" type="Block-up" x="8184" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="39" type="Block-up" x="8448" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="40" type="Block-up" x="8712" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="41" type="Block-up" x="8976" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="42" type="Block-up" x="9240" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="43" type="Block-up" x="9504" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="44" type="Block-up" x="9768" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="45" type="Block-up" x="10032" y="5808" width="264" height="264">
    <properties>
-    <property name="Color" type="int" value="1"/>
-    <property name="NextColor" type="int" value="2"/>
+    <property name="Color" type="int" value="2"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
-    <property name="Time" type="int" value="5"/>
+    <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="48" type="Block-rotate-01" x="3960" y="5544" width="264" height="264">
@@ -414,5 +414,12 @@
     <property name="Time" type="int" value="14"/>
    </properties>
   </object>
+ </objectgroup>
+ <objectgroup id="8" name="SpawnParticles">
+  <object id="52" x="1320" y="4488" width="264" height="264"/>
+  <object id="53" x="528" y="4752" width="264" height="264"/>
+  <object id="54" x="2376" y="4752" width="264" height="264"/>
+  <object id="55" x="528" y="3960" width="264" height="264"/>
+  <object id="56" x="2112" y="3696" width="264" height="264"/>
  </objectgroup>
 </map>
