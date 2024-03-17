@@ -1,8 +1,6 @@
 import 'dart:async';
-import 'dart:math';
 import 'package:flame/components.dart';
 import 'package:flame_tiled/flame_tiled.dart';
-// import 'package:flutter_application_1/components/background_tile.dart';
 import 'package:flutter_application_1/components/blocks.dart';
 import 'package:flutter_application_1/components/blocks_animated.dart';
 import 'package:flutter_application_1/components/boost_up.dart';
@@ -21,11 +19,8 @@ class Level extends World with HasGameRef<PixelGame> {
   Vector2 startingPosition = Vector2.zero();
   List<CollisionsBlock> collisionsBlock = [];
   late CameraComponent cam;
-  // late Blocks blockUp;
   double fixedDeltaTime = 0.1 / 60;
   double accumulatedTime = 0;
-  // List<Blocks> blocksList = [];
-  List<Particles> particlesList = [];
 
   @override
   FutureOr<void> onLoad() async {
@@ -42,57 +37,6 @@ class Level extends World with HasGameRef<PixelGame> {
     return super.onLoad();
   }
 
-  // @override
-  // void update(double dt) {
-  //   accumulatedTime += dt;
-
-  //   double fallSpeed = 50 * fixedDeltaTime;
-
-  //   while (accumulatedTime >= fixedDeltaTime) {
-  //     if (player.horizontalMovement == 1) {
-  //       for (var i = 0; i < blocksList.length; i++) {
-  //         Blocks block = blocksList[i];
-  //         if (block.position.y < startingPosition.y) {
-  //           double speed = 80 * fixedDeltaTime * (blocksList.length - i);
-
-  //           block.position.y += (speed + fallSpeed);
-
-  //           if (block.position.y >= startingPosition.y) {
-  //             block.position.y = startingPosition.y;
-  //           }
-  //         }
-  //       }
-  //     }
-  //     accumulatedTime -= fixedDeltaTime;
-  //   }
-  //   super.update(dt);
-  // }
-
-  @override
-  void update(double dt) {
-    accumulatedTime += dt;
-
-    double speed = 50;
-
-    while (accumulatedTime >= fixedDeltaTime) {
-      Random random = Random();
-
-      for (var i = 0; i < particlesList.length; i++) {
-        Particles particle = particlesList[i];
-
-        double randomX = (random.nextDouble() * 2 - 1) * speed;
-        double randomY = (random.nextDouble() * 2 - 1) * speed;
-
-        particle.position += Vector2(randomX, randomY) * fixedDeltaTime;
-
-        particle.position.x = particle.position.x.clamp(0, level.width);
-        particle.position.y = particle.position.y.clamp(0, level.height);
-      }
-      accumulatedTime -= fixedDeltaTime;
-    }
-    super.update(dt);
-  }
-
   void _spawningParticles() {
     final spawnPointsParticles =
         level.tileMap.getLayer<ObjectGroup>('SpawnParticles');
@@ -107,10 +51,10 @@ class Level extends World with HasGameRef<PixelGame> {
               position: Vector2(spawnParticle.x, spawnParticle.y),
               size: Vector2(spawnParticle.width / 8, spawnParticle.height / 8),
             );
+            particles.widthMap = level.width;
+            particles.heightMap = level.height;
             add(particles);
-            particlesList.add(particles);
             break;
-          // break;
         }
       }
     }

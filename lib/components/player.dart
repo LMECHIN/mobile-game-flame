@@ -153,6 +153,7 @@ class Player extends SpriteAnimationGroupComponent
     accumulatedTime += _dt;
     if (other is Obstacle) {
       _respawn();
+      // reset();
     }
     if (other is BoostUp) {
       while (accumulatedTime >= fixedDeltaTime) {
@@ -402,7 +403,17 @@ class Player extends SpriteAnimationGroupComponent
   }
 
   void reset() {
+    // final levelData = Provider.of<LevelData>(gameRef.context);
+    hasDie = false;
     position = Vector2(startingPosition.x, startingPosition.y - 20);
     current = PlayerState.idle;
+    // game.reset();
+    // game.resumeEngine();
+    // Navigator.of(gameRef.context).pushReplacement(
+    //   MaterialPageRoute(
+    //     builder: (context) =>
+    //         GamePlay(context: gameRef.context, level: levelData.selectedLevel),
+    //   ),
+    // );
   }
 }

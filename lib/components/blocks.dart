@@ -28,7 +28,7 @@ class Blocks extends SpriteAnimationComponent
     priority = -1;
 
     final hitboxShape = RectangleHitbox(
-      angle: -0.09,
+      angle: -0.1,
     );
     add(hitboxShape);
 
@@ -77,4 +77,8 @@ class Blocks extends SpriteAnimationComponent
       ),
     );
   }
+
+  void reset() {
+  }
+
 }

@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Level08.tmx",
+    "activeFile": "Level10.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -131,26 +131,26 @@
         },
         "Level08.tmx": {
             "expandedObjectLayers": [
-                4,
-                3
+                3,
+                4
             ],
             "scale": 0.0625,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 5376,
-                "y": 3728
+                "x": 5272,
+                "y": 3032
             }
         },
         "Level09.tmx": {
             "expandedObjectLayers": [
-                4,
-                3
+                3,
+                4
             ],
             "scale": 0.125,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 5264,
-                "y": 3024
+                "x": 5280,
+                "y": 3036
             }
         },
         "Level10.tmx": {
@@ -158,10 +158,10 @@
                 4
             ],
             "scale": 0.0625,
-            "selectedLayer": 5,
+            "selectedLayer": 6,
             "viewCenter": {
-                "x": 4624,
-                "y": 3024
+                "x": 5264,
+                "y": 4304
             }
         },
         "Map (100x100).tmx": {
@@ -171,21 +171,21 @@
             "scale": 0.032242424242424246,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 10390.03759398496,
-                "y": 27231.203007518794
+                "x": 13181.390977443607,
+                "y": 13196.898496240601
             }
         },
         "Map (100x23).tmx": {
             "expandedObjectLayers": [
-                4,
+                2,
                 3,
-                2
+                4
             ],
             "scale": 0.03125,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 3232,
-                "y": 3904
+                "x": 11328,
+                "y": 2640
             }
         },
         "Map (32x32).tsx": {
@@ -199,8 +199,8 @@
             "scale": 0.03125,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 12992,
-                "y": 9984
+                "x": 10560,
+                "y": 1328
             }
         },
         "Obstacle_01.tsx": {
@@ -265,44 +265,28 @@
     "map.tileWidth": 227,
     "map.width": 100,
     "openFiles": [
-        "Pixel Game.tsx",
-        "Level01.tmx",
-        "DLevel01.tsx",
-        "Level02.tmx",
-        "Level04.tmx",
-        "Map (32x32).tsx",
-        "Level05.tmx",
-        "Ground_02.tsx",
-        "Ground_03.tsx",
-        "Ground_05.tsx",
-        "Ground_06.tsx",
-        "Ground_07.tsx",
-        "Ground_08.tsx",
-        "Level03.tmx",
-        "Level06.tmx",
+        "Level08.tmx",
         "Level09.tmx",
-        "Ground_14.tsx",
-        "Obstacle_01.tsx",
-        "right.tsx",
-        "Ground_13.tsx",
-        "Ground_01.tsx",
-        "Level08.tmx"
+        "Level10.tmx",
+        "Map (80x10).tmx",
+        "Map (100x100).tmx",
+        "Map (100x23).tmx"
     ],
     "project": "Pixel Game.tiled-project",
     "property.type": "string",
     "recentFiles": [
-        "Pixel Game.tsx",
+        "Level08.tmx",
+        "Level09.tmx",
+        "Map (100x23).tmx",
+        "Map (100x100).tmx",
         "Map (80x10).tmx",
+        "Level10.tmx",
+        "Pixel Game.tsx",
         "Ground_01.tsx",
         "Ground_13.tsx",
         "right.tsx",
         "Obstacle_01.tsx",
-        "Ground_14.tsx",
-        "Ground_08.tsx",
-        "Ground_07.tsx",
-        "DLevel01.tsx",
-        "Map (32x32).tsx",
-        "Ground_02.tsx"
+        "Ground_14.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

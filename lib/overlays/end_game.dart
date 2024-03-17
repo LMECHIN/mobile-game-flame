@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/components/game_play.dart';
 import 'package:flutter_application_1/components/main_menu.dart';
-import 'package:flutter_application_1/overlays/pause_button.dart';
+import 'package:flutter_application_1/models/level_data.dart';
 import 'package:flutter_application_1/overlays/pause_menu.dart';
 import 'package:flutter_application_1/pixel_game.dart';
+import 'package:provider/provider.dart';
 
 class EndGame extends StatelessWidget {
   static const String id = 'EndGame';
@@ -12,6 +14,7 @@ class EndGame extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final levelData = Provider.of<LevelData>(context);
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -23,7 +26,7 @@ class EndGame extends StatelessWidget {
               'Level Completed !',
               style: TextStyle(
                 fontSize: 50.0,
-                color: Colors.black,
+                color: Colors.white,
                 shadows: [
                   Shadow(
                     blurRadius: 20.0,
@@ -31,6 +34,7 @@ class EndGame extends StatelessWidget {
                     offset: Offset(0, 0),
                   )
                 ],
+                decoration: TextDecoration.none,
               ),
             ),
           ),
@@ -39,22 +43,15 @@ class EndGame extends StatelessWidget {
             width: MediaQuery.of(context).size.width / 3,
             child: ElevatedButton(
               onPressed: () {
-                game.resumeEngine();
-                game.overlays.remove(PauseMenu.id);
-                game.overlays.add(PauseButton.id);
-              },
-              child: const Text('Resume'),
-            ),
-          ),
-
-          SizedBox(
-            width: MediaQuery.of(context).size.width / 3,
-            child: ElevatedButton(
-              onPressed: () {
-                game.overlays.remove(PauseMenu.id);
-                game.overlays.add(PauseButton.id);
+                game.overlays.remove(EndGame.id);
                 game.reset();
                 game.resumeEngine();
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        GamePlay(level: levelData.selectedLevel),
+                  ),
+                );
               },
               child: const Text('Restart'),
             ),
@@ -74,7 +71,7 @@ class EndGame extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text('Exit'),
+              child: const Text('Main menu'),
             ),
           ),
         ],

@@ -42,4 +42,18 @@ class BlocksAnimated extends SpriteAnimationComponent
     );
     return super.onLoad();
   }
+
+  void reset() {
+    animation = SpriteAnimation.fromFrameData(
+      game.images.fromCache('Sprites/14-TileSets/$texture.png'),
+      SpriteAnimationData.range(
+        start: start,
+        end: end,
+        amount: color,
+        stepTimes: speedLoop,
+        textureSize: Vector2(264, 264),
+        loop: loop,
+      ),
+    );
+  }
 }
