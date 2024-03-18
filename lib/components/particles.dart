@@ -39,10 +39,10 @@ class Particles extends SpriteAnimationComponent
     animation = SpriteAnimation.fromFrameData(
       game.images.fromCache('Sprites/14-TileSets/particle.png'),
       SpriteAnimationData.sequenced(
-        amount: 1,
-        stepTime: 1,
+        amount: 5,
+        stepTime: 0.025,
         textureSize: Vector2.all(264),
-        loop: false,
+        loop: true,
       ),
     );
     super.onLoad();

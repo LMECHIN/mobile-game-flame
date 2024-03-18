@@ -49,7 +49,7 @@ class Level extends World with HasGameRef<PixelGame> {
           default:
             final particles = Particles(
               position: Vector2(spawnParticle.x, spawnParticle.y),
-              size: Vector2(spawnParticle.width / 8, spawnParticle.height / 8),
+              size: Vector2(spawnParticle.width / 6, spawnParticle.height / 6),
             );
             particles.widthMap = level.width;
             particles.heightMap = level.height;
@@ -126,11 +126,11 @@ class Level extends World with HasGameRef<PixelGame> {
               position: Vector2(spawnBlock.x, spawnBlock.y),
               size: Vector2(spawnBlock.width, spawnBlock.height),
               color: color,
-              texture: textureAnimation,
-              speedLoop: [1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+              texture: 'ground_down',
+              speedLoop: [1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 1],
               loop: loop,
               start: 0,
-              end: 6,
+              end: 16,
             );
             add(blocksBlack);
             Future.delayed(Duration(seconds: time), () {

@@ -4,6 +4,7 @@ import 'package:flutter_application_1/components/levels_menu.dart';
 import 'package:flutter_application_1/components/skins_menu.dart';
 import 'package:flutter_application_1/models/level_data.dart';
 import 'package:flutter_application_1/utils/get_level_data.dart';
+import 'package:flutter_application_1/widget/build_button.dart';
 
 class MainMenu extends StatelessWidget {
   const MainMenu({Key? key}) : super(key: key);
@@ -34,9 +35,24 @@ class MainMenu extends StatelessWidget {
                 children: [
                   const Padding(
                     padding: EdgeInsets.symmetric(vertical: 50.0),
-                    child: Text('Game2d'),
+                    child: Text(
+                      'Game2d',
+                      style: TextStyle(
+                        fontSize: 50.0,
+                        color: Colors.white,
+                        shadows: [
+                          Shadow(
+                            blurRadius: 20.0,
+                            color: Colors.white,
+                            offset: Offset(0, 0),
+                          )
+                        ],
+                        decoration: TextDecoration.none,
+                      ),
+                    ),
                   ),
-                  ElevatedButton(
+                  BuildButton().buildMenuButton(
+                    text: 'Play',
                     onPressed: () {
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
@@ -46,9 +62,9 @@ class MainMenu extends StatelessWidget {
                         ),
                       );
                     },
-                    child: const Text('Play'),
                   ),
-                  ElevatedButton(
+                  BuildButton().buildMenuButton(
+                    text: 'Level',
                     onPressed: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
@@ -56,9 +72,9 @@ class MainMenu extends StatelessWidget {
                         ),
                       );
                     },
-                    child: const Text('Level'),
                   ),
-                  ElevatedButton(
+                  BuildButton().buildMenuButton(
+                    text: 'Skin',
                     onPressed: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
@@ -66,7 +82,6 @@ class MainMenu extends StatelessWidget {
                         ),
                       );
                     },
-                    child: const Text('Skin'),
                   ),
                 ],
               ),

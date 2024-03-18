@@ -152,7 +152,7 @@ class Player extends SpriteAnimationGroupComponent
   ) {
     accumulatedTime += _dt;
     if (other is Obstacle) {
-      _respawn();
+      respawn();
       // reset();
     }
     if (other is BoostUp) {
@@ -289,7 +289,7 @@ class Player extends SpriteAnimationGroupComponent
   void _playSlide(double dt) {
     // normalMoveSpeed = moveSpeed;
     moveSpeed = (4000000 * dt) / 1.68;
-    Future.delayed(const Duration(milliseconds: 100), () {
+    Future.delayed(const Duration(milliseconds: 50), () {
       moveSpeed = 800;
     });
     hasSlide = false;
@@ -309,12 +309,14 @@ class Player extends SpriteAnimationGroupComponent
           if (velocity.x > 0) {
             fixCam = 1;
             velocity.x = 0;
+            respawn();
             position.x = block.x - hitbox.offsetX - hitbox.width;
             break;
           }
           if (velocity.x < 0) {
             fixCam = 2;
             velocity.x = 0;
+            respawn();
             position.x = block.x + block.width + hitbox.width + hitbox.offsetX;
             break;
           }
@@ -351,11 +353,13 @@ class Player extends SpriteAnimationGroupComponent
         if (checkCollision(this, block)) {
           if (velocity.y > 0) {
             velocity.y = 0;
+            // respawn();
             position.y = block.y - hitbox.height - hitbox.offsetY;
             isOnGround = true;
             break;
           }
           if (velocity.y < 0) {
+            // respawn();
             velocity.y = 0;
             position.y = block.y + block.height - hitbox.offsetY;
           }
@@ -364,7 +368,7 @@ class Player extends SpriteAnimationGroupComponent
     }
   }
 
-  void _respawn() async {
+  void respawn() async {
     const canMoveDuration = Duration(milliseconds: 400);
     hasDie = true;
     current = PlayerState.death;
