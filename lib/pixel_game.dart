@@ -54,8 +54,8 @@ class PixelGame extends FlameGame
     );
     cam = CameraComponent.withFixedResolution(
       world: world,
-      width: world.level.width,
-      height: world.level.height,
+      width: 9080,
+      height: 5221,
     );
 
     cam.viewfinder.anchor = const Anchor(0.30, 0.5);
