@@ -1,9 +1,11 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_application_1/components/game_play.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_application_1/models/level_data.dart';
+import 'package:flutter_application_1/widget/build_button.dart';
 import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
 
@@ -53,36 +55,61 @@ class LevelsMenu extends StatelessWidget {
             }).toList();
 
             return Scaffold(
-              body: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Column(
+              body: Stack(
+                children: [
+                  Center(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: cleanedLevels.map((level) {
-                        return ElevatedButton(
-                          onPressed: () {
-                            levelData.selectLevel(level);
-                            Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                builder: (context) => GamePlay(
-                                  level: level,
-                                ),
-                              ),
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: cleanedLevels.map((level) {
+                            return ElevatedButton(
+                              onPressed: () {
+                                levelData.selectLevel(level);
+                                Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                    builder: (context) => GamePlay(
+                                      level: level,
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: Text(level),
                             );
-                          },
-                          child: Text(level),
-                        );
-                      }).toList(),
+                          }).toList(),
+                        ),
+                      ],
                     ),
-                    ElevatedButton(
+                  ),
+                  Positioned(
+                    top: 20,
+                    left: 20,
+                    child: BuildButton(
+                      effects: const {
+                        EffectState.shimmer: [
+                          ShimmerEffect(
+                            color: Colors.transparent,
+                            duration: Duration(seconds: 0),
+                          ),
+                        ],
+                      },
+                      text: 'Back',
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
-                      child: const Text('Back'),
+                      colors: const {
+                        ColorState.backgroundColor:
+                            Color.fromARGB(255, 188, 2, 2),
+                        ColorState.backgroundColorOnPressed: Colors.black,
+                        ColorState.borderColor: Color.fromARGB(255, 188, 2, 2),
+                        ColorState.borderColorOnPressed: Colors.black54,
+                        ColorState.shadowColor: Color.fromARGB(255, 188, 2, 2),
+                        ColorState.shadowColorOnPressed: Colors.black54,
+                      },
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             );
           } else {

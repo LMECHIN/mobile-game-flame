@@ -2,11 +2,13 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_application_1/models/player_data.dart';
+import 'package:flutter_application_1/widget/build_button.dart';
 import 'package:provider/provider.dart';
 
 class SkinsMenu extends StatelessWidget {
-  const SkinsMenu({super.key});
+  const SkinsMenu({Key? key});
 
   Future<List<String>> getFoldersInAssetFolder(String folderPath) async {
     List<String> folderList = [];
@@ -55,33 +57,73 @@ class SkinsMenu extends StatelessWidget {
           List<String>? skins = snapshot.data;
           if (skins != null && skins.isNotEmpty) {
             return Scaffold(
-              body: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Column(
+              body: Stack(
+                children: [
+                  Center(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: skins.map((skin) {
-                        return ElevatedButton(
-                          onPressed: () {
-                            playerData.selectSkin(skin);
-                          },
-                          child: Text(skin),
-                        );
-                      }).toList(),
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: skins.map((skin) {
+                            return ElevatedButton(
+                              onPressed: () {
+                                playerData.selectSkin(skin);
+                              },
+                              child: Text(skin),
+                            );
+                          }).toList(),
+                        ),
+                      ],
                     ),
-                    ElevatedButton(
+                  ),
+                  Positioned(
+                    top: 20,
+                    left: 20,
+                    child: BuildButton(
+                      effects: const {
+                        EffectState.shimmer: [
+                          ShimmerEffect(
+                            color: Colors.transparent,
+                            duration: Duration(seconds: 0),
+                          ),
+                        ],
+                      },
+                      text: 'Back',
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
-                      child: const Text('Back'),
+                      colors: const {
+                        ColorState.backgroundColor:
+                            Color.fromARGB(255, 188, 2, 2),
+                        ColorState.backgroundColorOnPressed: Colors.black,
+                        ColorState.borderColor: Color.fromARGB(255, 188, 2, 2),
+                        ColorState.borderColorOnPressed: Colors.black54,
+                        ColorState.shadowColor: Color.fromARGB(255, 188, 2, 2),
+                        ColorState.shadowColorOnPressed: Colors.black54,
+                      },
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             );
           } else {
-            return const Center(child: Text("No skins found."));
+            return const Center(
+              child: Text(
+                "No skins found.",
+                style: TextStyle(
+                  color: Colors.white,
+                  shadows: [
+                    Shadow(
+                      blurRadius: 20.0,
+                      color: Colors.white,
+                      offset: Offset(0, 0),
+                    )
+                  ],
+                  decoration: TextDecoration.none,
+                ),
+              ),
+            );
           }
         }
       },
