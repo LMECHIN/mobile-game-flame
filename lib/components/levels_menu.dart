@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_application_1/components/game_play.dart';
 import 'package:flutter/services.dart' show rootBundle;
@@ -9,10 +10,28 @@ import 'package:flutter_application_1/widget/build_button.dart';
 import 'package:path/path.dart' as p;
 import 'package:provider/provider.dart';
 
-class LevelsMenu extends StatelessWidget {
+class LevelsMenu extends StatefulWidget {
   const LevelsMenu({super.key});
 
+  @override
+  State<LevelsMenu> createState() => _LevelsMenuState();
+}
+
+class _LevelsMenuState extends State<LevelsMenu> {
+  late FixedExtentScrollController controller;
   static List<String> _assetList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    controller = FixedExtentScrollController();
+  }
+
+  @override
+  void dispose() {
+    controller.dispose;
+    super.dispose();
+  }
 
   Future<List<String>> getFilesInAssetFolder(String folderPath) async {
     if (_assetList.isNotEmpty) {
@@ -58,28 +77,36 @@ class LevelsMenu extends StatelessWidget {
               body: Stack(
                 children: [
                   Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: cleanedLevels.map((level) {
-                            return ElevatedButton(
-                              onPressed: () {
-                                levelData.selectLevel(level);
-                                Navigator.of(context).pushReplacement(
-                                  MaterialPageRoute(
-                                    builder: (context) => GamePlay(
-                                      level: level,
+                    child: RotatedBox(
+                      quarterTurns: -1,
+                      child: ListWheelScrollView(
+                        controller: controller,
+                        itemExtent: 250,
+                        physics: const FixedExtentScrollPhysics(),
+                        diameterRatio: 1.5,
+                        perspective: 0.008,
+                        children: cleanedLevels.map((level) {
+                          return RotatedBox(
+                            quarterTurns: 1,
+                            child: SizedBox(
+                              height: double.infinity,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  levelData.selectLevel(level);
+                                  Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(
+                                      builder: (context) => GamePlay(
+                                        level: level,
+                                      ),
                                     ),
-                                  ),
-                                );
-                              },
-                              child: Text(level),
-                            );
-                          }).toList(),
-                        ),
-                      ],
+                                  );
+                                },
+                                child: Text(level),
+                              ),
+                            ),
+                          );
+                        }).toList(),
+                      ),
                     ),
                   ),
                   Positioned(
@@ -106,6 +133,34 @@ class LevelsMenu extends StatelessWidget {
                         ColorState.borderColorOnPressed: Colors.black54,
                         ColorState.shadowColor: Color.fromARGB(255, 188, 2, 2),
                         ColorState.shadowColorOnPressed: Colors.black54,
+                      },
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 20,
+                    right: 20,
+                    child: GestureDetector(
+                      child: const Icon(Icons.arrow_forward),
+                      onTap: () {
+                        final nextLevel = controller.selectedItem + 1;
+
+                        controller.animateToItem(nextLevel,
+                            duration: const Duration(seconds: 1),
+                            curve: Curves.bounceOut);
+                      },
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 20,
+                    left: 20,
+                    child: GestureDetector(
+                      child: const Icon(Icons.arrow_back),
+                      onTap: () {
+                        final nextLevel = controller.selectedItem - 1;
+
+                        controller.animateToItem(nextLevel,
+                            duration: const Duration(seconds: 1),
+                            curve: Curves.bounceOut);
                       },
                     ),
                   ),
