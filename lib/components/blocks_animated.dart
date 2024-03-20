@@ -71,8 +71,8 @@ class BlocksAnimated extends SpriteAnimationComponent
       Set<Vector2> intersectionPoints, PositionComponent other) {
     if (other is Player) {
       if (hasSlide) {
-        other.moveSpeed = 800;
-        removeFromParent();
+        // other.moveSpeed = 800;
+        // removeFromParent();
       } else {
         other.respawn();
       }
