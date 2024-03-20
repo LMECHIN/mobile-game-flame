@@ -44,6 +44,8 @@ dependencies:
   hive: ^2.2.3
   hive_generator: ^2.0.1
   flutter_animate: ^4.5.0
+  spritewidget: ^2.0.1
+  video_player: ^2.8.3
 
 dev_dependencies:
   flutter_test:
@@ -73,8 +75,10 @@ flutter:
     - assets/images/Sprites/14-TileSets/
     - assets/images/Sprites/14-TileSets/neon/
     - assets/tiles/
-    - assets/images/Sprites/Skins/01-King Human/
-    - assets/images/Sprites/Skins/02-King Pig/
+    - assets/images/Sprites/Skins/KingHuman/
+    - assets/video/KingHuman/
+    - assets/video/KingPig/
+    - assets/images/Sprites/Skins/KingPig/
     - assets/images/HUD/
     - assets/images/Background/
     - assets/images/Checkpoints/

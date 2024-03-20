@@ -1,7 +1,5 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_application_1/components/game_play.dart';
 import 'package:flutter/services.dart' show rootBundle;
@@ -81,15 +79,16 @@ class _LevelsMenuState extends State<LevelsMenu> {
                       quarterTurns: -1,
                       child: ListWheelScrollView(
                         controller: controller,
-                        itemExtent: 250,
+                        itemExtent: 500,
                         physics: const FixedExtentScrollPhysics(),
                         diameterRatio: 1.5,
-                        perspective: 0.008,
+                        // perspective: 0.008,
                         children: cleanedLevels.map((level) {
                           return RotatedBox(
                             quarterTurns: 1,
                             child: SizedBox(
-                              height: double.infinity,
+                              width: 400,
+                              height: 200,
                               child: ElevatedButton(
                                 onPressed: () {
                                   levelData.selectLevel(level);

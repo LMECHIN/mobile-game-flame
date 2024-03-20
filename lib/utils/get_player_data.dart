@@ -6,7 +6,7 @@ Future<PlayerData> getPlayerData() async {
   PlayerData? playerData = box.get(PlayerData.playerDataKey);
 
   if (playerData == null) {
-    playerData = PlayerData('01-King Human');
+    playerData = PlayerData('KingHuman');
     await box.put(PlayerData.playerDataKey, playerData);
   }
 

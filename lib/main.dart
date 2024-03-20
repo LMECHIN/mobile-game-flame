@@ -26,7 +26,7 @@ Future<void> main() async {
       providers: [
         FutureProvider<PlayerData>(
           create: (BuildContext context) => getPlayerData(),
-          initialData: PlayerData('01-King Human'),
+          initialData: PlayerData('KingHuman'),
         ),
         FutureProvider<LevelData>(
           create: (BuildContext context) => getLevelData(),
