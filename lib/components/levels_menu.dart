@@ -1,11 +1,9 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_application_1/components/game_play.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_application_1/models/level_data.dart';
 import 'package:flutter_application_1/widget/build_button.dart';
-import 'package:path/path.dart' as p;
+import 'package:flutter_application_1/widget/find_path.dart';
 import 'package:provider/provider.dart';
 
 class LevelsMenu extends StatefulWidget {
@@ -17,7 +15,6 @@ class LevelsMenu extends StatefulWidget {
 
 class _LevelsMenuState extends State<LevelsMenu> {
   late FixedExtentScrollController controller;
-  static List<String> _assetList = [];
 
   @override
   void initState() {
@@ -31,34 +28,12 @@ class _LevelsMenuState extends State<LevelsMenu> {
     super.dispose();
   }
 
-  Future<List<String>> getFilesInAssetFolder(String folderPath) async {
-    if (_assetList.isNotEmpty) {
-      return _assetList;
-    }
-
-    try {
-      String manifest = await rootBundle.loadString('AssetManifest.json');
-      Map<String, dynamic> manifestMap = json.decode(manifest);
-      _assetList = manifestMap.keys
-          .where((String key) =>
-              key.startsWith(folderPath) && key.endsWith('.tmx'))
-          .map((String key) {
-        String fileName = p.basename(key);
-        return fileName;
-      }).toList();
-    } catch (e) {
-      print("Error retrieving asset files : $e");
-    }
-
-    return _assetList;
-  }
-
   @override
   Widget build(BuildContext context) {
     final levelData = Provider.of<LevelData>(context);
     String assetFolderPath = 'assets/tiles/';
     return FutureBuilder<List<String>>(
-      future: getFilesInAssetFolder(assetFolderPath),
+      future: getFilesInAssetFolder(assetFolderPath, '.tmx'),
       builder: (context, AsyncSnapshot<List<String>> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());

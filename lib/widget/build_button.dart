@@ -23,13 +23,15 @@ class BuildButton extends StatefulWidget {
   final VoidCallback onPressed;
   final Map<ColorState, Color> colors;
   final Map<EffectState, List<Effect<dynamic>>> effects;
+  final double? size;
   const BuildButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed,
     this.colors = const {},
     this.effects = const {},
-  }) : super(key: key);
+    this.size = 25,
+  });
 
   @override
   State<BuildButton> createState() => _BuildButtonState();
@@ -113,9 +115,9 @@ class _BuildButtonState extends State<BuildButton> {
             ),
             child: Text(
               widget.text,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.black,
-                fontSize: 25,
+                fontSize: widget.size,
                 fontFamily: 'DripOctober',
               ),
             ),

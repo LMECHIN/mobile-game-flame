@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_application_1/components/main_menu.dart';
 import 'package:flutter_application_1/pixel_game.dart';
+import 'package:flutter_application_1/widget/build_button.dart';
 import 'pause_button.dart';
 
 class PauseMenu extends StatelessWidget {
@@ -36,33 +38,69 @@ class PauseMenu extends StatelessWidget {
           ),
 
           SizedBox(
-            width: MediaQuery.of(context).size.width / 3,
-            child: ElevatedButton(
+            width: MediaQuery.of(context).size.width / 7,
+            child: BuildButton(
+              text: 'Resume',
+              size: 15,
+              colors: const {
+                ColorState.backgroundColor: Color.fromARGB(255, 2, 8, 188),
+                ColorState.backgroundColorOnPressed: Colors.black,
+                ColorState.borderColor: Color.fromARGB(255, 2, 8, 188),
+                ColorState.borderColorOnPressed: Colors.black54,
+                ColorState.shadowColor: Color.fromARGB(255, 2, 8, 188),
+                ColorState.shadowColorOnPressed: Colors.black54,
+              },
               onPressed: () {
                 game.resumeEngine();
                 game.overlays.remove(PauseMenu.id);
                 game.overlays.add(PauseButton.id);
               },
-              child: const Text('Resume'),
             ),
           ),
 
           SizedBox(
-            width: MediaQuery.of(context).size.width / 3,
-            child: ElevatedButton(
+            width: MediaQuery.of(context).size.width / 7,
+            child: BuildButton(
+              text: 'Restart',
+              size: 15,
+              effects: const {
+                EffectState.shimmer: [
+                  ShimmerEffect(
+                    color: Colors.transparent,
+                    duration: Duration(seconds: 0),
+                  ),
+                ],
+              },
               onPressed: () {
                 game.overlays.remove(PauseMenu.id);
                 game.overlays.add(PauseButton.id);
                 game.reset();
                 game.resumeEngine();
               },
-              child: const Text('Restart'),
             ),
           ),
 
           SizedBox(
-            width: MediaQuery.of(context).size.width / 3,
-            child: ElevatedButton(
+            width: MediaQuery.of(context).size.width / 7,
+            child: BuildButton(
+              text: 'Exit',
+              size: 15,
+              effects: const {
+                EffectState.shimmer: [
+                  ShimmerEffect(
+                    color: Colors.transparent,
+                    duration: Duration(seconds: 0),
+                  ),
+                ],
+              },
+              colors: const {
+                ColorState.backgroundColor: Color.fromARGB(255, 188, 2, 2),
+                ColorState.backgroundColorOnPressed: Colors.black,
+                ColorState.borderColor: Color.fromARGB(255, 188, 2, 2),
+                ColorState.borderColorOnPressed: Colors.black54,
+                ColorState.shadowColor: Color.fromARGB(255, 188, 2, 2),
+                ColorState.shadowColorOnPressed: Colors.black54,
+              },
               onPressed: () {
                 game.overlays.remove(PauseMenu.id);
                 game.reset();
@@ -74,7 +112,6 @@ class PauseMenu extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text('Exit'),
             ),
           ),
         ],

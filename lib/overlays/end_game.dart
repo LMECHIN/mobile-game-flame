@@ -1,16 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_application_1/components/game_play.dart';
 import 'package:flutter_application_1/components/main_menu.dart';
 import 'package:flutter_application_1/models/level_data.dart';
 import 'package:flutter_application_1/overlays/pause_menu.dart';
 import 'package:flutter_application_1/pixel_game.dart';
+import 'package:flutter_application_1/widget/build_button.dart';
+import 'package:flutter_application_1/widget/text_styles_list.dart';
 import 'package:provider/provider.dart';
 
-class EndGame extends StatelessWidget {
+class EndGame extends StatefulWidget {
   static const String id = 'EndGame';
   final PixelGame game;
 
   const EndGame({super.key, required this.game});
+
+  @override
+  State<EndGame> createState() => _EndGameState();
+}
+
+class _EndGameState extends State<EndGame> {
+  late int selectedIndex;
+  late List<TextStyle> textStyles;
+
+  @override
+  void initState() {
+    super.initState();
+    selectedIndex = 0;
+    textStyles = TextStylesList.getTextStyles([80, 80, 80, 80, 80, 80]);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,33 +37,48 @@ class EndGame extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Pause menu title.
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 50.0),
-            child: Text(
-              'Level Completed !',
-              style: TextStyle(
-                fontSize: 50.0,
-                color: Colors.white,
-                shadows: [
-                  Shadow(
-                    blurRadius: 20.0,
-                    color: Colors.white,
-                    offset: Offset(0, 0),
-                  )
-                ],
-                decoration: TextDecoration.none,
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 50.0),
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  selectedIndex++;
+                  if (selectedIndex >= textStyles.length) {
+                    selectedIndex = 0;
+                  }
+                });
+              },
+              child: Center(
+                child: AnimatedDefaultTextStyle(
+                  duration: const Duration(seconds: 1),
+                  style: textStyles[selectedIndex],
+                  child: const Text(
+                    'Level Completed !',
+                  ),
+                ),
               ),
-            ),
+            )
+                .animate()
+                .fade()
+                .scaleXY(
+                  duration: const Duration(seconds: 1),
+                  curve: Curves.bounceOut,
+                )
+                .then(
+                  delay: const Duration(seconds: 2),
+                  duration: const Duration(seconds: 1),
+                  curve: Curves.easeInBack,
+                ),
           ),
-
           SizedBox(
-            width: MediaQuery.of(context).size.width / 3,
-            child: ElevatedButton(
+            width: MediaQuery.of(context).size.width / 7,
+            child: BuildButton(
+              text: 'Restart',
+              size: 15,
               onPressed: () {
-                game.overlays.remove(EndGame.id);
-                game.reset();
-                game.resumeEngine();
+                widget.game.overlays.remove(EndGame.id);
+                widget.game.reset();
+                widget.game.resumeEngine();
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
                     builder: (context) =>
@@ -53,17 +86,33 @@ class EndGame extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text('Restart'),
             ),
           ),
-
           SizedBox(
-            width: MediaQuery.of(context).size.width / 3,
-            child: ElevatedButton(
+            width: MediaQuery.of(context).size.width / 7,
+            child: BuildButton(
+              text: 'Main menu',
+              size: 15,
+              effects: const {
+                EffectState.shimmer: [
+                  ShimmerEffect(
+                    color: Colors.transparent,
+                    duration: Duration(seconds: 0),
+                  ),
+                ],
+              },
+              colors: const {
+                ColorState.backgroundColor: Color.fromARGB(255, 2, 8, 188),
+                ColorState.backgroundColorOnPressed: Colors.black,
+                ColorState.borderColor: Color.fromARGB(255, 2, 8, 188),
+                ColorState.borderColorOnPressed: Colors.black54,
+                ColorState.shadowColor: Color.fromARGB(255, 2, 8, 188),
+                ColorState.shadowColorOnPressed: Colors.black54,
+              },
               onPressed: () {
-                game.overlays.remove(PauseMenu.id);
-                game.reset();
-                game.resumeEngine();
+                widget.game.overlays.remove(PauseMenu.id);
+                widget.game.reset();
+                widget.game.resumeEngine();
 
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
@@ -71,7 +120,6 @@ class EndGame extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text('Main menu'),
             ),
           ),
         ],

@@ -1,13 +1,10 @@
 import 'dart:async';
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_application_1/models/player_data.dart';
 import 'package:flutter_application_1/widget/build_button.dart';
+import 'package:flutter_application_1/widget/find_path.dart';
 import 'package:provider/provider.dart';
-import 'package:path/path.dart' as p;
-import 'package:video_player/video_player.dart';
 
 class SkinsMenu extends StatefulWidget {
   const SkinsMenu({super.key});
@@ -18,87 +15,11 @@ class SkinsMenu extends StatefulWidget {
 
 class _SkinsMenuState extends State<SkinsMenu> {
   late FixedExtentScrollController controller;
-  static List<String> _assetList = [];
   late Future<List<String>> _skinListFuture;
   int imageIndex = 0;
   int skinSize = 0;
-  late final Map<String, List<VideoPlayerController>> _videoPlayerControllers =
-      {};
-
-  Future<List<String>> getFoldersInAssetFolder(String folderPath) async {
-    List<String> folderList = [];
-
-    try {
-      List<String> assetList = await rootBundle
-          .loadString('AssetManifest.json')
-          .then((String manifest) {
-        Map<String, dynamic> manifestMap = json.decode(manifest);
-        return manifestMap.keys
-            .where((String key) =>
-                key.startsWith(folderPath) &&
-                key.contains('/') &&
-                !key.endsWith('.'))
-            .toList();
-      });
-
-      for (String assetPath in assetList) {
-        List<String> pathComponents = assetPath.split('/');
-        if (pathComponents.length > 1) {
-          String folderName = pathComponents[4];
-          if (!folderList.contains(folderName)) {
-            folderList.add(folderName);
-          }
-        }
-      }
-    } catch (e) {
-      print("Error retrieving asset folders: $e");
-    }
-
-    return folderList;
-  }
-
-  Future<List<String>> getFilesInAssetFolder(String folderPath) async {
-    if (_assetList.isNotEmpty) {
-      return _assetList;
-    }
-
-    try {
-      String manifest = await rootBundle.loadString('AssetManifest.json');
-      Map<String, dynamic> manifestMap = json.decode(manifest);
-      _assetList = manifestMap.keys
-          .where((String key) =>
-              key.startsWith(folderPath) && key.endsWith('.mp4'))
-          .map((String key) {
-        String fileName = p.basename(key);
-        return fileName;
-      }).toList();
-    } catch (e) {
-      print("Error retrieving asset files : $e");
-    }
-
-    return _assetList;
-  }
-
-  void _loadVideosForSkin(String skin) {
-    getFilesInAssetFolder('assets/images/Sprites/Skins/$skin')
-        .then((skinMoves) {
-      print(skin);
-      print(skinMoves);
-      if (skinMoves.isNotEmpty) {
-        List<VideoPlayerController> controllers = [];
-        for (String skinMove in skinMoves) {
-          VideoPlayerController controller = VideoPlayerController.asset(
-            "assets/video/$skin/$skinMove",
-          );
-          controller.initialize().then((_) {
-            setState(() {});
-          });
-          controllers.add(controller);
-        }
-        _videoPlayerControllers[skin] = controllers;
-      }
-    });
-  }
+  late String currentSkinImage;
+  late Map<String, String> skinImages = {};
 
   @override
   void initState() {
@@ -107,20 +28,29 @@ class _SkinsMenuState extends State<SkinsMenu> {
     _skinListFuture = getFoldersInAssetFolder('assets/images/Sprites/Skins/');
     _skinListFuture.then((skins) {
       skinSize = skins.length;
-      for (String skin in skins) {
-        _loadVideosForSkin(skin);
-      }
+      loadSkinImages(skins);
     });
+  }
+
+  Future<void> loadSkinImages(List<String> skins) async {
+    if (skins.isNotEmpty) {
+      List<Future<void>> futures = [];
+      for (String skin in skins) {
+        String idleImagePath =
+            "assets/images/Sprites/Skins/$skin/SkinsMenu/idle.gif";
+        String deathImagePath =
+            "assets/images/Sprites/Skins/$skin/SkinsMenu/death.gif";
+        futures.add(precacheImage(AssetImage(idleImagePath), context));
+        futures.add(precacheImage(AssetImage(deathImagePath), context));
+        skinImages[skin] = idleImagePath;
+      }
+      await Future.wait(futures);
+    }
   }
 
   @override
   void dispose() {
     controller.dispose();
-    _videoPlayerControllers.forEach((skin, controllers) {
-      controllers.forEach((controller) {
-        controller.dispose();
-      });
-    });
     super.dispose();
   }
 
@@ -151,38 +81,129 @@ class _SkinsMenuState extends State<SkinsMenu> {
                         children: skins.map((skin) {
                           return RotatedBox(
                             quarterTurns: 1,
-                            child: SizedBox(
-                              width: 200,
-                              height: 400,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  playerData.selectSkin(skin);
-                                  setState(() {
-                                    _videoPlayerControllers[skin]
-                                        ?.forEach((controller) {
-                                      controller.value.isPlaying
-                                          ? controller.pause()
-                                          : controller.play();
-                                      controller.setLooping(true);
-                                    });
-                                  });
-                                },
-                                child: _videoPlayerControllers[skin] != null
-                                    ? AspectRatio(
-                                        aspectRatio:
-                                            _videoPlayerControllers[skin]![0]
-                                                .value
-                                                .aspectRatio,
-                                        child: Stack(
-                                          children:
-                                              _videoPlayerControllers[skin]!
-                                                  .map((controller) {
-                                            return VideoPlayer(controller);
-                                          }).toList(),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    BuildButton(
+                                      text: 'Death',
+                                      size: 15,
+                                      effects: const {
+                                        EffectState.shimmer: [
+                                          ShimmerEffect(
+                                            color: Colors.transparent,
+                                            duration: Duration(seconds: 0),
+                                          ),
+                                        ],
+                                      },
+                                      onPressed: () {
+                                        setState(() {
+                                          skinImages[skin] =
+                                              "assets/images/Sprites/Skins/$skin/SkinsMenu/death.gif";
+                                        });
+                                      },
+                                    ),
+                                    BuildButton(
+                                      text: 'Slide',
+                                      size: 15,
+                                      effects: const {
+                                        EffectState.shimmer: [
+                                          ShimmerEffect(
+                                            color: Colors.transparent,
+                                            duration: Duration(seconds: 0),
+                                          ),
+                                        ],
+                                      },
+                                      onPressed: () {
+                                        setState(() {
+                                          skinImages[skin] =
+                                              "assets/images/Sprites/Skins/$skin/SkinsMenu/slide.gif";
+                                        });
+                                      },
+                                    ),
+                                    BuildButton(
+                                      text: 'Appearing',
+                                      size: 15,
+                                      effects: const {
+                                        EffectState.shimmer: [
+                                          ShimmerEffect(
+                                            color: Colors.transparent,
+                                            duration: Duration(seconds: 0),
+                                          ),
+                                        ],
+                                      },
+                                      onPressed: () {
+                                        setState(() {
+                                          skinImages[skin] =
+                                              "assets/images/Sprites/Skins/$skin/SkinsMenu/appearing.gif";
+                                        });
+                                      },
+                                    ),
+                                    BuildButton(
+                                      text: 'Idle',
+                                      size: 15,
+                                      effects: const {
+                                        EffectState.shimmer: [
+                                          ShimmerEffect(
+                                            color: Colors.transparent,
+                                            duration: Duration(seconds: 0),
+                                          ),
+                                        ],
+                                      },
+                                      onPressed: () {
+                                        setState(() {
+                                          skinImages[skin] =
+                                              "assets/images/Sprites/Skins/$skin/SkinsMenu/idle.gif";
+                                        });
+                                      },
+                                    ),
+                                  ],
+                                ),
+                                Expanded(
+                                  child: SizedBox(
+                                    width: 200,
+                                    height: 400,
+                                    child: Column(
+                                      children: [
+                                        ElevatedButton(
+                                          onPressed: () {
+                                            playerData.selectSkin(skin);
+                                          },
+                                          child: Image.asset(
+                                            skinImages[skin]!,
+                                            key: UniqueKey(),
+                                          ),
                                         ),
-                                      )
-                                    : Container(),
-                              ),
+                                        BuildButton(
+                                          text: 'Selected',
+                                          colors: const {
+                                            ColorState.backgroundColor:
+                                                Color.fromARGB(255, 2, 8, 188),
+                                            ColorState.backgroundColorOnPressed:
+                                                Colors.black,
+                                            ColorState.borderColor:
+                                                Color.fromARGB(255, 2, 8, 188),
+                                            ColorState.borderColorOnPressed:
+                                                Colors.black54,
+                                            ColorState.shadowColor:
+                                                Color.fromARGB(255, 2, 8, 188),
+                                            ColorState.shadowColorOnPressed:
+                                                Colors.black54,
+                                          },
+                                          onPressed: () {
+                                            // setState(() {
+                                            //   skinImages[skin] =
+                                            //       "assets/images/Sprites/Skins/$skin/SkinsMenu/death.gif";
+                                            // });
+                                          },
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           );
                         }).toList(),
