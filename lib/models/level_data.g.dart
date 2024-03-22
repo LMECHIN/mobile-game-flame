@@ -18,19 +18,16 @@ class LevelDataAdapter extends TypeAdapter<LevelData> {
     };
     return LevelData(
       fields[0] as String,
-      fields[1] as double,
-    )..levelProgress = (fields[2] as Map).cast<String, double>();
+    )..levelProgress = (fields[1] as Map).cast<String, double>();
   }
 
   @override
   void write(BinaryWriter writer, LevelData obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(2)
       ..writeByte(0)
       ..write(obj.selectedLevel)
       ..writeByte(1)
-      ..write(obj.progressBar)
-      ..writeByte(2)
       ..write(obj.levelProgress);
   }
 

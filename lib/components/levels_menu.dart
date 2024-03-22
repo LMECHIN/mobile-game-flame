@@ -15,7 +15,7 @@ class LevelProgressData {
 }
 
 class LevelsMenu extends StatefulWidget {
-  const LevelsMenu({super.key});
+  const LevelsMenu({Key? key}) : super(key: key);
 
   @override
   State<LevelsMenu> createState() => _LevelsMenuState();
@@ -32,7 +32,7 @@ class _LevelsMenuState extends State<LevelsMenu> {
 
   @override
   void dispose() {
-    controller.dispose;
+    controller.dispose(); // Fix: Added parentheses to call dispose method
     super.dispose();
   }
 
@@ -64,7 +64,6 @@ class _LevelsMenuState extends State<LevelsMenu> {
                 levelProgressData.map((data) => data.levelName).toList();
             for (var i = 0; i < levelProgressData.length; i++) {
               double progress = levelProgressData[i].progress;
-              // Mettez à jour le pourcentage de progression dans levelData
               levelData.updateLevelProgress(
                   levelProgressData[i].levelName, progress);
             }
@@ -84,7 +83,6 @@ class _LevelsMenuState extends State<LevelsMenu> {
                           final String level = entry.value;
                           final double progress =
                               levelData.levelProgress[level] ?? 0.0;
-                          print(progress);
                           return RotatedBox(
                             quarterTurns: 1,
                             child: Column(

@@ -6,7 +6,7 @@ Future<LevelData> getLevelData() async {
   LevelData? levelData = box.get(LevelData.levelDataKey);
 
   if (levelData == null) {
-    levelData = LevelData('Level10', 0);
+    levelData = LevelData('Level10.tmx');
     await box.put(LevelData.levelDataKey, levelData);
   }
 

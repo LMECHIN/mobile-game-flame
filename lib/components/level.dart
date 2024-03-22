@@ -22,7 +22,7 @@ class Level extends World with HasGameRef<PixelGame> {
   List<CollisionsBlock> collisionsBlock = [];
   late CameraComponent cam;
   late LevelData _levelData;
-  double get progressBar => _levelData.progressBar;
+  // double get progressBar => _levelData.progressBar;
   late Checkpoint checkpoint;
   double fixedDeltaTime = 0.1 / 60;
   double accumulatedTime = 0;
@@ -69,7 +69,7 @@ class Level extends World with HasGameRef<PixelGame> {
     } else if (_levelData.levelProgress[levelName]! > 100) {
       _levelData.levelProgress[levelName ?? ''] = 100.0;
     }
-    print(_levelData.levelProgress[levelName]);
+    // print(_levelData.levelProgress[levelName]);
   }
 
   void _spawningParticles() {
