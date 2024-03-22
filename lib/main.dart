@@ -30,7 +30,7 @@ Future<void> main() async {
         ),
         FutureProvider<LevelData>(
           create: (BuildContext context) => getLevelData(),
-          initialData: LevelData('Level10'),
+          initialData: LevelData('Level10', 0),
         )
       ],
       child: MaterialApp(

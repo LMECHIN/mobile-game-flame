@@ -9,9 +9,7 @@ class GamePlay extends StatelessWidget {
   final String? level;
   final PixelGame _game;
 
-  GamePlay({Key? key, this.level})
-      : _game = PixelGame(level: level),
-        super(key: key);
+  GamePlay({super.key, this.level}) : _game = PixelGame(level: level);
 
   @override
   Widget build(BuildContext context) {

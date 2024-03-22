@@ -409,7 +409,7 @@ class Player extends SpriteAnimationGroupComponent
   void reset() {
     // final levelData = Provider.of<LevelData>(gameRef.context);
     hasDie = false;
-    position = Vector2(startingPosition.x, startingPosition.y - 20);
+    // position = Vector2(startingPosition.x, startingPosition.y - 20);
     current = PlayerState.idle;
     // game.reset();
     // game.resumeEngine();

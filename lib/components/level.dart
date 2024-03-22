@@ -9,7 +9,9 @@ import 'package:flutter_application_1/components/collisions_block.dart';
 import 'package:flutter_application_1/components/obstacle.dart';
 import 'package:flutter_application_1/components/particles.dart';
 import 'package:flutter_application_1/components/player.dart';
+import 'package:flutter_application_1/models/level_data.dart';
 import 'package:flutter_application_1/pixel_game.dart';
+import 'package:provider/provider.dart';
 
 class Level extends World with HasGameRef<PixelGame> {
   final String? levelName;
@@ -19,12 +21,22 @@ class Level extends World with HasGameRef<PixelGame> {
   Vector2 startingPosition = Vector2.zero();
   List<CollisionsBlock> collisionsBlock = [];
   late CameraComponent cam;
+  late LevelData _levelData;
+  double get progressBar => _levelData.progressBar;
+  late Checkpoint checkpoint;
   double fixedDeltaTime = 0.1 / 60;
   double accumulatedTime = 0;
 
   @override
+  void onMount() {
+    super.onMount();
+
+    _levelData = Provider.of<LevelData>(game.buildContext!, listen: false);
+  }
+
+  @override
   FutureOr<void> onLoad() async {
-    level = await TiledComponent.load("$levelName.tmx", Vector2.all(264),
+    level = await TiledComponent.load("$levelName", Vector2.all(264),
         prefix: 'assets/tiles/');
 
     add(level);
@@ -35,6 +47,29 @@ class Level extends World with HasGameRef<PixelGame> {
     _addCollisions();
 
     return super.onLoad();
+  }
+
+  @override
+  void update(double dt) {
+    calculateProgress(player.position, checkpoint.position);
+  }
+
+  void calculateProgress(Vector2 playerPosition, Vector2 checkpointPosition) {
+    double distanceToCheckpoint = playerPosition.distanceTo(checkpointPosition);
+    double totalDistance = level.width;
+    double startOffset = 0.079 * totalDistance;
+    double endOffset = 0.03 * totalDistance;
+
+    if ((playerPosition.x - player.startingPosition.x).abs() <= 1.0) {
+      _levelData.levelProgress[levelName ?? ''] = 0.0;
+    } else if (_levelData.levelProgress[levelName]! < 100) {
+      _levelData.levelProgress[levelName ?? ''] = ((totalDistance - distanceToCheckpoint - endOffset) /
+              (totalDistance - startOffset - endOffset)) *
+          100;
+    } else if (_levelData.levelProgress[levelName]! > 100) {
+      _levelData.levelProgress[levelName ?? ''] = 100.0;
+    }
+    print(_levelData.levelProgress[levelName]);
   }
 
   void _spawningParticles() {
@@ -127,7 +162,25 @@ class Level extends World with HasGameRef<PixelGame> {
               size: Vector2(spawnBlock.width, spawnBlock.height),
               color: color,
               texture: 'ground_down',
-              speedLoop: [1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 1],
+              speedLoop: [
+                1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                1
+              ],
               loop: loop,
               start: 0,
               end: 16,
@@ -210,7 +263,7 @@ class Level extends World with HasGameRef<PixelGame> {
             add(boost);
             break;
           case 'Checkpoint':
-            final checkpoint = Checkpoint(
+            checkpoint = Checkpoint(
               position: Vector2(spawnPoint.x, spawnPoint.y),
               size: Vector2(spawnPoint.width, spawnPoint.height),
             );

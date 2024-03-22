@@ -5,6 +5,14 @@ import 'package:flutter_application_1/models/level_data.dart';
 import 'package:flutter_application_1/widget/build_button.dart';
 import 'package:flutter_application_1/widget/find_path.dart';
 import 'package:provider/provider.dart';
+import 'package:percent_indicator/percent_indicator.dart';
+
+class LevelProgressData {
+  final String levelName;
+  final double progress;
+
+  LevelProgressData(this.levelName, this.progress);
+}
 
 class LevelsMenu extends StatefulWidget {
   const LevelsMenu({super.key});
@@ -28,23 +36,38 @@ class _LevelsMenuState extends State<LevelsMenu> {
     super.dispose();
   }
 
+  Color _getColorByPercentage(double percent) {
+    if (percent >= 0.7) {
+      return Colors.green;
+    } else if (percent >= 0.5) {
+      return Colors.orange;
+    } else {
+      return const Color.fromARGB(255, 188, 2, 2);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final levelData = Provider.of<LevelData>(context);
     String assetFolderPath = 'assets/tiles/';
-    return FutureBuilder<List<String>>(
-      future: getFilesInAssetFolder(assetFolderPath, '.tmx'),
-      builder: (context, AsyncSnapshot<List<String>> snapshot) {
+    return FutureBuilder<List<LevelProgressData>>(
+      future: getFilesWithProgress(assetFolderPath, '.tmx', levelData),
+      builder: (context, AsyncSnapshot<List<LevelProgressData>> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
         } else if (snapshot.hasError) {
           return Center(child: Text("Error: ${snapshot.error}"));
         } else {
-          List<String>? levels = snapshot.data;
-          if (levels != null && levels.isNotEmpty) {
-            List<String> cleanedLevels = levels.map((level) {
-              return level.replaceAll('.tmx', '');
-            }).toList();
+          List<LevelProgressData>? levelProgressData = snapshot.data;
+          if (levelProgressData != null && levelProgressData.isNotEmpty) {
+            List<String> cleanedLevels =
+                levelProgressData.map((data) => data.levelName).toList();
+            for (var i = 0; i < levelProgressData.length; i++) {
+              double progress = levelProgressData[i].progress;
+              // Mettez à jour le pourcentage de progression dans levelData
+              levelData.updateLevelProgress(
+                  levelProgressData[i].levelName, progress);
+            }
 
             return Scaffold(
               body: Stack(
@@ -57,26 +80,49 @@ class _LevelsMenuState extends State<LevelsMenu> {
                         itemExtent: 500,
                         physics: const FixedExtentScrollPhysics(),
                         diameterRatio: 1.5,
-                        // perspective: 0.008,
-                        children: cleanedLevels.map((level) {
+                        children: cleanedLevels.asMap().entries.map((entry) {
+                          final String level = entry.value;
+                          final double progress =
+                              levelData.levelProgress[level] ?? 0.0;
+                          print(progress);
                           return RotatedBox(
                             quarterTurns: 1,
-                            child: SizedBox(
-                              width: 400,
-                              height: 200,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  levelData.selectLevel(level);
-                                  Navigator.of(context).pushReplacement(
-                                    MaterialPageRoute(
-                                      builder: (context) => GamePlay(
-                                        level: level,
-                                      ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SizedBox(
+                                  width: 400,
+                                  height: 200,
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      levelData.selectLevel(level);
+                                      Navigator.of(context).pushReplacement(
+                                        MaterialPageRoute(
+                                          builder: (context) => GamePlay(
+                                            level: level,
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                    child: LinearPercentIndicator(
+                                      width:
+                                          MediaQuery.of(context).size.width / 6,
+                                      alignment: MainAxisAlignment.center,
+                                      animateFromLastPercent: true,
+                                      animation: true,
+                                      lineHeight: 20.0,
+                                      animationDuration: 2500,
+                                      clipLinearGradient: true,
+                                      percent: progress / 100,
+                                      center: Text(
+                                          "${progress.roundToDouble()}% - $level"),
+                                      barRadius: const Radius.circular(80),
+                                      progressColor:
+                                          _getColorByPercentage(progress / 100),
                                     ),
-                                  );
-                                },
-                                child: Text(level),
-                              ),
+                                  ),
+                                ),
+                              ],
                             ),
                           );
                         }).toList(),

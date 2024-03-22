@@ -124,6 +124,42 @@ class _SkinsMenuState extends State<SkinsMenu> {
                                       },
                                     ),
                                     BuildButton(
+                                      text: 'Jump',
+                                      size: 15,
+                                      effects: const {
+                                        EffectState.shimmer: [
+                                          ShimmerEffect(
+                                            color: Colors.transparent,
+                                            duration: Duration(seconds: 0),
+                                          ),
+                                        ],
+                                      },
+                                      onPressed: () {
+                                        setState(() {
+                                          skinImages[skin] =
+                                              "assets/images/Sprites/Skins/$skin/SkinsMenu/jump.gif";
+                                        });
+                                      },
+                                    ),
+                                    BuildButton(
+                                      text: 'Fall',
+                                      size: 15,
+                                      effects: const {
+                                        EffectState.shimmer: [
+                                          ShimmerEffect(
+                                            color: Colors.transparent,
+                                            duration: Duration(seconds: 0),
+                                          ),
+                                        ],
+                                      },
+                                      onPressed: () {
+                                        setState(() {
+                                          skinImages[skin] =
+                                              "assets/images/Sprites/Skins/$skin/SkinsMenu/fall.gif";
+                                        });
+                                      },
+                                    ),
+                                    BuildButton(
                                       text: 'Appearing',
                                       size: 15,
                                       effects: const {
@@ -138,6 +174,24 @@ class _SkinsMenuState extends State<SkinsMenu> {
                                         setState(() {
                                           skinImages[skin] =
                                               "assets/images/Sprites/Skins/$skin/SkinsMenu/appearing.gif";
+                                        });
+                                      },
+                                    ),
+                                    BuildButton(
+                                      text: 'Run',
+                                      size: 15,
+                                      effects: const {
+                                        EffectState.shimmer: [
+                                          ShimmerEffect(
+                                            color: Colors.transparent,
+                                            duration: Duration(seconds: 0),
+                                          ),
+                                        ],
+                                      },
+                                      onPressed: () {
+                                        setState(() {
+                                          skinImages[skin] =
+                                              "assets/images/Sprites/Skins/$skin/SkinsMenu/run.gif";
                                         });
                                       },
                                     ),
