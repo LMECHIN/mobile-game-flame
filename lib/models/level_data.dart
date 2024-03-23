@@ -21,8 +21,8 @@ class LevelData extends ChangeNotifier with HiveObjectMixin {
     save();
   }
 
-  void updateLevelProgress(String levelName, double progress) {
-    levelProgress[levelName] = progress;
+  void selectLevelProgress(Map<String, double> progress) {
+    levelProgress = progress;
     notifyListeners();
     save();
   }

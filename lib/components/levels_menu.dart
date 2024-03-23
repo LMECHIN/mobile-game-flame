@@ -62,11 +62,6 @@ class _LevelsMenuState extends State<LevelsMenu> {
           if (levelProgressData != null && levelProgressData.isNotEmpty) {
             List<String> cleanedLevels =
                 levelProgressData.map((data) => data.levelName).toList();
-            for (var i = 0; i < levelProgressData.length; i++) {
-              double progress = levelProgressData[i].progress;
-              levelData.updateLevelProgress(
-                  levelProgressData[i].levelName, progress);
-            }
 
             return Scaffold(
               body: Stack(

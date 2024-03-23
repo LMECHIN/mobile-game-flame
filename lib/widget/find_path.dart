@@ -52,9 +52,8 @@ Future<List<LevelProgressData>> getFilesWithProgress(
     }).toList();
 
     for (var assetName in assetList) {
-      double progress = levelData.levelProgress[assetName] ?? 0.0;
-      levelProgressData.add(LevelProgressData(assetName, progress));
-      print(levelData.levelProgress[assetName]);
+      double? progress = levelData.levelProgress[assetName];
+      levelProgressData.add(LevelProgressData(assetName, progress ?? 0));
     }
   } catch (e) {
     print("Error retrieving asset files : $e");

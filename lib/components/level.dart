@@ -59,14 +59,23 @@ class Level extends World with HasGameRef<PixelGame> {
     double startOffset = 0.079 * totalDistance;
     double endOffset = 0.03 * totalDistance;
 
+    double levelProgress = 0;
+
     if ((playerPosition.x - player.startingPosition.x).abs() <= 1.0) {
-      _levelData.levelProgress[levelName ?? ''] = 0.0;
-    } else if (_levelData.levelProgress[levelName]! < 100) {
-      _levelData.levelProgress[levelName ?? ''] = ((totalDistance - distanceToCheckpoint - endOffset) /
-              (totalDistance - startOffset - endOffset)) *
-          100;
-    } else if (_levelData.levelProgress[levelName]! > 100) {
-      _levelData.levelProgress[levelName ?? ''] = 100.0;
+      levelProgress = 0.0;
+    } else if (levelProgress < 100) {
+      levelProgress =
+          ((totalDistance - distanceToCheckpoint - endOffset) /
+                  (totalDistance - startOffset - endOffset)) *
+              100;
+    } if (levelProgress > 100) {
+      levelProgress = 100.0;
+    }
+    print(levelProgress);
+    if (levelProgress >
+        (_levelData.levelProgress[levelName] ?? 0)) {
+      _levelData.levelProgress[levelName ?? ''] =
+          levelProgress;
     }
   }
 

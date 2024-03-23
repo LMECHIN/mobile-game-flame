@@ -131,8 +131,8 @@
         },
         "Level08.tmx": {
             "expandedObjectLayers": [
-                3,
-                4
+                4,
+                3
             ],
             "scale": 0.0625,
             "selectedLayer": 2,
@@ -143,8 +143,8 @@
         },
         "Level09.tmx": {
             "expandedObjectLayers": [
-                3,
-                4
+                4,
+                3
             ],
             "scale": 0.125,
             "selectedLayer": 3,
@@ -160,8 +160,8 @@
             "scale": 0.0625,
             "selectedLayer": 6,
             "viewCenter": {
-                "x": 5264,
-                "y": 4304
+                "x": 4672,
+                "y": 3680
             }
         },
         "Map (100x100).tmx": {
@@ -177,9 +177,9 @@
         },
         "Map (100x23).tmx": {
             "expandedObjectLayers": [
-                2,
+                4,
                 3,
-                4
+                2
             ],
             "scale": 0.03125,
             "selectedLayer": 2,
