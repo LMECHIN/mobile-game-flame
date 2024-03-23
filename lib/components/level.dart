@@ -11,7 +11,7 @@ import 'package:flutter_application_1/components/particles.dart';
 import 'package:flutter_application_1/components/player.dart';
 import 'package:flutter_application_1/models/level_data.dart';
 import 'package:flutter_application_1/pixel_game.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_application_1/utils/get_level_data.dart';
 
 class Level extends World with HasGameRef<PixelGame> {
   final String? levelName;
@@ -27,14 +27,8 @@ class Level extends World with HasGameRef<PixelGame> {
   double accumulatedTime = 0;
 
   @override
-  void onMount() {
-    super.onMount();
-
-    _levelData = Provider.of<LevelData>(game.buildContext!, listen: false);
-  }
-
-  @override
   FutureOr<void> onLoad() async {
+    _levelData = await getLevelData();
     level = await TiledComponent.load("$levelName", Vector2.all(264),
         prefix: 'assets/tiles/');
 
@@ -56,7 +50,7 @@ class Level extends World with HasGameRef<PixelGame> {
   void calculateProgress(Vector2 playerPosition, Vector2 checkpointPosition) {
     double distanceToCheckpoint = playerPosition.distanceTo(checkpointPosition);
     double totalDistance = level.width;
-    double startOffset = 0.079 * totalDistance;
+    double startOffset = 0.04 * totalDistance;
     double endOffset = 0.03 * totalDistance;
 
     double levelProgress = 0;
@@ -64,18 +58,15 @@ class Level extends World with HasGameRef<PixelGame> {
     if ((playerPosition.x - player.startingPosition.x).abs() <= 1.0) {
       levelProgress = 0.0;
     } else if (levelProgress < 100) {
-      levelProgress =
-          ((totalDistance - distanceToCheckpoint - endOffset) /
-                  (totalDistance - startOffset - endOffset)) *
-              100;
-    } if (levelProgress > 100) {
+      levelProgress = ((totalDistance - distanceToCheckpoint - endOffset) /
+              (totalDistance - startOffset - endOffset)) *
+          100;
+    }
+    if (levelProgress > 100) {
       levelProgress = 100.0;
     }
-    print(levelProgress);
-    if (levelProgress >
-        (_levelData.levelProgress[levelName] ?? 0)) {
-      _levelData.levelProgress[levelName ?? ''] =
-          levelProgress;
+    if (levelProgress > (_levelData.levelProgress[levelName] ?? 0)) {
+      _levelData.selectLevelProgress(levelProgress);
     }
   }
 

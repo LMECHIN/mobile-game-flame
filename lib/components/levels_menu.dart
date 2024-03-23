@@ -108,7 +108,7 @@ class _LevelsMenuState extends State<LevelsMenu> {
                                       clipLinearGradient: true,
                                       percent: progress / 100,
                                       center: Text(
-                                          "${progress.roundToDouble()}% - $level"),
+                                          "${progress.floorToDouble()}% - $level"),
                                       barRadius: const Radius.circular(80),
                                       progressColor:
                                           _getColorByPercentage(progress / 100),
