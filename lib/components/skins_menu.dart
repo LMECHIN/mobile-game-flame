@@ -75,7 +75,7 @@ class _SkinsMenuState extends State<SkinsMenu> {
                       quarterTurns: -1,
                       child: ListWheelScrollView(
                         controller: controller,
-                        itemExtent: 500,
+                        itemExtent: MediaQuery.of(context).size.width * 0.8,
                         physics: const FixedExtentScrollPhysics(),
                         diameterRatio: 1.5,
                         children: skins.map((skin) {
@@ -84,12 +84,13 @@ class _SkinsMenuState extends State<SkinsMenu> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Column(
+                                SingleChildScrollView(
+                                child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     BuildButton(
                                       text: 'Death',
-                                      size: 15,
+                                      size: 0.01,
                                       effects: const {
                                         EffectState.shimmer: [
                                           ShimmerEffect(
@@ -107,7 +108,7 @@ class _SkinsMenuState extends State<SkinsMenu> {
                                     ),
                                     BuildButton(
                                       text: 'Slide',
-                                      size: 15,
+                                      size: 0.01,
                                       effects: const {
                                         EffectState.shimmer: [
                                           ShimmerEffect(
@@ -125,7 +126,7 @@ class _SkinsMenuState extends State<SkinsMenu> {
                                     ),
                                     BuildButton(
                                       text: 'Jump',
-                                      size: 15,
+                                      size: 0.01,
                                       effects: const {
                                         EffectState.shimmer: [
                                           ShimmerEffect(
@@ -143,7 +144,7 @@ class _SkinsMenuState extends State<SkinsMenu> {
                                     ),
                                     BuildButton(
                                       text: 'Fall',
-                                      size: 15,
+                                      size: 0.01,
                                       effects: const {
                                         EffectState.shimmer: [
                                           ShimmerEffect(
@@ -161,7 +162,7 @@ class _SkinsMenuState extends State<SkinsMenu> {
                                     ),
                                     BuildButton(
                                       text: 'Appearing',
-                                      size: 15,
+                                      size: 0.01,
                                       effects: const {
                                         EffectState.shimmer: [
                                           ShimmerEffect(
@@ -179,7 +180,7 @@ class _SkinsMenuState extends State<SkinsMenu> {
                                     ),
                                     BuildButton(
                                       text: 'Run',
-                                      size: 15,
+                                      size: 0.01,
                                       effects: const {
                                         EffectState.shimmer: [
                                           ShimmerEffect(
@@ -197,7 +198,7 @@ class _SkinsMenuState extends State<SkinsMenu> {
                                     ),
                                     BuildButton(
                                       text: 'Idle',
-                                      size: 15,
+                                      size: 0.01,
                                       effects: const {
                                         EffectState.shimmer: [
                                           ShimmerEffect(
@@ -215,12 +216,15 @@ class _SkinsMenuState extends State<SkinsMenu> {
                                     ),
                                   ],
                                 ),
-                                Expanded(
-                                  child: SizedBox(
-                                    width: 200,
-                                    height: 400,
-                                    child: Column(
-                                      children: [
+                                ),
+                                SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width / 2,
+                                  height:
+                                      MediaQuery.of(context).size.height,
+                                  child: ListView(
+                                    shrinkWrap: true,
+                                    children: [
                                         ElevatedButton(
                                           onPressed: () {
                                             playerData.selectSkin(skin);
@@ -228,35 +232,37 @@ class _SkinsMenuState extends State<SkinsMenu> {
                                           child: Image.asset(
                                             skinImages[skin]!,
                                             key: UniqueKey(),
+                                            height: MediaQuery.of(context).size.width / 2.5,
+                                            width: MediaQuery.of(context).size.width / 2,
                                           ),
                                         ),
-                                        BuildButton(
-                                          text: 'Selected',
-                                          colors: const {
-                                            ColorState.backgroundColor:
-                                                Color.fromARGB(255, 2, 8, 188),
-                                            ColorState.backgroundColorOnPressed:
-                                                Colors.black,
-                                            ColorState.borderColor:
-                                                Color.fromARGB(255, 2, 8, 188),
-                                            ColorState.borderColorOnPressed:
-                                                Colors.black54,
-                                            ColorState.shadowColor:
-                                                Color.fromARGB(255, 2, 8, 188),
-                                            ColorState.shadowColorOnPressed:
-                                                Colors.black54,
-                                          },
-                                          onPressed: () {
-                                            // setState(() {
-                                            //   skinImages[skin] =
-                                            //       "assets/images/Sprites/Skins/$skin/SkinsMenu/death.gif";
-                                            // });
-                                          },
-                                        ),
-                                      ],
-                                    ),
+                                      BuildButton(
+                                        text: 'Select',
+                                        colors: const {
+                                          ColorState.backgroundColor:
+                                              Color.fromARGB(255, 2, 8, 188),
+                                          ColorState.backgroundColorOnPressed:
+                                              Colors.black,
+                                          ColorState.borderColor:
+                                              Color.fromARGB(255, 2, 8, 188),
+                                          ColorState.borderColorOnPressed:
+                                              Colors.black54,
+                                          ColorState.shadowColor:
+                                              Color.fromARGB(255, 2, 8, 188),
+                                          ColorState.shadowColorOnPressed:
+                                              Colors.black54,
+                                        },
+                                        onPressed: () {
+                                          // setState(() {
+                                          //   skinImages[skin] =
+                                          //       "assets/images/Sprites/Skins/$skin/SkinsMenu/death.gif";
+                                          // });
+                                        },
+                                      ),
+                                    ],
                                   ),
                                 ),
+                                // ),
                               ],
                             ),
                           );

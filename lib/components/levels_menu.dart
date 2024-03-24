@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_application_1/components/game_play.dart';
+import 'package:flutter_application_1/components/progress_bar.dart';
 import 'package:flutter_application_1/models/level_data.dart';
 import 'package:flutter_application_1/widget/build_button.dart';
 import 'package:flutter_application_1/widget/find_path.dart';
 import 'package:provider/provider.dart';
-import 'package:percent_indicator/percent_indicator.dart';
 
 class LevelProgressData {
   final String levelName;
@@ -32,18 +32,8 @@ class _LevelsMenuState extends State<LevelsMenu> {
 
   @override
   void dispose() {
-    controller.dispose(); // Fix: Added parentheses to call dispose method
+    controller.dispose();
     super.dispose();
-  }
-
-  Color _getColorByPercentage(double percent) {
-    if (percent >= 0.7) {
-      return Colors.green;
-    } else if (percent >= 0.5) {
-      return Colors.orange;
-    } else {
-      return const Color.fromARGB(255, 188, 2, 2);
-    }
   }
 
   @override
@@ -71,7 +61,7 @@ class _LevelsMenuState extends State<LevelsMenu> {
                       quarterTurns: -1,
                       child: ListWheelScrollView(
                         controller: controller,
-                        itemExtent: 500,
+                        itemExtent: MediaQuery.of(context).size.width * 0.8,
                         physics: const FixedExtentScrollPhysics(),
                         diameterRatio: 1.5,
                         children: cleanedLevels.asMap().entries.map((entry) {
@@ -84,36 +74,61 @@ class _LevelsMenuState extends State<LevelsMenu> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 SizedBox(
-                                  width: 400,
-                                  height: 200,
-                                  child: ElevatedButton(
-                                    onPressed: () {
-                                      levelData.selectLevel(level);
-                                      Navigator.of(context).pushReplacement(
-                                        MaterialPageRoute(
-                                          builder: (context) => GamePlay(
-                                            level: level,
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                    child: LinearPercentIndicator(
-                                      width:
-                                          MediaQuery.of(context).size.width / 6,
-                                      alignment: MainAxisAlignment.center,
-                                      animateFromLastPercent: true,
-                                      animation: true,
-                                      lineHeight: 20.0,
-                                      animationDuration: 2500,
-                                      clipLinearGradient: true,
-                                      percent: progress / 100,
-                                      center: Text(
-                                          "${progress.floorToDouble()}% - $level"),
-                                      barRadius: const Radius.circular(80),
-                                      progressColor:
-                                          _getColorByPercentage(progress / 100),
-                                    ),
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.5,
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.3,
+                                  child: ListView(
+                                    shrinkWrap: true,
+                                    children: [
+                                      Center(
+                                        child: Text(level),
+                                      ),
+                                      SizedBox(
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.1),
+                                      ProgressBar(progress: progress),
+                                    ],
                                   ),
+                                ),
+                                BuildButton(
+                                  effects: progress == 100
+                                      ? {
+                                          EffectState.shimmer: [
+                                            const ShimmerEffect(
+                                              color: Colors.transparent,
+                                              duration: Duration(seconds: 0),
+                                            ),
+                                          ],
+                                        }
+                                      : {},
+                                  colors: const {
+                                    ColorState.backgroundColor:
+                                        Color.fromARGB(255, 2, 8, 188),
+                                    ColorState.backgroundColorOnPressed:
+                                        Colors.black,
+                                    ColorState.borderColor:
+                                        Color.fromARGB(255, 2, 8, 188),
+                                    ColorState.borderColorOnPressed:
+                                        Colors.black54,
+                                    ColorState.shadowColor:
+                                        Color.fromARGB(255, 2, 8, 188),
+                                    ColorState.shadowColorOnPressed:
+                                        Colors.black54,
+                                  },
+                                  text: 'Select',
+                                  onPressed: () {
+                                    levelData.selectLevel(level);
+                                    Navigator.of(context).pushReplacement(
+                                      MaterialPageRoute(
+                                        builder: (context) => GamePlay(
+                                          level: level,
+                                        ),
+                                      ),
+                                    );
+                                  },
                                 ),
                               ],
                             ),

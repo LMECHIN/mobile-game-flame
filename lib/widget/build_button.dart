@@ -30,7 +30,7 @@ class BuildButton extends StatefulWidget {
     required this.onPressed,
     this.colors = const {},
     this.effects = const {},
-    this.size = 25,
+    this.size = 0.03,
   });
 
   @override
@@ -83,7 +83,8 @@ class _BuildButtonState extends State<BuildButton> {
       ];
     }
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10.0),
+      padding: EdgeInsets.symmetric(
+          vertical: MediaQuery.of(context).size.height * 0.015),
       child: Animate(
         effects: moveEffects,
         child: Animate(
@@ -117,7 +118,7 @@ class _BuildButtonState extends State<BuildButton> {
               widget.text,
               style: TextStyle(
                 color: Colors.black,
-                fontSize: widget.size,
+                fontSize: (MediaQuery.of(context).size.width * (widget.size ?? 0.03)),
                 fontFamily: 'DripOctober',
               ),
             ),
