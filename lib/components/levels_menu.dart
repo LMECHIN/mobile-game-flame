@@ -123,7 +123,7 @@ class _LevelsMenuState extends State<LevelsMenu> {
                                     levelData.selectLevel(level);
                                     Navigator.of(context).pushReplacement(
                                       MaterialPageRoute(
-                                        builder: (context) => GamePlay(
+                                        builder: (context) => GamePlay(context: context,
                                           level: level,
                                         ),
                                       ),

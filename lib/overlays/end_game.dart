@@ -74,7 +74,7 @@ class _EndGameState extends State<EndGame> {
             width: MediaQuery.of(context).size.width / 7,
             child: BuildButton(
               text: 'Restart',
-              size: 15,
+              size: 0.015,
               onPressed: () {
                 widget.game.overlays.remove(EndGame.id);
                 widget.game.reset();
@@ -82,7 +82,7 @@ class _EndGameState extends State<EndGame> {
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
                     builder: (context) =>
-                        GamePlay(level: levelData.selectedLevel),
+                        GamePlay(context: context, level: levelData.selectedLevel),
                   ),
                 );
               },
@@ -92,7 +92,7 @@ class _EndGameState extends State<EndGame> {
             width: MediaQuery.of(context).size.width / 7,
             child: BuildButton(
               text: 'Main menu',
-              size: 15,
+              size: 0.015,
               effects: const {
                 EffectState.shimmer: [
                   ShimmerEffect(

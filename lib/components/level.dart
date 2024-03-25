@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flame/components.dart';
+import 'package:flame/extensions.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flutter_application_1/components/blocks.dart';
 import 'package:flutter_application_1/components/blocks_animated.dart';
@@ -12,6 +13,7 @@ import 'package:flutter_application_1/components/player.dart';
 import 'package:flutter_application_1/models/level_data.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 import 'package:flutter_application_1/utils/get_level_data.dart';
+import 'package:flutter_application_1/widget/animation_properties.dart';
 
 class Level extends World with HasGameRef<PixelGame> {
   final String? levelName;
@@ -35,6 +37,7 @@ class Level extends World with HasGameRef<PixelGame> {
     add(level);
 
     _spawningParticles();
+    _spawningBlocksAnimated();
     _spawningBlocks();
     _spawningObjects();
     _addCollisions();
@@ -93,6 +96,62 @@ class Level extends World with HasGameRef<PixelGame> {
     }
   }
 
+  void _spawningBlocksAnimated() {
+    final spawnPointsBlocksAnimated =
+        level.tileMap.getLayer<ObjectGroup>('SpawnBlocksAnimated');
+    if (spawnPointsBlocksAnimated != null) {
+      for (final spawnBlockAnimated in spawnPointsBlocksAnimated.objects) {
+        final int time = spawnBlockAnimated.properties.getValue('Time') ?? 0;
+        final bool loop =
+            spawnBlockAnimated.properties.getValue('Loop') ?? true;
+        final bool nextLoop =
+            spawnBlockAnimated.properties.getValue('NextLoop') ?? true;
+        final String textureAnimation =
+            spawnBlockAnimated.properties.getValue('Texture') ?? 'down_black';
+        final String nextTextureAnimation =
+            spawnBlockAnimated.properties.getValue('NextTexture') ??
+                'rotate_blue';
+
+        Map<String, dynamic> currentAnimationProps =
+            animationProperties[textureAnimation] ?? {};
+        Map<String, dynamic> nextAnimationProps =
+            animationProperties[nextTextureAnimation] ?? {};
+
+        final blocks = BlocksAnimated(
+          position: Vector2(spawnBlockAnimated.x, spawnBlockAnimated.y),
+          size: Vector2(spawnBlockAnimated.width, spawnBlockAnimated.height),
+          color: currentAnimationProps["amount"] ?? 0,
+          texture: currentAnimationProps["texture"] ?? "",
+          speedLoop: (currentAnimationProps["speedLoop"] as List<num>)
+              .map((e) => e.toDouble())
+              .toList(),
+          loop: loop,
+          start: currentAnimationProps["start"] ?? 0,
+          end: currentAnimationProps["end"] ?? 0,
+        );
+        add(blocks);
+
+        Future.delayed(Duration(seconds: time), () {
+          remove(blocks);
+
+          final blocksTime = BlocksAnimated(
+            position: Vector2(spawnBlockAnimated.x, spawnBlockAnimated.y),
+            size: Vector2(spawnBlockAnimated.width, spawnBlockAnimated.height),
+            color: nextAnimationProps["amount"] ?? 0,
+            texture: nextAnimationProps["texture"] ?? "",
+            speedLoop: (nextAnimationProps["speedLoop"] as List<num>)
+                .map((e) => e.toDouble())
+                .toList(),
+            loop: nextLoop,
+            start: nextAnimationProps["start"] ?? 0,
+            end: nextAnimationProps["end"] ?? 0,
+          );
+          add(blocksTime);
+        });
+      }
+    }
+  }
+
   void _spawningBlocks() {
     final spawnPointsBlocks =
         level.tileMap.getLayer<ObjectGroup>('SpawnBlocks');
@@ -100,16 +159,22 @@ class Level extends World with HasGameRef<PixelGame> {
     if (spawnPointsBlocks != null) {
       for (final spawnBlock in spawnPointsBlocks.objects) {
         final int time = spawnBlock.properties.getValue('Time') ?? 0;
-        final bool loop = spawnBlock.properties.getValue('Loop') ?? false;
+        // final bool loop = spawnBlock.properties.getValue('Loop') ?? false;
         final speedLoop = spawnBlock.properties.getValue('SpeedLoop') ?? 1;
         final int color = spawnBlock.properties.getValue('Color') ?? 1;
         final int nextColor = spawnBlock.properties.getValue('NextColor') ?? 1;
         final String texture = spawnBlock.properties.getValue('Texture') ??
             'ground_blue_test(fix)';
-        final String textureAnimation =
-            spawnBlock.properties.getValue('TextureAnim') ?? 'ground_rotate_02';
         switch (spawnBlock.class_) {
           case 'Block-up':
+            break;
+          case 'Block-corner-up-left':
+            break;
+          case 'Block-rotate-01':
+            break;
+          case 'Block-bounce-01':
+            break;
+          default:
             final blocksBlack = Blocks(
               position: Vector2(spawnBlock.x, spawnBlock.y),
               size: Vector2(spawnBlock.width, spawnBlock.height),
@@ -118,115 +183,21 @@ class Level extends World with HasGameRef<PixelGame> {
             );
             add(blocksBlack);
             if (time != 0) {
+              remove(blocksBlack);
               Future.delayed(Duration(seconds: time), () {
                 startingPosition = Vector2(spawnBlock.x, spawnBlock.y);
                 final blockUp = Blocks(
-                  position: Vector2(spawnBlock.x, 0),
+                  position: Vector2(spawnBlock.x, spawnBlock.y),
                   size: Vector2(spawnBlock.width, spawnBlock.height),
                   color: color,
                   texture: texture,
-                  loop: true,
+                  loop: false,
                   speedLoop: speedLoop.toDouble(),
                 );
                 add(blockUp);
-                // blocksList.add(blockUp);
-                // remove(blockUp);
-                // blocksList.remove(blockUp);
               });
             }
             break;
-          case 'Block-corner-up-left':
-            final blocksBlack = Blocks(
-              position: Vector2(spawnBlock.x, spawnBlock.y),
-              size: Vector2(spawnBlock.width, spawnBlock.height),
-              color: color,
-              texture: 'ground_blue_test(fix)1',
-            );
-            add(blocksBlack);
-            Future.delayed(Duration(seconds: time), () {
-              remove(blocksBlack);
-              final blocksBlue = Blocks(
-                position: Vector2(spawnBlock.x, spawnBlock.y),
-                size: Vector2(spawnBlock.width, spawnBlock.height),
-                color: nextColor,
-                texture: 'ground_blue_test(fix)1',
-              );
-              add(blocksBlue);
-            });
-            break;
-          case 'Block-rotate-01':
-            final blocksBlack = BlocksAnimated(
-              position: Vector2(spawnBlock.x, spawnBlock.y),
-              size: Vector2(spawnBlock.width, spawnBlock.height),
-              color: color,
-              texture: 'ground_down',
-              speedLoop: [
-                1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                0.1,
-                1
-              ],
-              loop: loop,
-              start: 0,
-              end: 16,
-            );
-            add(blocksBlack);
-            Future.delayed(Duration(seconds: time), () {
-              remove(blocksBlack);
-              final blocksBlue = BlocksAnimated(
-                position: Vector2(spawnBlock.x, spawnBlock.y),
-                size: Vector2(spawnBlock.width, spawnBlock.height),
-                color: color,
-                texture: textureAnimation,
-                speedLoop: [1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
-                loop: loop,
-                start: 7,
-                end: 13,
-              );
-              add(blocksBlue);
-            });
-            break;
-          case 'Block-bounce-01':
-            final blocksBlack = BlocksAnimated(
-              position: Vector2(spawnBlock.x, spawnBlock.y),
-              size: Vector2(spawnBlock.width, spawnBlock.height),
-              color: color,
-              texture: 'ground_bounce_01',
-              speedLoop: [1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
-              loop: loop,
-              start: 0,
-              end: 10,
-            );
-            add(blocksBlack);
-            // Future.delayed(Duration(seconds: time), () {
-            //   remove(blocksBlack);
-            //   final blocksBlue = BlocksAnimated(
-            //     position: Vector2(spawnBlock.x, spawnBlock.y),
-            //     size: Vector2(spawnBlock.width, spawnBlock.height),
-            //     color: color,
-            //     texture: 'ground_rotate_02',
-            //     speedLoop: [1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
-            //     loop: loop,
-            //     start: 7,
-            //     end: 13,
-            //   );
-            //   add(blocksBlue);
-            // });
-            break;
-          default:
         }
       }
     }

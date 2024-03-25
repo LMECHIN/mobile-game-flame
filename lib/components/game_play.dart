@@ -8,8 +8,14 @@ import 'package:flutter_application_1/pixel_game.dart';
 class GamePlay extends StatelessWidget {
   final String? level;
   final PixelGame _game;
+  final BuildContext context;
 
-  GamePlay({super.key, this.level}) : _game = PixelGame(level: level);
+  GamePlay({super.key, required this.context, this.level})
+      : _game = PixelGame(
+            // widthResolution: MediaQuery.of(context).size.width * 6,
+            // heightResolution: MediaQuery.of(context).size.height * 6,
+            // context: context,
+            level: level);
 
   @override
   Widget build(BuildContext context) {

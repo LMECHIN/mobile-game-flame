@@ -22,6 +22,9 @@ class Blocks extends SpriteAnimationComponent
           position: position,
           size: size,
         );
+  bool _isTransitioning = false;
+  double transitionDuration = 0.5;
+  double _transitionTimer = 0;
 
   @override
   FutureOr<void> onLoad() {
@@ -55,7 +58,21 @@ class Blocks extends SpriteAnimationComponent
     super.onCollisionStart(intersectionPoints, other);
   }
 
-  void _reachedBlock() async {
+  @override
+  void update(double dt) {
+    super.update(dt);
+
+    if (_isTransitioning) {
+      _transitionTimer += dt;
+      if (_transitionTimer >= transitionDuration) {
+        _isTransitioning = false;
+        _transitionTimer = 0;
+        _restoreOriginalAnimation();
+      }
+    }
+  }
+
+  void _reachedBlock() {
     animation = SpriteAnimation.fromFrameData(
       game.images.fromCache('Sprites/14-TileSets/ground_player.png'),
       SpriteAnimationData.sequenced(
@@ -65,8 +82,10 @@ class Blocks extends SpriteAnimationComponent
         loop: false,
       ),
     );
+    _isTransitioning = true;
+  }
 
-    await animationTicker?.completed;
+  void _restoreOriginalAnimation() {
     animation = SpriteAnimation.fromFrameData(
       game.images.fromCache('Sprites/14-TileSets/$texture.png'),
       SpriteAnimationData.sequenced(
@@ -78,7 +97,5 @@ class Blocks extends SpriteAnimationComponent
     );
   }
 
-  void reset() {
-  }
-
+  void reset() {}
 }

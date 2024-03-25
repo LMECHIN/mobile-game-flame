@@ -50,7 +50,7 @@ class Player extends SpriteAnimationGroupComponent
   double normalMoveSpeed = 800;
   Vector2 startingPosition = Vector2.zero();
   Vector2 velocity = Vector2.zero();
-  double fixedDeltaTime = 0.1 / 60;
+  double fixedDeltaTime = 0.08 / 60;
   double accumulatedTime = 0;
   bool isOnGround = false;
   bool hasJumped = false;
@@ -60,6 +60,7 @@ class Player extends SpriteAnimationGroupComponent
   late Blood blood;
   int fixCam = 0;
   late double _dt;
+  bool delayExpired = false;
 
   List<CollisionsBlock> collisionsBlock = [];
   PlayerHitbox hitbox = PlayerHitbox(
@@ -268,6 +269,11 @@ class Player extends SpriteAnimationGroupComponent
       // _playTrail();
       _playSlide(dt);
     }
+
+    if (delayExpired) {
+      moveSpeed = 800;
+      hasSlide = false;
+    }
     // if (velocity.y > _gravity) isOnGround = false; // optional
     velocity.x = horizontalMovement * moveSpeed;
     position.x += velocity.x * dt;
@@ -287,12 +293,15 @@ class Player extends SpriteAnimationGroupComponent
   }
 
   void _playSlide(double dt) {
-    // normalMoveSpeed = moveSpeed;
     moveSpeed = (4000000 * dt) / 1.68;
+    delayExpired = false;
+    _startDelay();
+  }
+
+  void _startDelay() {
     Future.delayed(const Duration(milliseconds: 50), () {
-      moveSpeed = 800;
+      delayExpired = true;
     });
-    hasSlide = false;
   }
 
   void _playTrail() {

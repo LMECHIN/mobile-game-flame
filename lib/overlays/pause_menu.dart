@@ -41,7 +41,7 @@ class PauseMenu extends StatelessWidget {
             width: MediaQuery.of(context).size.width / 7,
             child: BuildButton(
               text: 'Resume',
-              size: 15,
+              size: 0.015,
               colors: const {
                 ColorState.backgroundColor: Color.fromARGB(255, 2, 8, 188),
                 ColorState.backgroundColorOnPressed: Colors.black,
@@ -62,7 +62,7 @@ class PauseMenu extends StatelessWidget {
             width: MediaQuery.of(context).size.width / 7,
             child: BuildButton(
               text: 'Restart',
-              size: 15,
+              size: 0.015,
               effects: const {
                 EffectState.shimmer: [
                   ShimmerEffect(
@@ -84,7 +84,7 @@ class PauseMenu extends StatelessWidget {
             width: MediaQuery.of(context).size.width / 7,
             child: BuildButton(
               text: 'Exit',
-              size: 15,
+              size: 0.015,
               effects: const {
                 EffectState.shimmer: [
                   ShimmerEffect(

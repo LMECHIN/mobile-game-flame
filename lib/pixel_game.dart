@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
-import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/components/button_jump.dart';
 import 'package:flutter_application_1/components/button_slide.dart';
@@ -18,7 +17,14 @@ class PixelGame extends FlameGame
         HasCollisionDetection,
         TapCallbacks {
   String? level;
-  PixelGame({this.level});
+  // final BuildContext context;
+  // final double widthResolution;
+  // final double heightResolution;
+  PixelGame({
+      // {required this.widthResolution,
+      // required this.heightResolution,
+      // required this.context,
+      this.level});
 
   late CameraComponent cam;
   double camSpeed = 800;
@@ -29,7 +35,7 @@ class PixelGame extends FlameGame
   late double targetZoom = 1.0;
   static const double zoomSpeed = 0.9;
 
-  Color color = const Color.fromARGB(255, 0, 0, 0);
+  Color color = const Color.fromARGB(255, 2, 8, 117);
 
   void updateBackgroundColor(Color newColor) {
     color = newColor;
@@ -54,12 +60,12 @@ class PixelGame extends FlameGame
     );
     cam = CameraComponent.withFixedResolution(
       world: world,
-      width: 9080,
-      height: 5221,
+      width: 14774,
+      height: 6072,
     );
 
     cam.viewfinder.anchor = const Anchor(0.30, 0.5);
-    setZoom(2.0);
+    setZoom(3.0);
     cam.priority = 0;
     if (showControls) {
       addJoystick();
