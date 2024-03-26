@@ -26,6 +26,7 @@ class Level extends World with HasGameRef<PixelGame> {
   late Checkpoint checkpoint;
   double fixedDeltaTime = 0.1 / 60;
   double accumulatedTime = 0;
+  List<Blocks> generatedBlocks = [];
 
   @override
   FutureOr<void> onLoad() async {
@@ -37,7 +38,7 @@ class Level extends World with HasGameRef<PixelGame> {
 
     _spawningParticles();
     _spawningBlocksAnimated();
-    _spawningBlocks();
+    // _spawningBlocks();
     _spawningObjects();
     _addCollisions();
 
@@ -47,6 +48,7 @@ class Level extends World with HasGameRef<PixelGame> {
   @override
   void update(double dt) {
     calculateProgress(player.position, checkpoint.position);
+    _spawningBlocks();
   }
 
   void calculateProgress(Vector2 playerPosition, Vector2 checkpointPosition) {
@@ -155,52 +157,49 @@ class Level extends World with HasGameRef<PixelGame> {
     final spawnPointsBlocks =
         level.tileMap.getLayer<ObjectGroup>('SpawnBlocks');
 
+    final double playerX = player.position.x;
+    final double playerY = player.position.y;
     if (spawnPointsBlocks != null) {
       for (final spawnBlock in spawnPointsBlocks.objects) {
-        final int time = spawnBlock.properties.getValue('Time') ?? 0;
-        // final bool loop = spawnBlock.properties.getValue('Loop') ?? false;
-        final speedLoop = spawnBlock.properties.getValue('SpeedLoop') ?? 1;
-        final int color = spawnBlock.properties.getValue('Color') ?? 1;
-        final int nextColor = spawnBlock.properties.getValue('NextColor') ?? 1;
-        final String texture = spawnBlock.properties.getValue('Texture') ??
-            'ground_blue_test(fix)';
-        final String groundTexture =
-            spawnBlock.properties.getValue('GroundTexture') ?? 'ground_player';
-        switch (spawnBlock.class_) {
-          case 'Block-up':
-            break;
-          case 'Block-corner-up-left':
-            break;
-          case 'Block-rotate-01':
-            break;
-          case 'Block-bounce-01':
-            break;
-          default:
+        final double spawnX = spawnBlock.x;
+        final double spawnY = spawnBlock.y;
+        final double distanceToPlayer =
+            (spawnX - playerX).abs() + (spawnY - playerY).abs();
+
+        if (distanceToPlayer < 5000) {
+          bool hasBlock = false;
+          for (final child in children) {
+            if (child is Blocks &&
+                child.position.x == spawnX &&
+                child.position.y == spawnY) {
+              hasBlock = true;
+              break;
+            }
+          }
+
+          if (!hasBlock) {
             final blocks = Blocks(
-              position: Vector2(spawnBlock.x, spawnBlock.y),
+              position: Vector2(spawnX, spawnY),
               size: Vector2(spawnBlock.width, spawnBlock.height),
-              color: color,
-              texture: texture,
-              groundTexture: groundTexture,
+              color: spawnBlock.properties.getValue('Color') ?? 1,
+              texture: spawnBlock.properties.getValue('Texture') ??
+                  'ground_blue_test(fix)',
+              groundTexture: spawnBlock.properties.getValue('GroundTexture') ??
+                  'ground_player',
             );
             add(blocks);
-            if (time != 0) {
-              remove(blocks);
-              Future.delayed(Duration(seconds: time), () {
-                startingPosition = Vector2(spawnBlock.x, spawnBlock.y);
-                final blocksTime = Blocks(
-                  position: Vector2(spawnBlock.x, spawnBlock.y),
-                  size: Vector2(spawnBlock.width, spawnBlock.height),
-                  color: nextColor,
-                  texture: texture,
-                  groundTexture: groundTexture,
-                  loop: false,
-                  speedLoop: speedLoop.toDouble(),
-                );
-                add(blocksTime);
-              });
-            }
-            break;
+
+            generatedBlocks.add(blocks);
+          }
+        }
+      }
+
+      for (final block in generatedBlocks) {
+        final double distanceToPlayer = (block.position.x - playerX).abs() +
+            (block.position.y - playerY).abs();
+        if (distanceToPlayer >= 5000) {
+          remove(block);
+          generatedBlocks.remove(block);
         }
       }
     }
