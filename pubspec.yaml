@@ -74,7 +74,6 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/Sprites/14-TileSets/
-    - assets/images/Sprites/14-TileSets/neon/
     - assets/tiles/
     - assets/images/Sprites/Skins/KingHuman/
     - assets/images/Sprites/Skins/KingHuman/SkinsMenu/

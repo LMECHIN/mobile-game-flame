@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flame/components.dart';
-import 'package:flame/extensions.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flutter_application_1/components/blocks.dart';
 import 'package:flutter_application_1/components/blocks_animated.dart';
@@ -165,6 +164,8 @@ class Level extends World with HasGameRef<PixelGame> {
         final int nextColor = spawnBlock.properties.getValue('NextColor') ?? 1;
         final String texture = spawnBlock.properties.getValue('Texture') ??
             'ground_blue_test(fix)';
+        final String groundTexture =
+            spawnBlock.properties.getValue('GroundTexture') ?? 'ground_player';
         switch (spawnBlock.class_) {
           case 'Block-up':
             break;
@@ -175,26 +176,28 @@ class Level extends World with HasGameRef<PixelGame> {
           case 'Block-bounce-01':
             break;
           default:
-            final blocksBlack = Blocks(
+            final blocks = Blocks(
               position: Vector2(spawnBlock.x, spawnBlock.y),
               size: Vector2(spawnBlock.width, spawnBlock.height),
-              color: nextColor,
+              color: color,
               texture: texture,
+              groundTexture: groundTexture,
             );
-            add(blocksBlack);
+            add(blocks);
             if (time != 0) {
-              remove(blocksBlack);
+              remove(blocks);
               Future.delayed(Duration(seconds: time), () {
                 startingPosition = Vector2(spawnBlock.x, spawnBlock.y);
-                final blockUp = Blocks(
+                final blocksTime = Blocks(
                   position: Vector2(spawnBlock.x, spawnBlock.y),
                   size: Vector2(spawnBlock.width, spawnBlock.height),
-                  color: color,
+                  color: nextColor,
                   texture: texture,
+                  groundTexture: groundTexture,
                   loop: false,
                   speedLoop: speedLoop.toDouble(),
                 );
-                add(blockUp);
+                add(blocksTime);
               });
             }
             break;
@@ -269,5 +272,10 @@ class Level extends World with HasGameRef<PixelGame> {
       }
     }
     player.collisionsBlock = collisionsBlock;
+  }
+
+  void reset() {
+    player.collisionsBlock.clear();
+    player.collisionsBlock.addAll(collisionsBlock);
   }
 }

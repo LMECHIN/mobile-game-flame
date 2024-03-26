@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_application_1/components/game_play.dart';
 import 'package:flutter_application_1/components/main_menu.dart';
+import 'package:flutter_application_1/models/level_data.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 import 'package:flutter_application_1/widget/build_button.dart';
+import 'package:provider/provider.dart';
 import 'pause_button.dart';
 
 class PauseMenu extends StatelessWidget {
@@ -13,6 +16,7 @@ class PauseMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final levelData = Provider.of<LevelData>(context);
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -76,6 +80,12 @@ class PauseMenu extends StatelessWidget {
                 game.overlays.add(PauseButton.id);
                 game.reset();
                 game.resumeEngine();
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        GamePlay(context: context, level: levelData.selectedLevel),
+                  ),
+                );
               },
             ),
           ),

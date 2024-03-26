@@ -38,16 +38,15 @@ class Player extends SpriteAnimationGroupComponent
   bool isRightKeyPressed = false;
 
   Color color = const Color.fromARGB(255, 0, 0, 0);
-
-  final double _gravity = 5;
-  final double _jumpForce = 1800;
-  final double _terminalVelocity = 2000;
+  final double _gravity = 8;
+  final double _jumpForce = 2800;
+  final double _terminalVelocity = 4600;
   double scaleFactor = 0.3;
   double widthMap = 0;
   double heightMap = 0;
   double horizontalMovement = 0;
-  double moveSpeed = 800;
-  double normalMoveSpeed = 800;
+  double moveSpeed = 1000;
+  double normalMoveSpeed = 1000;
   Vector2 startingPosition = Vector2.zero();
   Vector2 velocity = Vector2.zero();
   double fixedDeltaTime = 0.08 / 60;
@@ -240,19 +239,19 @@ class Player extends SpriteAnimationGroupComponent
     }
 
     // if (velocity.x > 0 || velocity.x < 0) playerState = PlayerState.sliding;
-    if (moveSpeed > 800) {
+    if (moveSpeed > 1000) {
       playerState = PlayerState.sliding;
     } else if ((velocity.x > 0 || velocity.x < 0) && !hasSlide) {
       hasSlide = false;
       playerState = PlayerState.running;
     }
-    if (moveSpeed > 800) {
+    if (moveSpeed > 1000) {
       playerState = PlayerState.sliding;
     } else if (velocity.y < 0) {
       playerState = PlayerState.jumping;
     }
 
-    if (moveSpeed > 800) {
+    if (moveSpeed > 1000) {
       playerState = PlayerState.sliding;
     } else if (velocity.y > 0) {
       playerState = PlayerState.falling;
@@ -271,7 +270,7 @@ class Player extends SpriteAnimationGroupComponent
     }
 
     if (delayExpired) {
-      moveSpeed = 800;
+      moveSpeed = 1000;
       hasSlide = false;
     }
     // if (velocity.y > _gravity) isOnGround = false; // optional
@@ -285,7 +284,6 @@ class Player extends SpriteAnimationGroupComponent
   }
 
   void _playJump(double dt) {
-    game.level = 'Level01';
     velocity.y = -_jumpForce;
     position.y += velocity.y * dt;
     isOnGround = false;
@@ -418,15 +416,7 @@ class Player extends SpriteAnimationGroupComponent
   void reset() {
     // final levelData = Provider.of<LevelData>(gameRef.context);
     hasDie = false;
-    // position = Vector2(startingPosition.x, startingPosition.y - 20);
+    position = Vector2(startingPosition.x, startingPosition.y - 20);
     current = PlayerState.idle;
-    // game.reset();
-    // game.resumeEngine();
-    // Navigator.of(gameRef.context).pushReplacement(
-    //   MaterialPageRoute(
-    //     builder: (context) =>
-    //         GamePlay(context: gameRef.context, level: levelData.selectedLevel),
-    //   ),
-    // );
   }
 }

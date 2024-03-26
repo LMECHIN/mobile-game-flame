@@ -11,6 +11,7 @@ class Blocks extends SpriteAnimationComponent
   double speedLoop;
   bool loop;
   final String texture;
+  final String groundTexture;
   Blocks({
     position,
     size,
@@ -18,6 +19,7 @@ class Blocks extends SpriteAnimationComponent
     this.speedLoop = 1,
     this.loop = false,
     required this.texture,
+    required this.groundTexture,
   }) : super(
           position: position,
           size: size,
@@ -74,7 +76,7 @@ class Blocks extends SpriteAnimationComponent
 
   void _reachedBlock() {
     animation = SpriteAnimation.fromFrameData(
-      game.images.fromCache('Sprites/14-TileSets/ground_player.png'),
+      game.images.fromCache('Sprites/14-TileSets/$groundTexture.png'),
       SpriteAnimationData.sequenced(
         amount: 5,
         stepTime: 0.05,
