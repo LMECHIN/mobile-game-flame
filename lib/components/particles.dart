@@ -79,8 +79,7 @@ class Particles extends SpriteAnimationComponent
   void onCollisionStart(
       Set<Vector2> intersectionPoints, PositionComponent other) {
     if (other is Player) {
-      removeFromParent();
-      // _updatePlayerColor(const Color.fromARGB(255, 11, 3, 55));
+      position.x += 5000;
     }
     super.onCollisionStart(intersectionPoints, other);
   }

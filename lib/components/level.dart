@@ -9,10 +9,12 @@ import 'package:flutter_application_1/components/collisions_block.dart';
 import 'package:flutter_application_1/components/obstacle.dart';
 import 'package:flutter_application_1/components/particles.dart';
 import 'package:flutter_application_1/components/player.dart';
+import 'package:flutter_application_1/map/spawning_blocks.dart';
+import 'package:flutter_application_1/map/spawning_blocks_animated.dart';
+import 'package:flutter_application_1/map/spawning_obstacles.dart';
 import 'package:flutter_application_1/models/level_data.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 import 'package:flutter_application_1/utils/get_level_data.dart';
-import 'package:flutter_application_1/widget/animation_properties.dart';
 
 class Level extends World with HasGameRef<PixelGame> {
   final String? levelName;
@@ -26,7 +28,11 @@ class Level extends World with HasGameRef<PixelGame> {
   late Checkpoint checkpoint;
   double fixedDeltaTime = 0.1 / 60;
   double accumulatedTime = 0;
+  List<Particles> generatedParticles = [];
   List<Blocks> generatedBlocks = [];
+  List<BlocksAnimated> generatedBlocksAnimated = [];
+  List<Obstacle> generatedObstacles = [];
+  Map<String, DateTime> lastSpawnTimes = {};
 
   @override
   FutureOr<void> onLoad() async {
@@ -36,10 +42,8 @@ class Level extends World with HasGameRef<PixelGame> {
 
     add(level);
 
-    _spawningParticles();
-    _spawningBlocksAnimated();
-    // _spawningBlocks();
     _spawningObjects();
+    // _spawningParticlesAdd();
     _addCollisions();
 
     return super.onLoad();
@@ -47,8 +51,29 @@ class Level extends World with HasGameRef<PixelGame> {
 
   @override
   void update(double dt) {
+    _spawningParticles();
     calculateProgress(player.position, checkpoint.position);
-    _spawningBlocks();
+    spawningBlocks(
+        level.tileMap.getLayer<ObjectGroup>('SpawnBlocks'),
+        player,
+        (blocks) => add(blocks),
+        (blocks) => remove(blocks),
+        children,
+        generatedBlocks);
+    spawningBlocksAnimated(
+        level.tileMap.getLayer<ObjectGroup>('SpawnBlocksAnimated'),
+        player,
+        (blocksAnimated) => add(blocksAnimated),
+        (blockAnimated) => remove(blockAnimated),
+        children,
+        generatedBlocksAnimated);
+    spawningObstacles(
+        level.tileMap.getLayer<ObjectGroup>('SpawnObstacles'),
+        player,
+        (obstacle) => add(obstacle),
+        (obstacle) => remove(obstacle),
+        children,
+        generatedObstacles);
   }
 
   void calculateProgress(Vector2 playerPosition, Vector2 checkpointPosition) {
@@ -78,12 +103,31 @@ class Level extends World with HasGameRef<PixelGame> {
     final spawnPointsParticles =
         level.tileMap.getLayer<ObjectGroup>('SpawnParticles');
 
+    final double playerX = player.position.x;
+    final double playerY = player.position.y;
     if (spawnPointsParticles != null) {
       for (final spawnParticle in spawnPointsParticles.objects) {
-        switch (spawnParticle.class_) {
-          case 'Particle':
-            break;
-          default:
+        final double spawnX = spawnParticle.x;
+        final double spawnY = spawnParticle.y;
+        final double distanceToPlayer =
+            (spawnX - playerX).abs() + (spawnY - playerY).abs();
+
+        if (distanceToPlayer < 5000) {
+          final lastSpawnTime = lastSpawnTimes[spawnParticle.name];
+          final currentTime = DateTime.now();
+          bool hasParticle = false;
+          for (final child in children) {
+            if (child is Blocks &&
+                child.position.x == spawnX &&
+                child.position.y == spawnY) {
+              hasParticle = true;
+              break;
+            }
+          }
+          if (!hasParticle &&
+              (lastSpawnTime == null ||
+                  currentTime.difference(lastSpawnTime) >=
+                      const Duration(seconds: 1))) {
             final particles = Particles(
               position: Vector2(spawnParticle.x, spawnParticle.y),
               size: Vector2(spawnParticle.width / 6, spawnParticle.height / 6),
@@ -91,115 +135,17 @@ class Level extends World with HasGameRef<PixelGame> {
             particles.widthMap = level.width;
             particles.heightMap = level.height;
             add(particles);
-            break;
-        }
-      }
-    }
-  }
-
-  void _spawningBlocksAnimated() {
-    final spawnPointsBlocksAnimated =
-        level.tileMap.getLayer<ObjectGroup>('SpawnBlocksAnimated');
-    if (spawnPointsBlocksAnimated != null) {
-      for (final spawnBlockAnimated in spawnPointsBlocksAnimated.objects) {
-        final int time = spawnBlockAnimated.properties.getValue('Time') ?? 0;
-        final bool loop =
-            spawnBlockAnimated.properties.getValue('Loop') ?? true;
-        final bool nextLoop =
-            spawnBlockAnimated.properties.getValue('NextLoop') ?? true;
-        final String textureAnimation =
-            spawnBlockAnimated.properties.getValue('Texture') ?? 'down_black';
-        final String nextTextureAnimation =
-            spawnBlockAnimated.properties.getValue('NextTexture') ??
-                'rotate_blue';
-
-        Map<String, dynamic> currentAnimationProps =
-            animationProperties[textureAnimation] ?? {};
-        Map<String, dynamic> nextAnimationProps =
-            animationProperties[nextTextureAnimation] ?? {};
-
-        final blocks = BlocksAnimated(
-          position: Vector2(spawnBlockAnimated.x, spawnBlockAnimated.y),
-          size: Vector2(spawnBlockAnimated.width, spawnBlockAnimated.height),
-          color: currentAnimationProps["amount"] ?? 0,
-          texture: currentAnimationProps["texture"] ?? "",
-          speedLoop: (currentAnimationProps["speedLoop"] as List<num>)
-              .map((e) => e.toDouble())
-              .toList(),
-          loop: loop,
-          start: currentAnimationProps["start"] ?? 0,
-          end: currentAnimationProps["end"] ?? 0,
-        );
-        add(blocks);
-
-        Future.delayed(Duration(seconds: time), () {
-          remove(blocks);
-
-          final blocksTime = BlocksAnimated(
-            position: Vector2(spawnBlockAnimated.x, spawnBlockAnimated.y),
-            size: Vector2(spawnBlockAnimated.width, spawnBlockAnimated.height),
-            color: nextAnimationProps["amount"] ?? 0,
-            texture: nextAnimationProps["texture"] ?? "",
-            speedLoop: (nextAnimationProps["speedLoop"] as List<num>)
-                .map((e) => e.toDouble())
-                .toList(),
-            loop: nextLoop,
-            start: nextAnimationProps["start"] ?? 0,
-            end: nextAnimationProps["end"] ?? 0,
-          );
-          add(blocksTime);
-        });
-      }
-    }
-  }
-
-  void _spawningBlocks() {
-    final spawnPointsBlocks =
-        level.tileMap.getLayer<ObjectGroup>('SpawnBlocks');
-
-    final double playerX = player.position.x;
-    final double playerY = player.position.y;
-    if (spawnPointsBlocks != null) {
-      for (final spawnBlock in spawnPointsBlocks.objects) {
-        final double spawnX = spawnBlock.x;
-        final double spawnY = spawnBlock.y;
-        final double distanceToPlayer =
-            (spawnX - playerX).abs() + (spawnY - playerY).abs();
-
-        if (distanceToPlayer < 5000) {
-          bool hasBlock = false;
-          for (final child in children) {
-            if (child is Blocks &&
-                child.position.x == spawnX &&
-                child.position.y == spawnY) {
-              hasBlock = true;
-              break;
-            }
-          }
-
-          if (!hasBlock) {
-            final blocks = Blocks(
-              position: Vector2(spawnX, spawnY),
-              size: Vector2(spawnBlock.width, spawnBlock.height),
-              color: spawnBlock.properties.getValue('Color') ?? 1,
-              texture: spawnBlock.properties.getValue('Texture') ??
-                  'ground_blue_test(fix)',
-              groundTexture: spawnBlock.properties.getValue('GroundTexture') ??
-                  'ground_player',
-            );
-            add(blocks);
-
-            generatedBlocks.add(blocks);
+            generatedParticles.add(particles);
+            lastSpawnTimes[spawnParticle.name] = currentTime;
           }
         }
       }
-
-      for (final block in generatedBlocks) {
-        final double distanceToPlayer = (block.position.x - playerX).abs() +
-            (block.position.y - playerY).abs();
+      for (final particle in generatedParticles) {
+        final double distanceToPlayer = (particle.position.x - playerX).abs() +
+            (particle.position.y - playerY).abs();
         if (distanceToPlayer >= 5000) {
-          remove(block);
-          generatedBlocks.remove(block);
+          remove(particle);
+          generatedParticles.remove(particle);
         }
       }
     }
@@ -224,6 +170,7 @@ class Level extends World with HasGameRef<PixelGame> {
               size: Vector2(spawnPoint.width, spawnPoint.height),
             );
             add(obstacle);
+            generatedObstacles.add(obstacle);
             break;
           case 'BoostsUp':
             final boost = BoostUp(

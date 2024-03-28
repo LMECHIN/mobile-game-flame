@@ -32,6 +32,15 @@ class Obstacle extends SpriteAnimationComponent with HasGameRef<PixelGame> {
       ]);
       add(hitboxShape);
     }
+    animation = SpriteAnimation.fromFrameData(
+      game.images.fromCache('Sprites/14-TileSets/Obstacle01.png'),
+      SpriteAnimationData.sequenced(
+        amount: 1,
+        stepTime: 1,
+        textureSize: Vector2(264, 264),
+        loop: false,
+      ),
+    );
     // debugMode = true;
     return super.onLoad();
   }

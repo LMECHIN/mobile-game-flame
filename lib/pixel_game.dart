@@ -55,8 +55,8 @@ class PixelGame extends FlameGame
   void _parallaxBackgroung() async {
     ParallaxComponent background = await loadParallaxComponent(
       [
-        // ParallaxImageData('Background/Starfield_01-1024x1024.png'),
-        ParallaxImageData('Background/Starfield_02-1024x1024.png'),
+        // ParallaxImageData('Background/background.png'),
+        // ParallaxImageData('Background/Starfield_02-1024x1024.png'),
         // ParallaxImageData('Background/Starfield_03-1024x1024.png'),
         // ParallaxImageData('Background/Starfield_04-1024x1024.png'),
         // ParallaxImageData('Background/Starfield_05-1024x1024.png'),
@@ -64,7 +64,7 @@ class PixelGame extends FlameGame
         // ParallaxImageData('Background/Starfield_07-1024x1024.png'),
         // ParallaxImageData('Background/Starfield_08-1024x1024.png'),
       ],
-      baseVelocity: Vector2(10, 0),
+      baseVelocity: Vector2(20, 0),
       velocityMultiplierDelta: Vector2(1.6, 1.0),
       priority: -1,
     );
@@ -123,6 +123,7 @@ class PixelGame extends FlameGame
 
   void reset() {
     player.reset();
+    color = Colors.black;
     // createLevel.reset();
   }
 
