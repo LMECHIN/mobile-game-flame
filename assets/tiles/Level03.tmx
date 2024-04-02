@@ -3,7 +3,7 @@
  <tileset firstgid="1" source="light2.tsx"/>
  <tileset firstgid="10" source="Obstacle_01.tsx"/>
  <tileset firstgid="19" source="boost_right.tsx"/>
- <layer id="10" name="boosts" width="300" height="23">
+ <layer id="10" name="boosts" width="300" height="23" locked="1">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -30,7 +30,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="7" name="lights" width="300" height="23">
+ <layer id="7" name="lights" width="300" height="23" locked="1">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -57,7 +57,7 @@
 7,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,9
 </data>
  </layer>
- <layer id="9" name="lights 2" width="300" height="23">
+ <layer id="9" name="lights 2" width="300" height="23" locked="1">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -84,7 +84,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="2" name="Collisions">
+ <objectgroup id="2" name="Collisions" locked="1">
   <object id="4" x="0" y="5808" width="68640" height="264"/>
   <object id="5" x="68640" y="5808" width="10560" height="264"/>
   <object id="315" x="15048" y="5544" width="264" height="264"/>
@@ -101,14 +101,14 @@
   <object id="439" x="30360" y="4752" width="528" height="264"/>
   <object id="441" x="32472" y="5544" width="792" height="264"/>
   <object id="442" x="33264" y="4752" width="792" height="264"/>
-  <object id="444" x="34320" y="4488" width="792" height="264"/>
-  <object id="445" x="35640" y="4224" width="528" height="264"/>
-  <object id="446" x="36432" y="3960" width="528" height="264"/>
-  <object id="447" x="37488" y="3696" width="264" height="264"/>
-  <object id="448" x="38016" y="3432" width="264" height="264"/>
+  <object id="444" x="34584" y="4488" width="792" height="264"/>
+  <object id="445" x="35904" y="4224" width="528" height="264"/>
+  <object id="446" x="36696" y="3960" width="528" height="264"/>
+  <object id="447" x="37752" y="3696" width="264" height="264"/>
+  <object id="448" x="38544" y="3432" width="264" height="264"/>
   <object id="596" x="40656" y="5280" width="1056" height="264"/>
  </objectgroup>
- <objectgroup id="3" name="Spawnpoints">
+ <objectgroup id="3" name="Spawnpoints" locked="1">
   <object id="6" name="Player" type="Player" x="528" y="5280" width="264" height="264"/>
   <object id="11" name="Checkpoint" type="Checkpoint" x="78672" y="5544" width="264" height="264"/>
   <object id="363" type="Obstacle" x="27456" y="5280" width="264" height="264"/>
@@ -186,9 +186,10 @@
   <object id="592" type="Obstacle" x="36168" y="5544" width="264" height="264"/>
   <object id="593" type="Obstacle" x="33000" y="5280" width="264" height="264"/>
  </objectgroup>
- <objectgroup id="4" name="SpawnBlocks" locked="1">
+ <objectgroup id="4" name="SpawnBlocks">
   <object id="12" x="264" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -197,6 +198,7 @@
   </object>
   <object id="132" x="19272" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -205,6 +207,7 @@
   </object>
   <object id="204" x="38280" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -213,6 +216,7 @@
   </object>
   <object id="276" x="57288" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -221,6 +225,7 @@
   </object>
   <object id="51" x="6600" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -229,6 +234,7 @@
   </object>
   <object id="85" x="25608" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -237,6 +243,7 @@
   </object>
   <object id="157" x="44616" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -245,6 +252,7 @@
   </object>
   <object id="229" x="63624" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -253,6 +261,7 @@
   </object>
   <object id="75" x="12936" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -261,6 +270,7 @@
   </object>
   <object id="84" x="31944" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -269,6 +279,7 @@
   </object>
   <object id="156" x="50952" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -277,6 +288,7 @@
   </object>
   <object id="228" x="69960" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -285,6 +297,7 @@
   </object>
   <object id="25" x="2376" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -293,6 +306,7 @@
   </object>
   <object id="117" x="21384" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -301,6 +315,7 @@
   </object>
   <object id="189" x="40392" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -309,6 +324,7 @@
   </object>
   <object id="261" x="59400" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -317,6 +333,7 @@
   </object>
   <object id="36" x="8712" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -325,6 +342,7 @@
   </object>
   <object id="86" x="27720" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -333,6 +351,7 @@
   </object>
   <object id="158" x="46728" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -341,6 +360,7 @@
   </object>
   <object id="230" x="65736" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -349,6 +369,7 @@
   </object>
   <object id="60" x="15048" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -357,6 +378,7 @@
   </object>
   <object id="133" x="34056" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -365,6 +387,7 @@
   </object>
   <object id="205" x="53064" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -373,6 +396,7 @@
   </object>
   <object id="277" x="72072" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -381,6 +405,7 @@
   </object>
   <object id="33" x="4488" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -389,6 +414,7 @@
   </object>
   <object id="109" x="23496" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -397,6 +423,7 @@
   </object>
   <object id="181" x="42504" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -405,6 +432,7 @@
   </object>
   <object id="253" x="61512" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -413,6 +441,7 @@
   </object>
   <object id="57" x="10824" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -421,6 +450,7 @@
   </object>
   <object id="87" x="29832" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -429,6 +459,7 @@
   </object>
   <object id="159" x="48840" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -437,6 +468,7 @@
   </object>
   <object id="231" x="67848" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -445,6 +477,7 @@
   </object>
   <object id="81" x="17160" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -453,6 +486,7 @@
   </object>
   <object id="153" x="36168" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -461,6 +495,7 @@
   </object>
   <object id="225" x="55176" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -469,6 +504,7 @@
   </object>
   <object id="297" x="74184" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -477,6 +513,7 @@
   </object>
   <object id="300" x="76296" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -485,6 +522,7 @@
   </object>
   <object id="14" x="792" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -493,6 +531,7 @@
   </object>
   <object id="129" x="19800" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -501,6 +540,7 @@
   </object>
   <object id="201" x="38808" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -509,6 +549,7 @@
   </object>
   <object id="273" x="57816" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -517,6 +558,7 @@
   </object>
   <object id="48" x="7128" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -525,6 +567,7 @@
   </object>
   <object id="88" x="26136" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -533,6 +576,7 @@
   </object>
   <object id="160" x="45144" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -541,6 +585,7 @@
   </object>
   <object id="232" x="64152" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -549,6 +594,7 @@
   </object>
   <object id="72" x="13464" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -557,6 +603,7 @@
   </object>
   <object id="145" x="32472" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -565,6 +612,7 @@
   </object>
   <object id="217" x="51480" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -573,6 +621,7 @@
   </object>
   <object id="289" x="70488" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -581,6 +630,7 @@
   </object>
   <object id="22" x="2904" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -589,6 +639,7 @@
   </object>
   <object id="118" x="21912" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -597,6 +648,7 @@
   </object>
   <object id="190" x="40920" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -605,6 +657,7 @@
   </object>
   <object id="262" x="59928" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -613,6 +666,7 @@
   </object>
   <object id="37" x="9240" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -621,6 +675,7 @@
   </object>
   <object id="89" x="28248" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -629,6 +684,7 @@
   </object>
   <object id="161" x="47256" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -637,6 +693,7 @@
   </object>
   <object id="233" x="66264" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -645,6 +702,7 @@
   </object>
   <object id="61" x="15576" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -653,6 +711,7 @@
   </object>
   <object id="134" x="34584" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -661,6 +720,7 @@
   </object>
   <object id="206" x="53592" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -669,6 +729,7 @@
   </object>
   <object id="278" x="72600" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -677,6 +738,7 @@
   </object>
   <object id="30" x="5016" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -685,6 +747,7 @@
   </object>
   <object id="110" x="24024" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -693,6 +756,7 @@
   </object>
   <object id="182" x="43032" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -701,6 +765,7 @@
   </object>
   <object id="254" x="62040" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -709,6 +774,7 @@
   </object>
   <object id="54" x="11352" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -717,6 +783,7 @@
   </object>
   <object id="90" x="30360" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -725,6 +792,7 @@
   </object>
   <object id="162" x="49368" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -733,6 +801,7 @@
   </object>
   <object id="234" x="68376" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -741,6 +810,7 @@
   </object>
   <object id="78" x="17688" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -749,6 +819,7 @@
   </object>
   <object id="150" x="36696" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -757,6 +828,7 @@
   </object>
   <object id="222" x="55704" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -765,6 +837,7 @@
   </object>
   <object id="294" x="74712" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -773,6 +846,7 @@
   </object>
   <object id="301" x="76824" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -781,6 +855,7 @@
   </object>
   <object id="16" x="1320" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -789,6 +864,7 @@
   </object>
   <object id="127" x="20328" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -797,6 +873,7 @@
   </object>
   <object id="199" x="39336" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -805,6 +882,7 @@
   </object>
   <object id="271" x="58344" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -813,6 +891,7 @@
   </object>
   <object id="46" x="7656" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -821,6 +900,7 @@
   </object>
   <object id="91" x="26664" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -829,6 +909,7 @@
   </object>
   <object id="163" x="45672" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -837,6 +918,7 @@
   </object>
   <object id="235" x="64680" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -845,6 +927,7 @@
   </object>
   <object id="70" x="13992" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -853,6 +936,7 @@
   </object>
   <object id="143" x="33000" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -861,6 +945,7 @@
   </object>
   <object id="215" x="52008" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -869,6 +954,7 @@
   </object>
   <object id="287" x="71016" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -877,6 +963,7 @@
   </object>
   <object id="20" x="3432" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -885,6 +972,7 @@
   </object>
   <object id="119" x="22440" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -893,6 +981,7 @@
   </object>
   <object id="191" x="41448" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -901,6 +990,7 @@
   </object>
   <object id="263" x="60456" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -909,6 +999,7 @@
   </object>
   <object id="38" x="9768" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -917,6 +1008,7 @@
   </object>
   <object id="92" x="28776" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -925,6 +1017,7 @@
   </object>
   <object id="164" x="47784" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -933,6 +1026,7 @@
   </object>
   <object id="236" x="66792" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -941,6 +1035,7 @@
   </object>
   <object id="62" x="16104" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -949,6 +1044,7 @@
   </object>
   <object id="135" x="35112" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -957,6 +1053,7 @@
   </object>
   <object id="207" x="54120" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -965,6 +1062,7 @@
   </object>
   <object id="279" x="73128" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -973,6 +1071,7 @@
   </object>
   <object id="28" x="5544" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -981,6 +1080,7 @@
   </object>
   <object id="111" x="24552" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -989,6 +1089,7 @@
   </object>
   <object id="183" x="43560" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -997,6 +1098,7 @@
   </object>
   <object id="255" x="62568" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1005,6 +1107,7 @@
   </object>
   <object id="52" x="11880" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1013,6 +1116,7 @@
   </object>
   <object id="93" x="30888" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1021,6 +1125,7 @@
   </object>
   <object id="165" x="49896" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1029,6 +1134,7 @@
   </object>
   <object id="237" x="68904" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1037,6 +1143,7 @@
   </object>
   <object id="76" x="18216" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1045,6 +1152,7 @@
   </object>
   <object id="148" x="37224" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1053,6 +1161,7 @@
   </object>
   <object id="220" x="56232" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1061,6 +1170,7 @@
   </object>
   <object id="292" x="75240" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1069,6 +1179,7 @@
   </object>
   <object id="302" x="77352" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1077,6 +1188,7 @@
   </object>
   <object id="18" x="1848" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1085,6 +1197,7 @@
   </object>
   <object id="125" x="20856" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1093,6 +1206,7 @@
   </object>
   <object id="197" x="39864" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1101,6 +1215,7 @@
   </object>
   <object id="269" x="58872" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1109,6 +1224,7 @@
   </object>
   <object id="44" x="8184" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1117,6 +1233,7 @@
   </object>
   <object id="94" x="27192" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1125,6 +1242,7 @@
   </object>
   <object id="166" x="46200" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1133,6 +1251,7 @@
   </object>
   <object id="238" x="65208" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1141,6 +1260,7 @@
   </object>
   <object id="68" x="14520" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1149,6 +1269,7 @@
   </object>
   <object id="141" x="33528" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1157,6 +1278,7 @@
   </object>
   <object id="213" x="52536" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1165,6 +1287,7 @@
   </object>
   <object id="285" x="71544" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1173,6 +1296,7 @@
   </object>
   <object id="26" x="3960" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1181,6 +1305,7 @@
   </object>
   <object id="120" x="22968" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1189,6 +1314,7 @@
   </object>
   <object id="192" x="41976" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1197,6 +1323,7 @@
   </object>
   <object id="264" x="60984" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1205,6 +1332,7 @@
   </object>
   <object id="39" x="10296" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1213,6 +1341,7 @@
   </object>
   <object id="95" x="29304" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1221,6 +1350,7 @@
   </object>
   <object id="167" x="48312" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1229,6 +1359,7 @@
   </object>
   <object id="239" x="67320" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1237,6 +1368,7 @@
   </object>
   <object id="63" x="16632" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1245,6 +1377,7 @@
   </object>
   <object id="136" x="35640" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1253,6 +1386,7 @@
   </object>
   <object id="208" x="54648" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1261,6 +1395,7 @@
   </object>
   <object id="280" x="73656" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1269,6 +1404,7 @@
   </object>
   <object id="34" x="6072" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1277,6 +1413,7 @@
   </object>
   <object id="112" x="25080" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1285,6 +1422,7 @@
   </object>
   <object id="184" x="44088" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1293,6 +1431,7 @@
   </object>
   <object id="256" x="63096" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1301,6 +1440,7 @@
   </object>
   <object id="58" x="12408" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1309,6 +1449,7 @@
   </object>
   <object id="96" x="31416" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1317,6 +1458,7 @@
   </object>
   <object id="168" x="50424" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1325,6 +1467,7 @@
   </object>
   <object id="240" x="69432" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1333,6 +1476,7 @@
   </object>
   <object id="82" x="18744" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1341,6 +1485,7 @@
   </object>
   <object id="154" x="37752" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1349,6 +1494,7 @@
   </object>
   <object id="226" x="56760" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1357,6 +1503,7 @@
   </object>
   <object id="298" x="75768" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1365,6 +1512,7 @@
   </object>
   <object id="303" x="77880" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1373,6 +1521,7 @@
   </object>
   <object id="308" x="78672" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1381,6 +1530,7 @@
   </object>
   <object id="13" x="528" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1389,6 +1539,7 @@
   </object>
   <object id="131" x="19536" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1397,6 +1548,7 @@
   </object>
   <object id="203" x="38544" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1405,6 +1557,7 @@
   </object>
   <object id="275" x="57552" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1413,6 +1566,7 @@
   </object>
   <object id="50" x="6864" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1421,6 +1575,7 @@
   </object>
   <object id="97" x="25872" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1429,6 +1584,7 @@
   </object>
   <object id="169" x="44880" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1437,6 +1593,7 @@
   </object>
   <object id="241" x="63888" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1445,6 +1602,7 @@
   </object>
   <object id="74" x="13200" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1453,6 +1611,7 @@
   </object>
   <object id="147" x="32208" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1461,6 +1620,7 @@
   </object>
   <object id="219" x="51216" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1469,6 +1629,7 @@
   </object>
   <object id="291" x="70224" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1477,6 +1638,7 @@
   </object>
   <object id="24" x="2640" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1485,6 +1647,7 @@
   </object>
   <object id="121" x="21648" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1493,6 +1656,7 @@
   </object>
   <object id="193" x="40656" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1501,6 +1665,7 @@
   </object>
   <object id="265" x="59664" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1509,6 +1674,7 @@
   </object>
   <object id="40" x="8976" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1517,6 +1683,7 @@
   </object>
   <object id="98" x="27984" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1525,6 +1692,7 @@
   </object>
   <object id="170" x="46992" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1533,6 +1701,7 @@
   </object>
   <object id="242" x="66000" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1541,6 +1710,7 @@
   </object>
   <object id="64" x="15312" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1549,32 +1719,95 @@
   </object>
   <object id="312" x="17952" y="5544" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="true"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="Ground_16"/>
+    <property name="TextureBlock" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
   <object id="314" x="15048" y="5544" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="true"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="2"/>
     <property name="Texture" value="ground_blue_test(fix)1"/>
+    <property name="TextureBlock" type="bool" value="true"/>
     <property name="Time" type="int" value="1"/>
    </properties>
   </object>
   <object id="330" x="17952" y="5280" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="true"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="Ground_02"/>
+    <property name="TextureBlock" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
   <object id="361" x="27456" y="5544" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="true"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1584,6 +1817,21 @@
   </object>
   <object id="366" x="28248" y="5544" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="true"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1593,33 +1841,96 @@
   </object>
   <object id="332" x="20328" y="5544" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
-    <property name="Texture" value="Ground_11"/>
+    <property name="Texture" value="Ground_03"/>
+    <property name="TextureBlock" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
   <object id="333" x="20064" y="5544" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="true"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="Ground_03"/>
+    <property name="TextureBlock" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
   <object id="338" x="22176" y="5544" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="true"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="Ground_03"/>
+    <property name="TextureBlock" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
   <object id="346" x="25608" y="5544" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1629,15 +1940,46 @@
   </object>
   <object id="339" x="22440" y="5544" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="true"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
+    <property name="TextureBlock" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
   <object id="367" x="28512" y="5544" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="true"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1647,6 +1989,21 @@
   </object>
   <object id="368" x="28776" y="5544" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="true"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1656,6 +2013,21 @@
   </object>
   <object id="384" x="32736" y="5544" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="true"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1665,6 +2037,21 @@
   </object>
   <object id="389" x="33528" y="4752" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1674,6 +2061,21 @@
   </object>
   <object id="456" x="40920" y="5280" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1683,6 +2085,21 @@
   </object>
   <object id="462" x="41184" y="5280" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1690,8 +2107,23 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
-  <object id="392" x="34584" y="4488" width="264" height="264">
+  <object id="392" x="34848" y="4488" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1701,6 +2133,21 @@
   </object>
   <object id="345" x="25344" y="5544" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="true"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1710,6 +2157,21 @@
   </object>
   <object id="347" x="25080" y="5544" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="true"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1719,15 +2181,46 @@
   </object>
   <object id="340" x="22704" y="5544" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="true"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="Ground_10"/>
+    <property name="TextureBlock" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
   <object id="369" x="29040" y="5544" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="true"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1737,6 +2230,21 @@
   </object>
   <object id="341" x="22704" y="5280" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="true"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1746,6 +2254,21 @@
   </object>
   <object id="370" x="29040" y="5280" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="true"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1755,6 +2278,21 @@
   </object>
   <object id="377" x="29568" y="5016" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="true"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1764,6 +2302,21 @@
   </object>
   <object id="379" x="30360" y="4752" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="true"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1771,8 +2324,23 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
-  <object id="394" x="35640" y="4224" width="264" height="264">
+  <object id="394" x="35904" y="4224" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="true"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1780,8 +2348,23 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
-  <object id="396" x="36432" y="3960" width="264" height="264">
+  <object id="396" x="36696" y="3960" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="true"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1791,6 +2374,21 @@
   </object>
   <object id="382" x="32472" y="5544" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="true"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1800,6 +2398,21 @@
   </object>
   <object id="388" x="33264" y="4752" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="true"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1809,6 +2422,21 @@
   </object>
   <object id="457" x="40656" y="5280" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="true"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1816,8 +2444,23 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
-  <object id="391" x="34320" y="4488" width="264" height="264">
+  <object id="391" x="34584" y="4488" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="true"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1827,6 +2470,21 @@
   </object>
   <object id="378" x="29832" y="5016" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="true"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1836,6 +2494,21 @@
   </object>
   <object id="380" x="30624" y="4752" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="true"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1843,8 +2516,23 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
-  <object id="395" x="35904" y="4224" width="264" height="264">
+  <object id="395" x="36168" y="4224" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="true"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1852,8 +2540,23 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
-  <object id="397" x="36696" y="3960" width="264" height="264">
+  <object id="397" x="36960" y="3960" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="true"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1861,8 +2564,23 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
-  <object id="398" x="37488" y="3696" width="264" height="264">
+  <object id="398" x="37752" y="3696" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1870,8 +2588,23 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
-  <object id="399" x="38016" y="3432" width="264" height="264">
+  <object id="399" x="38544" y="3432" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1881,6 +2614,21 @@
   </object>
   <object id="383" x="33000" y="5544" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="true"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1890,6 +2638,21 @@
   </object>
   <object id="390" x="33792" y="4752" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="true"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1899,6 +2662,21 @@
   </object>
   <object id="458" x="41448" y="5280" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="true"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1906,8 +2684,23 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
-  <object id="393" x="34848" y="4488" width="264" height="264">
+  <object id="393" x="35112" y="4488" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="true"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1917,6 +2710,21 @@
   </object>
   <object id="344" x="25080" y="5280" width="264" height="264">
    <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="true"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
     <property name="Color" type="int" value="1"/>
     <property name="GroundTexture" value="ground_player_border_up"/>
     <property name="NextColor" type="int" value="1"/>
@@ -1926,6 +2734,7 @@
   </object>
   <object id="137" x="34320" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1934,6 +2743,7 @@
   </object>
   <object id="209" x="53328" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1942,6 +2752,7 @@
   </object>
   <object id="281" x="72336" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1950,6 +2761,7 @@
   </object>
   <object id="32" x="4752" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1958,6 +2770,7 @@
   </object>
   <object id="113" x="23760" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1966,6 +2779,7 @@
   </object>
   <object id="185" x="42768" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1974,6 +2788,7 @@
   </object>
   <object id="257" x="61776" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1982,6 +2797,7 @@
   </object>
   <object id="56" x="11088" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1990,6 +2806,7 @@
   </object>
   <object id="99" x="30096" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -1998,6 +2815,7 @@
   </object>
   <object id="171" x="49104" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2006,6 +2824,7 @@
   </object>
   <object id="243" x="68112" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2014,6 +2833,7 @@
   </object>
   <object id="80" x="17424" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2022,6 +2842,7 @@
   </object>
   <object id="152" x="36432" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2030,6 +2851,7 @@
   </object>
   <object id="224" x="55440" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2038,6 +2860,7 @@
   </object>
   <object id="296" x="74448" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2046,6 +2869,7 @@
   </object>
   <object id="304" x="76560" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2054,6 +2878,7 @@
   </object>
   <object id="15" x="1056" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2062,6 +2887,7 @@
   </object>
   <object id="130" x="20064" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2070,6 +2896,7 @@
   </object>
   <object id="202" x="39072" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2078,6 +2905,7 @@
   </object>
   <object id="274" x="58080" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2086,6 +2914,7 @@
   </object>
   <object id="49" x="7392" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2094,6 +2923,7 @@
   </object>
   <object id="100" x="26400" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2102,6 +2932,7 @@
   </object>
   <object id="172" x="45408" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2110,6 +2941,7 @@
   </object>
   <object id="244" x="64416" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2118,6 +2950,7 @@
   </object>
   <object id="73" x="13728" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2126,6 +2959,7 @@
   </object>
   <object id="146" x="32736" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2134,6 +2968,7 @@
   </object>
   <object id="218" x="51744" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2142,6 +2977,7 @@
   </object>
   <object id="290" x="70752" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2150,6 +2986,7 @@
   </object>
   <object id="23" x="3168" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2158,6 +2995,7 @@
   </object>
   <object id="122" x="22176" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2166,6 +3004,7 @@
   </object>
   <object id="194" x="41184" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2174,6 +3013,7 @@
   </object>
   <object id="266" x="60192" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2182,6 +3022,7 @@
   </object>
   <object id="41" x="9504" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2190,6 +3031,7 @@
   </object>
   <object id="101" x="28512" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2198,6 +3040,7 @@
   </object>
   <object id="173" x="47520" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2206,6 +3049,7 @@
   </object>
   <object id="245" x="66528" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2214,6 +3058,7 @@
   </object>
   <object id="65" x="15840" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2222,6 +3067,7 @@
   </object>
   <object id="138" x="34848" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2230,6 +3076,7 @@
   </object>
   <object id="210" x="53856" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2238,6 +3085,7 @@
   </object>
   <object id="282" x="72864" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2246,6 +3094,7 @@
   </object>
   <object id="31" x="5280" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2254,6 +3103,7 @@
   </object>
   <object id="114" x="24288" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2262,6 +3112,7 @@
   </object>
   <object id="186" x="43296" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2270,6 +3121,7 @@
   </object>
   <object id="258" x="62304" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2278,6 +3130,7 @@
   </object>
   <object id="55" x="11616" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2286,6 +3139,7 @@
   </object>
   <object id="102" x="30624" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2294,6 +3148,7 @@
   </object>
   <object id="174" x="49632" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2302,6 +3157,7 @@
   </object>
   <object id="246" x="68640" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2310,6 +3166,7 @@
   </object>
   <object id="79" x="17952" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2318,6 +3175,7 @@
   </object>
   <object id="151" x="36960" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2326,6 +3184,7 @@
   </object>
   <object id="223" x="55968" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2334,6 +3193,7 @@
   </object>
   <object id="295" x="74976" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2342,6 +3202,7 @@
   </object>
   <object id="305" x="77088" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2350,6 +3211,7 @@
   </object>
   <object id="17" x="1584" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2358,6 +3220,7 @@
   </object>
   <object id="128" x="20592" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2366,6 +3229,7 @@
   </object>
   <object id="200" x="39600" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2374,6 +3238,7 @@
   </object>
   <object id="272" x="58608" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2382,6 +3247,7 @@
   </object>
   <object id="47" x="7920" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2390,6 +3256,7 @@
   </object>
   <object id="103" x="26928" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2398,6 +3265,7 @@
   </object>
   <object id="175" x="45936" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2406,6 +3274,7 @@
   </object>
   <object id="247" x="64944" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2414,6 +3283,7 @@
   </object>
   <object id="71" x="14256" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2422,6 +3292,7 @@
   </object>
   <object id="144" x="33264" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2430,6 +3301,7 @@
   </object>
   <object id="216" x="52272" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2438,6 +3310,7 @@
   </object>
   <object id="288" x="71280" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2446,6 +3319,7 @@
   </object>
   <object id="21" x="3696" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2454,6 +3328,7 @@
   </object>
   <object id="123" x="22704" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2462,6 +3337,7 @@
   </object>
   <object id="195" x="41712" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2470,6 +3346,7 @@
   </object>
   <object id="267" x="60720" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2478,6 +3355,7 @@
   </object>
   <object id="42" x="10032" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2486,6 +3364,7 @@
   </object>
   <object id="104" x="29040" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2494,6 +3373,7 @@
   </object>
   <object id="176" x="48048" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2502,6 +3382,7 @@
   </object>
   <object id="248" x="67056" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2510,6 +3391,7 @@
   </object>
   <object id="66" x="16368" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2518,6 +3400,7 @@
   </object>
   <object id="139" x="35376" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2526,6 +3409,7 @@
   </object>
   <object id="211" x="54384" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2534,6 +3418,7 @@
   </object>
   <object id="283" x="73392" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2542,6 +3427,7 @@
   </object>
   <object id="29" x="5808" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2550,6 +3436,7 @@
   </object>
   <object id="115" x="24816" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2558,6 +3445,7 @@
   </object>
   <object id="187" x="43824" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2566,6 +3454,7 @@
   </object>
   <object id="259" x="62832" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2574,6 +3463,7 @@
   </object>
   <object id="53" x="12144" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2582,6 +3472,7 @@
   </object>
   <object id="105" x="31152" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2590,6 +3481,7 @@
   </object>
   <object id="177" x="50160" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2598,6 +3490,7 @@
   </object>
   <object id="249" x="69168" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2606,6 +3499,7 @@
   </object>
   <object id="77" x="18480" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2614,6 +3508,7 @@
   </object>
   <object id="149" x="37488" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2622,6 +3517,7 @@
   </object>
   <object id="221" x="56496" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2630,6 +3526,7 @@
   </object>
   <object id="293" x="75504" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2638,6 +3535,7 @@
   </object>
   <object id="306" x="77616" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2646,6 +3544,7 @@
   </object>
   <object id="309" x="78408" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2654,6 +3553,7 @@
   </object>
   <object id="19" x="2112" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2662,6 +3562,7 @@
   </object>
   <object id="126" x="21120" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2670,6 +3571,7 @@
   </object>
   <object id="198" x="40128" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2678,6 +3580,7 @@
   </object>
   <object id="270" x="59136" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2686,6 +3589,7 @@
   </object>
   <object id="45" x="8448" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2694,6 +3598,7 @@
   </object>
   <object id="106" x="27456" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2702,6 +3607,7 @@
   </object>
   <object id="178" x="46464" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2710,6 +3616,7 @@
   </object>
   <object id="250" x="65472" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2718,6 +3625,7 @@
   </object>
   <object id="69" x="14784" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2726,6 +3634,7 @@
   </object>
   <object id="142" x="33792" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2734,6 +3643,7 @@
   </object>
   <object id="214" x="52800" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2742,6 +3652,7 @@
   </object>
   <object id="286" x="71808" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2750,6 +3661,7 @@
   </object>
   <object id="27" x="4224" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2758,6 +3670,7 @@
   </object>
   <object id="124" x="23232" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2766,6 +3679,7 @@
   </object>
   <object id="196" x="42240" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2774,6 +3688,7 @@
   </object>
   <object id="268" x="61248" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2782,6 +3697,7 @@
   </object>
   <object id="43" x="10560" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2790,6 +3706,7 @@
   </object>
   <object id="107" x="29568" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2798,6 +3715,7 @@
   </object>
   <object id="179" x="48576" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2806,6 +3724,7 @@
   </object>
   <object id="251" x="67584" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2814,6 +3733,7 @@
   </object>
   <object id="67" x="16896" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2822,6 +3742,7 @@
   </object>
   <object id="140" x="35904" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2830,6 +3751,7 @@
   </object>
   <object id="212" x="54912" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2838,6 +3760,7 @@
   </object>
   <object id="284" x="73920" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2846,6 +3769,7 @@
   </object>
   <object id="35" x="6336" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2854,6 +3778,7 @@
   </object>
   <object id="116" x="25344" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2862,6 +3787,7 @@
   </object>
   <object id="188" x="44352" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2870,6 +3796,7 @@
   </object>
   <object id="260" x="63360" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2878,6 +3805,7 @@
   </object>
   <object id="59" x="12672" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2886,6 +3814,7 @@
   </object>
   <object id="108" x="31680" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2894,6 +3823,7 @@
   </object>
   <object id="180" x="50688" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2902,6 +3832,7 @@
   </object>
   <object id="252" x="69696" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2910,6 +3841,7 @@
   </object>
   <object id="83" x="19008" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2918,6 +3850,7 @@
   </object>
   <object id="155" x="38016" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2926,6 +3859,7 @@
   </object>
   <object id="227" x="57024" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2934,6 +3868,7 @@
   </object>
   <object id="299" x="76032" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2942,6 +3877,7 @@
   </object>
   <object id="307" x="78144" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2950,6 +3886,7 @@
   </object>
   <object id="310" x="78936" y="5808" width="264" height="264">
    <properties>
+    <property name="BorderUp" type="bool" value="true"/>
     <property name="Color" type="int" value="1"/>
     <property name="NextColor" type="int" value="1"/>
     <property name="Texture" value="ground_blue_test(fix)"/>
@@ -2958,7 +3895,7 @@
   </object>
  </objectgroup>
  <objectgroup id="5" name="SpawnBlocksAnimated" locked="1"/>
- <objectgroup id="6" name="SpawnParticles">
+ <objectgroup id="6" name="SpawnParticles" locked="1">
   <object id="598" x="2112" y="5016" width="264" height="264"/>
   <object id="600" x="7656" y="4752" width="264" height="264"/>
   <object id="601" x="10032" y="4488" width="264" height="264"/>

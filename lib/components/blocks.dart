@@ -2,7 +2,10 @@ import 'dart:async';
 
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
+import 'package:flutter_application_1/components/border_blocks.dart';
+import 'package:flutter_application_1/components/ground_effect.dart';
 import 'package:flutter_application_1/components/player.dart';
+import 'package:flutter_application_1/components/texture_blocks.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 
 class Blocks extends SpriteAnimationComponent
@@ -10,6 +13,8 @@ class Blocks extends SpriteAnimationComponent
   int color;
   double speedLoop;
   bool loop;
+  List<bool> borders;
+  bool hasTextureBlocks;
   final String texture;
   final String groundTexture;
   Blocks({
@@ -18,6 +23,24 @@ class Blocks extends SpriteAnimationComponent
     this.color = 2,
     this.speedLoop = 1,
     this.loop = false,
+    this.borders = const [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    this.hasTextureBlocks = false,
     required this.texture,
     required this.groundTexture,
   }) : super(
@@ -39,15 +62,31 @@ class Blocks extends SpriteAnimationComponent
 
     // debugMode = true;
     animation = SpriteAnimation.fromFrameData(
-      game.images.fromCache('Sprites/14-TileSets/$texture.png'),
+      game.images.fromCache('Sprites/14-TileSets/Ground_05.png'),
       SpriteAnimationData.sequenced(
         amount: color,
         stepTime: speedLoop,
-        textureSize: Vector2(264, 264),
+        textureSize: Vector2.all(264),
         loop: loop,
       ),
     );
+    final int i = _checkBorder();
+    final borderBlocks = BorderBlocks(borderIndex: i);
+    add(borderBlocks);
+
+    final textureBlocks = TextureBlocks(hasOn: hasTextureBlocks);
+    add(textureBlocks);
+
     return super.onLoad();
+  }
+
+  int _checkBorder() {
+    for (int i = 0; i < borders.length; i++) {
+      if (borders[i]) {
+        return i;
+      }
+    }
+    return 15;
   }
 
   @override
@@ -75,21 +114,14 @@ class Blocks extends SpriteAnimationComponent
   }
 
   void _reachedBlock() {
-    animation = SpriteAnimation.fromFrameData(
-      game.images.fromCache('Sprites/14-TileSets/$groundTexture.png'),
-      SpriteAnimationData.sequenced(
-        amount: 5,
-        stepTime: 0.05,
-        textureSize: Vector2.all(264),
-        loop: false,
-      ),
-    );
+    final groundEffect = GroundEffect();
+    add(groundEffect);
     _isTransitioning = true;
   }
 
   void _restoreOriginalAnimation() {
     animation = SpriteAnimation.fromFrameData(
-      game.images.fromCache('Sprites/14-TileSets/$texture.png'),
+      game.images.fromCache('Sprites/14-TileSets/Ground_05.png'),
       SpriteAnimationData.sequenced(
         amount: color,
         stepTime: speedLoop,

@@ -43,6 +43,25 @@ void spawningBlocks(
                 'ground_blue_test(fix)',
             groundTexture: spawnBlock.properties.getValue('GroundTexture') ??
                 'ground_player',
+            borders: [
+              spawnBlock.properties.getValue('BorderUp') ?? false,
+              spawnBlock.properties.getValue('BorderDown') ?? false,
+              spawnBlock.properties.getValue('BorderLeft') ?? false,
+              spawnBlock.properties.getValue('BorderRight') ?? false,
+              spawnBlock.properties.getValue('BorderUpLeft') ?? false,
+              spawnBlock.properties.getValue('BorderUpRight') ?? false,
+              spawnBlock.properties.getValue('BorderDownLeft') ?? false,
+              spawnBlock.properties.getValue('BorderDownRight') ?? false,
+              spawnBlock.properties.getValue('BorderUpDown') ?? false,
+              spawnBlock.properties.getValue('BorderUpDownLeft') ?? false,
+              spawnBlock.properties.getValue('BorderUpDownRight') ?? false,
+              spawnBlock.properties.getValue('BorderLeftRight') ?? false,
+              spawnBlock.properties.getValue('BorderLeftRightUp') ?? false,
+              spawnBlock.properties.getValue('BorderLeftRightDown') ?? false,
+              spawnBlock.properties.getValue('BorderLeftRightUpDown') ?? false,
+            ],
+            hasTextureBlocks:
+                spawnBlock.properties.getValue('TextureBlock') ?? false,
           );
           add(blocks);
           generatedBlocks.add(blocks);

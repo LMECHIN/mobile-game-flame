@@ -8,7 +8,7 @@ class LevelData extends ChangeNotifier with HiveObjectMixin {
   late String selectedLevel;
 
   @HiveField(1)
-  Map<String, double> levelProgress = {};
+  Map<String, double> levelProgress = {"" : 0};
 
   static const String levelDataBox = 'LevelDataBox';
   static const String levelDataKey = 'LevelDataKey';
