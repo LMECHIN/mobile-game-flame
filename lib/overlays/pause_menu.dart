@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_application_1/components/game_play.dart';
@@ -5,14 +7,50 @@ import 'package:flutter_application_1/components/main_menu.dart';
 import 'package:flutter_application_1/models/level_data.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 import 'package:flutter_application_1/widget/build_button.dart';
+import 'package:flutter_application_1/widget/text_styles_list.dart';
 import 'package:provider/provider.dart';
 import 'pause_button.dart';
 
-class PauseMenu extends StatelessWidget {
+class PauseMenu extends StatefulWidget {
   static const String id = 'PauseMenu';
   final PixelGame game;
 
   const PauseMenu({super.key, required this.game});
+
+  @override
+  State<PauseMenu> createState() => _PauseMenuState();
+}
+
+class _PauseMenuState extends State<PauseMenu> {
+  late int selectedIndex;
+  late List<TextStyle> textStyles;
+  late Timer _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    selectedIndex = 0;
+    textStyles = TextStylesList.getTextStyles([]);
+    _startTimer();
+  }
+
+  void _startTimer() {
+    const duration = Duration(seconds: 2);
+    _timer = Timer.periodic(duration, (timer) {
+      setState(() {
+        selectedIndex++;
+        if (selectedIndex >= textStyles.length) {
+          selectedIndex = 0;
+        }
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,26 +59,40 @@ class PauseMenu extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Pause menu title.
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 50.0),
-            child: Text(
-              'Paused',
-              style: TextStyle(
-                fontSize: 50.0,
-                color: Colors.white,
-                shadows: [
-                  Shadow(
-                    blurRadius: 20.0,
-                    color: Colors.white,
-                    offset: Offset(0, 0),
-                  )
-                ],
-                decoration: TextDecoration.none,
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 50.0),
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  selectedIndex++;
+                  if (selectedIndex >= textStyles.length) {
+                    selectedIndex = 0;
+                  }
+                });
+              },
+              child: Center(
+                child: AnimatedDefaultTextStyle(
+                  duration: const Duration(seconds: 1),
+                  style: textStyles[selectedIndex],
+                  child: const Text(
+                    'Pause',
+                  ),
+                ),
               ),
-            ),
+            )
+                .animate()
+                .fade()
+                .scaleXY(
+                  duration: const Duration(seconds: 1),
+                  curve: Curves.bounceOut,
+                )
+                .then(
+                  delay: const Duration(seconds: 2),
+                  duration: const Duration(seconds: 1),
+                  curve: Curves.easeInBack,
+                )
+                .shake(),
           ),
-
           SizedBox(
             width: MediaQuery.of(context).size.width / 7,
             child: BuildButton(
@@ -55,13 +107,12 @@ class PauseMenu extends StatelessWidget {
                 ColorState.shadowColorOnPressed: Colors.black54,
               },
               onPressed: () {
-                game.resumeEngine();
-                game.overlays.remove(PauseMenu.id);
-                game.overlays.add(PauseButton.id);
+                widget.game.resumeEngine();
+                widget.game.overlays.remove(PauseMenu.id);
+                widget.game.overlays.add(PauseButton.id);
               },
             ),
           ),
-
           SizedBox(
             width: MediaQuery.of(context).size.width / 7,
             child: BuildButton(
@@ -76,20 +127,19 @@ class PauseMenu extends StatelessWidget {
                 ],
               },
               onPressed: () {
-                game.overlays.remove(PauseMenu.id);
-                game.overlays.add(PauseButton.id);
-                game.reset();
-                game.resumeEngine();
+                widget.game.overlays.remove(PauseMenu.id);
+                widget.game.overlays.add(PauseButton.id);
+                widget.game.reset();
+                widget.game.resumeEngine();
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                    builder: (context) =>
-                        GamePlay(context: context, level: levelData.selectedLevel),
+                    builder: (context) => GamePlay(
+                        context: context, level: levelData.selectedLevel),
                   ),
                 );
               },
             ),
           ),
-
           SizedBox(
             width: MediaQuery.of(context).size.width / 7,
             child: BuildButton(
@@ -112,9 +162,9 @@ class PauseMenu extends StatelessWidget {
                 ColorState.shadowColorOnPressed: Colors.black54,
               },
               onPressed: () {
-                game.overlays.remove(PauseMenu.id);
-                game.reset();
-                game.resumeEngine();
+                widget.game.overlays.remove(PauseMenu.id);
+                widget.game.reset();
+                widget.game.resumeEngine();
 
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(

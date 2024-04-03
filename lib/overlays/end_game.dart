@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_application_1/components/game_play.dart';
@@ -22,12 +24,32 @@ class EndGame extends StatefulWidget {
 class _EndGameState extends State<EndGame> {
   late int selectedIndex;
   late List<TextStyle> textStyles;
+  late Timer _timer;
 
   @override
   void initState() {
     super.initState();
     selectedIndex = 0;
     textStyles = TextStylesList.getTextStyles([80, 80, 80, 80, 80, 80]);
+    _startTimer();
+  }
+
+  void _startTimer() {
+    const duration = Duration(seconds: 2);
+    _timer = Timer.periodic(duration, (timer) {
+      setState(() {
+        selectedIndex++;
+        if (selectedIndex >= textStyles.length) {
+          selectedIndex = 0;
+        }
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
   }
 
   @override
@@ -81,8 +103,8 @@ class _EndGameState extends State<EndGame> {
                 widget.game.resumeEngine();
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                    builder: (context) =>
-                        GamePlay(context: context, level: levelData.selectedLevel),
+                    builder: (context) => GamePlay(
+                        context: context, level: levelData.selectedLevel),
                   ),
                 );
               },

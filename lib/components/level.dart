@@ -51,8 +51,8 @@ class Level extends World with HasGameRef<PixelGame> {
 
   @override
   void update(double dt) {
-    _spawningParticles();
     calculateProgress(player.position, checkpoint.position);
+    _spawningParticles();
     spawningBlocks(
         level.tileMap.getLayer<ObjectGroup>('SpawnBlocks'),
         player,

@@ -61,21 +61,7 @@ class Blocks extends SpriteAnimationComponent
     add(hitboxShape);
 
     // debugMode = true;
-    animation = SpriteAnimation.fromFrameData(
-      game.images.fromCache('Sprites/14-TileSets/Ground_05.png'),
-      SpriteAnimationData.sequenced(
-        amount: color,
-        stepTime: speedLoop,
-        textureSize: Vector2.all(264),
-        loop: loop,
-      ),
-    );
-    final int i = _checkBorder();
-    final borderBlocks = BorderBlocks(borderIndex: i);
-    add(borderBlocks);
-
-    final textureBlocks = TextureBlocks(hasOn: hasTextureBlocks);
-    add(textureBlocks);
+    _restoreOriginalAnimation();
 
     return super.onLoad();
   }
@@ -121,14 +107,22 @@ class Blocks extends SpriteAnimationComponent
 
   void _restoreOriginalAnimation() {
     animation = SpriteAnimation.fromFrameData(
-      game.images.fromCache('Sprites/14-TileSets/Ground_05.png'),
-      SpriteAnimationData.sequenced(
-        amount: color,
-        stepTime: speedLoop,
-        textureSize: Vector2(264, 264),
+      game.images.fromCache('Sprites/14-TileSets/blocks.png'),
+      SpriteAnimationData.range(
+        start: color,
+        end: color,
+        amount: 10,
+        stepTimes: [speedLoop],
+        textureSize: Vector2.all(264),
         loop: loop,
       ),
     );
+    final int i = _checkBorder();
+    final borderBlocks = BorderBlocks(borderIndex: i);
+    add(borderBlocks);
+
+    final textureBlocks = TextureBlocks(hasOn: hasTextureBlocks);
+    add(textureBlocks);
   }
 
   void reset() {}

@@ -63,6 +63,12 @@ void spawningBlocksAnimated(
           add(blockAnimated);
           generatedBlocksAnimated.add(blockAnimated);
           Future.delayed(Duration(seconds: time), () {
+            if (blockAnimated.hasChildren &&
+                generatedBlocksAnimated.isNotEmpty &&
+                blockAnimated.isMounted) {
+              remove(blockAnimated);
+              generatedBlocksAnimated.remove(blockAnimated);
+            }
             final blocksTime = BlocksAnimated(
               position: Vector2(spawnBlockAnimated.x, spawnBlockAnimated.y),
               size:
@@ -82,13 +88,15 @@ void spawningBlocksAnimated(
         }
       }
     }
-    for (final blockAnimated in generatedBlocksAnimated) {
-      final double distanceToPlayer =
-          (blockAnimated.position.x - playerX).abs() +
-              (blockAnimated.position.y - playerY).abs();
-      if (distanceToPlayer >= 5000) {
-        remove(blockAnimated);
-        generatedBlocksAnimated.remove(blockAnimated);
+    for (final block in generatedBlocksAnimated) {
+      final double distanceToPlayer = (block.position.x - playerX).abs() +
+          (block.position.y - playerY).abs();
+      if (distanceToPlayer >= 5000 &&
+          !block.isRemoving &&
+          generatedBlocksAnimated.isNotEmpty &&
+          block.isMounted) {
+        remove(block);
+        generatedBlocksAnimated.remove(block);
       }
     }
   }
