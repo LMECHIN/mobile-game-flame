@@ -162,7 +162,7 @@
   <object id="448" x="38544" y="3432" width="264" height="264"/>
   <object id="596" x="40656" y="5280" width="1056" height="264"/>
  </objectgroup>
- <objectgroup id="3" name="Spawnpoints" locked="1">
+ <objectgroup id="3" name="Spawnpoints">
   <object id="6" name="Player" type="Player" x="528" y="5280" width="264" height="264"/>
   <object id="11" name="Checkpoint" type="Checkpoint" x="78672" y="5544" width="264" height="264"/>
   <object id="363" type="Obstacle" x="27456" y="5280" width="264" height="264"/>
@@ -173,7 +173,7 @@
   <object id="385" type="BoostsUp" x="32472" y="5016" width="264" height="264"/>
   <object id="449" type="BoostsUp" x="38544" y="2904" width="264" height="264"/>
  </objectgroup>
- <objectgroup id="11" name="SpawnObstacles" locked="1">
+ <objectgroup id="11" name="SpawnObstacles">
   <object id="529" type="Obstacle" x="3168" y="5544" width="264" height="264"/>
   <object id="530" type="Obstacle" x="7656" y="5544" width="264" height="264"/>
   <object id="531" type="Obstacle" x="11616" y="5544" width="264" height="264"/>

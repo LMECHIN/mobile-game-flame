@@ -22,7 +22,7 @@ class GroundEffect extends SpriteAnimationComponent
       SpriteAnimationData.sequenced(
         amount: 5,
         stepTime: 0.05,
-        textureSize: Vector2.all(264),
+        textureSize: Vector2(270, 270),
         loop: false,
       ),
     );

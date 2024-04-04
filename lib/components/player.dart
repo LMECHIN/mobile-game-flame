@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_application_1/components/blood.dart';
 import 'package:flutter_application_1/components/boost_up.dart';
 import 'package:flutter_application_1/components/collisions_block.dart';
 import 'package:flutter_application_1/components/obstacle.dart';
@@ -56,7 +56,6 @@ class Player extends SpriteAnimationGroupComponent
   bool hasSlide = false;
   bool hasDie = false;
   late Trail trail;
-  late Blood blood;
   int fixCam = 0;
   late double _dt;
   bool delayExpired = false;
@@ -90,9 +89,6 @@ class Player extends SpriteAnimationGroupComponent
     );
 
     add(RectangleHitbox(size: sizeHitbox, position: positionHitbox));
-    trail = Trail(position: Vector2(position.x - 252, position.y - 4000));
-    blood = Blood(
-        position: Vector2(position.x - 400, position.y - 5000), size: size);
     return super.onLoad();
   }
 
@@ -108,7 +104,6 @@ class Player extends SpriteAnimationGroupComponent
         _checkHorizontalCollisions(fixedDeltaTime);
         _applyGravity(fixedDeltaTime);
         _checkVerticalCollisions(fixedDeltaTime);
-        // _checkBoosts();
       }
       accumulatedTime -= fixedDeltaTime;
     }
@@ -153,7 +148,6 @@ class Player extends SpriteAnimationGroupComponent
     accumulatedTime += _dt;
     if (other is Obstacle) {
       respawn();
-      // reset();
     }
     if (other is BoostUp) {
       while (accumulatedTime >= fixedDeltaTime) {
@@ -238,7 +232,6 @@ class Player extends SpriteAnimationGroupComponent
       flipHorizontallyAroundCenter();
     }
 
-    // if (velocity.x > 0 || velocity.x < 0) playerState = PlayerState.sliding;
     if (moveSpeed > 1000) {
       playerState = PlayerState.sliding;
     } else if ((velocity.x > 0 || velocity.x < 0) && !hasSlide) {
@@ -329,13 +322,6 @@ class Player extends SpriteAnimationGroupComponent
           }
         }
       }
-      // if (block.isBoostUp) {
-      //   if (checkCollision(this, block)) {
-      //     _playJump(dt);
-      //     _playSlide(dt);
-      //     break;
-      //   }
-      // }
     }
   }
 
@@ -360,14 +346,13 @@ class Player extends SpriteAnimationGroupComponent
         if (checkCollision(this, block)) {
           if (velocity.y > 0) {
             velocity.y = 0;
-            // respawn();
             position.y = block.y - hitbox.height - hitbox.offsetY;
             isOnGround = true;
             break;
           }
           if (velocity.y < 0) {
-            // respawn();
             velocity.y = 0;
+            respawn();
             position.y = block.y + block.height - hitbox.offsetY;
           }
         }
@@ -382,7 +367,8 @@ class Player extends SpriteAnimationGroupComponent
     Future.delayed(
         canMoveDuration,
         () => {
-              _updatePlayerColor(const Color.fromARGB(255, 0, 0, 0)),
+              _updatePlayerColor(
+                  gameRef.createLevel.selectedColor ?? Colors.black),
               // remove(blood),
             });
     // add(blood);
@@ -414,7 +400,6 @@ class Player extends SpriteAnimationGroupComponent
   }
 
   void reset() {
-    // final levelData = Provider.of<LevelData>(gameRef.context);
     hasDie = false;
     position = Vector2(startingPosition.x, startingPosition.y - 20);
     current = PlayerState.idle;

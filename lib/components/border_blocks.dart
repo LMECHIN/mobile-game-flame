@@ -44,7 +44,7 @@ class BorderBlocks extends SpriteAnimationComponent with HasGameRef<PixelGame> {
         SpriteAnimationData.sequenced(
           amount: 1,
           stepTime: 1,
-          textureSize: Vector2.all(264),
+          textureSize: Vector2(270, 270),
           loop: false,
         ),
       );

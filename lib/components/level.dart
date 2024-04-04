@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flame/components.dart';
 import 'package:flame_tiled/flame_tiled.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/blocks.dart';
 import 'package:flutter_application_1/components/blocks_animated.dart';
 import 'package:flutter_application_1/components/boost_up.dart';
@@ -33,6 +34,7 @@ class Level extends World with HasGameRef<PixelGame> {
   List<BlocksAnimated> generatedBlocksAnimated = [];
   List<Obstacle> generatedObstacles = [];
   Map<String, DateTime> lastSpawnTimes = {};
+  late Color? selectedColor;
 
   @override
   FutureOr<void> onLoad() async {
@@ -42,8 +44,8 @@ class Level extends World with HasGameRef<PixelGame> {
 
     add(level);
 
+    _spawningBackground();
     _spawningObjects();
-    // _spawningParticlesAdd();
     _addCollisions();
 
     return super.onLoad();
@@ -74,6 +76,34 @@ class Level extends World with HasGameRef<PixelGame> {
         (obstacle) => remove(obstacle),
         children,
         generatedObstacles);
+  }
+
+  void _spawningBackground() {
+    final backgroundLayer = level.tileMap.getLayer('Background');
+
+    if (backgroundLayer != null) {
+      final backgroundColor = backgroundLayer.properties.getValue('Background');
+      if (backgroundColor != null) {
+        final colorMap = {
+          'dark blue': const Color(0xFF00003C),
+          'dark purple': const Color(0xFF770A67),
+          'dark red': const Color(0xFF750021),
+          'dark green': const Color(0xFF0D7260),
+          'pink': const Color(0xFFFF0C89),
+          'red': const Color(0xFFFF0C00),
+          'yellow': const Color(0xFFFFF600),
+          'green': const Color(0xFF00FF55),
+          'blue': const Color(0xFF00FFED),
+        };
+        selectedColor = colorMap[backgroundColor];
+        if (selectedColor != null) {
+          gameRef.updateBackgroundColor(selectedColor ?? Colors.black);
+          // gameRef.setInitColor(selectedColor);
+        } else {
+          gameRef.updateBackgroundColor(Colors.black);
+        }
+      }
+    }
   }
 
   void calculateProgress(Vector2 playerPosition, Vector2 checkpointPosition) {

@@ -19,11 +19,7 @@ class BoostUp extends SpriteAnimationComponent with HasGameRef<PixelGame> {
   @override
   FutureOr<void> onLoad() {
     priority = -1;
-    final hitboxShape = PolygonHitbox([
-      Vector2(0, size.y),
-      Vector2(size.x / 2, 0),
-      Vector2(size.x, size.y),
-    ]);
+    final hitboxShape = RectangleHitbox();
     add(hitboxShape);
     // debugMode = true;
     return super.onLoad();

@@ -79,8 +79,6 @@ flutter:
     - assets/tiles/
     - assets/images/Sprites/Skins/KingHuman/
     - assets/images/Sprites/Skins/KingHuman/SkinsMenu/
-    - assets/video/KingHuman/
-    - assets/video/KingPig/
     - assets/images/Sprites/Skins/KingPig/
     - assets/images/Sprites/Skins/KingPig/SkinsMenu/
     - assets/images/HUD/

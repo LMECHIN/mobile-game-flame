@@ -38,10 +38,18 @@ class PixelGame extends FlameGame
   double targetZoom = 1.0;
   static const double zoomSpeed = 0.9;
 
-  Color color = Color.fromARGB(255, 10, 10, 205);
+  Color color = Colors.black;
+  // Color initialColor = Colors.black;
 
   void updateBackgroundColor(Color newColor) {
     color = newColor;
+  }
+
+  @override
+  void render(Canvas canvas) {
+    canvas.drawRect(
+        Rect.fromLTWH(0, 0, size.x, size.y), Paint()..color = color);
+    super.render(canvas);
   }
 
   // @override
