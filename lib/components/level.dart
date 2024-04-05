@@ -80,28 +80,36 @@ class Level extends World with HasGameRef<PixelGame> {
 
   void _spawningBackground() {
     final backgroundLayer = level.tileMap.getLayer('Background');
+    final Map<String, Color> colorMap = {
+      'dark blue': const Color(0xFF00003C),
+      'dark purple': const Color(0xFF770A67),
+      'dark red': const Color(0xFF750021),
+      'dark green': const Color(0xFF0D7260),
+      'pink': const Color(0xFFFF0C89),
+      'red': const Color(0xFFFF0C00),
+      'yellow': const Color(0xFFFFF600),
+      'green': const Color(0xFF00FF55),
+      'blue': const Color(0xFF00FFED),
+    };
 
     if (backgroundLayer != null) {
       final backgroundColor = backgroundLayer.properties.getValue('Background');
+      final nextBackgroundColor = backgroundLayer.properties.getValue('NextBackground');
+      final time = backgroundLayer.properties.getValue('Time');
       if (backgroundColor != null) {
-        final colorMap = {
-          'dark blue': const Color(0xFF00003C),
-          'dark purple': const Color(0xFF770A67),
-          'dark red': const Color(0xFF750021),
-          'dark green': const Color(0xFF0D7260),
-          'pink': const Color(0xFFFF0C89),
-          'red': const Color(0xFFFF0C00),
-          'yellow': const Color(0xFFFFF600),
-          'green': const Color(0xFF00FF55),
-          'blue': const Color(0xFF00FFED),
-        };
         selectedColor = colorMap[backgroundColor];
         if (selectedColor != null) {
           gameRef.updateBackgroundColor(selectedColor ?? Colors.black);
-          // gameRef.setInitColor(selectedColor);
         } else {
           gameRef.updateBackgroundColor(Colors.black);
         }
+      } else {
+        selectedColor = Colors.black;
+      }
+      if (time != null) {
+        Future.delayed(Duration(seconds: time), () {
+          gameRef.updateBackgroundColor(colorMap[nextBackgroundColor] ?? Colors.black);
+        });
       }
     }
   }

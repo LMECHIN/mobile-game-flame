@@ -71,7 +71,7 @@ class Player extends SpriteAnimationGroupComponent
   @override
   FutureOr<void> onLoad() {
     _loadAllAnimations();
-    // debugMode = true;
+    debugMode = true;
     startingPosition = Vector2(position.x, position.y);
     scale = Vector2(scaleFactor, scaleFactor);
 
@@ -367,8 +367,13 @@ class Player extends SpriteAnimationGroupComponent
     Future.delayed(
         canMoveDuration,
         () => {
-              _updatePlayerColor(
-                  gameRef.createLevel.selectedColor ?? Colors.black),
+              if (gameRef.createLevel.selectedColor != null)
+                {
+                  _updatePlayerColor(
+                      gameRef.createLevel.selectedColor ?? Colors.black)
+                }
+              else
+                {_updatePlayerColor(Colors.black)}
               // remove(blood),
             });
     // add(blood);

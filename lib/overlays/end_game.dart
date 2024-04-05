@@ -75,7 +75,7 @@ class _EndGameState extends State<EndGame> {
                   duration: const Duration(seconds: 1),
                   style: textStyles[selectedIndex],
                   child: const Text(
-                    'Level Completed !',
+                    'Level Completed!',
                   ),
                 ),
               ),

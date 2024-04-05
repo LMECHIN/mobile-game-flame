@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:ui';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
@@ -87,9 +88,10 @@ class PixelGame extends FlameGame
     cam = CameraComponent.withFixedResolution(
       world: createLevel,
       width: 14774,
-      height: 6272,
+      height: 6600,
     );
 
+    // cam.viewfinder.anchor = const Anchor(0.15, 0.60);
     setZoom(2.5);
     cam.priority = 0;
     if (showControls) {
@@ -97,6 +99,7 @@ class PixelGame extends FlameGame
       add(ButtonJump());
       add(ButtonSlide());
     }
+
     addAll([cam, createLevel]);
 
     await super.onLoad();
@@ -109,13 +112,14 @@ class PixelGame extends FlameGame
     }
 
     cam.viewfinder.anchor = const Anchor(0.15, -1.4);
-
     cam.follow(
-      // maxSpeed: 4000,
       player,
+      maxSpeed: double.infinity,
       horizontalOnly: true,
       snap: false,
     );
+    updateCam();
+
     updateZoom(dt);
     super.update(dt);
     if (player.hasSlide && !player.hasDie) {
@@ -170,6 +174,36 @@ class PixelGame extends FlameGame
         break;
     }
     player.horizontalMovement = horizontalMovementTotal.toDouble();
+  }
+
+  void updateCam() {
+    double maxSpeed = 750;
+    double fallSpeed = player.velocity.y.abs();
+
+    if (fallSpeed > 0) {
+      maxSpeed += fallSpeed * 0.5;
+    }
+
+    if (player.position.y > 3420 && player.position.y <= 4476) {
+      cam.moveTo(Vector2(player.position.x, -792), speed: maxSpeed);
+    } else if (player.position.y > 2364 && player.position.y <= 3420) {
+      cam.moveTo(Vector2(player.position.x, -1584), speed: maxSpeed);
+    } else if (player.position.y > 1308 && player.position.y <= 2364) {
+      cam.moveTo(Vector2(player.position.x, -2376), speed: maxSpeed);
+    } else if (player.position.y > 252 && player.position.y <= 1308) {
+      cam.moveTo(Vector2(player.position.x, -3168), speed: maxSpeed);
+    } else if (player.position.y <= 252) {
+      cam.moveTo(Vector2(player.position.x, -3960), speed: maxSpeed);
+    } else {
+      cam.moveTo(Vector2(player.position.x, 0), speed: maxSpeed);
+    }
+
+    cam.follow(
+      player,
+      maxSpeed: maxSpeed,
+      horizontalOnly: true,
+      snap: false,
+    );
   }
 
   void updateZoom(double dt) {
