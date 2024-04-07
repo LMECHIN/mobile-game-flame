@@ -76,6 +76,7 @@ flutter:
     - assets/images/Sprites/14-TileSets/
     - assets/images/Sprites/14-TileSets/Borders/
     - assets/images/Sprites/14-TileSets/Texture_Blocks/
+    - assets/images/Sprites/14-TileSets/Texture_Obstacles/
     - assets/tiles/
     - assets/images/Sprites/Skins/KingHuman/
     - assets/images/Sprites/Skins/KingHuman/SkinsMenu/

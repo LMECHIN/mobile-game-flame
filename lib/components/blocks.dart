@@ -20,7 +20,7 @@ class Blocks extends SpriteAnimationComponent
   Blocks({
     position,
     size,
-    this.color = 2,
+    this.color = 0,
     this.speedLoop = 1,
     this.loop = false,
     this.borders = const [

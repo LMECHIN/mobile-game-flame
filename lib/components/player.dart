@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_application_1/components/boost_up.dart';
 import 'package:flutter_application_1/components/collisions_block.dart';
 import 'package:flutter_application_1/components/obstacle.dart';
+import 'package:flutter_application_1/components/obstacle_circle.dart';
 import 'package:flutter_application_1/components/player_hitbox.dart';
 import 'package:flutter_application_1/components/trail.dart';
 import 'package:flutter_application_1/components/utils.dart';
@@ -71,7 +72,7 @@ class Player extends SpriteAnimationGroupComponent
   @override
   FutureOr<void> onLoad() {
     _loadAllAnimations();
-    debugMode = true;
+    // debugMode = true;
     startingPosition = Vector2(position.x, position.y);
     scale = Vector2(scaleFactor, scaleFactor);
 
@@ -146,7 +147,7 @@ class Player extends SpriteAnimationGroupComponent
     PositionComponent other,
   ) {
     accumulatedTime += _dt;
-    if (other is Obstacle) {
+    if (other is Obstacle || other is ObstacleCircle) {
       respawn();
     }
     if (other is BoostUp) {

@@ -8,11 +8,13 @@ import 'package:flutter_application_1/components/boost_up.dart';
 import 'package:flutter_application_1/components/checkpoint.dart';
 import 'package:flutter_application_1/components/collisions_block.dart';
 import 'package:flutter_application_1/components/obstacle.dart';
+import 'package:flutter_application_1/components/obstacle_circle.dart';
 import 'package:flutter_application_1/components/particles.dart';
 import 'package:flutter_application_1/components/player.dart';
 import 'package:flutter_application_1/map/spawning_blocks.dart';
 import 'package:flutter_application_1/map/spawning_blocks_animated.dart';
 import 'package:flutter_application_1/map/spawning_obstacles.dart';
+import 'package:flutter_application_1/map/spawning_obstacles_circles.dart';
 import 'package:flutter_application_1/models/level_data.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 import 'package:flutter_application_1/utils/get_level_data.dart';
@@ -33,6 +35,7 @@ class Level extends World with HasGameRef<PixelGame> {
   List<Blocks> generatedBlocks = [];
   List<BlocksAnimated> generatedBlocksAnimated = [];
   List<Obstacle> generatedObstacles = [];
+  List<ObstacleCircle> generatedObstaclesCircles = [];
   Map<String, DateTime> lastSpawnTimes = {};
   late Color? selectedColor;
 
@@ -76,6 +79,13 @@ class Level extends World with HasGameRef<PixelGame> {
         (obstacle) => remove(obstacle),
         children,
         generatedObstacles);
+    spawningObstaclesCircles(
+        level.tileMap.getLayer<ObjectGroup>('SpawnObstaclesCircles'),
+        player,
+        (obstacle) => add(obstacle),
+        (obstacle) => remove(obstacle),
+        children,
+        generatedObstaclesCircles);
   }
 
   void _spawningBackground() {
