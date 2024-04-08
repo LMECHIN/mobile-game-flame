@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" width="300" height="23" tilewidth="264" tileheight="264" infinite="0" nextlayerid="17" nextobjectid="1619">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="300" height="23" tilewidth="264" tileheight="264" infinite="0" nextlayerid="17" nextobjectid="1622">
  <tileset firstgid="1" source="boost_right.tsx"/>
  <tileset firstgid="10" source="light2.tsx"/>
  <layer id="11" name="Lights" width="300" height="23">
@@ -114,6 +114,7 @@
   <object id="1614" x="3960" y="5544" width="264" height="264">
    <properties>
     <property name="Color" type="int" value="0"/>
+    <property name="Down" type="bool" value="true"/>
     <property name="TextureObstacle" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -121,6 +122,7 @@
   <object id="1615" x="4488" y="5544" width="264" height="264">
    <properties>
     <property name="Color" type="int" value="5"/>
+    <property name="Down" type="bool" value="true"/>
     <property name="TextureObstacle" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -128,6 +130,7 @@
   <object id="1617" x="4752" y="5544" width="264" height="264">
    <properties>
     <property name="Color" type="int" value="6"/>
+    <property name="Down" type="bool" value="true"/>
     <property name="TextureObstacle" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -137,11 +140,13 @@
     <property name="Color" type="int" value="8"/>
     <property name="TextureObstacle" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
+    <property name="Up" type="bool" value="true"/>
    </properties>
   </object>
   <object id="1616" x="4224" y="5544" width="264" height="264">
    <properties>
     <property name="Color" type="int" value="4"/>
+    <property name="Down" type="bool" value="true"/>
     <property name="TextureObstacle" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -198,7 +203,40 @@
   <object id="1488" type="BoostsUp" x="6600" y="5015" width="264" height="264"/>
  </objectgroup>
  <objectgroup id="7" name="SpawnObstacles">
-  <object id="1484" type="Obstacle" x="3696" y="5544" width="264" height="264"/>
+  <object id="1484" type="Obstacle" x="3696" y="5544" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="0"/>
+    <property name="Down" type="bool" value="true"/>
+    <property name="TextureObstacle" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="1619" type="Obstacle" x="5280" y="5544" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="6"/>
+    <property name="Down" type="bool" value="false"/>
+    <property name="TextureObstacle" type="bool" value="true"/>
+    <property name="Up" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="1620" type="Obstacle" x="5544" y="5544" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="Down" type="bool" value="false"/>
+    <property name="Left" type="bool" value="true"/>
+    <property name="TextureObstacle" type="bool" value="true"/>
+    <property name="Up" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="1621" type="Obstacle" x="5808" y="5544" width="264" height="264">
+   <properties>
+    <property name="Color" type="int" value="2"/>
+    <property name="Down" type="bool" value="false"/>
+    <property name="Left" type="bool" value="false"/>
+    <property name="Right" type="bool" value="true"/>
+    <property name="TextureObstacle" type="bool" value="true"/>
+    <property name="Up" type="bool" value="false"/>
+   </properties>
+  </object>
   <object id="1507" x="6864" y="5544" width="264" height="264"/>
   <object id="1514" x="7920" y="5544" width="264" height="264"/>
   <object id="1518" x="8976" y="5544" width="264" height="264"/>

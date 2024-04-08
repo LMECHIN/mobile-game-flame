@@ -74,6 +74,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/Sprites/14-TileSets/
+    - assets/images/Sprites/14-TileSets/Obstacles_Circles/
+    - assets/images/Sprites/14-TileSets/Obstacles_Triangles/
     - assets/images/Sprites/14-TileSets/Borders/
     - assets/images/Sprites/14-TileSets/Texture_Blocks/
     - assets/images/Sprites/14-TileSets/Texture_Obstacles/

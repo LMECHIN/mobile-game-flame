@@ -37,6 +37,16 @@ void spawningObstacles(
           final obstacle = Obstacle(
             position: Vector2(spawnX, spawnY),
             size: Vector2(spawnObstacle.width, spawnObstacle.height),
+            color: spawnObstacle.properties.getValue('Color') ?? 0,
+            loop: spawnObstacle.properties.getValue('Loop') ?? false,
+            speedLoop: spawnObstacle.properties.getValue('Speedloop') ?? 1,
+            hasTextureObstacles: spawnObstacle.properties.getValue('TextureObstacle') ?? false,
+            rotate:  {
+              "up" : spawnObstacle.properties.getValue('Up') ?? false,
+              "down" : spawnObstacle.properties.getValue('Down') ?? false,
+              "left" : spawnObstacle.properties.getValue('Left') ?? false,
+              "right" : spawnObstacle.properties.getValue('Right') ?? false,
+            }
           );
           add(obstacle);
           generatedObstacles.add(obstacle);

@@ -40,7 +40,13 @@ void spawningObstaclesCircles(
             color: spawnObstacleCircle.properties.getValue('Color') ?? 0,
             loop: spawnObstacleCircle.properties.getValue('Loop') ?? false,
             speedLoop: spawnObstacleCircle.properties.getValue('Speedloop') ?? 1,
-            hasTextureObstacles: spawnObstacleCircle.properties.getValue('TextureObstacle') ?? false
+            hasTextureObstacles: spawnObstacleCircle.properties.getValue('TextureObstacle') ?? false,
+            rotate:  {
+              "up" : spawnObstacleCircle.properties.getValue('Up') ?? false,
+              "down" : spawnObstacleCircle.properties.getValue('Down') ?? false,
+              "left" : spawnObstacleCircle.properties.getValue('Left') ?? false,
+              "right" : spawnObstacleCircle.properties.getValue('Right') ?? false,
+            }
           );
           add(obstacle);
           generatedObstaclesCircles.add(obstacle);

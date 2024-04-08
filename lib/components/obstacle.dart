@@ -1,14 +1,29 @@
 import 'dart:async';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
+import 'package:flutter_application_1/components/texture_obstacles.dart';
 import 'package:flutter_application_1/pixel_game.dart';
+import 'package:flutter_application_1/utils/obstacle_hitbox.dart';
 
 class Obstacle extends SpriteAnimationComponent with HasGameRef<PixelGame> {
-  bool rotate;
+  int color;
+  double speedLoop;
+  bool loop;
+  bool hasTextureObstacles;
+  Map<String, bool> rotate;
   Obstacle({
     position,
     size,
-    this.rotate = false,
+    this.color = 0,
+    this.speedLoop = 1,
+    this.loop = false,
+    this.hasTextureObstacles = false,
+    this.rotate = const {
+      "up": false,
+      "down": false,
+      "left": false,
+      "right": false,
+    },
   }) : super(
           position: position,
           size: size,
@@ -16,31 +31,33 @@ class Obstacle extends SpriteAnimationComponent with HasGameRef<PixelGame> {
 
   @override
   FutureOr<void> onLoad() {
+    Map<String, List<Vector2>> directionPoints = triangleHitbox(size);
+
     priority = -1;
-    if (!rotate) {
-      final hitboxShape = PolygonHitbox([
-        Vector2(0, size.y),
-        Vector2(size.x / 2, 0),
-        Vector2(size.x, size.y),
-      ]);
-      add(hitboxShape);
-    } else {
-      final hitboxShape = PolygonHitbox([
-        Vector2(size.x, 0),
-        Vector2(size.x / 2, size.y),
-        Vector2(0, 0),
-      ]);
-      add(hitboxShape);
-    }
-    animation = SpriteAnimation.fromFrameData(
-      game.images.fromCache('Sprites/14-TileSets/Obstacle01.png'),
-      SpriteAnimationData.sequenced(
-        amount: 1,
-        stepTime: 1,
-        textureSize: Vector2(264, 264),
-        loop: false,
-      ),
-    );
+    rotate.forEach((key, value) {
+      if (value) {
+        if (directionPoints.containsKey(key)) {
+          List<Vector2> points = directionPoints[key]!;
+          final hitboxShape = PolygonHitbox(points);
+          add(hitboxShape);
+        }
+        animation = SpriteAnimation.fromFrameData(
+          game.images.fromCache(
+              'Sprites/14-TileSets/Obstacles_Triangles/obstacles_triangles_$key.png'),
+          SpriteAnimationData.range(
+            start: color,
+            end: color,
+            amount: 10,
+            stepTimes: [speedLoop],
+            textureSize: Vector2.all(264),
+            loop: loop,
+          ),
+        );
+        final textureObstacles =
+            TextureObstacles(hasOn: hasTextureObstacles, rotate: key);
+        add(textureObstacles);
+      }
+    });
     // debugMode = true;
     return super.onLoad();
   }
