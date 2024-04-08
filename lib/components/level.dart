@@ -11,6 +11,7 @@ import 'package:flutter_application_1/components/obstacle.dart';
 import 'package:flutter_application_1/components/obstacle_circle.dart';
 import 'package:flutter_application_1/components/particles.dart';
 import 'package:flutter_application_1/components/player.dart';
+import 'package:flutter_application_1/components/rope.dart';
 import 'package:flutter_application_1/map/spawning_blocks.dart';
 import 'package:flutter_application_1/map/spawning_blocks_animated.dart';
 import 'package:flutter_application_1/map/spawning_obstacles.dart';
@@ -31,6 +32,7 @@ class Level extends World with HasGameRef<PixelGame> {
   late Checkpoint checkpoint;
   double fixedDeltaTime = 0.1 / 60;
   double accumulatedTime = 0;
+  List<Rope> generatedRopes = [];
   List<Particles> generatedParticles = [];
   List<Blocks> generatedBlocks = [];
   List<BlocksAnimated> generatedBlocksAnimated = [];
@@ -57,6 +59,7 @@ class Level extends World with HasGameRef<PixelGame> {
   @override
   void update(double dt) {
     calculateProgress(player.position, checkpoint.position);
+    _spawningRopes();
     _spawningParticles();
     spawningBlocks(
         level.tileMap.getLayer<ObjectGroup>('SpawnBlocks'),
@@ -144,6 +147,50 @@ class Level extends World with HasGameRef<PixelGame> {
     }
     if (levelProgress > (_levelData.levelProgress[levelName] ?? 0)) {
       _levelData.selectLevelProgress(levelProgress);
+    }
+  }
+
+  void _spawningRopes() {
+    final spawnPointsRopes =
+        level.tileMap.getLayer<ObjectGroup>('SpawnRopes');
+
+    final double playerX = player.position.x;
+    final double playerY = player.position.y;
+    if (spawnPointsRopes != null) {
+      for (final spawnRope in spawnPointsRopes.objects) {
+        final double spawnX = spawnRope.x;
+        final double spawnY = spawnRope.y;
+        final double distanceToPlayer =
+            (spawnX - playerX).abs() + (spawnY - playerY).abs();
+
+        if (distanceToPlayer < 5000) {
+          bool hasRope = false;
+          for (final child in children) {
+            if (child is Rope &&
+                child.position.x == spawnX &&
+                child.position.y == spawnY) {
+              hasRope = true;
+              break;
+            }
+          }
+          if (!hasRope) {
+            final ropes = Rope(
+              position: Vector2(spawnRope.x, spawnRope.y),
+              size: Vector2(spawnRope.width, spawnRope.height),
+            );
+            add(ropes);
+            generatedRopes.add(ropes);
+          }
+        }
+      }
+      for (final rope in generatedRopes) {
+        final double distanceToPlayer = (rope.position.x - playerX).abs() +
+            (rope.position.y - playerY).abs();
+        if (distanceToPlayer >= 5000) {
+          remove(rope);
+          generatedRopes.remove(rope);
+        }
+      }
     }
   }
 
