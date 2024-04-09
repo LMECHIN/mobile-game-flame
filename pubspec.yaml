@@ -85,7 +85,13 @@ flutter:
     - assets/images/Sprites/Skins/KingPig/
     - assets/images/Sprites/Skins/KingPig/SkinsMenu/
     - assets/images/HUD/
-    - assets/images/Background/
+    - assets/images/Background/Level_01/
+    - assets/images/Background/Level_02/
+    - assets/images/Background/Level_03/
+    - assets/images/Background/Level_04/
+    - assets/images/Background/Level_05/
+    - assets/images/Background/Level_07/
+    - assets/images/Background/Level_08/
     - assets/images/Checkpoints/
 
   # An image asset can refer to one or more resolution-specific "variants", see

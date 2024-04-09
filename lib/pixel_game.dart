@@ -62,9 +62,43 @@ class PixelGame extends FlameGame
   // }
 
   void _parallaxBackgroung() async {
+    ParallaxComponent backgroundFix = await loadParallaxComponent(
+      [
+        ParallaxImageData('Background/Level_07/1.png'),
+      ],
+      scale: Vector2(2, 2),
+      priority: -2,
+    );
+
     ParallaxComponent background = await loadParallaxComponent(
       [
-        ParallaxImageData('Background/$level.png'),
+        ParallaxImageData('Background/Level_05/1.png'),
+        ParallaxImageData('Background/Level_05/2.png'),
+        ParallaxImageData('Background/Level_05/3.png'),
+        ParallaxImageData('Background/Level_05/4.png'),
+        ParallaxImageData('Background/Level_05/5.png'),
+        // ParallaxImageData('Background/Level_07/1.png'),
+        // ParallaxImageData('Background/Level_07/2.png'),
+        // ParallaxImageData('Background/Level_07/3.png'),
+        // ParallaxImageData('Background/Level_07/4.png'),
+        // ParallaxImageData('Background/Level_08/1.png'),
+        // ParallaxImageData('Background/Level_08/2.png'),
+        // ParallaxImageData('Background/Level_08/3.png'),
+        // ParallaxImageData('Background/Level_08/4.png'),
+        // ParallaxImageData('Background/Level_08/5.png'),
+        // ParallaxImageData('Background/Level_08/6.png'),
+        // ParallaxImageData('Background/Level_04/1.png'),
+        // ParallaxImageData('Background/Level_04/2.png'),
+        // ParallaxImageData('Background/Level_04/3.png'),
+        // ParallaxImageData('Background/Level_04/4.png'),
+        // ParallaxImageData('Background/Level_01/1.png'),
+        // ParallaxImageData('Background/Level_01/2.png'),
+        // ParallaxImageData('Background/Level_01/3.png'),
+        // ParallaxImageData('Background/Level_01/4.png'),
+        // ParallaxImageData('Background/Level_02/1.png'),
+        // ParallaxImageData('Background/Level_02/2.png'),
+        // ParallaxImageData('Background/Level_02/3.png'),
+        // ParallaxImageData('Background/Level_02/4.png'),
       ],
       baseVelocity: Vector2(20, 0),
       velocityMultiplierDelta: Vector2(1.6, 1.0),
@@ -72,12 +106,13 @@ class PixelGame extends FlameGame
       // repeat: ImageRepeat.noRepeat,
     );
     add(background);
+    add(backgroundFix);
   }
 
   @override
   FutureOr<void> onLoad() async {
     await images.loadAllImages();
-    // _parallaxBackgroung();
+    _parallaxBackgroung();
     PlayerData playerData = await getPlayerData();
     player = Player(character: playerData.selectedSkin);
 
@@ -184,7 +219,7 @@ class PixelGame extends FlameGame
       maxSpeed += fallSpeed * 0.5;
     }
 
- if (player.position.y > 2364 && player.position.y <= 3420) {
+    if (player.position.y > 2364 && player.position.y <= 3420) {
       cam.moveTo(Vector2(player.position.x, -1584), speed: maxSpeed);
     } else if (player.position.y > 1308 && player.position.y <= 2364) {
       cam.moveTo(Vector2(player.position.x, -2376), speed: maxSpeed);
