@@ -87,12 +87,12 @@ class PixelGame extends FlameGame
     );
     cam = CameraComponent.withFixedResolution(
       world: createLevel,
-      width: 14774,
-      height: 6600,
+      width: 4880,
+      height: 2200,
     );
 
     // cam.viewfinder.anchor = const Anchor(0.15, 0.60);
-    setZoom(2.5);
+    // setZoom(2.5);
     cam.priority = 0;
     if (showControls) {
       addJoystick();
@@ -111,7 +111,7 @@ class PixelGame extends FlameGame
       updateJoystick();
     }
 
-    cam.viewfinder.anchor = const Anchor(0.15, -1.4);
+    cam.viewfinder.anchor = const Anchor(0.15, -1.8);
     cam.follow(
       player,
       maxSpeed: double.infinity,
@@ -184,9 +184,7 @@ class PixelGame extends FlameGame
       maxSpeed += fallSpeed * 0.5;
     }
 
-    if (player.position.y > 3420 && player.position.y <= 4476) {
-      cam.moveTo(Vector2(player.position.x, -792), speed: maxSpeed);
-    } else if (player.position.y > 2364 && player.position.y <= 3420) {
+ if (player.position.y > 2364 && player.position.y <= 3420) {
       cam.moveTo(Vector2(player.position.x, -1584), speed: maxSpeed);
     } else if (player.position.y > 1308 && player.position.y <= 2364) {
       cam.moveTo(Vector2(player.position.x, -2376), speed: maxSpeed);

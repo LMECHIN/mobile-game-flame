@@ -15,8 +15,7 @@ class Blocks extends SpriteAnimationComponent
   bool loop;
   List<bool> borders;
   bool hasTextureBlocks;
-  final String texture;
-  final String groundTexture;
+  bool texture;
   Blocks({
     position,
     size,
@@ -41,8 +40,7 @@ class Blocks extends SpriteAnimationComponent
       false
     ],
     this.hasTextureBlocks = false,
-    required this.texture,
-    required this.groundTexture,
+    this.texture = true,
   }) : super(
           position: position,
           size: size,
@@ -59,9 +57,8 @@ class Blocks extends SpriteAnimationComponent
       angle: -0.1,
     );
     add(hitboxShape);
-
-    // debugMode = true;
     _restoreOriginalAnimation();
+    // debugMode = true;
 
     return super.onLoad();
   }
@@ -106,17 +103,19 @@ class Blocks extends SpriteAnimationComponent
   }
 
   void _restoreOriginalAnimation() {
-    animation = SpriteAnimation.fromFrameData(
-      game.images.fromCache('Sprites/14-TileSets/blocks.png'),
-      SpriteAnimationData.range(
-        start: color,
-        end: color,
-        amount: 10,
-        stepTimes: [speedLoop],
-        textureSize: Vector2.all(264),
-        loop: loop,
-      ),
-    );
+    if (texture) {
+      animation = SpriteAnimation.fromFrameData(
+        game.images.fromCache('Sprites/14-TileSets/blocks.png'),
+        SpriteAnimationData.range(
+          start: color,
+          end: color,
+          amount: 10,
+          stepTimes: [speedLoop],
+          textureSize: Vector2.all(264),
+          loop: loop,
+        ),
+      );
+    }
     final int i = _checkBorder();
     final borderBlocks = BorderBlocks(borderIndex: i);
     add(borderBlocks);

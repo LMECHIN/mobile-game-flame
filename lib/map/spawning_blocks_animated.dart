@@ -62,29 +62,31 @@ void spawningBlocksAnimated(
           );
           add(blockAnimated);
           generatedBlocksAnimated.add(blockAnimated);
-          Future.delayed(Duration(seconds: time), () {
-            if (blockAnimated.hasChildren &&
-                generatedBlocksAnimated.isNotEmpty &&
-                blockAnimated.isMounted) {
-              remove(blockAnimated);
-              generatedBlocksAnimated.remove(blockAnimated);
-            }
-            final blocksTime = BlocksAnimated(
-              position: Vector2(spawnBlockAnimated.x, spawnBlockAnimated.y),
-              size:
-                  Vector2(spawnBlockAnimated.width, spawnBlockAnimated.height),
-              color: nextAnimationProps["amount"] ?? 0,
-              texture: nextAnimationProps["texture"] ?? "",
-              speedLoop: (nextAnimationProps["speedLoop"] as List<num>)
-                  .map((e) => e.toDouble())
-                  .toList(),
-              loop: nextLoop,
-              start: nextAnimationProps["start"] ?? 0,
-              end: nextAnimationProps["end"] ?? 0,
-            );
-            add(blocksTime);
-            generatedBlocksAnimated.add(blocksTime);
-          });
+          if (time != 0) {
+            Future.delayed(Duration(seconds: time), () {
+              if (blockAnimated.hasChildren &&
+                  generatedBlocksAnimated.isNotEmpty &&
+                  blockAnimated.isMounted) {
+                remove(blockAnimated);
+                generatedBlocksAnimated.remove(blockAnimated);
+              }
+              final blocksTime = BlocksAnimated(
+                position: Vector2(spawnBlockAnimated.x, spawnBlockAnimated.y),
+                size: Vector2(
+                    spawnBlockAnimated.width, spawnBlockAnimated.height),
+                color: nextAnimationProps["amount"] ?? 0,
+                texture: nextAnimationProps["texture"] ?? "",
+                speedLoop: (nextAnimationProps["speedLoop"] as List<num>)
+                    .map((e) => e.toDouble())
+                    .toList(),
+                loop: nextLoop,
+                start: nextAnimationProps["start"] ?? 0,
+                end: nextAnimationProps["end"] ?? 0,
+              );
+              add(blocksTime);
+              generatedBlocksAnimated.add(blocksTime);
+            });
+          }
         }
       }
     }
