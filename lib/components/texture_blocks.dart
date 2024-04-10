@@ -25,7 +25,7 @@ class TextureBlocks extends SpriteAnimationComponent
         SpriteAnimationData.sequenced(
           amount: 9,
           stepTime: 0.05,
-          textureSize: Vector2.all(264),
+          textureSize: Vector2.all(66),
           loop: true,
         ),
       );

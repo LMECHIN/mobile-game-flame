@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:ui';
+
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
@@ -11,6 +11,7 @@ import 'package:flutter_application_1/components/level.dart';
 import 'package:flutter_application_1/components/player.dart';
 import 'package:flutter_application_1/models/player_data.dart';
 import 'package:flutter_application_1/utils/get_player_data.dart';
+import 'package:flutter_application_1/widget/find_path.dart';
 
 class PixelGame extends FlameGame
     with
@@ -19,15 +20,9 @@ class PixelGame extends FlameGame
         HasCollisionDetection,
         TapCallbacks {
   String? level;
-  // final BuildContext context;
-  // final double widthResolution;
-  // final double heightResolution;
-  PixelGame(
-      {
-      // {required this.widthResolution,
-      // required this.heightResolution,
-      // required this.context,
-      this.level});
+  PixelGame({
+    this.level,
+  });
 
   late CameraComponent cam;
   double camSpeed = 800;
@@ -38,9 +33,10 @@ class PixelGame extends FlameGame
   int horizontalMovementTotal = 0;
   double targetZoom = 1.0;
   static const double zoomSpeed = 0.9;
-
   Color color = Colors.black;
-  // Color initialColor = Colors.black;
+  double speedBackground = 20;
+  bool isBackgroundLoaded = false;
+  late List<ParallaxComponent> parallaxComponents = [];
 
   void updateBackgroundColor(Color newColor) {
     color = newColor;
@@ -61,58 +57,36 @@ class PixelGame extends FlameGame
   //   super.render(canvas);
   // }
 
-  void _parallaxBackgroung() async {
-    ParallaxComponent backgroundFix = await loadParallaxComponent(
-      [
-        ParallaxImageData('Background/Level_07/1.png'),
-      ],
-      scale: Vector2(2, 2),
-      priority: -2,
-    );
+  void updateSpeedBackground(double newSpeed) {
+    speedBackground = newSpeed;
+  }
+
+  void parallaxBackground() async {
+    String? clearLevel = level!.replaceAll(".tmx", "");
+    List<String> backgroundFiles = await getFilesInAssetFolder(
+        'assets/images/Background/$clearLevel/', '.png');
+
+    List<ParallaxImageData> images = [];
+
+    for (String file in backgroundFiles) {
+      images.add(ParallaxImageData('Background/$clearLevel/$file'));
+    }
 
     ParallaxComponent background = await loadParallaxComponent(
-      [
-        ParallaxImageData('Background/Level_05/1.png'),
-        ParallaxImageData('Background/Level_05/2.png'),
-        ParallaxImageData('Background/Level_05/3.png'),
-        ParallaxImageData('Background/Level_05/4.png'),
-        ParallaxImageData('Background/Level_05/5.png'),
-        // ParallaxImageData('Background/Level_07/1.png'),
-        // ParallaxImageData('Background/Level_07/2.png'),
-        // ParallaxImageData('Background/Level_07/3.png'),
-        // ParallaxImageData('Background/Level_07/4.png'),
-        // ParallaxImageData('Background/Level_08/1.png'),
-        // ParallaxImageData('Background/Level_08/2.png'),
-        // ParallaxImageData('Background/Level_08/3.png'),
-        // ParallaxImageData('Background/Level_08/4.png'),
-        // ParallaxImageData('Background/Level_08/5.png'),
-        // ParallaxImageData('Background/Level_08/6.png'),
-        // ParallaxImageData('Background/Level_04/1.png'),
-        // ParallaxImageData('Background/Level_04/2.png'),
-        // ParallaxImageData('Background/Level_04/3.png'),
-        // ParallaxImageData('Background/Level_04/4.png'),
-        // ParallaxImageData('Background/Level_01/1.png'),
-        // ParallaxImageData('Background/Level_01/2.png'),
-        // ParallaxImageData('Background/Level_01/3.png'),
-        // ParallaxImageData('Background/Level_01/4.png'),
-        // ParallaxImageData('Background/Level_02/1.png'),
-        // ParallaxImageData('Background/Level_02/2.png'),
-        // ParallaxImageData('Background/Level_02/3.png'),
-        // ParallaxImageData('Background/Level_02/4.png'),
-      ],
-      baseVelocity: Vector2(20, 0),
+      images,
+      baseVelocity: Vector2(speedBackground, 0),
       velocityMultiplierDelta: Vector2(1.6, 1.0),
       priority: -1,
-      // repeat: ImageRepeat.noRepeat,
     );
     add(background);
-    add(backgroundFix);
+    parallaxComponents.add(background);
+    isBackgroundLoaded = true;
   }
 
   @override
   FutureOr<void> onLoad() async {
     await images.loadAllImages();
-    _parallaxBackgroung();
+    parallaxBackground();
     PlayerData playerData = await getPlayerData();
     player = Player(character: playerData.selectedSkin);
 
@@ -157,8 +131,21 @@ class PixelGame extends FlameGame
 
     updateZoom(dt);
     super.update(dt);
-    if (player.hasSlide && !player.hasDie) {
-      camSpeed = 4000;
+
+    // if (player.hasSlide && !player.hasDie) {
+    //   updateSpeedBackground(200);
+    //   updateParallaxVelocity();
+    //   camSpeed = 4000;
+    //   Future.delayed(const Duration(milliseconds: 50), () {
+    //     updateSpeedBackground(20);
+    //     updateParallaxVelocity();
+    //   });
+    // }
+  }
+
+  void updateParallaxVelocity() {
+    for (final component in parallaxComponents) {
+      component.parallax?.baseVelocity = Vector2(speedBackground, 0.0);
     }
   }
 

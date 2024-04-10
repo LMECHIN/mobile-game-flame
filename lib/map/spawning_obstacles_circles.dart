@@ -13,21 +13,18 @@ void spawningObstaclesCircles(
     dynamic children,
     List<ObstacleCircle> generatedObstaclesCircles) {
   final double playerX = player.position.x;
-  final double playerY = player.position.y;
 
   if (spawnPointsObstaclesCircles != null) {
     for (final spawnObstacleCircle in spawnPointsObstaclesCircles.objects) {
       final double spawnX = spawnObstacleCircle.x;
-      final double spawnY = spawnObstacleCircle.y;
-      final double distanceToPlayer =
-          (spawnX - playerX).abs() + (spawnY - playerY).abs();
+      final double distanceToPlayer = (spawnX - playerX).abs();
 
-      if (distanceToPlayer < 5000) {
+      if (distanceToPlayer < 3000) {
         bool hasObstacleCircle = false;
         for (final child in children) {
           if (child is ObstacleCircle &&
               child.position.x == spawnX &&
-              child.position.y == spawnY) {
+              child.position.y == spawnObstacleCircle.y) {
             hasObstacleCircle = true;
             break;
           }
@@ -35,28 +32,34 @@ void spawningObstaclesCircles(
 
         if (!hasObstacleCircle) {
           final obstacle = ObstacleCircle(
-            position: Vector2(spawnX, spawnY),
-            size: Vector2(spawnObstacleCircle.width, spawnObstacleCircle.height),
-            color: spawnObstacleCircle.properties.getValue('Color') ?? 0,
-            loop: spawnObstacleCircle.properties.getValue('Loop') ?? false,
-            speedLoop: spawnObstacleCircle.properties.getValue('Speedloop') ?? 1,
-            hasTextureObstacles: spawnObstacleCircle.properties.getValue('TextureObstacle') ?? false,
-            rotate:  {
-              "up" : spawnObstacleCircle.properties.getValue('Up') ?? false,
-              "down" : spawnObstacleCircle.properties.getValue('Down') ?? false,
-              "left" : spawnObstacleCircle.properties.getValue('Left') ?? false,
-              "right" : spawnObstacleCircle.properties.getValue('Right') ?? false,
-            }
-          );
+              position: Vector2(spawnX, spawnObstacleCircle.y),
+              size: Vector2(
+                  spawnObstacleCircle.width, spawnObstacleCircle.height),
+              color: spawnObstacleCircle.properties.getValue('Color') ?? 0,
+              loop: spawnObstacleCircle.properties.getValue('Loop') ?? false,
+              speedLoop:
+                  spawnObstacleCircle.properties.getValue('Speedloop') ?? 1,
+              hasTextureObstacles:
+                  spawnObstacleCircle.properties.getValue('TextureObstacle') ??
+                      false,
+              rotate: {
+                "up": spawnObstacleCircle.properties.getValue('Up') ?? false,
+                "down":
+                    spawnObstacleCircle.properties.getValue('Down') ?? false,
+                "left":
+                    spawnObstacleCircle.properties.getValue('Left') ?? false,
+                "right":
+                    spawnObstacleCircle.properties.getValue('Right') ?? false,
+              });
           add(obstacle);
           generatedObstaclesCircles.add(obstacle);
         }
       }
     }
     for (final obstacleCircle in generatedObstaclesCircles) {
-      final double distanceToPlayer = (obstacleCircle.position.x - playerX).abs() +
-          (obstacleCircle.position.y - playerY).abs();
-      if (distanceToPlayer >= 5000) {
+      final double distanceToPlayer =
+          (obstacleCircle.position.x - playerX).abs();
+      if (distanceToPlayer >= 3000) {
         remove(obstacleCircle);
         generatedObstaclesCircles.remove(obstacleCircle);
       }

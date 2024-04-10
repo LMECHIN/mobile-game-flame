@@ -61,13 +61,21 @@ class Level extends World with HasGameRef<PixelGame> {
     calculateProgress(player.position, checkpoint.position);
     _spawningRopes();
     _spawningParticles();
-    spawningBlocks(
-        level.tileMap.getLayer<ObjectGroup>('SpawnBlocks'),
-        player,
-        (blocks) => add(blocks),
-        (blocks) => remove(blocks),
-        children,
-        generatedBlocks);
+    addBlocks(
+      level.tileMap.getLayer<ObjectGroup>('SpawnBlocks'),
+      player,
+      add,
+      remove,
+      children,
+      generatedBlocks,
+    );
+
+// Supprimer les blocs
+    removeBlocks(
+      player,
+      remove,
+      generatedBlocks,
+    );
     spawningBlocksAnimated(
         level.tileMap.getLayer<ObjectGroup>('SpawnBlocksAnimated'),
         player,
@@ -107,7 +115,8 @@ class Level extends World with HasGameRef<PixelGame> {
 
     if (backgroundLayer != null) {
       final backgroundColor = backgroundLayer.properties.getValue('Background');
-      final nextBackgroundColor = backgroundLayer.properties.getValue('NextBackground');
+      final nextBackgroundColor =
+          backgroundLayer.properties.getValue('NextBackground');
       final time = backgroundLayer.properties.getValue('Time');
       if (backgroundColor != null) {
         selectedColor = colorMap[backgroundColor];
@@ -121,7 +130,8 @@ class Level extends World with HasGameRef<PixelGame> {
       }
       if (time != null) {
         Future.delayed(Duration(seconds: time), () {
-          gameRef.updateBackgroundColor(colorMap[nextBackgroundColor] ?? Colors.black);
+          gameRef.updateBackgroundColor(
+              colorMap[nextBackgroundColor] ?? Colors.black);
         });
       }
     }
@@ -151,8 +161,7 @@ class Level extends World with HasGameRef<PixelGame> {
   }
 
   void _spawningRopes() {
-    final spawnPointsRopes =
-        level.tileMap.getLayer<ObjectGroup>('SpawnRopes');
+    final spawnPointsRopes = level.tileMap.getLayer<ObjectGroup>('SpawnRopes');
 
     final double playerX = player.position.x;
     final double playerY = player.position.y;
@@ -254,6 +263,7 @@ class Level extends World with HasGameRef<PixelGame> {
       for (final spawnPoint in spawnPointsPlayer.objects) {
         switch (spawnPoint.class_) {
           case 'Player':
+            // player.size = Vector2(spawnPoint, 264);
             player.position = Vector2(spawnPoint.x, spawnPoint.y);
             player.widthMap = level.width;
             player.heightMap = level.height;

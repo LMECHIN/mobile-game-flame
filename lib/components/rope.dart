@@ -21,7 +21,7 @@ class Rope extends SpriteAnimationComponent with HasGameRef<PixelGame> {
       SpriteAnimationData.sequenced(
         amount: 9,
         stepTime: 0.08,
-        textureSize: Vector2.all(264),
+        textureSize: Vector2.all(66),
         loop: true,
       ),
     );

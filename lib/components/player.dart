@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
+import 'package:flame/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/components/boost_up.dart';
@@ -24,7 +25,8 @@ class Player extends SpriteAnimationGroupComponent
     this.sizeCharacter = '2048x2048',
     Vector2? textureSize,
     super.position,
-  }) : textureSize = textureSize ?? Vector2(2048, 2048);
+    super.size,
+  }) : textureSize = textureSize ?? Vector2(512, 512);
 
   final double stepTime = 0.1;
   late final SpriteAnimation idleAnimation;
@@ -42,7 +44,7 @@ class Player extends SpriteAnimationGroupComponent
   final double _gravity = 8;
   final double _jumpForce = 2800;
   final double _terminalVelocity = 4600;
-  double scaleFactor = 0.3;
+  double scaleFactor = 1.2;
   double widthMap = 0;
   double heightMap = 0;
   double horizontalMovement = 0;
@@ -86,7 +88,7 @@ class Player extends SpriteAnimationGroupComponent
       position.y * adjustementY -
           (size.y * 0.25) -
           (sizeHitbox.y / 2) +
-          (sizeHitbox.y * (adjustementY - 0.1)),
+          (sizeHitbox.y * (adjustementY + 0.25)),
     );
 
     add(RectangleHitbox(size: sizeHitbox, position: positionHitbox));

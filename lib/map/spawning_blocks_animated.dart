@@ -14,14 +14,11 @@ void spawningBlocksAnimated(
     dynamic children,
     List<BlocksAnimated> generatedBlocksAnimated) {
   final double playerX = player.position.x;
-  final double playerY = player.position.y;
 
   if (spawnPointsBlocksAnimated != null) {
     for (final spawnBlockAnimated in spawnPointsBlocksAnimated.objects) {
       final double spawnX = spawnBlockAnimated.x;
-      final double spawnY = spawnBlockAnimated.y;
-      final double distanceToPlayer =
-          (spawnX - playerX).abs() + (spawnY - playerY).abs();
+      final double distanceToPlayer = (spawnX - playerX).abs();
       final int time = spawnBlockAnimated.properties.getValue('Time') ?? 0;
       final bool loop = spawnBlockAnimated.properties.getValue('Loop') ?? true;
       final bool nextLoop =
@@ -37,19 +34,19 @@ void spawningBlocksAnimated(
       Map<String, dynamic> nextAnimationProps =
           animationProperties[nextTextureAnimation] ?? {};
 
-      if (distanceToPlayer < 5000) {
+      if (distanceToPlayer < 3000) {
         bool hasBlockAnimated = false;
         for (final child in children) {
           if (child is BlocksAnimated &&
               child.position.x == spawnX &&
-              child.position.y == spawnY) {
+              child.position.y == spawnBlockAnimated.y) {
             hasBlockAnimated = true;
             break;
           }
         }
         if (!hasBlockAnimated) {
           final blockAnimated = BlocksAnimated(
-            position: Vector2(spawnBlockAnimated.x, spawnBlockAnimated.y),
+            position: Vector2(spawnX, spawnBlockAnimated.y),
             size: Vector2(spawnBlockAnimated.width, spawnBlockAnimated.height),
             color: currentAnimationProps["amount"] ?? 0,
             texture: currentAnimationProps["texture"] ?? "",
@@ -91,9 +88,8 @@ void spawningBlocksAnimated(
       }
     }
     for (final block in generatedBlocksAnimated) {
-      final double distanceToPlayer = (block.position.x - playerX).abs() +
-          (block.position.y - playerY).abs();
-      if (distanceToPlayer >= 5000 &&
+      final double distanceToPlayer = (block.position.x - playerX).abs();
+      if (distanceToPlayer >= 3000 &&
           !block.isRemoving &&
           generatedBlocksAnimated.isNotEmpty &&
           block.isMounted) {

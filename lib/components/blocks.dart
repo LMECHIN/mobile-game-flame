@@ -6,6 +6,7 @@ import 'package:flutter_application_1/components/border_blocks.dart';
 import 'package:flutter_application_1/components/ground_effect.dart';
 import 'package:flutter_application_1/components/player.dart';
 import 'package:flutter_application_1/components/texture_blocks.dart';
+import 'package:flutter_application_1/components/texture_cross.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 
 class Blocks extends SpriteAnimationComponent
@@ -15,6 +16,7 @@ class Blocks extends SpriteAnimationComponent
   bool loop;
   List<bool> borders;
   bool hasTextureBlocks;
+  bool hasTextureCross;
   bool texture;
   Blocks({
     position,
@@ -40,6 +42,7 @@ class Blocks extends SpriteAnimationComponent
       false
     ],
     this.hasTextureBlocks = false,
+    this.hasTextureCross = false,
     this.texture = true,
   }) : super(
           position: position,
@@ -105,23 +108,34 @@ class Blocks extends SpriteAnimationComponent
   void _restoreOriginalAnimation() {
     if (texture) {
       animation = SpriteAnimation.fromFrameData(
-        game.images.fromCache('Sprites/14-TileSets/blocks.png'),
+        game.images.fromCache('Sprites/14-TileSets/blocks1.png'),
         SpriteAnimationData.range(
           start: color,
           end: color,
           amount: 10,
           stepTimes: [speedLoop],
-          textureSize: Vector2.all(264),
+          textureSize: Vector2.all(1),
           loop: loop,
         ),
       );
     }
     final int i = _checkBorder();
-    final borderBlocks = BorderBlocks(borderIndex: i);
+    final borderBlocks = BorderBlocks(
+      borderIndex: i,
+      size: Vector2.all(269),
+    );
     add(borderBlocks);
 
-    final textureBlocks = TextureBlocks(hasOn: hasTextureBlocks);
+    final textureBlocks = TextureBlocks(
+      hasOn: hasTextureBlocks,
+      size: Vector2.all(264),
+    );
     add(textureBlocks);
+    final textureCross = TextureCross(
+      hasOn: hasTextureCross,
+      size: Vector2.all(264),
+    );
+    add(textureCross);
   }
 
   void reset() {}
