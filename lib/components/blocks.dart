@@ -100,7 +100,7 @@ class Blocks extends SpriteAnimationComponent
   }
 
   void _reachedBlock() {
-    final groundEffect = GroundEffect();
+    final groundEffect = GroundEffect(size: Vector2.all(65));
     add(groundEffect);
     _isTransitioning = true;
   }
@@ -122,18 +122,18 @@ class Blocks extends SpriteAnimationComponent
     final int i = _checkBorder();
     final borderBlocks = BorderBlocks(
       borderIndex: i,
-      size: Vector2.all(269),
+      size: Vector2.all(65),
     );
     add(borderBlocks);
 
     final textureBlocks = TextureBlocks(
       hasOn: hasTextureBlocks,
-      size: Vector2.all(264),
+      size: Vector2.all(64),
     );
     add(textureBlocks);
     final textureCross = TextureCross(
       hasOn: hasTextureCross,
-      size: Vector2.all(264),
+      size: Vector2.all(64),
     );
     add(textureCross);
   }

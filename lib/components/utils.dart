@@ -11,8 +11,9 @@ bool checkCollision(player, block) {
   final blockHeight = block.height;
 
   final fixedX = player.scale.x < 0
-      ? playerX - (hitbox.offsetX * 2) - playerWidth
-      : playerX;
+      ? playerX - playerWidth // Ajustement pour la direction gauche
+      : playerX; // Pas besoin d'ajustement pour la direction droite
+
   final fixedY = block.isBoostUp ? playerY + playerHeight : playerY;
 
   return (fixedY < blockY + blockHeight &&

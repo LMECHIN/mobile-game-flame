@@ -44,7 +44,7 @@ class Level extends World with HasGameRef<PixelGame> {
   @override
   FutureOr<void> onLoad() async {
     _levelData = await getLevelData();
-    level = await TiledComponent.load("$levelName", Vector2.all(264),
+    level = await TiledComponent.load("$levelName", Vector2.all(64),
         prefix: 'assets/tiles/');
 
     add(level);
@@ -61,19 +61,12 @@ class Level extends World with HasGameRef<PixelGame> {
     calculateProgress(player.position, checkpoint.position);
     _spawningRopes();
     _spawningParticles();
-    addBlocks(
+    spawningBlocks(
       level.tileMap.getLayer<ObjectGroup>('SpawnBlocks'),
       player,
       add,
       remove,
       children,
-      generatedBlocks,
-    );
-
-// Supprimer les blocs
-    removeBlocks(
-      player,
-      remove,
       generatedBlocks,
     );
     spawningBlocksAnimated(
@@ -263,8 +256,8 @@ class Level extends World with HasGameRef<PixelGame> {
       for (final spawnPoint in spawnPointsPlayer.objects) {
         switch (spawnPoint.class_) {
           case 'Player':
-            // player.size = Vector2(spawnPoint, 264);
             player.position = Vector2(spawnPoint.x, spawnPoint.y);
+            player.size = Vector2(spawnPoint.width, spawnPoint.height);
             player.widthMap = level.width;
             player.heightMap = level.height;
             add(player);

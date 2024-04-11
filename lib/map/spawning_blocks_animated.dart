@@ -34,7 +34,7 @@ void spawningBlocksAnimated(
       Map<String, dynamic> nextAnimationProps =
           animationProperties[nextTextureAnimation] ?? {};
 
-      if (distanceToPlayer < 3000) {
+      if (distanceToPlayer < 750) {
         bool hasBlockAnimated = false;
         for (final child in children) {
           if (child is BlocksAnimated &&
@@ -89,7 +89,7 @@ void spawningBlocksAnimated(
     }
     for (final block in generatedBlocksAnimated) {
       final double distanceToPlayer = (block.position.x - playerX).abs();
-      if (distanceToPlayer >= 3000 &&
+      if (distanceToPlayer >= 750 &&
           !block.isRemoving &&
           generatedBlocksAnimated.isNotEmpty &&
           block.isMounted) {

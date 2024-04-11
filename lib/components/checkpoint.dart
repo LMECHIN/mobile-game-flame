@@ -35,7 +35,7 @@ class Checkpoint extends SpriteAnimationComponent
       SpriteAnimationData.sequenced(
         amount: 1,
         stepTime: 1,
-        textureSize: Vector2.all(264),
+        textureSize: Vector2.all(66),
       ),
     );
     return super.onLoad();
@@ -66,7 +66,7 @@ class Checkpoint extends SpriteAnimationComponent
       SpriteAnimationData.sequenced(
         amount: 26,
         stepTime: 0.05,
-        textureSize: Vector2.all(264),
+        textureSize: Vector2.all(66),
         loop: false,
       ),
     );
@@ -78,7 +78,7 @@ class Checkpoint extends SpriteAnimationComponent
       SpriteAnimationData.sequenced(
         amount: 10,
         stepTime: 0.05,
-        textureSize: Vector2.all(264),
+        textureSize: Vector2.all(66),
       ),
     );
   }

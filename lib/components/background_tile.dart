@@ -17,7 +17,7 @@ class BackgroundTile extends SpriteComponent with HasGameRef<PixelGame> {
   @override
   FutureOr<void> onLoad() {
     priority = 0;
-    size = Vector2.all(264);
+    size = Vector2.all(64);
     sprite = Sprite(game.images.fromCache('Sprites/14-TileSets/$color.png'));
     return super.onLoad();
   }
@@ -25,7 +25,7 @@ class BackgroundTile extends SpriteComponent with HasGameRef<PixelGame> {
   // @override
   // void update(double dt) {
   //   position.y += scrollSpeed;
-  //   double tileSize = 264;
+  //   double tileSize = 64;
   //   int scrollHeight = (game.size.y / tileSize).floor();
 
   //   if (position.y > scrollHeight * tileSize) position.y = -tileSize;

@@ -100,8 +100,7 @@ class PixelGame extends FlameGame
       height: 2200,
     );
 
-    // cam.viewfinder.anchor = const Anchor(0.15, 0.60);
-    // setZoom(2.5);
+    setZoom(3.5);
     cam.priority = 0;
     if (showControls) {
       addJoystick();
@@ -120,16 +119,15 @@ class PixelGame extends FlameGame
       updateJoystick();
     }
 
-    cam.viewfinder.anchor = const Anchor(0.15, -1.8);
+    cam.viewfinder.anchor = const Anchor(0.15, -1.4);
     cam.follow(
       player,
       maxSpeed: double.infinity,
       horizontalOnly: true,
       snap: false,
     );
-    updateCam();
-
     updateZoom(dt);
+    updateCam(dt);
     super.update(dt);
 
     // if (player.hasSlide && !player.hasDie) {
@@ -198,32 +196,69 @@ class PixelGame extends FlameGame
     player.horizontalMovement = horizontalMovementTotal.toDouble();
   }
 
-  void updateCam() {
-    double maxSpeed = 750;
+  void updateCam(double dt) {
+    double maxSpeed = 150;
     double fallSpeed = player.velocity.y.abs();
+    double timeInZone = 0;
 
     if (fallSpeed > 0) {
-      maxSpeed += fallSpeed * 0.5;
+      maxSpeed += fallSpeed * 0.8;
     }
 
-    if (player.position.y > 2364 && player.position.y <= 3420) {
-      cam.moveTo(Vector2(player.position.x, -1584), speed: maxSpeed);
-    } else if (player.position.y > 1308 && player.position.y <= 2364) {
-      cam.moveTo(Vector2(player.position.x, -2376), speed: maxSpeed);
-    } else if (player.position.y > 252 && player.position.y <= 1308) {
-      cam.moveTo(Vector2(player.position.x, -3168), speed: maxSpeed);
-    } else if (player.position.y <= 252) {
-      cam.moveTo(Vector2(player.position.x, -3960), speed: maxSpeed);
-    } else {
-      cam.moveTo(Vector2(player.position.x, 0), speed: maxSpeed);
+    if ((player.position.y > 892 && player.position.y <= 1084)) {
+      timeInZone += dt;
+      if (timeInZone >= 0.006 || player.isOnGround) {
+        cam.moveTo(Vector2(player.position.x, -192), speed: maxSpeed);
+        cam.follow(
+          player,
+          maxSpeed: maxSpeed,
+          horizontalOnly: true,
+          snap: false,
+        );
+      }
+    } else if ((player.position.y > 700 && player.position.y <= 892)) {
+      timeInZone += dt;
+      if (timeInZone >= 0.006 || player.isOnGround) {
+        cam.moveTo(Vector2(player.position.x, -384), speed: maxSpeed);
+        cam.follow(
+          player,
+          maxSpeed: maxSpeed,
+          horizontalOnly: true,
+          snap: false,
+        );
+      }
+    } else if ((player.position.y > 508 && player.position.y <= 700)) {
+      timeInZone += dt;
+      if (timeInZone >= 0.006 || player.isOnGround) {
+        cam.moveTo(Vector2(player.position.x, -576), speed: maxSpeed);
+        cam.follow(
+          player,
+          maxSpeed: maxSpeed,
+          horizontalOnly: true,
+          snap: false,
+        );
+      }
+    } else if (player.position.y <= 508) {
+      timeInZone += dt;
+      if (timeInZone >= 0.006 || player.isOnGround) {
+        cam.moveTo(Vector2(player.position.x, -768), speed: maxSpeed);
+        cam.follow(
+          player,
+          maxSpeed: maxSpeed,
+          horizontalOnly: true,
+          snap: false,
+        );
+      }
+    } else if (player.position.y > 1084) {
+      timeInZone = 0;
+      cam.moveTo(Vector2(player.position.x, 0), speed: 750);
+      cam.follow(
+        player,
+        maxSpeed: 750,
+        horizontalOnly: true,
+        snap: false,
+      );
     }
-
-    cam.follow(
-      player,
-      maxSpeed: maxSpeed,
-      horizontalOnly: true,
-      snap: false,
-    );
   }
 
   void updateZoom(double dt) {

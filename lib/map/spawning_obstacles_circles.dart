@@ -19,7 +19,7 @@ void spawningObstaclesCircles(
       final double spawnX = spawnObstacleCircle.x;
       final double distanceToPlayer = (spawnX - playerX).abs();
 
-      if (distanceToPlayer < 3000) {
+      if (distanceToPlayer < 750) {
         bool hasObstacleCircle = false;
         for (final child in children) {
           if (child is ObstacleCircle &&
@@ -59,7 +59,7 @@ void spawningObstaclesCircles(
     for (final obstacleCircle in generatedObstaclesCircles) {
       final double distanceToPlayer =
           (obstacleCircle.position.x - playerX).abs();
-      if (distanceToPlayer >= 3000) {
+      if (distanceToPlayer >= 750) {
         remove(obstacleCircle);
         generatedObstaclesCircles.remove(obstacleCircle);
       }

@@ -5,7 +5,7 @@ import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flutter_application_1/components/blocks.dart';
 import 'package:flutter_application_1/components/player.dart';
 
-void addBlocks(
+void spawningBlocks(
     ObjectGroup? spawnPointsBlocks,
     Player player,
     FutureOr<void> Function(Component) add,
@@ -19,7 +19,7 @@ void addBlocks(
     final double distanceToPlayer = (spawnX - playerX).abs();
     final int time = spawnBlock.properties.getValue('Time') ?? 0;
 
-    if (distanceToPlayer < 3000) {
+    if (distanceToPlayer < 750) {
       bool hasBlock = false;
       for (final child in children) {
         if (child is Blocks &&
@@ -51,8 +51,7 @@ void addBlocks(
             spawnBlock.properties.getValue('BorderLeftRight') ?? false,
             spawnBlock.properties.getValue('BorderLeftRightUp') ?? false,
             spawnBlock.properties.getValue('BorderLeftRightDown') ?? false,
-            spawnBlock.properties.getValue('BorderLeftRightUpDown') ??
-                false,
+            spawnBlock.properties.getValue('BorderLeftRightUpDown') ?? false,
           ],
           hasTextureBlocks:
               spawnBlock.properties.getValue('TextureBlock') ?? false,
@@ -74,18 +73,9 @@ void addBlocks(
       }
     }
   }
-}
-
-
-void removeBlocks(
-    Player player,
-    void Function(Component) remove,
-    List<Blocks> generatedBlocks) {
-  final double playerX = player.position.x;
-
   for (final uniqueBlock in generatedBlocks.toList()) {
     final double distanceToPlayer = (uniqueBlock.position.x - playerX).abs();
-    if (distanceToPlayer >= 3000 &&
+    if (distanceToPlayer >= 750 &&
         !uniqueBlock.isRemoving &&
         generatedBlocks.contains(uniqueBlock) &&
         uniqueBlock.isMounted) {
@@ -94,4 +84,3 @@ void removeBlocks(
     }
   }
 }
-
