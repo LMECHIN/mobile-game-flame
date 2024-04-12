@@ -2437,30 +2437,6 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
-  <object id="5817" name="Cross" x="8128" y="960" width="64" height="64">
-   <properties>
-    <property name="BorderDown" type="bool" value="false"/>
-    <property name="BorderDownLeft" type="bool" value="false"/>
-    <property name="BorderDownRight" type="bool" value="false"/>
-    <property name="BorderLeft" type="bool" value="false"/>
-    <property name="BorderLeftRight" type="bool" value="false"/>
-    <property name="BorderLeftRightDown" type="bool" value="false"/>
-    <property name="BorderLeftRightUp" type="bool" value="true"/>
-    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
-    <property name="BorderRight" type="bool" value="false"/>
-    <property name="BorderUp" type="bool" value="false"/>
-    <property name="BorderUpDown" type="bool" value="false"/>
-    <property name="BorderUpDownLeft" type="bool" value="false"/>
-    <property name="BorderUpDownRight" type="bool" value="false"/>
-    <property name="BorderUpLeft" type="bool" value="false"/>
-    <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
-    <property name="TextureBlock" type="bool" value="false"/>
-    <property name="TextureCross" type="bool" value="true"/>
-    <property name="Time" type="int" value="0"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup id="3" name="Spawnpoints" locked="1">
   <object id="4789" name="Checkpoint" type="Checkpoint" x="19072" y="1344" width="64" height="64"/>
@@ -2477,7 +2453,7 @@
   </object>
  </objectgroup>
  <objectgroup id="17" name="SpawnRopes" locked="1"/>
- <objectgroup id="4" name="SpawnBlocks">
+ <objectgroup id="4" name="SpawnBlocks" locked="1">
   <object id="4486" x="0" y="1408" width="64" height="64">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>

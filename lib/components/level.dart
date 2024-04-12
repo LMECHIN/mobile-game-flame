@@ -7,6 +7,7 @@ import 'package:flutter_application_1/components/blocks_animated.dart';
 import 'package:flutter_application_1/components/boost_up.dart';
 import 'package:flutter_application_1/components/checkpoint.dart';
 import 'package:flutter_application_1/components/collisions_block.dart';
+import 'package:flutter_application_1/components/obstacle.dart';
 import 'package:flutter_application_1/components/particles.dart';
 import 'package:flutter_application_1/components/player.dart';
 import 'package:flutter_application_1/components/rope.dart';
@@ -34,6 +35,8 @@ class Level extends World with HasGameRef<PixelGame> {
   List<BlocksAnimated> generatedBlocksAnimated = [];
   Map<String, DateTime> lastSpawnTimes = {};
   late Color? selectedColor;
+  List<Blocks> generatedBlocks = [];
+  List<Obstacle> generatedObstacles = [];
 
   @override
   FutureOr<void> onLoad() async {
@@ -60,6 +63,7 @@ class Level extends World with HasGameRef<PixelGame> {
       add,
       remove,
       children,
+      generatedBlocks,
     );
     spawningObstacles(
       level.tileMap.getLayer<ObjectGroup>('SpawnObstacles'),
@@ -67,6 +71,7 @@ class Level extends World with HasGameRef<PixelGame> {
       add,
       remove,
       children,
+      generatedObstacles,
     );
     spawningObstaclesCircles(
       level.tileMap.getLayer<ObjectGroup>('SpawnObstaclesCircles'),

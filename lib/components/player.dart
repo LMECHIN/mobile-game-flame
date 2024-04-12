@@ -262,7 +262,7 @@ class Player extends SpriteAnimationGroupComponent
     if (hasJumped && isOnGround) {
       _playJump(dt);
     }
-    if (hasSlide) {
+    if (hasSlide && !isOnGround) {
       // _playTrail();
       _playSlide(400000, dt);
     }
