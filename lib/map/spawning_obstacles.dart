@@ -10,8 +10,8 @@ void spawningObstacles(
     Player player,
     FutureOr<void> Function(Component) add,
     void Function(Component) remove,
-    dynamic children,
-    List<Obstacle> generatedObstacles) {
+    dynamic children) {
+  List<Obstacle> generatedObstacles = [];
   final double playerX = player.position.x;
 
   if (spawnPointsObstacles != null) {
@@ -52,7 +52,10 @@ void spawningObstacles(
     }
     for (final obstacle in generatedObstacles) {
       final double distanceToPlayer = (obstacle.position.x - playerX).abs();
-      if (distanceToPlayer >= 750) {
+      if (distanceToPlayer >= 750 &&
+          !obstacle.isRemoving &&
+          generatedObstacles.contains(obstacle) &&
+          obstacle.isMounted) {
         remove(obstacle);
         generatedObstacles.remove(obstacle);
       }

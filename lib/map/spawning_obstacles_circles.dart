@@ -10,8 +10,8 @@ void spawningObstaclesCircles(
     Player player,
     FutureOr<void> Function(Component) add,
     void Function(Component) remove,
-    dynamic children,
-    List<ObstacleCircle> generatedObstaclesCircles) {
+    dynamic children) {
+  List<ObstacleCircle> generatedObstaclesCircles = [];
   final double playerX = player.position.x;
 
   if (spawnPointsObstaclesCircles != null) {

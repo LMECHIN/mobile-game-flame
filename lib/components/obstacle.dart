@@ -56,7 +56,7 @@ class Obstacle extends SpriteAnimationComponent with HasGameRef<PixelGame> {
         final textureObstacles = TextureObstacles(
           hasOn: hasTextureObstacles,
           rotate: key,
-          size: Vector2.all(264),
+          size: Vector2.all(66),
         );
         add(textureObstacles);
       }

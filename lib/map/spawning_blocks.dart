@@ -10,25 +10,22 @@ void spawningBlocks(
     Player player,
     FutureOr<void> Function(Component) add,
     void Function(Component) remove,
-    dynamic children,
-    List<Blocks> generatedBlocks) {
+    dynamic children) {
+  List<Blocks> generatedBlocks = [];
   final double playerX = player.position.x;
+  const double playerDistanceThreshold = 750;
 
   for (final spawnBlock in spawnPointsBlocks!.objects) {
     final double spawnX = spawnBlock.x;
     final double distanceToPlayer = (spawnX - playerX).abs();
     final int time = spawnBlock.properties.getValue('Time') ?? 0;
 
-    if (distanceToPlayer < 750) {
-      bool hasBlock = false;
-      for (final child in children) {
-        if (child is Blocks &&
-            child.position.x == spawnX &&
-            child.position.y == spawnBlock.y) {
-          hasBlock = true;
-          break;
-        }
-      }
+    if (distanceToPlayer < playerDistanceThreshold) {
+      final Set<Vector2> blockPositions = Set.from(
+        children.whereType<Blocks>().map((child) => child.position),
+      );
+
+      bool hasBlock = blockPositions.contains(Vector2(spawnX, spawnBlock.y));
 
       if (!hasBlock) {
         final blocks = Blocks(
@@ -75,7 +72,7 @@ void spawningBlocks(
   }
   for (final uniqueBlock in generatedBlocks.toList()) {
     final double distanceToPlayer = (uniqueBlock.position.x - playerX).abs();
-    if (distanceToPlayer >= 750 &&
+    if (distanceToPlayer >= playerDistanceThreshold &&
         !uniqueBlock.isRemoving &&
         generatedBlocks.contains(uniqueBlock) &&
         uniqueBlock.isMounted) {

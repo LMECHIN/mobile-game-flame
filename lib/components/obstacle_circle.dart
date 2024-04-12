@@ -51,7 +51,7 @@ class ObstacleCircle extends SpriteAnimationComponent
         final textureObstacles = TextureObstacles(
           hasOn: hasTextureObstacles,
           rotate: key,
-          size: Vector2.all(264),
+          size: Vector2.all(66),
         );
         add(textureObstacles);
       }

@@ -156,7 +156,7 @@ class Player extends SpriteAnimationGroupComponent
     if (other is BoostUp) {
       while (accumulatedTime >= fixedDeltaTime) {
         _playJump(fixedDeltaTime);
-        _playSlide(fixedDeltaTime);
+        _playSlide(500000, fixedDeltaTime);
         accumulatedTime -= fixedDeltaTime;
         break;
       }
@@ -264,7 +264,7 @@ class Player extends SpriteAnimationGroupComponent
     }
     if (hasSlide) {
       // _playTrail();
-      _playSlide(dt);
+      _playSlide(400000, dt);
     }
 
     if (delayExpired) {
@@ -288,8 +288,8 @@ class Player extends SpriteAnimationGroupComponent
     hasJumped = false;
   }
 
-  void _playSlide(double dt) {
-    moveSpeed = (400000 * dt) / 0.42;
+  void _playSlide(int value, double dt) {
+    moveSpeed = (value * dt) / 0.42;
     delayExpired = false;
     _startDelay();
   }

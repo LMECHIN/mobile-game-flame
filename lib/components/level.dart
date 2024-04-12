@@ -7,8 +7,6 @@ import 'package:flutter_application_1/components/blocks_animated.dart';
 import 'package:flutter_application_1/components/boost_up.dart';
 import 'package:flutter_application_1/components/checkpoint.dart';
 import 'package:flutter_application_1/components/collisions_block.dart';
-import 'package:flutter_application_1/components/obstacle.dart';
-import 'package:flutter_application_1/components/obstacle_circle.dart';
 import 'package:flutter_application_1/components/particles.dart';
 import 'package:flutter_application_1/components/player.dart';
 import 'package:flutter_application_1/components/rope.dart';
@@ -32,12 +30,8 @@ class Level extends World with HasGameRef<PixelGame> {
   late Checkpoint checkpoint;
   double fixedDeltaTime = 0.1 / 60;
   double accumulatedTime = 0;
-  List<Rope> generatedRopes = [];
   List<Particles> generatedParticles = [];
-  List<Blocks> generatedBlocks = [];
   List<BlocksAnimated> generatedBlocksAnimated = [];
-  List<Obstacle> generatedObstacles = [];
-  List<ObstacleCircle> generatedObstaclesCircles = [];
   Map<String, DateTime> lastSpawnTimes = {};
   late Color? selectedColor;
 
@@ -48,7 +42,6 @@ class Level extends World with HasGameRef<PixelGame> {
         prefix: 'assets/tiles/');
 
     add(level);
-
     _spawningBackground();
     _spawningObjects();
     _addCollisions();
@@ -67,29 +60,30 @@ class Level extends World with HasGameRef<PixelGame> {
       add,
       remove,
       children,
-      generatedBlocks,
+    );
+    spawningObstacles(
+      level.tileMap.getLayer<ObjectGroup>('SpawnObstacles'),
+      player,
+      add,
+      remove,
+      children,
+    );
+    spawningObstaclesCircles(
+      level.tileMap.getLayer<ObjectGroup>('SpawnObstaclesCircles'),
+      player,
+      add,
+      remove,
+      children,
     );
     spawningBlocksAnimated(
-        level.tileMap.getLayer<ObjectGroup>('SpawnBlocksAnimated'),
-        player,
-        (blocksAnimated) => add(blocksAnimated),
-        (blockAnimated) => remove(blockAnimated),
-        children,
-        generatedBlocksAnimated);
-    spawningObstacles(
-        level.tileMap.getLayer<ObjectGroup>('SpawnObstacles'),
-        player,
-        (obstacle) => add(obstacle),
-        (obstacle) => remove(obstacle),
-        children,
-        generatedObstacles);
-    spawningObstaclesCircles(
-        level.tileMap.getLayer<ObjectGroup>('SpawnObstaclesCircles'),
-        player,
-        (obstacle) => add(obstacle),
-        (obstacle) => remove(obstacle),
-        children,
-        generatedObstaclesCircles);
+      level.tileMap.getLayer<ObjectGroup>('SpawnBlocksAnimated'),
+      player,
+      (blocksAnimated) => add(blocksAnimated),
+      (blockAnimated) => remove(blockAnimated),
+      children,
+      generatedBlocksAnimated,
+    );
+    super.update(dt);
   }
 
   void _spawningBackground() {
@@ -154,6 +148,7 @@ class Level extends World with HasGameRef<PixelGame> {
   }
 
   void _spawningRopes() {
+    List<Rope> generatedRopes = [];
     final spawnPointsRopes = level.tileMap.getLayer<ObjectGroup>('SpawnRopes');
 
     final double playerX = player.position.x;
@@ -261,14 +256,6 @@ class Level extends World with HasGameRef<PixelGame> {
             player.widthMap = level.width;
             player.heightMap = level.height;
             add(player);
-            break;
-          case 'Obstacle':
-            final obstacle = Obstacle(
-              position: Vector2(spawnPoint.x, spawnPoint.y),
-              size: Vector2(spawnPoint.width, spawnPoint.height),
-            );
-            add(obstacle);
-            generatedObstacles.add(obstacle);
             break;
           case 'BoostsUp':
             final boost = BoostUp(
