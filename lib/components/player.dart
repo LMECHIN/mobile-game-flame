@@ -42,15 +42,15 @@ class Player extends SpriteAnimationGroupComponent
   bool isRightKeyPressed = false;
 
   Color color = const Color.fromARGB(255, 0, 0, 0);
-  final double _gravity = 3.5;
+  final double _gravity = 3;
   final double _jumpForce = 700;
   final double _terminalVelocity = 1150;
   double scaleFactor = 2.4;
   double widthMap = 0;
   double heightMap = 0;
   double horizontalMovement = 0;
-  double moveSpeed = 300;
-  double normalMoveSpeed = 300;
+  double moveSpeed = 500;
+  double normalMoveSpeed = 500;
   Vector2 startingPosition = Vector2.zero();
   Vector2 velocity = Vector2.zero();
   double fixedDeltaTime = 0.08 / 60;
@@ -237,19 +237,19 @@ class Player extends SpriteAnimationGroupComponent
       flipHorizontallyAroundCenter();
     }
 
-    if (moveSpeed > 300) {
+    if (moveSpeed > 500) {
       playerState = PlayerState.sliding;
     } else if ((velocity.x > 0 || velocity.x < 0) && !hasSlide) {
       hasSlide = false;
       playerState = PlayerState.running;
     }
-    if (moveSpeed > 300) {
+    if (moveSpeed > 500) {
       playerState = PlayerState.sliding;
     } else if (velocity.y < 0) {
       playerState = PlayerState.jumping;
     }
 
-    if (moveSpeed > 300) {
+    if (moveSpeed > 500) {
       playerState = PlayerState.sliding;
     } else if (velocity.y > 0) {
       playerState = PlayerState.falling;
@@ -262,13 +262,13 @@ class Player extends SpriteAnimationGroupComponent
     if (hasJumped && isOnGround) {
       _playJump(dt);
     }
-    if (hasSlide && !isOnGround) {
+    if (hasSlide) {
       // _playTrail();
       _playSlide(400000, dt);
     }
 
     if (delayExpired) {
-      moveSpeed = 300;
+      moveSpeed = 500;
       hasSlide = false;
     }
     // if (velocity.y > _gravity) isOnGround = false; // optional

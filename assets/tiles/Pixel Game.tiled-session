@@ -73,15 +73,15 @@
         },
         "Level01.tmx": {
             "expandedObjectLayers": [
-                7,
+                16,
                 4,
-                16
+                7
             ],
             "scale": 0.25,
-            "selectedLayer": 4,
+            "selectedLayer": 11,
             "viewCenter": {
-                "x": 3448,
-                "y": 4716
+                "x": 5552,
+                "y": 1152
             }
         },
         "Level02.tmx": {
@@ -93,11 +93,14 @@
             }
         },
         "Level03.tmx": {
-            "scale": 0.0625,
-            "selectedLayer": 6,
+            "expandedObjectLayers": [
+                4
+            ],
+            "scale": 0.125,
+            "selectedLayer": 11,
             "viewCenter": {
-                "x": 39592,
-                "y": 792
+                "x": 5328,
+                "y": 1168
             }
         },
         "Level04.tmx": {
@@ -162,9 +165,9 @@
         "Level10.tmx": {
             "expandedObjectLayers": [
                 3,
-                4,
                 9,
-                8
+                8,
+                4
             ],
             "scale": 0.25,
             "selectedLayer": 4,
@@ -220,6 +223,9 @@
             "scaleInDock": 0.25,
             "scaleInEditor": 1
         },
+        "boost!.tsx": {
+            "scaleInDock": 1
+        },
         "boost.tsx": {
             "scaleInDock": 1
         },
@@ -239,6 +245,9 @@
             "scaleInDock": 1
         },
         "corner_up_right.tsx": {
+            "scaleInDock": 1
+        },
+        "dash!.tsx": {
             "scaleInDock": 1
         },
         "down.tsx": {
@@ -287,7 +296,7 @@
         "Level01.tmx"
     ],
     "project": "Pixel Game.tiled-project",
-    "property.type": "string",
+    "property.type": "bool",
     "recentFiles": [
         "Level08.tmx",
         "Level09.tmx",

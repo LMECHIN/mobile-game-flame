@@ -108,11 +108,11 @@ class Blocks extends SpriteAnimationComponent
   void _restoreOriginalAnimation() {
     if (texture) {
       animation = SpriteAnimation.fromFrameData(
-        game.images.fromCache('Sprites/14-TileSets/blocks1.png'),
+        game.images.fromCache('Sprites/14-TileSets/blocks2.png'),
         SpriteAnimationData.range(
           start: color,
           end: color,
-          amount: 10,
+          amount: 12,
           stepTimes: [speedLoop],
           textureSize: Vector2.all(1),
           loop: loop,

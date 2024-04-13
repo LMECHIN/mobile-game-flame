@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="300" height="23" tilewidth="64" tileheight="64" infinite="0" nextlayerid="29" nextobjectid="5933">
+<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" width="300" height="23" tilewidth="64" tileheight="64" infinite="0" nextlayerid="29" nextobjectid="5933">
  <tileset firstgid="1" source="boost_right.tsx"/>
  <tileset firstgid="10" source="light2.tsx"/>
  <tileset firstgid="19" source="dash!.tsx"/>
@@ -167,7 +167,7 @@
 </data>
  </layer>
  <objectgroup id="16" name="SpawnObstaclesCircles"/>
- <objectgroup id="2" name="Collisions">
+ <objectgroup id="2" name="Collisions" locked="1">
   <object id="4485" x="0" y="1408" width="19200" height="64"/>
   <object id="5705" x="8000" y="1024" width="64" height="64"/>
   <object id="5706" x="7872" y="1088" width="64" height="64"/>
@@ -2445,15 +2445,16 @@
  <objectgroup id="7" name="SpawnObstacles">
   <object id="5931" name="Obstacle" x="896" y="1344" width="64" height="64">
    <properties>
-    <property name="Color" type="int" value="3"/>
+    <property name="Color" type="int" value="1"/>
     <property name="Down" type="bool" value="true"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureObstacle" type="bool" value="true"/>
     <property name="Up" type="bool" value="false"/>
    </properties>
   </object>
  </objectgroup>
  <objectgroup id="17" name="SpawnRopes" locked="1"/>
- <objectgroup id="4" name="SpawnBlocks" locked="1">
+ <objectgroup id="4" name="SpawnBlocks">
   <object id="4486" x="0" y="1408" width="64" height="64">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
@@ -5154,20 +5155,95 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
-  <object id="5818" x="8000" y="1024" width="64" height="64"/>
-  <object id="5819" x="7872" y="1088" width="64" height="64"/>
-  <object id="5820" x="7744" y="1152" width="64" height="64"/>
-  <object id="5821" x="7616" y="1216" width="64" height="64"/>
-  <object id="5822" x="7488" y="1280" width="64" height="64"/>
-  <object id="5823" x="6976" y="1280" width="448" height="128"/>
-  <object id="5824" x="5952" y="1280" width="704" height="128"/>
-  <object id="5825" x="6208" y="1024" width="192" height="64"/>
-  <object id="5826" x="5312" y="1344" width="640" height="64"/>
-  <object id="5827" x="4544" y="1344" width="640" height="64"/>
-  <object id="5828" x="3712" y="1280" width="704" height="128"/>
-  <object id="5829" x="3072" y="1344" width="640" height="64"/>
-  <object id="5830" x="1536" y="1344" width="64" height="64"/>
-  <object id="5831" x="832" y="1344" width="64" height="64"/>
+  <object id="5818" x="8000" y="1024" width="64" height="64">
+   <properties>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="5819" x="7872" y="1088" width="64" height="64">
+   <properties>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="5820" x="7744" y="1152" width="64" height="64">
+   <properties>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="5821" x="7616" y="1216" width="64" height="64">
+   <properties>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="5822" x="7488" y="1280" width="64" height="64">
+   <properties>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="5823" x="6976" y="1280" width="448" height="128">
+   <properties>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="5824" x="5952" y="1280" width="704" height="128">
+   <properties>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="5825" x="6208" y="1024" width="192" height="64">
+   <properties>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="5826" x="5312" y="1344" width="640" height="64">
+   <properties>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="5827" x="4544" y="1344" width="640" height="64">
+   <properties>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="5828" x="3712" y="1280" width="704" height="128">
+   <properties>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="5829" x="3072" y="1344" width="640" height="64">
+   <properties>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="5830" x="1536" y="1344" width="64" height="64">
+   <properties>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="5831" x="832" y="1344" width="64" height="64">
+   <properties>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+   </properties>
+  </object>
   <object id="5832" x="832" y="1344" width="64" height="64">
    <properties>
     <property name="BorderDown" type="bool" value="false"/>
@@ -5185,8 +5261,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5208,8 +5284,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5231,8 +5307,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="true"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5254,8 +5331,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5277,8 +5355,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5300,8 +5379,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5323,8 +5403,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5346,8 +5427,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5369,8 +5451,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5392,8 +5475,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5415,8 +5499,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5438,8 +5523,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5461,8 +5547,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5484,8 +5571,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5507,8 +5595,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5530,8 +5619,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5553,8 +5643,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5576,8 +5667,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5599,8 +5691,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5622,8 +5715,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5645,8 +5739,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5668,8 +5763,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5691,8 +5787,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5714,8 +5811,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="true"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5737,8 +5835,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5760,8 +5859,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5783,8 +5883,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5806,8 +5907,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="true"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5829,8 +5931,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="true"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5852,8 +5955,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5875,8 +5979,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5898,8 +6003,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5921,8 +6027,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5944,8 +6051,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5967,8 +6075,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -5990,8 +6099,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6013,8 +6122,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6036,8 +6145,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6059,8 +6168,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6082,8 +6192,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6105,8 +6216,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6128,8 +6240,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6151,8 +6264,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="true"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6174,8 +6287,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6197,8 +6311,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6220,8 +6335,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6243,8 +6359,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6266,8 +6383,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6289,8 +6406,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6312,8 +6429,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6335,8 +6453,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6358,8 +6477,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="true"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6381,8 +6501,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="true"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6404,8 +6525,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6427,8 +6549,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6450,8 +6573,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6473,8 +6597,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6496,8 +6621,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6519,8 +6645,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6542,8 +6668,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6565,8 +6691,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6588,8 +6715,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6611,8 +6739,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6634,8 +6763,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6657,8 +6787,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6680,8 +6810,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6703,8 +6834,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6726,8 +6857,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6749,8 +6880,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6772,8 +6904,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6795,8 +6927,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6818,8 +6950,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6841,8 +6974,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6864,8 +6998,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6887,8 +7022,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6910,8 +7046,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6933,8 +7070,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6956,8 +7094,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -6979,8 +7118,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7002,8 +7142,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7025,8 +7166,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7048,8 +7190,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7071,8 +7214,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7094,8 +7238,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7117,8 +7262,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7140,8 +7286,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7163,8 +7309,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7186,8 +7332,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7209,8 +7356,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7232,8 +7380,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="true"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7255,8 +7404,9 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="true"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
+    <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7278,8 +7428,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7301,8 +7451,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="true"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7324,8 +7474,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7347,8 +7497,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7370,8 +7520,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7393,8 +7543,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7416,8 +7566,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>
    </properties>
@@ -7439,8 +7589,8 @@
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
-    <property name="Color" type="int" value="4"/>
-    <property name="NextColor" type="int" value="4"/>
+    <property name="Color" type="int" value="1"/>
+    <property name="NextColor" type="int" value="1"/>
     <property name="TextureBlock" type="bool" value="false"/>
     <property name="TextureCross" type="bool" value="true"/>
     <property name="Time" type="int" value="0"/>

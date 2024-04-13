@@ -38,7 +38,7 @@ void spawningBlocks(
             position: Vector2(spawnX, spawnBlock.y),
             size: Vector2(spawnBlock.width, spawnBlock.height),
             color: spawnBlock.properties.getValue('Color') ?? 1,
-            texture: spawnBlock.properties.getValue('Texture') ?? false,
+            texture: spawnBlock.properties.getValue('Texture') ?? true,
             borders: [
               spawnBlock.properties.getValue('BorderUp') ?? false,
               spawnBlock.properties.getValue('BorderDown') ?? false,
