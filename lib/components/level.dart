@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flame/components.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_application_1/components/blocks.dart';
 import 'package:flutter_application_1/components/blocks_animated.dart';
 import 'package:flutter_application_1/components/boost_up.dart';
@@ -19,7 +20,7 @@ import 'package:flutter_application_1/models/level_data.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 import 'package:flutter_application_1/utils/get_level_data.dart';
 
-class Level extends World with HasGameRef<PixelGame> {
+class Level extends World with HasGameRef<PixelGame> implements TickerProvider {
   final String? levelName;
   final Player player;
   Level({required this.levelName, required this.player});
@@ -37,6 +38,11 @@ class Level extends World with HasGameRef<PixelGame> {
   late Color? selectedColor;
   List<Blocks> generatedBlocks = [];
   List<Obstacle> generatedObstacles = [];
+
+  @override
+  Ticker createTicker(TickerCallback onTick) {
+    return Ticker(onTick);
+  }
 
   @override
   FutureOr<void> onLoad() async {
@@ -64,6 +70,7 @@ class Level extends World with HasGameRef<PixelGame> {
       remove,
       children,
       generatedBlocks,
+      this,
     );
     spawningObstacles(
       level.tileMap.getLayer<ObjectGroup>('SpawnObstacles'),

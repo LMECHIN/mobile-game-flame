@@ -221,7 +221,7 @@ class Player extends SpriteAnimationGroupComponent
       game.images.fromCache(sprite),
       SpriteAnimationData.sequenced(
         amount: amount,
-        stepTime: 0.1,
+        stepTime: 0.08,
         textureSize: textureSize,
         loop: false,
       ),

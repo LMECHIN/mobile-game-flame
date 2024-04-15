@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flame/components.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 import 'package:flutter_application_1/utils/border_texture.dart';
 
@@ -33,6 +34,13 @@ class BorderBlocks extends SpriteAnimationComponent with HasGameRef<PixelGame> {
           size: size,
         );
   static const int maxIndex = 15;
+
+  // @override
+  // void render(Canvas canvas) {
+  //   super.render(canvas);
+  //   Paint paint = Paint()..color = Colors.white;
+  //   canvas.drawRect(Rect.fromLTWH(position.x, position.y, 4, 65), paint);
+  // }
 
   @override
   Future<void> onLoad() async {

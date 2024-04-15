@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
+import 'package:flame/extensions.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/border_blocks.dart';
 import 'package:flutter_application_1/components/ground_effect.dart';
 import 'package:flutter_application_1/components/player.dart';
@@ -18,6 +20,7 @@ class Blocks extends SpriteAnimationComponent
   bool hasTextureBlocks;
   bool hasTextureCross;
   bool texture;
+  Color bluePaintColor;
   Blocks({
     position,
     size,
@@ -44,6 +47,7 @@ class Blocks extends SpriteAnimationComponent
     this.hasTextureBlocks = false,
     this.hasTextureCross = false,
     this.texture = true,
+    this.bluePaintColor = const Color(0xFF0000FF),
   }) : super(
           position: position,
           size: size,
@@ -51,10 +55,11 @@ class Blocks extends SpriteAnimationComponent
   bool _isTransitioning = false;
   double transitionDuration = 0.5;
   double _transitionTimer = 0;
+  late Paint bluePaint;
 
   @override
   FutureOr<void> onLoad() {
-    priority = -1;
+    priority = 0;
 
     final hitboxShape = RectangleHitbox(
       angle: -0.1,
@@ -99,6 +104,14 @@ class Blocks extends SpriteAnimationComponent
     }
   }
 
+  @override
+  void render(Canvas canvas) {
+    bluePaint = Paint()..color = bluePaintColor;
+    canvas.drawRect(
+        const Rect.fromLTWH(0, 0, 65, 65), bluePaint);
+    super.render(canvas);
+  }
+
   void _reachedBlock() {
     final groundEffect = GroundEffect(size: Vector2.all(65));
     add(groundEffect);
@@ -106,19 +119,19 @@ class Blocks extends SpriteAnimationComponent
   }
 
   void _restoreOriginalAnimation() {
-    if (texture) {
-      animation = SpriteAnimation.fromFrameData(
-        game.images.fromCache('Sprites/14-TileSets/blocks2.png'),
-        SpriteAnimationData.range(
-          start: color,
-          end: color,
-          amount: 12,
-          stepTimes: [speedLoop],
-          textureSize: Vector2.all(1),
-          loop: loop,
-        ),
-      );
-    }
+    // if (texture) {
+    //   animation = SpriteAnimation.fromFrameData(
+    //     game.images.fromCache('Sprites/14-TileSets/blocks2.png'),
+    //     SpriteAnimationData.range(
+    //       start: color,
+    //       end: color,
+    //       amount: 10,
+    //       stepTimes: [speedLoop],
+    //       textureSize: Vector2.all(1),
+    //       loop: loop,
+    //     ),
+    //   );
+    // }
     final int i = _checkBorder();
     final borderBlocks = BorderBlocks(
       borderIndex: i,
