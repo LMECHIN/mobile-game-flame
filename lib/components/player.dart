@@ -10,7 +10,6 @@ import 'package:flutter_application_1/components/collisions_block.dart';
 import 'package:flutter_application_1/components/obstacle.dart';
 import 'package:flutter_application_1/components/obstacle_circle.dart';
 import 'package:flutter_application_1/components/player_hitbox.dart';
-import 'package:flutter_application_1/components/trail.dart';
 import 'package:flutter_application_1/components/utils.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 
@@ -59,7 +58,6 @@ class Player extends SpriteAnimationGroupComponent
   bool hasJumped = false;
   bool hasSlide = false;
   bool hasDie = false;
-  late Trail trail;
   int fixCam = 0;
   late double _dt;
   bool delayExpired = false;
@@ -297,13 +295,6 @@ class Player extends SpriteAnimationGroupComponent
   void _startDelay() {
     Future.delayed(const Duration(milliseconds: 50), () {
       delayExpired = true;
-    });
-  }
-
-  void _playTrail() {
-    add(trail);
-    Future.delayed(const Duration(milliseconds: 100), () {
-      remove(trail);
     });
   }
 

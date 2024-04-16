@@ -34,6 +34,7 @@ class PixelGame extends FlameGame
   double targetZoom = 1.0;
   static const double zoomSpeed = 0.9;
   Color color = Colors.black;
+  Color colorBottom = Colors.black;
   double speedBackground = 20;
   bool isBackgroundLoaded = false;
   late List<ParallaxComponent> parallaxComponents = [];
@@ -42,20 +43,28 @@ class PixelGame extends FlameGame
     color = newColor;
   }
 
-  @override
-  void render(Canvas canvas) {
-    canvas.drawRect(
-        Rect.fromLTWH(0, 0, size.x, size.y), Paint()..color = color);
-    super.render(canvas);
+  void updateBackgroundColorBottom(Color newColor) {
+    colorBottom = newColor;
   }
 
-  // @override
-  // void render(Canvas canvas) {
-  //   final Rect backgroundRect = Rect.fromLTWH(0, 0, size.x, size.y);
-  //   final image = images.fromCache('/Background/Blue.png'); // Chemin de l'image de fond
-  //   canvas.drawImageRect(image, backgroundRect, backgroundRect, Paint());
-  //   super.render(canvas);
-  // }
+  @override
+  void render(Canvas canvas) {
+    final double topHeight = size.y / 1.195;
+    final double bottomHeight = size.y - topHeight;
+    final camY = cam.viewfinder.position.y;
+
+    canvas.drawRect(
+      Rect.fromLTWH(0, 0, size.x, size.y),
+      Paint()..color = color,
+    );
+
+    // canvas.drawRect(
+    //   Rect.fromLTWH(0, size.y - bottomHeight - camY, size.x, bottomHeight + 1000),
+    //   Paint()..color = colorBottom,
+    // );
+
+    super.render(canvas);
+  }
 
   void updateSpeedBackground(double newSpeed) {
     speedBackground = newSpeed;

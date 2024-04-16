@@ -106,9 +106,10 @@ class Blocks extends SpriteAnimationComponent
 
   @override
   void render(Canvas canvas) {
-    bluePaint = Paint()..color = bluePaintColor;
-    canvas.drawRect(
-        const Rect.fromLTWH(0, 0, 65, 65), bluePaint);
+    if (texture) {
+      bluePaint = Paint()..color = bluePaintColor;
+      canvas.drawRect(const Rect.fromLTWH(0, 0, 65, 65), bluePaint);
+    }
     super.render(canvas);
   }
 
