@@ -66,13 +66,17 @@ class Level extends World with HasGameRef<PixelGame> {
       gameRef.updateBackgroundColorBottom,
       children,
       generatedBlocks,
+      generatedObstacles,
     );
     spawningObstacles(
       level.tileMap.getLayer<ObjectGroup>('SpawnObstacles'),
       player,
       add,
       remove,
+      gameRef.updateBackgroundColor,
+      gameRef.updateBackgroundColorBottom,
       children,
+      generatedBlocks,
       generatedObstacles,
     );
     spawningObstaclesCircles(

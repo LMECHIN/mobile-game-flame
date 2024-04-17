@@ -85,7 +85,6 @@ class Blocks extends SpriteAnimationComponent
       Set<Vector2> intersectionPoints, PositionComponent other) {
     if (other is Player) {
       _reachedBlock();
-      // _updatePlayerColor(const Color.fromARGB(255, 11, 3, 55));
     }
     super.onCollisionStart(intersectionPoints, other);
   }
@@ -120,19 +119,6 @@ class Blocks extends SpriteAnimationComponent
   }
 
   void _restoreOriginalAnimation() {
-    // if (texture) {
-    //   animation = SpriteAnimation.fromFrameData(
-    //     game.images.fromCache('Sprites/14-TileSets/blocks2.png'),
-    //     SpriteAnimationData.range(
-    //       start: color,
-    //       end: color,
-    //       amount: 10,
-    //       stepTimes: [speedLoop],
-    //       textureSize: Vector2.all(1),
-    //       loop: loop,
-    //     ),
-    //   );
-    // }
     final int i = _checkBorder();
     final borderBlocks = BorderBlocks(
       borderIndex: i,

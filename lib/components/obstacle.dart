@@ -1,6 +1,8 @@
 import 'dart:async';
+
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/texture_obstacles.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 import 'package:flutter_application_1/utils/obstacle_hitbox.dart';
@@ -11,6 +13,7 @@ class Obstacle extends SpriteAnimationComponent with HasGameRef<PixelGame> {
   bool loop;
   bool hasTextureObstacles;
   Map<String, bool> rotate;
+  Color bluePaintColor;
   Obstacle({
     position,
     size,
@@ -24,10 +27,58 @@ class Obstacle extends SpriteAnimationComponent with HasGameRef<PixelGame> {
       "left": false,
       "right": false,
     },
+    this.bluePaintColor = const Color(0xFF0000FF),
   }) : super(
           position: position,
           size: size,
         );
+  late Paint bluePaint;
+
+  @override
+  void render(Canvas canvas) {
+    super.render(canvas);
+
+    bluePaint = Paint()..color = bluePaintColor;
+    rotate.forEach((key, value) {
+      if (value) {
+        switch (key) {
+          case "up":
+            Path path = Path();
+            path.moveTo(0, 0);
+            path.lineTo(65, 0);
+            path.lineTo(32.5, 65);
+            path.close();
+            canvas.drawPath(path, bluePaint);
+            break;
+          case "down":
+            Path path = Path();
+            path.moveTo(0, 65);
+            path.lineTo(65, 65);
+            path.lineTo(32.5, 0);
+            path.close();
+            canvas.drawPath(path, bluePaint);
+            break;
+          case "left":
+            Path path = Path();
+            path.moveTo(65, 32.5);
+            path.lineTo(0, 0);
+            path.lineTo(0, 65);
+            path.close();
+            canvas.drawPath(path, bluePaint);
+
+            break;
+          case "right":
+            Path path = Path();
+            path.moveTo(0, 32.5);
+            path.lineTo(65, 0);
+            path.lineTo(65, 65);
+            path.close();
+            canvas.drawPath(path, bluePaint);
+            break;
+        }
+      }
+    });
+  }
 
   @override
   FutureOr<void> onLoad() {
@@ -41,18 +92,7 @@ class Obstacle extends SpriteAnimationComponent with HasGameRef<PixelGame> {
           final hitboxShape = PolygonHitbox(points);
           add(hitboxShape);
         }
-        animation = SpriteAnimation.fromFrameData(
-          game.images.fromCache(
-              'Sprites/14-TileSets/Obstacles_Triangles/obstacles_triangles_$key.png'),
-          SpriteAnimationData.range(
-            start: color,
-            end: color,
-            amount: 10,
-            stepTimes: [speedLoop],
-            textureSize: Vector2.all(66),
-            loop: loop,
-          ),
-        );
+
         final textureObstacles = TextureObstacles(
           hasOn: hasTextureObstacles,
           rotate: key,
@@ -61,7 +101,6 @@ class Obstacle extends SpriteAnimationComponent with HasGameRef<PixelGame> {
         add(textureObstacles);
       }
     });
-    // debugMode = true;
     return super.onLoad();
   }
 }

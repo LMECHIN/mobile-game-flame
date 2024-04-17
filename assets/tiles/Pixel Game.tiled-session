@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Level01.tmx",
+    "activeFile": "Level03.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -96,11 +96,11 @@
             "expandedObjectLayers": [
                 4
             ],
-            "scale": 0.125,
-            "selectedLayer": 11,
+            "scale": 0.25,
+            "selectedLayer": 9,
             "viewCenter": {
-                "x": 5328,
-                "y": 1168
+                "x": 5320,
+                "y": 1160
             }
         },
         "Level04.tmx": {
@@ -304,8 +304,8 @@
         "Map (80x10).tmx",
         "Map (100x100).tmx",
         "Map (100x23).tmx",
-        "Level03.tmx",
         "Level01.tmx",
+        "Level03.tmx",
         "Pixel Game.tsx",
         "Ground_01.tsx",
         "Ground_13.tsx",

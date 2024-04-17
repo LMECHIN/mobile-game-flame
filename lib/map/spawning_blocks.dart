@@ -4,25 +4,10 @@ import 'package:flame/components.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/blocks.dart';
+import 'package:flutter_application_1/components/obstacle.dart';
 import 'package:flutter_application_1/components/player.dart';
-
-class Tuple6<T1, T2, T3, T4, T5, T6> {
-  final T1 item1;
-  final T2 item2;
-  final T3 item3;
-  final T4 item4;
-  final T5 item5;
-  final T6 item6;
-
-  Tuple6(
-    this.item1,
-    this.item2,
-    this.item3,
-    this.item4,
-    this.item5,
-    this.item6,
-  );
-}
+import 'package:flutter_application_1/utils/transition.dart';
+// import 'package:flutter_application_1/utils/transition_data.dart';
 
 void spawningBlocks(
   ObjectGroup? spawnPointsBlocks,
@@ -33,6 +18,7 @@ void spawningBlocks(
   void Function(Color) updateBackgroundColorBottom,
   dynamic children,
   List<Blocks> generatedBlocks,
+  List<Obstacle> generatedObstacles,
 ) {
   final double playerX = player.position.x;
   const double playerDistanceThreshold = 1000;
@@ -103,84 +89,14 @@ void spawningBlocks(
       generatedBlocks.remove(blocksToRemove);
     }
 
-    final List<Tuple6<double, double, Color, Color, Color, Color>>
-        transitionData = [
-      Tuple6(
-        3000,
-        4000,
-        Colors.blue,
-        Colors.purple,
-        const Color.fromARGB(255, 1, 60, 109),
-        const Color.fromARGB(255, 74, 0, 87),
-      ),
-      Tuple6(
-        6000,
-        7000,
-        Colors.purple,
-        Colors.red,
-        const Color.fromARGB(255, 74, 0, 87),
-        const Color.fromARGB(255, 255, 0, 0),
-      ),
-    ];
-
     if (changeColor) {
-      double colorProgress = 0;
-
-      for (int i = 0; i < transitionData.length; i++) {
-        final transition = transitionData[i];
-        final double transitionStart = transition.item1;
-        final double transitionEnd = transition.item2;
-
-        if (distanceToPlayer <= transitionStart) {
-          colorProgress = 0.0;
-          break;
-        } else if (distanceToPlayer > transitionStart &&
-            distanceToPlayer <= transitionEnd) {
-          colorProgress = ((distanceToPlayer - transitionStart) /
-                  (transitionEnd - transitionStart))
-              .clamp(0.0, 1.0);
-          break;
-        } else if (distanceToPlayer > transitionEnd) {
-          colorProgress = 1.0;
-          continue;
-        }
-      }
-
-      Color newColorBack = Colors.transparent;
-      Color newColor = Colors.transparent;
-
-      for (int i = 0; i < transitionData.length; i++) {
-        final transition = transitionData[i];
-        final double transitionStart = transition.item1;
-        final double transitionEnd = transition.item2;
-        final Color startColor = transition.item3;
-        final Color endColor = transition.item4;
-        final Color startColorBack = transition.item5;
-        final Color endColorBack = transition.item6;
-
-        if (distanceToPlayer < transitionStart) {
-          newColorBack = startColorBack;
-          newColor = startColor;
-          break;
-        } else if (distanceToPlayer >= transitionStart &&
-            distanceToPlayer <= transitionEnd) {
-          newColorBack =
-              Color.lerp(startColorBack, endColorBack, colorProgress)!;
-          newColor = Color.lerp(startColor, endColor, colorProgress)!;
-          break;
-        } else if (distanceToPlayer > transitionEnd) {
-          newColorBack = endColorBack;
-          newColor = endColor;
-        }
-      }
-
-      updateBackgroundColor(newColorBack);
-      updateBackgroundColorBottom(newColor);
-
-      for (final block in generatedBlocks) {
-        block.bluePaintColor = newColor;
-      }
-
+      transition(
+        distanceToPlayer,
+        updateBackgroundColor,
+        updateBackgroundColorBottom,
+        generatedBlocks,
+        generatedObstacles,
+      );
       changeColor = false;
     }
   }

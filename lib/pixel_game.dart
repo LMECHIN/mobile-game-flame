@@ -49,9 +49,9 @@ class PixelGame extends FlameGame
 
   @override
   void render(Canvas canvas) {
-    final double topHeight = size.y / 1.195;
-    final double bottomHeight = size.y - topHeight;
-    final camY = cam.viewfinder.position.y;
+    // final double topHeight = size.y / 1.195;
+    // final double bottomHeight = size.y - topHeight;
+    // final camY = cam.viewfinder.position.y;
 
     canvas.drawRect(
       Rect.fromLTWH(0, 0, size.x, size.y),
@@ -216,7 +216,7 @@ class PixelGame extends FlameGame
 
     if ((player.position.y > 892 && player.position.y <= 1084)) {
       timeInZone += dt;
-      if (timeInZone >= 0.01 || player.isOnGround) {
+      if (timeInZone >= 0.01) {
         cam.moveTo(Vector2(player.position.x, -192), speed: maxSpeed);
         cam.follow(
           player,
@@ -227,7 +227,7 @@ class PixelGame extends FlameGame
       }
     } else if ((player.position.y > 700 && player.position.y <= 892)) {
       timeInZone += dt;
-      if (timeInZone >= 0.01 || player.isOnGround) {
+      if (timeInZone >= 0.01) {
         cam.moveTo(Vector2(player.position.x, -384), speed: maxSpeed);
         cam.follow(
           player,
@@ -238,7 +238,7 @@ class PixelGame extends FlameGame
       }
     } else if ((player.position.y > 508 && player.position.y <= 700)) {
       timeInZone += dt;
-      if (timeInZone >= 0.01 || player.isOnGround) {
+      if (timeInZone >= 0.01) {
         cam.moveTo(Vector2(player.position.x, -576), speed: maxSpeed);
         cam.follow(
           player,
@@ -249,7 +249,7 @@ class PixelGame extends FlameGame
       }
     } else if (player.position.y <= 508) {
       timeInZone += dt;
-      if (timeInZone >= 0.01 || player.isOnGround) {
+      if (timeInZone >= 0.01) {
         cam.moveTo(Vector2(player.position.x, -768), speed: maxSpeed);
         cam.follow(
           player,
