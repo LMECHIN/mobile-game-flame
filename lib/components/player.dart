@@ -61,6 +61,7 @@ class Player extends SpriteAnimationGroupComponent
   int fixCam = 0;
   late double _dt;
   bool delayExpired = false;
+  bool startMusic = false;
 
   List<CollisionsBlock> collisionsBlock = [];
   PlayerHitbox hitbox = PlayerHitbox(
@@ -165,22 +166,40 @@ class Player extends SpriteAnimationGroupComponent
 
   void _loadAllAnimations() {
     idleAnimation = _spriteAnimation(
-        "Sprites/Skins/$character/Idle ($sizeCharacter).png", 6, textureSize, 0.15);
+        "Sprites/Skins/$character/Idle ($sizeCharacter).png",
+        6,
+        textureSize,
+        0.15);
 
     runningAnimation = _spriteAnimation(
-        "Sprites/Skins/$character/Run ($sizeCharacter).png", 8, textureSize, 0.08);
+        "Sprites/Skins/$character/Run ($sizeCharacter).png",
+        8,
+        textureSize,
+        0.08);
 
     jumpingAnimation = _spriteAnimation(
-        "Sprites/Skins/$character/Jump ($sizeCharacter).png", 5, textureSize, 0.2);
+        "Sprites/Skins/$character/Jump ($sizeCharacter).png",
+        5,
+        textureSize,
+        0.2);
 
     fallingAnimation = _spriteAnimation(
-        "Sprites/Skins/$character/Fall ($sizeCharacter).png", 4, textureSize, 0.1);
+        "Sprites/Skins/$character/Fall ($sizeCharacter).png",
+        4,
+        textureSize,
+        0.1);
 
     slidingAnimation = _spriteAnimation(
-        "Sprites/Skins/$character/Slide ($sizeCharacter).png", 5, textureSize, 0.06);
+        "Sprites/Skins/$character/Slide ($sizeCharacter).png",
+        5,
+        textureSize,
+        0.06);
 
     deathAnimation = _spriteAnimation(
-        "Sprites/Skins/$character/Death ($sizeCharacter).png", 8, textureSize, 0.1)
+        "Sprites/Skins/$character/Death ($sizeCharacter).png",
+        8,
+        textureSize,
+        0.1)
       ..loop = false;
 
     appearingAnimation = _reanimationSpriteAnimation(
@@ -355,12 +374,21 @@ class Player extends SpriteAnimationGroupComponent
 
   void respawn() async {
     const canMoveDuration = Duration(milliseconds: 400);
+    startMusic = true;
+    // if (startMusic) {
+    // game.audio.stopBgm();
+    // }
     hasDie = true;
     hasJumped = false;
     current = PlayerState.death;
     Future.delayed(
         canMoveDuration,
         () => {
+              if (startMusic)
+                {
+                  game.audio.playBgm("Level03.mp3"),
+                  startMusic = false,
+                },
               if (gameRef.createLevel.selectedColor != null)
                 {
                   _updatePlayerColor(

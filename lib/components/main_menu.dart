@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_application_1/components/game_play.dart';
 import 'package:flutter_application_1/components/levels_menu.dart';
+import 'package:flutter_application_1/components/settings_menu.dart';
 import 'package:flutter_application_1/components/skins_menu.dart';
 import 'package:flutter_application_1/models/level_data.dart';
 import 'package:flutter_application_1/utils/get_level_data.dart';
@@ -115,6 +116,16 @@ class _MainMenuState extends State<MainMenu> {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) => const SkinsMenu(),
+                            ),
+                          );
+                        },
+                      ),
+                      BuildButton(
+                        text: 'Settings',
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const SettingsMenu(),
                             ),
                           );
                         },

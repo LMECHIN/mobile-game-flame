@@ -1,6 +1,8 @@
 import 'package:flutter_application_1/models/level_data.dart';
+import 'package:flutter_application_1/models/setting_data.dart';
 import 'package:flutter_application_1/utils/get_level_data.dart';
 import 'package:flutter_application_1/utils/get_player_data.dart';
+import 'package:flutter_application_1/utils/get_setting_data.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +12,8 @@ import 'package:provider/provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Flame.device.fullScreen();
-  Flame.device.setLandscape();
+  await Flame.device.fullScreen();
+  await Flame.device.setLandscape();
 
   await initHive();
 
@@ -25,7 +27,14 @@ Future<void> main() async {
         FutureProvider<LevelData>(
           create: (BuildContext context) => getLevelData(),
           initialData: LevelData('Level10.tmx'),
-        )
+        ),
+        FutureProvider<SettingData>(
+          create: (BuildContext context) => getSettingData(),
+          initialData: SettingData(
+            backgroundMusic: true,
+            soundEffects: true,
+          ),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -42,4 +51,5 @@ Future<void> initHive() async {
 
   Hive.registerAdapter(PlayerDataAdapter());
   Hive.registerAdapter(LevelDataAdapter());
+  Hive.registerAdapter(SettingDataAdapter());
 }

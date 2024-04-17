@@ -45,24 +45,24 @@ class Obstacle extends SpriteAnimationComponent with HasGameRef<PixelGame> {
           case "up":
             Path path = Path();
             path.moveTo(0, 0);
-            path.lineTo(65, 0);
-            path.lineTo(32.5, 65);
+            path.lineTo(64, 0);
+            path.lineTo(32.5, 64);
             path.close();
             canvas.drawPath(path, bluePaint);
             break;
           case "down":
             Path path = Path();
-            path.moveTo(0, 65);
-            path.lineTo(65, 65);
+            path.moveTo(0, 64);
+            path.lineTo(64, 64);
             path.lineTo(32.5, 0);
             path.close();
             canvas.drawPath(path, bluePaint);
             break;
           case "left":
             Path path = Path();
-            path.moveTo(65, 32.5);
+            path.moveTo(64, 32.5);
             path.lineTo(0, 0);
-            path.lineTo(0, 65);
+            path.lineTo(0, 64);
             path.close();
             canvas.drawPath(path, bluePaint);
 
@@ -70,8 +70,8 @@ class Obstacle extends SpriteAnimationComponent with HasGameRef<PixelGame> {
           case "right":
             Path path = Path();
             path.moveTo(0, 32.5);
-            path.lineTo(65, 0);
-            path.lineTo(65, 65);
+            path.lineTo(64, 0);
+            path.lineTo(64, 64);
             path.close();
             canvas.drawPath(path, bluePaint);
             break;
@@ -92,7 +92,16 @@ class Obstacle extends SpriteAnimationComponent with HasGameRef<PixelGame> {
           final hitboxShape = PolygonHitbox(points);
           add(hitboxShape);
         }
-
+        animation = SpriteAnimation.fromFrameData(
+          game.images.fromCache(
+              'Sprites/14-TileSets/Borders/obstacle_$key.png'),
+          SpriteAnimationData.sequenced(
+            amount: 1,
+            stepTime: 1,
+            textureSize: Vector2(132, 132),
+            loop: false,
+          ),
+        );
         final textureObstacles = TextureObstacles(
           hasOn: hasTextureObstacles,
           rotate: key,

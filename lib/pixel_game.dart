@@ -4,9 +4,11 @@ import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 import 'package:flame/parallax.dart';
+import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/components/audio.dart';
 import 'package:flutter_application_1/components/button_jump.dart';
-import 'package:flutter_application_1/components/button_slide.dart';
+// import 'package:flutter_application_1/components/button_slide.dart';
 import 'package:flutter_application_1/components/level.dart';
 import 'package:flutter_application_1/components/player.dart';
 import 'package:flutter_application_1/models/player_data.dart';
@@ -29,7 +31,7 @@ class PixelGame extends FlameGame
   late Player player;
   late Level createLevel;
   late JoystickComponent joystick;
-  bool showControls = false;
+  bool showControls = true;
   int horizontalMovementTotal = 0;
   double targetZoom = 1.0;
   static const double zoomSpeed = 0.9;
@@ -38,6 +40,8 @@ class PixelGame extends FlameGame
   double speedBackground = 20;
   bool isBackgroundLoaded = false;
   late List<ParallaxComponent> parallaxComponents = [];
+  bool musicPlaying = false;
+  late Audio audio;
 
   void updateBackgroundColor(Color newColor) {
     color = newColor;
@@ -92,10 +96,21 @@ class PixelGame extends FlameGame
     isBackgroundLoaded = true;
   }
 
+  void playMusic() {
+    String clearLevel = level!.replaceAll(".tmx", ".mp3");
+    if (!musicPlaying) {
+      FlameAudio.play(clearLevel, volume: 0.4);
+      musicPlaying = true;
+    }
+  }
+
   @override
   FutureOr<void> onLoad() async {
+    FlameAudio.bgm.initialize();
     await images.loadAllImages();
+    audio = Audio();
     // parallaxBackground();
+    // playMusic();
     PlayerData playerData = await getPlayerData();
     player = Player(character: playerData.selectedSkin);
 
@@ -108,25 +123,35 @@ class PixelGame extends FlameGame
       width: 4880,
       height: 2200,
     );
-
     setZoom(3.5);
     cam.priority = 0;
     if (showControls) {
-      addJoystick();
+      // addJoystick();
       add(ButtonJump());
-      add(ButtonSlide());
+      // add(ButtonSlide());
     }
 
-    addAll([cam, createLevel]);
-
+    await addAll([audio, cam, createLevel]);
     await super.onLoad();
   }
 
   @override
+  void onAttach() {
+    audio.playBgm("Level03.mp3");
+    super.onAttach();
+  }
+
+  @override
+  void onDetach() {
+    audio.stopBgm();
+    super.onDetach();
+  }
+
+  @override
   void update(double dt) {
-    if (showControls) {
-      updateJoystick();
-    }
+    // if (showControls) {
+    //   updateJoystick();
+    // }
 
     cam.viewfinder.anchor = const Anchor(0.15, -1.4);
     cam.follow(

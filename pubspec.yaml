@@ -47,6 +47,7 @@ dependencies:
   spritewidget: ^2.0.1
   video_player: ^2.8.3
   percent_indicator: ^4.2.3
+  flame_audio: ^1.3.3
 
 dev_dependencies:
   flutter_test:
@@ -79,6 +80,7 @@ flutter:
     - assets/images/Sprites/14-TileSets/Borders/
     - assets/images/Sprites/14-TileSets/Texture_Blocks/
     - assets/images/Sprites/14-TileSets/Texture_Obstacles/
+    - assets/audio/
     - assets/tiles/
     - assets/images/Sprites/Skins/KingHuman/
     - assets/images/Sprites/Skins/KingHuman/SkinsMenu/
