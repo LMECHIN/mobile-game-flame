@@ -1,3 +1,4 @@
+import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/blocks.dart';
 import 'package:flutter_application_1/components/obstacle.dart';
@@ -9,11 +10,12 @@ void transition(
   void Function(Color) updateBackgroundColorBottom,
   List<Blocks> generatedBlocks,
   List<Obstacle> generatedObstacles,
+  ObjectGroup? spawnPointsBlocks,
 ) {
   double colorProgress = 0;
 
-  for (int i = 0; i < transitionData.length; i++) {
-    final transition = transitionData[i];
+  for (int i = 0; i < transitionData(spawnPointsBlocks).length; i++) {
+    final transition = transitionData(spawnPointsBlocks)[i];
     final double transitionStart = transition.item1;
     final double transitionEnd = transition.item2;
 
@@ -35,8 +37,8 @@ void transition(
   Color newColorBack = Colors.transparent;
   Color newColor = Colors.transparent;
 
-  for (int i = 0; i < transitionData.length; i++) {
-    final transition = transitionData[i];
+  for (int i = 0; i < transitionData(spawnPointsBlocks).length; i++) {
+    final transition = transitionData(spawnPointsBlocks)[i];
     final double transitionStart = transition.item1;
     final double transitionEnd = transition.item2;
     final Color startColor = transition.item3;

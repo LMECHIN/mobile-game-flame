@@ -46,6 +46,14 @@ class Audio extends Component with HasGameReference<PixelGame> {
     }
   }
 
+  void pauseBgm() {
+    FlameAudio.bgm.pause();
+  }
+
+  void resumeBgm() {
+    FlameAudio.bgm.resume();
+  }
+
   void stopBgm() {
     FlameAudio.bgm.stop();
   }

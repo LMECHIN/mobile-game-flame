@@ -26,7 +26,7 @@ Future<void> main() async {
         ),
         FutureProvider<LevelData>(
           create: (BuildContext context) => getLevelData(),
-          initialData: LevelData('Level10.tmx'),
+          initialData: LevelData('Level03.tmx'),
         ),
         FutureProvider<SettingData>(
           create: (BuildContext context) => getSettingData(),

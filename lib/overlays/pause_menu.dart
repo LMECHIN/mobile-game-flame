@@ -59,40 +59,37 @@ class _PauseMenuState extends State<PauseMenu> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 50.0),
-            child: GestureDetector(
-              onTap: () {
-                setState(() {
-                  selectedIndex++;
-                  if (selectedIndex >= textStyles.length) {
-                    selectedIndex = 0;
-                  }
-                });
-              },
-              child: Center(
-                child: AnimatedDefaultTextStyle(
-                  duration: const Duration(seconds: 1),
-                  style: textStyles[selectedIndex],
-                  child: const Text(
-                    'Pause',
-                  ),
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                selectedIndex++;
+                if (selectedIndex >= textStyles.length) {
+                  selectedIndex = 0;
+                }
+              });
+            },
+            child: Center(
+              child: AnimatedDefaultTextStyle(
+                duration: const Duration(seconds: 1),
+                style: textStyles[selectedIndex],
+                child: const Text(
+                  'Pause',
                 ),
               ),
-            )
-                .animate()
-                .fade()
-                .scaleXY(
-                  duration: const Duration(seconds: 1),
-                  curve: Curves.bounceOut,
-                )
-                .then(
-                  delay: const Duration(seconds: 2),
-                  duration: const Duration(seconds: 1),
-                  curve: Curves.easeInBack,
-                )
-                .shake(),
-          ),
+            ),
+          )
+              .animate()
+              .fade()
+              .scaleXY(
+                duration: const Duration(seconds: 1),
+                curve: Curves.bounceOut,
+              )
+              .then(
+                delay: const Duration(seconds: 2),
+                duration: const Duration(seconds: 1),
+                curve: Curves.easeInBack,
+              )
+              .shake(),
           SizedBox(
             width: MediaQuery.of(context).size.width / 7,
             child: BuildButton(
@@ -108,6 +105,7 @@ class _PauseMenuState extends State<PauseMenu> {
               },
               onPressed: () {
                 widget.game.resumeEngine();
+                widget.game.audio.resumeBgm();
                 widget.game.overlays.remove(PauseMenu.id);
                 widget.game.overlays.add(PauseButton.id);
               },
@@ -129,7 +127,8 @@ class _PauseMenuState extends State<PauseMenu> {
               onPressed: () {
                 widget.game.overlays.remove(PauseMenu.id);
                 widget.game.overlays.add(PauseButton.id);
-                widget.game.reset();
+                // widget.game.audio.stopBgm();
+                // widget.game.reset();
                 widget.game.resumeEngine();
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(

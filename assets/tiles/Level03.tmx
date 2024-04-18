@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="300" height="23" tilewidth="64" tileheight="64" infinite="0" nextlayerid="29" nextobjectid="5730">
+<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" width="300" height="23" tilewidth="64" tileheight="64" infinite="0" nextlayerid="29" nextobjectid="5777">
  <tileset firstgid="1" source="boost_right.tsx"/>
  <tileset firstgid="10" source="light2.tsx"/>
- <tileset firstgid="19" source="dash!.tsx"/>
- <tileset firstgid="20" source="boost!.tsx"/>
  <layer id="23" name="Lights" width="300" height="23" locked="1">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -139,7 +137,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="27" name="BoostsUp" width="300" height="23" locked="1">
+ <layer id="27" name="BoostsUp" width="300" height="23">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -160,55 +158,14 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="16" name="SpawnObstaclesCircles">
-  <object id="5654" name="Circle" x="6656" y="1280" width="64" height="64">
-   <properties>
-    <property name="Color" type="int" value="3"/>
-    <property name="Down" type="bool" value="true"/>
-    <property name="TextureObstacle" type="bool" value="true"/>
-    <property name="Up" type="bool" value="false"/>
-   </properties>
-  </object>
-  <object id="5656" name="Circle" x="6720" y="1280" width="64" height="64">
-   <properties>
-    <property name="Color" type="int" value="3"/>
-    <property name="Down" type="bool" value="true"/>
-    <property name="TextureObstacle" type="bool" value="true"/>
-    <property name="Up" type="bool" value="false"/>
-   </properties>
-  </object>
-  <object id="5657" name="Circle" x="6784" y="1280" width="64" height="64">
-   <properties>
-    <property name="Color" type="int" value="3"/>
-    <property name="Down" type="bool" value="true"/>
-    <property name="TextureObstacle" type="bool" value="true"/>
-    <property name="Up" type="bool" value="false"/>
-   </properties>
-  </object>
-  <object id="5659" name="Circle" x="6848" y="1280" width="64" height="64">
-   <properties>
-    <property name="Color" type="int" value="3"/>
-    <property name="Down" type="bool" value="true"/>
-    <property name="TextureObstacle" type="bool" value="true"/>
-    <property name="Up" type="bool" value="false"/>
-   </properties>
-  </object>
-  <object id="5661" name="Circle" x="6912" y="1280" width="64" height="64">
-   <properties>
-    <property name="Color" type="int" value="3"/>
-    <property name="Down" type="bool" value="true"/>
-    <property name="TextureObstacle" type="bool" value="true"/>
-    <property name="Up" type="bool" value="false"/>
-   </properties>
-  </object>
- </objectgroup>
- <objectgroup id="2" name="Collisions" locked="1">
+ <objectgroup id="16" name="SpawnObstaclesCircles"/>
+ <objectgroup id="2" name="Collisions">
   <object id="4485" x="0" y="1408" width="19200" height="64"/>
   <object id="5691" x="8640" y="960" width="64" height="64">
    <properties>
@@ -298,19 +255,13 @@
     <property name="NextColor" type="int" value="11"/>
    </properties>
   </object>
-  <object id="5696" x="6976" y="1280" width="448" height="128">
-   <properties>
-    <property name="Color" type="int" value="11"/>
-    <property name="NextColor" type="int" value="11"/>
-   </properties>
-  </object>
   <object id="5697" x="5952" y="1280" width="704" height="128">
    <properties>
     <property name="Color" type="int" value="11"/>
     <property name="NextColor" type="int" value="11"/>
    </properties>
   </object>
-  <object id="5698" x="6208" y="1024" width="192" height="64">
+  <object id="5698" x="6208" y="1088" width="192" height="64">
    <properties>
     <property name="BorderLeftRightUpDown" type="bool" value="true"/>
     <property name="BorderUp" type="bool" value="false"/>
@@ -354,11 +305,25 @@
     <property name="NextColor" type="int" value="11"/>
    </properties>
   </object>
+  <object id="5740" x="6848" y="1280" width="576" height="128"/>
+  <object id="5754" x="10368" y="704" width="192" height="64"/>
+  <object id="5755" x="10816" y="512" width="64" height="64"/>
+  <object id="5756" x="10816" y="640" width="64" height="64"/>
+  <object id="5757" x="10944" y="704" width="192" height="64"/>
+  <object id="5758" x="11392" y="512" width="64" height="64"/>
+  <object id="5768" x="11968" y="512" width="64" height="64"/>
+  <object id="5776" x="12544" y="512" width="64" height="64"/>
+  <object id="5759" x="11392" y="640" width="64" height="64"/>
+  <object id="5767" x="11968" y="640" width="64" height="64"/>
+  <object id="5775" x="12544" y="640" width="64" height="64"/>
+  <object id="5760" x="11520" y="704" width="192" height="64"/>
+  <object id="5766" x="12096" y="704" width="192" height="64"/>
+  <object id="5774" x="12672" y="704" width="192" height="64"/>
  </objectgroup>
  <objectgroup id="3" name="Spawnpoints">
   <object id="4789" name="Checkpoint" type="Checkpoint" x="19072" y="1344" width="64" height="64"/>
   <object id="4790" name="Player" type="Player" x="128" y="1344" width="64" height="64"/>
-  <object id="5648" type="BoostsUp" x="6784" y="1216" width="64" height="64"/>
+  <object id="5730" type="BoostsUp" x="2304" y="1344" width="64" height="64"/>
  </objectgroup>
  <objectgroup id="7" name="SpawnObstacles">
   <object id="5546" name="Triangle" x="1600" y="1344" width="64" height="64">
@@ -393,6 +358,14 @@
     <property name="Up" type="bool" value="true"/>
    </properties>
   </object>
+  <object id="5733" name="Triangle" x="6656" y="1344" width="64" height="64">
+   <properties>
+    <property name="Color" type="int" value="3"/>
+    <property name="Down" type="bool" value="true"/>
+    <property name="TextureObstacle" type="bool" value="true"/>
+    <property name="Up" type="bool" value="false"/>
+   </properties>
+  </object>
   <object id="5592" name="Triangle" x="4480" y="1344" width="64" height="64">
    <properties>
     <property name="Color" type="int" value="3"/>
@@ -417,6 +390,14 @@
     <property name="Up" type="bool" value="true"/>
    </properties>
   </object>
+  <object id="5732" name="Triangle" x="6720" y="1344" width="64" height="64">
+   <properties>
+    <property name="Color" type="int" value="3"/>
+    <property name="Down" type="bool" value="true"/>
+    <property name="TextureObstacle" type="bool" value="true"/>
+    <property name="Up" type="bool" value="false"/>
+   </properties>
+  </object>
   <object id="5647" name="Triangle" x="6336" y="1152" width="64" height="64">
    <properties>
     <property name="Color" type="int" value="3"/>
@@ -425,18 +406,20 @@
     <property name="Up" type="bool" value="true"/>
    </properties>
   </object>
+  <object id="5731" name="Triangle" x="6784" y="1344" width="64" height="64">
+   <properties>
+    <property name="Color" type="int" value="3"/>
+    <property name="Down" type="bool" value="true"/>
+    <property name="TextureObstacle" type="bool" value="true"/>
+    <property name="Up" type="bool" value="false"/>
+   </properties>
+  </object>
  </objectgroup>
- <objectgroup id="17" name="SpawnRopes" locked="1">
-  <object id="5642" name="Rope" x="6208" y="1088" width="64" height="64"/>
-  <object id="5653" name="Rope" x="6656" y="1344" width="64" height="64"/>
-  <object id="5643" name="Rope" x="6272" y="1088" width="64" height="64"/>
-  <object id="5652" name="Rope" x="6720" y="1344" width="64" height="64"/>
-  <object id="5644" name="Rope" x="6336" y="1088" width="64" height="64"/>
-  <object id="5651" name="Rope" x="6784" y="1344" width="64" height="64"/>
-  <object id="5658" name="Rope" x="6848" y="1344" width="64" height="64"/>
-  <object id="5660" name="Rope" x="6912" y="1344" width="64" height="64"/>
- </objectgroup>
+ <objectgroup id="17" name="SpawnRopes"/>
  <objectgroup id="4" name="SpawnBlocks">
+  <properties>
+   <property name="Transition" value="0, 4000, FF2196F3, FF9C27B0, FF013C6D, FF4A0057; 4200, 4500, FF9C27B0, FFF44336, FF4A0057, FF540000; 8000, 9000, FFF44336, FF4CAF50, FF540000, FF0B5400"/>
+  </properties>
   <object id="4486" x="0" y="1408" width="64" height="64">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
@@ -3944,7 +3927,7 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
-  <object id="5639" x="6208" y="1024" width="64" height="64">
+  <object id="5639" x="6208" y="1088" width="64" height="64">
    <properties>
     <property name="BorderDown" type="bool" value="false"/>
     <property name="BorderDownLeft" type="bool" value="false"/>
@@ -3967,7 +3950,7 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
-  <object id="5640" x="6272" y="1024" width="64" height="64">
+  <object id="5640" x="6272" y="1088" width="64" height="64">
    <properties>
     <property name="BorderDown" type="bool" value="false"/>
     <property name="BorderDownLeft" type="bool" value="false"/>
@@ -3990,7 +3973,7 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
-  <object id="5641" x="6336" y="1024" width="64" height="64">
+  <object id="5641" x="6336" y="1088" width="64" height="64">
    <properties>
     <property name="BorderDown" type="bool" value="false"/>
     <property name="BorderDownLeft" type="bool" value="false"/>
@@ -4105,7 +4088,7 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
-  <object id="5666" x="6976" y="1280" width="64" height="64">
+  <object id="5666" x="6848" y="1280" width="64" height="64">
    <properties>
     <property name="BorderDown" type="bool" value="false"/>
     <property name="BorderDownLeft" type="bool" value="false"/>
@@ -4496,6 +4479,52 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
+  <object id="5736" x="6976" y="1344" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5738" x="6912" y="1344" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
   <object id="5670" x="7232" y="1344" width="64" height="64">
    <properties>
     <property name="BorderDown" type="bool" value="false"/>
@@ -4611,7 +4640,7 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
-  <object id="5665" x="6976" y="1344" width="64" height="64">
+  <object id="5665" x="6848" y="1344" width="64" height="64">
    <properties>
     <property name="BorderDown" type="bool" value="false"/>
     <property name="BorderDownLeft" type="bool" value="false"/>
@@ -5117,6 +5146,52 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
+  <object id="5737" x="6976" y="1280" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="true"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5739" x="6912" y="1280" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="true"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
   <object id="5674" x="7232" y="1280" width="64" height="64">
    <properties>
     <property name="BorderDown" type="bool" value="false"/>
@@ -5531,6 +5606,535 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
+  <object id="5741" x="10368" y="704" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="true"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5750" x="10944" y="704" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="true"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5751" x="11520" y="704" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="true"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5761" x="12096" y="704" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="true"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5769" x="12672" y="704" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="true"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5742" x="10432" y="704" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5749" x="11008" y="704" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5752" x="11584" y="704" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5762" x="12160" y="704" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5770" x="12736" y="704" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5743" x="10496" y="704" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="true"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5748" x="11072" y="704" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="true"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5753" x="11648" y="704" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="true"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5763" x="12224" y="704" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="true"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5771" x="12800" y="704" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="true"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5744" x="10816" y="640" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="true"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5746" x="11392" y="640" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="true"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5764" x="11968" y="640" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="true"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5772" x="12544" y="640" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="true"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5745" x="10816" y="512" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="true"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5747" x="11392" y="512" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="true"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5765" x="11968" y="512" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="true"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="5773" x="12544" y="512" width="64" height="64">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="Color" type="int" value="11"/>
+    <property name="NextColor" type="int" value="11"/>
+    <property name="TextureBlock" type="bool" value="true"/>
+    <property name="Time" type="int" value="0"/>
+   </properties>
+  </object>
   <object id="5711" name="Cross" x="10432" y="512" width="64" height="64">
    <properties>
     <property name="BorderDown" type="bool" value="false"/>
@@ -5603,10 +6207,6 @@
     <property name="Time" type="int" value="0"/>
    </properties>
   </object>
-  <object id="5726" x="3136" y="1280" width="64" height="64"/>
-  <object id="5727" x="3136" y="1216" width="64" height="64"/>
-  <object id="5728" x="3200" y="1216" width="64" height="64"/>
-  <object id="5729" x="3200" y="1280" width="64" height="64"/>
  </objectgroup>
  <objectgroup id="18" name="SpawnBlocksAnimated" locked="1"/>
  <objectgroup id="6" name="SpawnParticles" locked="1"/>

@@ -76,7 +76,6 @@ flutter:
   assets:
     - assets/images/Sprites/14-TileSets/
     - assets/images/Sprites/14-TileSets/Obstacles_Circles/
-    - assets/images/Sprites/14-TileSets/Obstacles_Triangles/
     - assets/images/Sprites/14-TileSets/Borders/
     - assets/images/Sprites/14-TileSets/Texture_Blocks/
     - assets/images/Sprites/14-TileSets/Texture_Obstacles/
@@ -86,14 +85,6 @@ flutter:
     - assets/images/Sprites/Skins/KingHuman/SkinsMenu/
     - assets/images/Sprites/Skins/KingPig/
     - assets/images/Sprites/Skins/KingPig/SkinsMenu/
-    - assets/images/HUD/
-    - assets/images/Background/Level01/
-    - assets/images/Background/Level02/
-    - assets/images/Background/Level03/
-    - assets/images/Background/Level04/
-    - assets/images/Background/Level05/
-    - assets/images/Background/Level06/
-    - assets/images/Background/Level07/
     - assets/images/Checkpoints/
 
   # An image asset can refer to one or more resolution-specific "variants", see

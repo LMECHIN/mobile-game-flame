@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/extensions.dart';
+import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/components/boost_up.dart';
@@ -47,7 +48,7 @@ class Player extends SpriteAnimationGroupComponent
   double scaleFactor = 2.4;
   double widthMap = 0;
   double heightMap = 0;
-  double horizontalMovement = 0;
+  double horizontalMovement = 1;
   double moveSpeed = 500;
   double normalMoveSpeed = 500;
   Vector2 startingPosition = Vector2.zero();
@@ -59,9 +60,8 @@ class Player extends SpriteAnimationGroupComponent
   bool hasSlide = false;
   bool hasDie = false;
   int fixCam = 0;
-  late double _dt;
+  // late double _dt;
   bool delayExpired = false;
-  bool startMusic = false;
 
   List<CollisionsBlock> collisionsBlock = [];
   PlayerHitbox hitbox = PlayerHitbox(
@@ -75,7 +75,8 @@ class Player extends SpriteAnimationGroupComponent
   FutureOr<void> onLoad() {
     _loadAllAnimations();
     // debugMode = true;
-    startingPosition = Vector2(position.x, position.y - 20);
+    startingPosition = Vector2(position.x, position.y - 80);
+    position = Vector2(position.x, position.y - 80);
     scale = Vector2(scaleFactor, scaleFactor);
 
     Vector2 sizeHitbox = Vector2(size.x / 4.5, size.y / 3);
@@ -98,7 +99,7 @@ class Player extends SpriteAnimationGroupComponent
   @override
   void update(double dt) {
     accumulatedTime += dt;
-    _dt = dt;
+    // _dt = dt;
 
     while (accumulatedTime >= fixedDeltaTime) {
       if (!hasDie) {
@@ -110,18 +111,17 @@ class Player extends SpriteAnimationGroupComponent
       }
       accumulatedTime -= fixedDeltaTime;
     }
-    // horizontalMovement = 1;
 
     super.update(dt);
   }
 
   @override
   bool onKeyEvent(RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
-    horizontalMovement = 0;
-    isLeftKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyQ) ||
-        keysPressed.contains(LogicalKeyboardKey.arrowLeft);
-    isRightKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyD) ||
-        keysPressed.contains(LogicalKeyboardKey.arrowRight);
+    // horizontalMovement = 0;
+    // isLeftKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyQ) ||
+    //     keysPressed.contains(LogicalKeyboardKey.arrowLeft);
+    // isRightKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyD) ||
+    //     keysPressed.contains(LogicalKeyboardKey.arrowRight);
 
     // if (isLeftKeyPressed) {
     //   pressKey = true;
@@ -131,7 +131,7 @@ class Player extends SpriteAnimationGroupComponent
     // }
     // horizontalMovement += isLeftKeyPressed ? -1 : 0;
     // horizontalMovement += isRightKeyPressed ? 1 : 0;
-    horizontalMovement += 1;
+    // horizontalMovement += 1;
 
     hasJumped = keysPressed.contains(LogicalKeyboardKey.space);
     if (keysPressed.contains(LogicalKeyboardKey.arrowDown)) {
@@ -148,20 +148,21 @@ class Player extends SpriteAnimationGroupComponent
     Set<Vector2> intersectionPoints,
     PositionComponent other,
   ) {
-    accumulatedTime += _dt;
     if (other is Obstacle || other is ObstacleCircle) {
       respawn();
     }
     if (other is BoostUp) {
-      while (accumulatedTime >= fixedDeltaTime) {
-        _playJump(fixedDeltaTime);
-        _playSlide(500000, fixedDeltaTime);
-        accumulatedTime -= fixedDeltaTime;
-        break;
-      }
+      hasSlide = true;
+      _startSlideTimer();
     }
 
     super.onCollisionStart(intersectionPoints, other);
+  }
+
+  void _startSlideTimer() {
+    Future.delayed(const Duration(milliseconds: 150), () {
+      hasSlide = false;
+    });
   }
 
   void _loadAllAnimations() {
@@ -289,14 +290,15 @@ class Player extends SpriteAnimationGroupComponent
       hasSlide = false;
     }
     // if (velocity.y > _gravity) isOnGround = false; // optional
+    // horizontalMovement = 1;
     velocity.x = horizontalMovement * moveSpeed;
     position.x += velocity.x * dt;
   }
 
-  void _updatePlayerColor(Color newColor) {
-    color = newColor;
-    gameRef.updateBackgroundColor(newColor);
-  }
+  // void _updatePlayerColor(Color newColor) {
+  //   color = newColor;
+  //   gameRef.updateBackgroundColor(newColor);
+  // }
 
   void _playJump(double dt) {
     velocity.y = -_jumpForce;
@@ -373,62 +375,26 @@ class Player extends SpriteAnimationGroupComponent
   }
 
   void respawn() async {
-    const canMoveDuration = Duration(milliseconds: 400);
-    startMusic = true;
-    // if (startMusic) {
-    // game.audio.stopBgm();
-    // }
+    if (FlameAudio.bgm.isPlaying) {
+      game.audio.stopBgm();
+    }
     hasDie = true;
     hasJumped = false;
     current = PlayerState.death;
-    Future.delayed(
-        canMoveDuration,
-        () => {
-              if (startMusic)
-                {
-                  game.audio.playBgm("Level03.mp3"),
-                  startMusic = false,
-                },
-              if (gameRef.createLevel.selectedColor != null)
-                {
-                  _updatePlayerColor(
-                      gameRef.createLevel.selectedColor ?? Colors.black)
-                }
-              else
-                {_updatePlayerColor(Colors.black)}
-              // remove(blood),
-            });
-    // add(blood);
-    _updatePlayerColor(const Color.fromARGB(255, 250, 250, 250));
     await animationTicker?.completed;
     animationTicker?.reset();
-
-    if (velocity.x < 0 && scale.x < 0) {
-      position = Vector2(startingPosition.x + 660, startingPosition.y - 60);
-    } else {
-      position = Vector2(startingPosition.x, startingPosition.y - 60);
-    }
-
+    position = Vector2(startingPosition.x, startingPosition.y);
     current = PlayerState.appearing;
-
     await animationTicker?.completed;
     animationTicker?.reset();
-
-    if (velocity.x < 0 && scale.x < 0) {
-      position = Vector2(startingPosition.x + 660, startingPosition.y - 60);
-    } else {
-      position = Vector2(startingPosition.x, startingPosition.y - 60);
-    }
-    Future.delayed(
-        canMoveDuration,
-        () => {
-              hasDie = false,
-            });
+    position = Vector2(startingPosition.x, startingPosition.y);
+    hasDie = false;
+    game.audio.playBgm("Level03.mp3");
   }
 
   void reset() {
     hasDie = false;
-    position = Vector2(startingPosition.x, startingPosition.y - 60);
+    position = Vector2(startingPosition.x, startingPosition.y);
     current = PlayerState.idle;
   }
 }

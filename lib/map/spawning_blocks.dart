@@ -25,6 +25,7 @@ void spawningBlocks(
   List<Blocks> blocksToRemove = [];
   bool changeColor = true;
 
+  // print(spawnPointsBlocks!.properties.getValue('Transition'));
   for (final spawnBlock in spawnPointsBlocks!.objects) {
     final double spawnX = spawnBlock.x;
     final double distanceToPlayer = (spawnX - playerX).abs();
@@ -96,6 +97,7 @@ void spawningBlocks(
         updateBackgroundColorBottom,
         generatedBlocks,
         generatedObstacles,
+        spawnPointsBlocks,
       );
       changeColor = false;
     }

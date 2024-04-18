@@ -130,7 +130,13 @@ class PixelGame extends FlameGame
       add(ButtonJump());
       // add(ButtonSlide());
     }
-
+    cam.viewfinder.anchor = const Anchor(0.30, 0.4);
+    cam.follow(
+      player,
+      maxSpeed: double.infinity,
+      // horizontalOnly: true,
+      snap: true,
+    );
     await addAll([audio, cam, createLevel]);
     await super.onLoad();
   }
@@ -143,7 +149,9 @@ class PixelGame extends FlameGame
 
   @override
   void onDetach() {
-    audio.stopBgm();
+    if (!FlameAudio.bgm.isPlaying) {
+      audio.stopBgm();
+    }
     super.onDetach();
   }
 
@@ -153,15 +161,9 @@ class PixelGame extends FlameGame
     //   updateJoystick();
     // }
 
-    cam.viewfinder.anchor = const Anchor(0.15, -1.4);
-    cam.follow(
-      player,
-      maxSpeed: double.infinity,
-      horizontalOnly: true,
-      snap: false,
-    );
+    // cam.viewfinder.anchor = const Anchor(0.15, 0);
     updateZoom(dt);
-    updateCam(dt);
+    // updateCam(dt);
     super.update(dt);
 
     // if (player.hasSlide && !player.hasDie) {
@@ -181,8 +183,13 @@ class PixelGame extends FlameGame
     }
   }
 
-  void reset() {
+  void reset() async {
     player.reset();
+    // if (FlameAudio.bgm.isPlaying) {
+    //   audio.stopBgm();
+    // }
+    // await Future.delayed(const Duration(milliseconds: 400));
+    // audio.playBgm("Level03.mp3");
     color = Colors.black;
     // createLevel.reset();
   }
@@ -296,11 +303,6 @@ class PixelGame extends FlameGame
   }
 
   void updateZoom(double dt) {
-    final currentZoom = cam.viewfinder.zoom;
-    final diff = targetZoom - currentZoom;
-    final zoomIncrement = zoomSpeed * dt;
-    final newZoom = currentZoom + (diff.clamp(-zoomIncrement, zoomIncrement));
-
-    cam.viewfinder.zoom = newZoom;
+    cam.viewfinder.zoom = targetZoom;
   }
 }

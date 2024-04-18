@@ -71,36 +71,49 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "Level test.tmx": {
+            "scale": 0.06689583333333333,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 9611.958891311118,
+                "y": 2855.1853005294297
+            }
+        },
         "Level01.tmx": {
             "expandedObjectLayers": [
                 16,
-                4,
-                7
+                7,
+                4
             ],
             "scale": 0.25,
             "selectedLayer": 11,
             "viewCenter": {
-                "x": 5552,
-                "y": 1152
+                "x": 1232,
+                "y": 1712
             }
         },
         "Level02.tmx": {
-            "scale": 1,
+            "scale": 0.125,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 639.5,
-                "y": 367.5
+                "x": 7976,
+                "y": 928
             }
         },
         "Level03.tmx": {
             "expandedObjectLayers": [
+                2,
+                3,
+                16,
+                17,
+                7,
                 4
             ],
             "scale": 0.25,
-            "selectedLayer": 9,
+            "selectedLayer": 11,
             "viewCenter": {
-                "x": 5320,
-                "y": 1160
+                "x": 11968,
+                "y": 856
             }
         },
         "Level04.tmx": {
@@ -165,8 +178,8 @@
         "Level10.tmx": {
             "expandedObjectLayers": [
                 3,
-                9,
                 8,
+                9,
                 4
             ],
             "scale": 0.25,
@@ -189,8 +202,8 @@
         },
         "Map (100x23).tmx": {
             "expandedObjectLayers": [
-                3,
                 2,
+                3,
                 4
             ],
             "scale": 0.03125,
@@ -227,12 +240,15 @@
             "scaleInDock": 1
         },
         "boost.tsx": {
+            "dynamicWrapping": true,
             "scaleInDock": 1
         },
         "boost_right.tsx": {
+            "dynamicWrapping": false,
             "scaleInDock": 1
         },
         "boost_up.tsx": {
+            "dynamicWrapping": true,
             "scaleInDock": 1
         },
         "corner_down_left.tsx": {
@@ -248,6 +264,7 @@
             "scaleInDock": 1
         },
         "dash!.tsx": {
+            "dynamicWrapping": false,
             "scaleInDock": 1
         },
         "down.tsx": {
@@ -296,8 +313,9 @@
         "Level01.tmx"
     ],
     "project": "Pixel Game.tiled-project",
-    "property.type": "bool",
+    "property.type": "string",
     "recentFiles": [
+        "Level03.tmx",
         "Level08.tmx",
         "Level09.tmx",
         "Level10.tmx",
@@ -305,12 +323,12 @@
         "Map (100x100).tmx",
         "Map (100x23).tmx",
         "Level01.tmx",
-        "Level03.tmx",
         "Pixel Game.tsx",
         "Ground_01.tsx",
         "Ground_13.tsx",
         "right.tsx"
     ],
+    "textEdit.monospace": true,
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
         "height": 264,

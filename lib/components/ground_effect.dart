@@ -21,7 +21,7 @@ class GroundEffect extends SpriteAnimationComponent
       game.images.fromCache('Sprites/14-TileSets/ground_walk_effect.png'),
       SpriteAnimationData.sequenced(
         amount: 5,
-        stepTime: 0.05,
+        stepTime: 0.02,
         textureSize: Vector2(66, 66),
         loop: false,
       ),
