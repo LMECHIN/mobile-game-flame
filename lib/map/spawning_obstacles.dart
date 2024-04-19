@@ -27,7 +27,7 @@ void spawningObstacles(
     final double spawnX = spawnObstacle.x;
     final double distanceToPlayer = (spawnX - playerX).abs();
 
-    if (distanceToPlayer < 1000) {
+    if (distanceToPlayer < 800) {
       bool hasObstacle = false;
       for (final child in children) {
         if (child is Obstacle &&
@@ -60,7 +60,7 @@ void spawningObstacles(
 
     for (final obstacle in generatedObstacles) {
       final double distanceToPlayer = (obstacle.position.x - playerX).abs();
-      if (distanceToPlayer >= 1000 &&
+      if (distanceToPlayer >= 800 &&
           !obstacle.isRemoving &&
           obstacle.isMounted) {
         obstaclesToRemove.add(obstacle);

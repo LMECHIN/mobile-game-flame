@@ -21,7 +21,7 @@ void spawningBlocks(
   List<Obstacle> generatedObstacles,
 ) {
   final double playerX = player.position.x;
-  const double playerDistanceThreshold = 1000;
+  const double playerDistanceThreshold = 250;
   List<Blocks> blocksToRemove = [];
   bool changeColor = true;
 
@@ -30,7 +30,7 @@ void spawningBlocks(
     final double spawnX = spawnBlock.x;
     final double distanceToPlayer = (spawnX - playerX).abs();
 
-    if (distanceToPlayer < 1000) {
+    if (distanceToPlayer < 250) {
       bool hasBlock = false;
       for (final child in children) {
         if (child is Blocks &&

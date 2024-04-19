@@ -46,18 +46,12 @@ class Checkpoint extends SpriteAnimationComponent
       Set<Vector2> intersectionPoints, PositionComponent other) {
     if (other is Player) {
       _reachedCheckpoint();
-      // _updatePlayerColor(const Color.fromARGB(255, 11, 3, 55));
       other.hasDie = true;
       other.current = PlayerState.idle;
       game.overlays.remove(PauseButton.id);
       game.overlays.add(EndGame.id);
     }
     super.onCollisionStart(intersectionPoints, other);
-  }
-
-  void _updatePlayerColor(Color newColor) {
-    color = newColor;
-    gameRef.updateBackgroundColor(newColor);
   }
 
   void _reachedCheckpoint() async {

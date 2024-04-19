@@ -52,9 +52,9 @@ class Blocks extends SpriteAnimationComponent
           position: position,
           size: size,
         );
-  bool _isTransitioning = false;
+  // bool _isTransitioning = false;
   double transitionDuration = 0.5;
-  double _transitionTimer = 0;
+  // double _transitionTimer = 0;
   late Paint bluePaint;
 
   @override
@@ -89,51 +89,52 @@ class Blocks extends SpriteAnimationComponent
     super.onCollisionStart(intersectionPoints, other);
   }
 
-  @override
-  void update(double dt) {
-    super.update(dt);
+  // @override
+  // void update(double dt) {
+  //   super.update(dt);
 
-    if (_isTransitioning) {
-      _transitionTimer += dt;
-      if (_transitionTimer >= transitionDuration) {
-        _isTransitioning = false;
-        _transitionTimer = 0;
-        _restoreOriginalAnimation();
-      }
-    }
-  }
+  //   if (_isTransitioning) {
+  //     _transitionTimer += dt;
+  //     if (_transitionTimer >= transitionDuration) {
+  //       _isTransitioning = false;
+  //       _transitionTimer = 0;
+  //       _restoreOriginalAnimation();
+  //     }
+  //   }
+  // }
 
   @override
   void render(Canvas canvas) {
+    priority = -1;
     if (texture) {
       bluePaint = Paint()..color = bluePaintColor;
-      canvas.drawRect(const Rect.fromLTWH(0, 0, 65, 65), bluePaint);
+      canvas.drawRect(const Rect.fromLTWH(0, 0, 16.25, 16.25), bluePaint);
     }
     super.render(canvas);
   }
 
   void _reachedBlock() {
-    final groundEffect = GroundEffect(size: Vector2.all(65));
+    final groundEffect = GroundEffect(size: Vector2.all(16.25));
     add(groundEffect);
-    _isTransitioning = true;
+    // _isTransitioning = true;
   }
 
   void _restoreOriginalAnimation() {
     final int i = _checkBorder();
     final borderBlocks = BorderBlocks(
       borderIndex: i,
-      size: Vector2.all(65),
+      size: Vector2.all(16.25),
     );
     add(borderBlocks);
 
     final textureBlocks = TextureBlocks(
       hasOn: hasTextureBlocks,
-      size: Vector2.all(64),
+      size: Vector2.all(16),
     );
     add(textureBlocks);
     final textureCross = TextureCross(
       hasOn: hasTextureCross,
-      size: Vector2.all(64),
+      size: Vector2.all(16),
     );
     add(textureCross);
   }

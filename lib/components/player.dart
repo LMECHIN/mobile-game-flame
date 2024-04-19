@@ -4,7 +4,6 @@ import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/extensions.dart';
 import 'package:flame_audio/flame_audio.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/components/boost_up.dart';
 import 'package:flutter_application_1/components/collisions_block.dart';
@@ -29,7 +28,6 @@ class Player extends SpriteAnimationGroupComponent
     super.size,
   }) : textureSize = textureSize ?? Vector2(512, 512);
 
-  // final double stepTime = 0.1;
   late final SpriteAnimation idleAnimation;
   late final SpriteAnimation runningAnimation;
   late final SpriteAnimation jumpingAnimation;
@@ -42,15 +40,15 @@ class Player extends SpriteAnimationGroupComponent
   bool isRightKeyPressed = false;
 
   Color color = const Color.fromARGB(255, 0, 0, 0);
-  final double _gravity = 3;
-  final double _jumpForce = 700;
-  final double _terminalVelocity = 1150;
-  double scaleFactor = 2.4;
+  final double _gravity = 0.77;
+  final double _jumpForce = 175;
+  final double _terminalVelocity = 270;
+  double scaleFactor = 2.2;
   double widthMap = 0;
   double heightMap = 0;
   double horizontalMovement = 1;
-  double moveSpeed = 500;
-  double normalMoveSpeed = 500;
+  double moveSpeed = 125;
+  double normalMoveSpeed = 125;
   Vector2 startingPosition = Vector2.zero();
   Vector2 velocity = Vector2.zero();
   double fixedDeltaTime = 0.08 / 60;
@@ -65,18 +63,18 @@ class Player extends SpriteAnimationGroupComponent
 
   List<CollisionsBlock> collisionsBlock = [];
   PlayerHitbox hitbox = PlayerHitbox(
-    offsetX: 66,
-    offsetY: 92,
-    width: 20,
-    height: 40,
+    offsetX: 13,
+    offsetY: 19,
+    width: 8,
+    height: 12,
   );
 
   @override
   FutureOr<void> onLoad() {
     _loadAllAnimations();
     // debugMode = true;
-    startingPosition = Vector2(position.x, position.y - 80);
-    position = Vector2(position.x, position.y - 80);
+    startingPosition = Vector2(position.x, position.y - 20);
+    position = Vector2(position.x, position.y - 20);
     scale = Vector2(scaleFactor, scaleFactor);
 
     Vector2 sizeHitbox = Vector2(size.x / 4.5, size.y / 3);
@@ -89,7 +87,7 @@ class Player extends SpriteAnimationGroupComponent
       position.y * adjustementY -
           (size.y * 0.25) -
           (sizeHitbox.y / 2) +
-          (sizeHitbox.y * (adjustementY + 0.15)),
+          (sizeHitbox.y * (adjustementY + 0.20)),
     );
 
     add(RectangleHitbox(position: positionHitbox, size: sizeHitbox));
@@ -123,12 +121,12 @@ class Player extends SpriteAnimationGroupComponent
     // isRightKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyD) ||
     //     keysPressed.contains(LogicalKeyboardKey.arrowRight);
 
-    // if (isLeftKeyPressed) {
-    //   pressKey = true;
-    // }
-    // if (isRightKeyPressed) {
-    //   pressKey = false;
-    // }
+    // // if (isLeftKeyPressed) {
+    // //   pressKey = true;
+    // // }
+    // // if (isRightKeyPressed) {
+    // //   pressKey = false;
+    // // }
     // horizontalMovement += isLeftKeyPressed ? -1 : 0;
     // horizontalMovement += isRightKeyPressed ? 1 : 0;
     // horizontalMovement += 1;
@@ -255,19 +253,19 @@ class Player extends SpriteAnimationGroupComponent
       flipHorizontallyAroundCenter();
     }
 
-    if (moveSpeed > 500) {
+    if (moveSpeed > 125) {
       playerState = PlayerState.sliding;
     } else if ((velocity.x > 0 || velocity.x < 0) && !hasSlide) {
       hasSlide = false;
       playerState = PlayerState.running;
     }
-    if (moveSpeed > 500) {
+    if (moveSpeed > 125) {
       playerState = PlayerState.sliding;
     } else if (velocity.y < 0) {
       playerState = PlayerState.jumping;
     }
 
-    if (moveSpeed > 500) {
+    if (moveSpeed > 125) {
       playerState = PlayerState.sliding;
     } else if (velocity.y > 0) {
       playerState = PlayerState.falling;
@@ -286,7 +284,7 @@ class Player extends SpriteAnimationGroupComponent
     }
 
     if (delayExpired) {
-      moveSpeed = 500;
+      moveSpeed = 125;
       hasSlide = false;
     }
     // if (velocity.y > _gravity) isOnGround = false; // optional

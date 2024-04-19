@@ -120,24 +120,24 @@ class PixelGame extends FlameGame
     );
     cam = CameraComponent.withFixedResolution(
       world: createLevel,
-      width: 4880,
-      height: 2200,
+      width: 1220,
+      height: 550,
     );
-    setZoom(3.5);
+    setZoom(4);
     cam.priority = 0;
     if (showControls) {
       // addJoystick();
       add(ButtonJump());
       // add(ButtonSlide());
     }
-    cam.viewfinder.anchor = const Anchor(0.30, 0.4);
+    cam.viewfinder.anchor = const Anchor(0.30, 0.44);
     cam.follow(
       player,
-      maxSpeed: double.infinity,
+      // maxSpeed: double.infinity,
       // horizontalOnly: true,
-      snap: true,
+      // snap: true,
     );
-    await addAll([audio, cam, createLevel]);
+    addAll([audio, cam, createLevel]);
     await super.onLoad();
   }
 
@@ -160,7 +160,6 @@ class PixelGame extends FlameGame
     // if (showControls) {
     //   updateJoystick();
     // }
-
     // cam.viewfinder.anchor = const Anchor(0.15, 0);
     updateZoom(dt);
     // updateCam(dt);
@@ -196,45 +195,6 @@ class PixelGame extends FlameGame
 
   void setZoom(double zoom) {
     targetZoom = zoom;
-  }
-
-  void addJoystick() {
-    joystick = JoystickComponent(
-      priority: 1,
-      background: CircleComponent(
-        radius: 48,
-        paint: Paint()..color = const Color(0xFF000000),
-      ),
-      knob: CircleComponent(
-        radius: 32,
-        paint: Paint()..color = const Color(0xFFFFFFFF),
-      ),
-      margin: const EdgeInsets.only(left: 32, bottom: 32),
-    );
-
-    add(joystick);
-  }
-
-  void updateJoystick() {
-    horizontalMovementTotal = 0;
-
-    switch (joystick.direction) {
-      case JoystickDirection.left:
-      case JoystickDirection.upLeft:
-      case JoystickDirection.downLeft:
-        horizontalMovementTotal -= 1;
-
-        break;
-      case JoystickDirection.right:
-      case JoystickDirection.upRight:
-      case JoystickDirection.downRight:
-        horizontalMovementTotal += 1;
-
-        break;
-      default:
-        break;
-    }
-    player.horizontalMovement = horizontalMovementTotal.toDouble();
   }
 
   void updateCam(double dt) {
