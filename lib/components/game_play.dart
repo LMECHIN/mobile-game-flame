@@ -1,5 +1,6 @@
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/overlays/death_game.dart';
 import 'package:flutter_application_1/overlays/end_game.dart';
 import 'package:flutter_application_1/overlays/pause_button.dart';
 import 'package:flutter_application_1/overlays/pause_menu.dart';
@@ -12,9 +13,6 @@ class GamePlay extends StatelessWidget {
 
   GamePlay({super.key, required this.context, this.level})
       : _game = PixelGame(
-            // widthResolution: MediaQuery.of(context).size.width * 6,
-            // heightResolution: MediaQuery.of(context).size.height * 6,
-            // context: context,
             level: level);
 
   @override
@@ -23,9 +21,12 @@ class GamePlay extends StatelessWidget {
       canPop: false,
       child: GameWidget(
         game: _game,
-        initialActiveOverlays: const [PauseButton.id],
+        initialActiveOverlays: const [PauseButton.id, DeathGame.id],
         overlayBuilderMap: {
           PauseButton.id: (BuildContext context, PixelGame game) => PauseButton(
+                game: game,
+              ),
+          DeathGame.id: (BuildContext context, PixelGame game) => DeathGame(
                 game: game,
               ),
           PauseMenu.id: (BuildContext context, PixelGame game) => PauseMenu(

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" width="300" height="23" tilewidth="16" tileheight="16" infinite="0" nextlayerid="30" nextobjectid="7567">
+<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" width="300" height="23" tilewidth="16" tileheight="16" infinite="0" nextlayerid="30" nextobjectid="7745">
  <tileset firstgid="1" source="boost_right.tsx"/>
  <tileset firstgid="10" source="light2.tsx"/>
  <tileset firstgid="19" source="light2.tsx"/>
@@ -166,8 +166,7 @@
 </data>
  </layer>
  <objectgroup id="16" name="SpawnObstaclesCircles"/>
- <objectgroup id="2" name="Collisions" locked="1">
-  <object id="6641" x="0" y="352" width="4800" height="16"/>
+ <objectgroup id="2" name="Collisions">
   <object id="7083" x="0" y="352" width="768" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
@@ -208,6 +207,24 @@
   <object id="7564" x="736" y="336" width="160" height="16"/>
   <object id="7565" x="496" y="336" width="16" height="16"/>
   <object id="7566" x="272" y="336" width="16" height="16"/>
+  <object id="7616" x="3296" y="240" width="96" height="16"/>
+  <object id="7704" x="2848" y="304" width="48" height="16"/>
+  <object id="7706" x="2784" y="320" width="16" height="32"/>
+  <object id="7707" x="2720" y="336" width="16" height="16"/>
+  <object id="7708" x="2656" y="288" width="16" height="32"/>
+  <object id="7709" x="2464" y="288" width="16" height="32"/>
+  <object id="7710" x="2400" y="336" width="16" height="16"/>
+  <object id="7711" x="2272" y="288" width="16" height="32"/>
+  <object id="7713" x="2160" y="320" width="16" height="32"/>
+  <object id="7714" x="2096" y="336" width="16" height="16"/>
+  <object id="7732" x="3200" y="288" width="256" height="16"/>
+  <object id="7733" x="3152" y="304" width="16" height="16"/>
+  <object id="7737" x="0" y="352" width="3072" height="16"/>
+  <object id="7739" x="3472" y="352" width="1328" height="16"/>
+  <object id="7740" x="3456" y="352" width="16" height="16"/>
+  <object id="7741" x="3088" y="352" width="16" height="16"/>
+  <object id="7743" x="3040" y="320" width="64" height="32"/>
+  <object id="7744" x="2992" y="336" width="48" height="16"/>
  </objectgroup>
  <objectgroup id="3" name="Spawnpoints">
   <object id="6643" name="Player" type="Player" x="32" y="336" width="16" height="16"/>
@@ -256,6 +273,125 @@
     <property name="Up" type="bool" value="false"/>
    </properties>
   </object>
+  <object id="7570" name="Triangle" x="3296" y="256" width="16" height="16">
+   <properties>
+    <property name="Down" type="bool" value="false"/>
+    <property name="TextureObstacle" type="bool" value="true"/>
+    <property name="Up" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7604" name="Triangle" x="3328" y="256" width="16" height="16">
+   <properties>
+    <property name="Down" type="bool" value="false"/>
+    <property name="TextureObstacle" type="bool" value="true"/>
+    <property name="Up" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7608" name="Triangle" x="3360" y="256" width="16" height="16">
+   <properties>
+    <property name="Down" type="bool" value="false"/>
+    <property name="TextureObstacle" type="bool" value="true"/>
+    <property name="Up" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7580" name="Triangle" x="3312" y="256" width="16" height="16">
+   <properties>
+    <property name="Down" type="bool" value="false"/>
+    <property name="TextureObstacle" type="bool" value="true"/>
+    <property name="Up" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7603" name="Triangle" x="3344" y="256" width="16" height="16">
+   <properties>
+    <property name="Down" type="bool" value="false"/>
+    <property name="TextureObstacle" type="bool" value="true"/>
+    <property name="Up" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7607" name="Triangle" x="3376" y="256" width="16" height="16">
+   <properties>
+    <property name="Down" type="bool" value="false"/>
+    <property name="TextureObstacle" type="bool" value="true"/>
+    <property name="Up" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7614" name="Triangle" x="3408" y="272" width="16" height="16">
+   <properties>
+    <property name="Down" type="bool" value="true"/>
+    <property name="TextureObstacle" type="bool" value="true"/>
+    <property name="Up" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7661" name="Triangle" x="1920" y="336" width="16" height="16">
+   <properties>
+    <property name="Down" type="bool" value="true"/>
+    <property name="TextureObstacle" type="bool" value="false"/>
+    <property name="Up" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7676" name="Triangle" x="1952" y="336" width="16" height="16">
+   <properties>
+    <property name="Down" type="bool" value="true"/>
+    <property name="TextureObstacle" type="bool" value="false"/>
+    <property name="Up" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7675" name="Triangle" x="2320" y="336" width="16" height="16">
+   <properties>
+    <property name="Down" type="bool" value="true"/>
+    <property name="TextureObstacle" type="bool" value="false"/>
+    <property name="Up" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7681" name="Triangle" x="2512" y="336" width="16" height="16">
+   <properties>
+    <property name="Down" type="bool" value="true"/>
+    <property name="TextureObstacle" type="bool" value="false"/>
+    <property name="Up" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7685" name="Triangle" x="2592" y="336" width="16" height="16">
+   <properties>
+    <property name="Down" type="bool" value="true"/>
+    <property name="TextureObstacle" type="bool" value="false"/>
+    <property name="Up" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7688" name="Triangle" x="2768" y="336" width="16" height="16">
+   <properties>
+    <property name="Down" type="bool" value="true"/>
+    <property name="TextureObstacle" type="bool" value="false"/>
+    <property name="Up" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7694" name="Triangle" x="2848" y="320" width="16" height="16">
+   <properties>
+    <property name="Down" type="bool" value="false"/>
+    <property name="TextureObstacle" type="bool" value="false"/>
+    <property name="Up" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7702" name="Triangle" x="2864" y="320" width="16" height="16">
+   <properties>
+    <property name="Down" type="bool" value="false"/>
+    <property name="TextureObstacle" type="bool" value="false"/>
+    <property name="Up" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7703" name="Triangle" x="2880" y="320" width="16" height="16">
+   <properties>
+    <property name="Down" type="bool" value="false"/>
+    <property name="TextureObstacle" type="bool" value="false"/>
+    <property name="Up" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7662" name="Triangle" x="1888" y="336" width="16" height="16">
+   <properties>
+    <property name="Down" type="bool" value="true"/>
+    <property name="TextureObstacle" type="bool" value="false"/>
+    <property name="Up" type="bool" value="false"/>
+   </properties>
+  </object>
   <object id="7467" name="Triangle" x="1536" y="288" width="16" height="16">
    <properties>
     <property name="Down" type="bool" value="false"/>
@@ -294,7 +430,7 @@
  </objectgroup>
  <objectgroup id="29" name="SpawnBlocks">
   <properties>
-   <property name="Transition" value="0, 700, FF2196F3, FF9C27B0, FF013C6D, FF4A0057; 790, 810, FF9C27B0, FF4CAF50, FF4A0057, FF0B5400; 1800, 1810, FF4CAF50, FFF44336, FF0B5400, FF540000"/>
+   <property name="Transition" value="0, 700, FF2196F3, FF9C27B0, FF013C6D, FF4A0057; 790, 810, FF9C27B0, FF4CAF50, FF4A0057, FF0B5400; 1800, 1810, FF4CAF50, FFF44336, FF0B5400, FF540000; 2800, 2920, FFF44336, FF0E0E0E, FF540000, FF000000; 3010, 3010, FF0E0E0E, FF0E0E0E, FF000000, FFFFFFFF; 3050, 3050, FF0E0E0E, FF0E0E0E, FFFFFFFF, FF000000"/>
   </properties>
   <object id="6645" x="272" y="336" width="16" height="16">
    <properties>
@@ -2196,6 +2332,506 @@
     <property name="TextureBlock" type="bool" value="true"/>
    </properties>
   </object>
+  <object id="7665" x="2096" y="336" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="true"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7678" x="2400" y="336" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="true"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7682" x="2720" y="336" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="true"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7718" x="2992" y="336" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="true"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7725" x="3040" y="320" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="true"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7719" x="3008" y="336" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="true"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7724" x="3056" y="320" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="true"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7720" x="3024" y="336" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="true"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7727" x="3056" y="336" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7723" x="3072" y="320" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="true"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7721" x="3040" y="336" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7726" x="3072" y="336" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7742" x="3088" y="336" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="true"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7722" x="3088" y="320" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="true"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7729" x="3152" y="304" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7668" x="2160" y="320" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="true"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7673" x="2272" y="288" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="true"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7680" x="2464" y="288" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="true"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7684" x="2656" y="288" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="true"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7693" x="2784" y="320" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="true"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7669" x="2160" y="336" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="true"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7672" x="2272" y="304" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="true"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7679" x="2464" y="304" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="true"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7683" x="2656" y="304" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="true"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7692" x="2784" y="336" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="true"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="true"/>
+   </properties>
+  </object>
   <object id="7496" x="2048" y="256" width="16" height="16">
    <properties>
     <property name="BorderDown" type="bool" value="false"/>
@@ -2377,6 +3013,26 @@
    </properties>
   </object>
   <object id="7510" x="2688" y="176" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="true"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7700" x="2848" y="304" width="16" height="16">
    <properties>
     <property name="BorderDown" type="bool" value="false"/>
     <property name="BorderDownLeft" type="bool" value="false"/>
@@ -2616,6 +3272,26 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
+  <object id="7567" x="3200" y="288" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="true"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
   <object id="7506" x="2560" y="176" width="16" height="16">
    <properties>
     <property name="BorderDown" type="bool" value="false"/>
@@ -2637,6 +3313,26 @@
    </properties>
   </object>
   <object id="7509" x="2704" y="176" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7699" x="2864" y="304" width="16" height="16">
    <properties>
     <property name="BorderDown" type="bool" value="false"/>
     <property name="BorderDownLeft" type="bool" value="false"/>
@@ -2716,6 +3412,406 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
+  <object id="7568" x="3248" y="288" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7730" x="3232" y="288" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7731" x="3216" y="288" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7573" x="3328" y="288" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7612" x="3408" y="288" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7576" x="3312" y="288" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7609" x="3392" y="288" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7575" x="3280" y="288" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7610" x="3360" y="288" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7571" x="3264" y="288" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7577" x="3296" y="240" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7602" x="3328" y="240" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7606" x="3360" y="240" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7579" x="3312" y="240" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7601" x="3344" y="240" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7605" x="3376" y="240" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7572" x="3344" y="288" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7613" x="3424" y="288" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7574" x="3296" y="288" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7611" x="3376" y="288" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="true"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
   <object id="7507" x="2576" y="176" width="16" height="16">
    <properties>
     <property name="BorderDown" type="bool" value="false"/>
@@ -2737,6 +3833,26 @@
    </properties>
   </object>
   <object id="7508" x="2720" y="176" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="true"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="7701" x="2880" y="304" width="16" height="16">
    <properties>
     <property name="BorderDown" type="bool" value="false"/>
     <property name="BorderDownLeft" type="bool" value="false"/>
@@ -2816,6 +3932,26 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
+  <object id="7569" x="3440" y="288" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="true"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+   </properties>
+  </object>
   <object id="7504" name="Cross" x="2560" y="128" width="16" height="16">
    <properties>
     <property name="BorderDown" type="bool" value="false"/>
@@ -2831,6 +3967,69 @@
     <property name="BorderUpDown" type="bool" value="false"/>
     <property name="BorderUpDownLeft" type="bool" value="false"/>
     <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7671" name="Cross" x="2208" y="336" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7716" name="Cross" x="2928" y="304" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="true"/>
+    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpLeft" type="bool" value="false"/>
+    <property name="BorderUpRight" type="bool" value="false"/>
+    <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7717" name="Cross" x="2944" y="304" width="16" height="16">
+   <properties>
+    <property name="BorderDown" type="bool" value="false"/>
+    <property name="BorderDownLeft" type="bool" value="false"/>
+    <property name="BorderDownRight" type="bool" value="false"/>
+    <property name="BorderLeft" type="bool" value="false"/>
+    <property name="BorderLeftRight" type="bool" value="false"/>
+    <property name="BorderLeftRightDown" type="bool" value="false"/>
+    <property name="BorderLeftRightUp" type="bool" value="false"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
+    <property name="BorderRight" type="bool" value="false"/>
+    <property name="BorderUp" type="bool" value="false"/>
+    <property name="BorderUpDown" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="true"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
@@ -2967,11 +4166,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7278" x="3328" y="352" width="16" height="16">
+  <object id="7278" name="Cross" x="3328" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7326" x="4096" y="352" width="16" height="16">
@@ -3051,11 +4251,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7280" x="3200" y="352" width="16" height="16">
+  <object id="7280" name="Cross" x="3200" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7328" x="3968" y="352" width="16" height="16">
@@ -3184,11 +4385,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7283" x="3136" y="352" width="16" height="16">
+  <object id="7283" name="Cross" x="3136" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7331" x="3904" y="352" width="16" height="16">
@@ -3226,11 +4428,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7284" x="3392" y="352" width="16" height="16">
+  <object id="7284" name="Cross" x="3392" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7332" x="4160" y="352" width="16" height="16">
@@ -3317,11 +4520,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7286" x="3264" y="352" width="16" height="16">
+  <object id="7286" name="Cross" x="3264" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7334" x="4032" y="352" width="16" height="16">
@@ -3450,11 +4654,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7289" x="3104" y="352" width="16" height="16">
+  <object id="7289" name="Cross" x="3104" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7337" x="3872" y="352" width="16" height="16">
@@ -3492,11 +4697,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7290" x="3360" y="352" width="16" height="16">
+  <object id="7290" name="Cross" x="3360" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7338" x="4128" y="352" width="16" height="16">
@@ -3576,11 +4782,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7292" x="3232" y="352" width="16" height="16">
+  <object id="7292" name="Cross" x="3232" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7340" x="4000" y="352" width="16" height="16">
@@ -3709,11 +4916,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7295" x="3168" y="352" width="16" height="16">
+  <object id="7295" name="Cross" x="3168" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7343" x="3936" y="352" width="16" height="16">
@@ -3751,11 +4959,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7296" x="3424" y="352" width="16" height="16">
+  <object id="7296" name="Cross" x="3424" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7344" x="4192" y="352" width="16" height="16">
@@ -3842,11 +5051,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7298" x="3296" y="352" width="16" height="16">
+  <object id="7298" name="Cross" x="3296" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7346" x="4064" y="352" width="16" height="16">
@@ -4017,11 +5227,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7302" x="3344" y="352" width="16" height="16">
+  <object id="7302" name="Cross" x="3344" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7350" x="4112" y="352" width="16" height="16">
@@ -4101,11 +5312,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7304" x="3216" y="352" width="16" height="16">
+  <object id="7304" name="Cross" x="3216" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7352" x="3984" y="352" width="16" height="16">
@@ -4234,11 +5446,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7307" x="3152" y="352" width="16" height="16">
+  <object id="7307" name="Cross" x="3152" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7355" x="3920" y="352" width="16" height="16">
@@ -4276,11 +5489,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7308" x="3408" y="352" width="16" height="16">
+  <object id="7308" name="Cross" x="3408" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7356" x="4176" y="352" width="16" height="16">
@@ -4367,11 +5581,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7310" x="3280" y="352" width="16" height="16">
+  <object id="7310" name="Cross" x="3280" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7358" x="4048" y="352" width="16" height="16">
@@ -4500,11 +5715,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7313" x="3120" y="352" width="16" height="16">
+  <object id="7313" name="Cross" x="3120" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7361" x="3888" y="352" width="16" height="16">
@@ -4542,11 +5758,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7314" x="3376" y="352" width="16" height="16">
+  <object id="7314" name="Cross" x="3376" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7362" x="4144" y="352" width="16" height="16">
@@ -4626,11 +5843,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7316" x="3248" y="352" width="16" height="16">
+  <object id="7316" name="Cross" x="3248" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7364" x="4016" y="352" width="16" height="16">
@@ -4759,11 +5977,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7319" x="3184" y="352" width="16" height="16">
+  <object id="7319" name="Cross" x="3184" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7367" x="3952" y="352" width="16" height="16">
@@ -4801,11 +6020,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7320" x="3440" y="352" width="16" height="16">
+  <object id="7320" name="Cross" x="3440" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7368" x="4208" y="352" width="16" height="16">
@@ -4892,11 +6112,12 @@
     <property name="TextureBlock" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="7322" x="3312" y="352" width="16" height="16">
+  <object id="7322" name="Cross" x="3312" y="352" width="16" height="16">
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
+    <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
   <object id="7370" x="4080" y="352" width="16" height="16">

@@ -143,14 +143,17 @@ class PixelGame extends FlameGame
 
   @override
   void onAttach() {
-    audio.playBgm("Level03.mp3");
+    if (musicPlaying == false) {
+      audio.playBgm("Level03.mp3");
+      musicPlaying = true;
+    }
     super.onAttach();
   }
 
   @override
   void onDetach() {
-    if (!FlameAudio.bgm.isPlaying) {
-      audio.stopBgm();
+    if (!FlameAudio.bgm.isPlaying && musicPlaying) {
+    audio.stopBgm();
     }
     super.onDetach();
   }

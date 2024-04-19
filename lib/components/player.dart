@@ -293,11 +293,6 @@ class Player extends SpriteAnimationGroupComponent
     position.x += velocity.x * dt;
   }
 
-  // void _updatePlayerColor(Color newColor) {
-  //   color = newColor;
-  //   gameRef.updateBackgroundColor(newColor);
-  // }
-
   void _playJump(double dt) {
     velocity.y = -_jumpForce;
     position.y += velocity.y * dt;
