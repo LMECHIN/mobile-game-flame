@@ -20,6 +20,9 @@ cd game2d
 
 flutter pub get
 
+flutter run
+
+# Increase performances (without mobile device connected)
 flutter run --release
 
 ```
