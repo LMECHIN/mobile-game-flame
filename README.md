@@ -22,7 +22,7 @@ flutter pub get
 
 flutter run
 
-# Increase performances (without mobile device connected)
+# Improve performance (without a mobile device connected)
 flutter run --release
 
 ```
