@@ -1,10 +1,6 @@
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/lmechin/game2d?color=c20053">
-
-
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/lmechin/game2d?color=c20053">
-
-  <img alt="License" src="https://img.shields.io/github/license/lmechin/game2d?color=c20053">
+  <img alt="Language" src="https://img.shields.io/badge/language-dart-c20053?style=plastic">
+  <img alt="License" src="https://img.shields.io/badge/licence-MIT-c20053?style=plastic">
 </p>
 
 # :heart_on_fire: Game
@@ -33,7 +29,7 @@ $ flutter run --release
 # The will start the game on any connected device.
 ```
 
-## Supported platforms
+## :eye_speech_bubble: Supported platforms
 
 - Android
 - iOS
