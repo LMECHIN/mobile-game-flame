@@ -87,7 +87,7 @@ class Level extends World with HasGameRef<GameRun> {
   void calculateProgress(Vector2 playerPosition, Vector2 checkpointPosition) {
     double distanceToCheckpoint = playerPosition.distanceTo(checkpointPosition);
     double totalDistance = level.width;
-    double startOffset = 0.008 * totalDistance;
+    double startOffset = 0.01 * totalDistance;
     double levelProgress = 0;
 
     if ((playerPosition.x - player.startingPosition.x).abs() <= 1.0) {
@@ -105,6 +105,7 @@ class Level extends World with HasGameRef<GameRun> {
     if (levelProgress > (_levelData.levelProgress[levelName] ?? 0)) {
       _levelData.selectLevelProgress(levelProgress);
     }
+    print(levelProgress);
   }
 
   void _spawningRopes() {
@@ -245,7 +246,7 @@ class Level extends World with HasGameRef<GameRun> {
     if (collisionsLayer != null) {
       for (final collision in collisionsLayer.objects) {
         switch (collision.class_) {
-          case 'BoostsUp':
+          case 'EndGame':
             final platform = CollisionsBlock(
               position: Vector2(collision.x, collision.y),
               size: Vector2(collision.width, collision.height),

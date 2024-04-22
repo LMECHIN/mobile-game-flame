@@ -43,9 +43,9 @@ class TextureCross extends SpriteAnimationComponent
   @override
   void update(double dt) {
     if (hasOn) {
-      if (game.player.hasSlide) {
+      if (game.player.hasBoost) {
         hasSlide = true;
-        Future.delayed(const Duration(milliseconds: 80), () {
+        Future.delayed(const Duration(milliseconds: 500), () {
           hasSlide = false;
         });
       }

@@ -45,7 +45,7 @@ class Checkpoint extends SpriteAnimationComponent
       Set<Vector2> intersectionPoints, PositionComponent other) {
     if (other is Player) {
       _reachedCheckpoint();
-      other.hasDie = true;
+      other.endGame = true;
       other.current = PlayerState.idle;
       game.overlays.remove(PauseButton.id);
       game.overlays.add(EndGame.id);

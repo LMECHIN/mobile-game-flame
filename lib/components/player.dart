@@ -41,7 +41,9 @@ class Player extends SpriteAnimationGroupComponent
   bool hasJumped = false;
   bool hasSlide = false;
   bool hasDie = false;
+  bool endGame = false;
   bool delayExpired = false;
+  bool hasBoost = false;
 
   final double _gravity = 0.77;
   final double _jumpForce = 175;
@@ -94,7 +96,7 @@ class Player extends SpriteAnimationGroupComponent
     accumulatedTime += dt;
 
     while (accumulatedTime >= fixedDeltaTime) {
-      if (!hasDie) {
+      if (!hasDie && !endGame) {
         _updatePlayerState();
         _updatePlayerMovement(fixedDeltaTime);
         _checkHorizontalCollisions();
@@ -109,7 +111,7 @@ class Player extends SpriteAnimationGroupComponent
   }
 
   @override
-  bool onKeyEvent(RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
+  bool onKeyEvent(KeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
     // horizontalMovement = 0;
     // isLeftKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyQ) ||
     //     keysPressed.contains(LogicalKeyboardKey.arrowLeft);
@@ -145,7 +147,7 @@ class Player extends SpriteAnimationGroupComponent
       respawn();
     }
     if (other is BoostUp) {
-      hasSlide = true;
+      hasBoost = true;
       _startSlideTimer();
     }
 
@@ -153,8 +155,8 @@ class Player extends SpriteAnimationGroupComponent
   }
 
   void _startSlideTimer() {
-    Future.delayed(const Duration(milliseconds: 150), () {
-      hasSlide = false;
+    Future.delayed(const Duration(milliseconds: 100), () {
+      hasBoost = false;
     });
   }
 
@@ -274,8 +276,8 @@ class Player extends SpriteAnimationGroupComponent
     if (hasJumped && isOnGround) {
       _playJump(dt);
     }
-    if (hasSlide) {
-      _playSlide(400000, dt);
+    if (hasSlide || hasBoost) {
+      _playSlide(150000, dt);
     }
 
     if (delayExpired) {
@@ -308,20 +310,22 @@ class Player extends SpriteAnimationGroupComponent
 
   void _checkHorizontalCollisions() {
     for (final block in collisionsBlock) {
-      if (!block.isPlatform) {
-        if (checkCollision(this, block)) {
-          if (velocity.x > 0) {
-            velocity.x = 0;
+      if (checkCollision(this, block)) {
+        if (velocity.x > 0) {
+          velocity.x = 0;
+          if (!block.isPlatform) {
             respawn();
-            position.x = block.x - hitbox.offsetX - hitbox.width;
-            break;
           }
-          if (velocity.x < 0) {
-            velocity.x = 0;
+          position.x = block.x - hitbox.offsetX - hitbox.width;
+          break;
+        }
+        if (velocity.x < 0) {
+          velocity.x = 0;
+          if (!block.isPlatform) {
             respawn();
-            position.x = block.x + block.width + hitbox.width + hitbox.offsetX;
-            break;
           }
+          position.x = block.x + block.width + hitbox.width + hitbox.offsetX;
+          break;
         }
       }
     }
