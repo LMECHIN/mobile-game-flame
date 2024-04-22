@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_application_1/components/game_play.dart';
-import 'package:flutter_application_1/components/levels_menu.dart';
-import 'package:flutter_application_1/components/settings_menu.dart';
-import 'package:flutter_application_1/components/skins_menu.dart';
-import 'package:flutter_application_1/models/level_data.dart';
-import 'package:flutter_application_1/utils/get_level_data.dart';
-import 'package:flutter_application_1/widget/build_button.dart';
-import 'package:flutter_application_1/widget/text_styles_list.dart';
+import 'package:game/game_play.dart';
+import 'package:game/menu/levels_menu.dart';
+import 'package:game/menu/settings_menu.dart';
+import 'package:game/menu/skins_menu.dart';
+import 'package:game/models/level_data.dart';
+import 'package:game/utils/get_level_data.dart';
+import 'package:game/widget/build_button.dart';
+import 'package:game/widget/text_styles_list.dart';
 
 class MainMenu extends StatefulWidget {
   const MainMenu({super.key});

@@ -1,18 +1,18 @@
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/overlays/death_game.dart';
-import 'package:flutter_application_1/overlays/end_game.dart';
-import 'package:flutter_application_1/overlays/pause_button.dart';
-import 'package:flutter_application_1/overlays/pause_menu.dart';
-import 'package:flutter_application_1/pixel_game.dart';
+import 'package:game/overlays/death_game.dart';
+import 'package:game/overlays/end_game.dart';
+import 'package:game/overlays/pause_button.dart';
+import 'package:game/overlays/pause_menu.dart';
+import 'package:game/game_run.dart';
 
 class GamePlay extends StatelessWidget {
   final String? level;
-  final PixelGame _game;
+  final GameRun _game;
   final BuildContext context;
 
   GamePlay({super.key, required this.context, this.level})
-      : _game = PixelGame(
+      : _game = GameRun(
           level: level,
         );
 
@@ -24,16 +24,16 @@ class GamePlay extends StatelessWidget {
         game: _game,
         initialActiveOverlays: const [PauseButton.id, DeathGame.id],
         overlayBuilderMap: {
-          PauseButton.id: (BuildContext context, PixelGame game) => PauseButton(
+          PauseButton.id: (BuildContext context, GameRun game) => PauseButton(
                 game: game,
               ),
-          DeathGame.id: (BuildContext context, PixelGame game) => DeathGame(
+          DeathGame.id: (BuildContext context, GameRun game) => DeathGame(
                 game: game,
               ),
-          PauseMenu.id: (BuildContext context, PixelGame game) => PauseMenu(
+          PauseMenu.id: (BuildContext context, GameRun game) => PauseMenu(
                 game: game,
               ),
-          EndGame.id: (BuildContext context, PixelGame game) => EndGame(
+          EndGame.id: (BuildContext context, GameRun game) => EndGame(
                 game: game,
               ),
         },

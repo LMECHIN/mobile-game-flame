@@ -2,18 +2,18 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_application_1/components/game_play.dart';
-import 'package:flutter_application_1/components/main_menu.dart';
-import 'package:flutter_application_1/models/level_data.dart';
-import 'package:flutter_application_1/pixel_game.dart';
-import 'package:flutter_application_1/widget/build_button.dart';
-import 'package:flutter_application_1/widget/text_styles_list.dart';
+import 'package:game/game_play.dart';
+import 'package:game/menu/main_menu.dart';
+import 'package:game/models/level_data.dart';
+import 'package:game/game_run.dart';
+import 'package:game/widget/build_button.dart';
+import 'package:game/widget/text_styles_list.dart';
 import 'package:provider/provider.dart';
 import 'pause_button.dart';
 
 class PauseMenu extends StatefulWidget {
   static const String id = 'PauseMenu';
-  final PixelGame game;
+  final GameRun game;
 
   const PauseMenu({super.key, required this.game});
 

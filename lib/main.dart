@@ -1,13 +1,13 @@
-import 'package:flutter_application_1/models/level_data.dart';
-import 'package:flutter_application_1/models/setting_data.dart';
-import 'package:flutter_application_1/utils/get_level_data.dart';
-import 'package:flutter_application_1/utils/get_player_data.dart';
-import 'package:flutter_application_1/utils/get_setting_data.dart';
+import 'package:game/models/level_data.dart';
+import 'package:game/models/setting_data.dart';
+import 'package:game/utils/get_level_data.dart';
+import 'package:game/utils/get_player_data.dart';
+import 'package:game/utils/get_setting_data.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/components/main_menu.dart';
-import 'package:flutter_application_1/models/player_data.dart';
+import 'package:game/menu/main_menu.dart';
+import 'package:game/models/player_data.dart';
 import 'package:provider/provider.dart';
 
 Future<void> main() async {
@@ -39,12 +39,6 @@ Future<void> main() async {
       builder: (context, child) {
         return MultiProvider(
           providers: [
-            ChangeNotifierProvider<PlayerData>.value(
-              value: Provider.of<PlayerData>(context),
-            ),
-            ChangeNotifierProvider<LevelData>.value(
-              value: Provider.of<LevelData>(context),
-            ),
             ChangeNotifierProvider<SettingData>.value(
               value: Provider.of<SettingData>(context),
             ),

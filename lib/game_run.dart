@@ -5,14 +5,14 @@ import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/components/audio.dart';
-import 'package:flutter_application_1/components/button_jump.dart';
-import 'package:flutter_application_1/components/level.dart';
-import 'package:flutter_application_1/components/player.dart';
-import 'package:flutter_application_1/models/player_data.dart';
-import 'package:flutter_application_1/utils/get_player_data.dart';
+import 'package:game/components/audio.dart';
+import 'package:game/components/buttons/button_jump.dart';
+import 'package:game/components/level.dart';
+import 'package:game/components/player.dart';
+import 'package:game/models/player_data.dart';
+import 'package:game/utils/get_player_data.dart';
 
-class PixelGame extends FlameGame
+class GameRun extends FlameGame
     with
         HasKeyboardHandlerComponents,
         DragCallbacks,
@@ -20,7 +20,7 @@ class PixelGame extends FlameGame
         TapCallbacks {
   String? level;
 
-  PixelGame({
+  GameRun({
     this.level,
   });
 
@@ -67,7 +67,7 @@ class PixelGame extends FlameGame
   FutureOr<void> onLoad() async {
     FlameAudio.bgm.initialize();
     await images.loadAllImages();
-    audio = Audio();
+    audio = Audio(level);
     PlayerData playerData = await getPlayerData();
     player = Player(character: playerData.selectedSkin);
 

@@ -1,5 +1,5 @@
 import 'package:hive/hive.dart';
-import 'package:flutter_application_1/models/player_data.dart';
+import 'package:game/models/player_data.dart';
 
 Future<PlayerData> getPlayerData() async {
   final box = await Hive.openBox<PlayerData>(PlayerData.playerDataBox);

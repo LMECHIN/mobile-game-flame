@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:flame/components.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/components/blocks.dart';
-import 'package:flutter_application_1/components/obstacle.dart';
-import 'package:flutter_application_1/components/player.dart';
-import 'package:flutter_application_1/utils/transition.dart';
+import 'package:game/components/blocks.dart';
+import 'package:game/components/obstacle.dart';
+import 'package:game/components/player.dart';
+import 'package:game/utils/transition.dart';
 
 void spawningBlocks(
   ObjectGroup? spawnPointsBlocks,

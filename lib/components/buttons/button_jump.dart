@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
-import 'package:flutter_application_1/pixel_game.dart';
+import 'package:game/game_run.dart';
 
 class ButtonJump extends PositionComponent
-    with HasGameRef<PixelGame>, TapCallbacks {
+    with HasGameRef<GameRun>, TapCallbacks {
   ButtonJump();
 
   @override

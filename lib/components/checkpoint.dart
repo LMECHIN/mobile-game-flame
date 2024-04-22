@@ -3,13 +3,13 @@ import 'dart:async';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_application_1/overlays/end_game.dart';
-import 'package:flutter_application_1/overlays/pause_button.dart';
-import 'package:flutter_application_1/pixel_game.dart';
-import 'package:flutter_application_1/components/player.dart';
+import 'package:game/overlays/end_game.dart';
+import 'package:game/overlays/pause_button.dart';
+import 'package:game/game_run.dart';
+import 'package:game/components/player.dart';
 
 class Checkpoint extends SpriteAnimationComponent
-    with HasGameRef<PixelGame>, CollisionCallbacks {
+    with HasGameRef<GameRun>, CollisionCallbacks {
   Checkpoint({
     position,
     size,

@@ -1,5 +1,5 @@
 import 'package:hive/hive.dart';
-import 'package:flutter_application_1/models/setting_data.dart';
+import 'package:game/models/setting_data.dart';
 
 Future<SettingData> getSettingData() async {
   final box = await Hive.openBox<SettingData>(SettingData.settingDataBox);

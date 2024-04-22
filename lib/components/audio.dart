@@ -1,10 +1,14 @@
 import 'package:flame/components.dart';
 import 'package:flame_audio/flame_audio.dart';
-import 'package:flutter_application_1/models/setting_data.dart';
-import 'package:flutter_application_1/pixel_game.dart';
+import 'package:game/models/setting_data.dart';
+import 'package:game/game_run.dart';
 import 'package:provider/provider.dart';
 
-class Audio extends Component with HasGameReference<PixelGame> {
+class Audio extends Component with HasGameReference<GameRun> {
+  String? level;
+
+  Audio(this.level);
+
   @override
   Future<void>? onLoad() async {
     FlameAudio.bgm.initialize();
@@ -14,7 +18,7 @@ class Audio extends Component with HasGameReference<PixelGame> {
 
     try {
       await FlameAudio.audioCache.load(
-        'Level03.mp3',
+        level ?? 'Level03.mp3',
       );
     } catch (_) {
       print('Failed');

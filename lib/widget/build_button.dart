@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_application_1/widget/material_property.dart';
+import 'package:game/widget/material_property.dart';
 
 enum ColorState {
   backgroundColor,

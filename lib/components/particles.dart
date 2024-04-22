@@ -1,11 +1,11 @@
 import 'dart:math';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
-import 'package:flutter_application_1/components/player.dart';
-import 'package:flutter_application_1/pixel_game.dart';
+import 'package:game/components/player.dart';
+import 'package:game/game_run.dart';
 
 class Particles extends SpriteAnimationComponent
-    with HasGameRef<PixelGame>, CollisionCallbacks {
+    with HasGameRef<GameRun>, CollisionCallbacks {
   static const double minSpeed = 10;
   static const double maxSpeed = 300;
 

@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:flutter_application_1/components/levels_menu.dart';
-import 'package:flutter_application_1/models/level_data.dart';
+import 'package:game/menu/levels_menu.dart';
+import 'package:game/models/level_data.dart';
 import 'package:path/path.dart' as p;
 
 Future<List<String>> getFoldersInAssetFolder(String folderPath) async {

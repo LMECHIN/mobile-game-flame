@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/components/texture_obstacles.dart';
-import 'package:flutter_application_1/pixel_game.dart';
-import 'package:flutter_application_1/utils/obstacle_hitbox.dart';
+import 'package:game/components/textures/texture_obstacles.dart';
+import 'package:game/game_run.dart';
+import 'package:game/utils/obstacle_hitbox.dart';
 
-class Obstacle extends SpriteAnimationComponent with HasGameRef<PixelGame> {
+class Obstacle extends SpriteAnimationComponent with HasGameRef<GameRun> {
   int color;
   double speedLoop;
   bool loop;

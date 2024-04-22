@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_application_1/components/game_play.dart';
-import 'package:flutter_application_1/components/progress_bar.dart';
-import 'package:flutter_application_1/models/level_data.dart';
-import 'package:flutter_application_1/widget/build_button.dart';
-import 'package:flutter_application_1/widget/find_path.dart';
+import 'package:game/game_play.dart';
+import 'package:game/utils/progress_bar.dart';
+import 'package:game/models/level_data.dart';
+import 'package:game/widget/build_button.dart';
+import 'package:game/widget/find_path.dart';
 import 'package:provider/provider.dart';
 
 class LevelProgressData {

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/overlays/pause_menu.dart';
-import 'package:flutter_application_1/pixel_game.dart';
+import 'package:game/overlays/pause_menu.dart';
+import 'package:game/game_run.dart';
 
 class PauseButton extends StatelessWidget {
   static const String id = 'PauseButton';
-  final PixelGame game;
+  final GameRun game;
 
   const PauseButton({super.key, required this.game});
 

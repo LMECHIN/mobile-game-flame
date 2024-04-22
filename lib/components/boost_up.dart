@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
-import 'package:flutter_application_1/pixel_game.dart';
+import 'package:game/game_run.dart';
 
-class BoostUp extends SpriteAnimationComponent with HasGameRef<PixelGame> {
+class BoostUp extends SpriteAnimationComponent with HasGameRef<GameRun> {
   bool isPlatform;
   bool isBoostUp;
 

@@ -1,21 +1,21 @@
 import 'dart:async';
 import 'package:flame/components.dart';
 import 'package:flame_tiled/flame_tiled.dart';
-import 'package:flutter_application_1/components/blocks.dart';
-import 'package:flutter_application_1/components/boost_up.dart';
-import 'package:flutter_application_1/components/checkpoint.dart';
-import 'package:flutter_application_1/components/collisions_block.dart';
-import 'package:flutter_application_1/components/obstacle.dart';
-import 'package:flutter_application_1/components/particles.dart';
-import 'package:flutter_application_1/components/player.dart';
-import 'package:flutter_application_1/components/rope.dart';
-import 'package:flutter_application_1/map/spawning_blocks.dart';
-import 'package:flutter_application_1/map/spawning_obstacles.dart';
-import 'package:flutter_application_1/models/level_data.dart';
-import 'package:flutter_application_1/pixel_game.dart';
-import 'package:flutter_application_1/utils/get_level_data.dart';
+import 'package:game/components/blocks.dart';
+import 'package:game/components/boost_up.dart';
+import 'package:game/components/checkpoint.dart';
+import 'package:game/utils/collisions_block.dart';
+import 'package:game/components/obstacle.dart';
+import 'package:game/components/particles.dart';
+import 'package:game/components/player.dart';
+import 'package:game/components/rope.dart';
+import 'package:game/map/spawning_blocks.dart';
+import 'package:game/map/spawning_obstacles.dart';
+import 'package:game/models/level_data.dart';
+import 'package:game/game_run.dart';
+import 'package:game/utils/get_level_data.dart';
 
-class Level extends World with HasGameRef<PixelGame> {
+class Level extends World with HasGameRef<GameRun> {
   final String? levelName;
   final Player player;
 
@@ -265,10 +265,5 @@ class Level extends World with HasGameRef<PixelGame> {
       }
     }
     player.collisionsBlock = collisionsBlock;
-  }
-
-  void reset() {
-    player.collisionsBlock.clear();
-    player.collisionsBlock.addAll(collisionsBlock);
   }
 }

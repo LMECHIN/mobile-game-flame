@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
-import 'package:flutter_application_1/components/player.dart';
-import 'package:flutter_application_1/pixel_game.dart';
+import 'package:game/components/player.dart';
+import 'package:game/game_run.dart';
 
 class TextureCross extends SpriteAnimationComponent
-    with HasGameRef<PixelGame>, CollisionCallbacks {
+    with HasGameRef<GameRun>, CollisionCallbacks {
   bool hasOn;
   TextureCross({
     position,

@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flame/components.dart';
-import 'package:flutter_application_1/pixel_game.dart';
-import 'package:flutter_application_1/utils/border_texture.dart';
+import 'package:game/game_run.dart';
+import 'package:game/utils/border_texture.dart';
 
-class BorderBlocks extends SpriteAnimationComponent with HasGameRef<PixelGame> {
+class BorderBlocks extends SpriteAnimationComponent with HasGameRef<GameRun> {
   int borderIndex;
   List<String> borderTexture = [
     borderUp,

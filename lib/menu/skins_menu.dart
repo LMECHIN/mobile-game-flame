@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_application_1/models/player_data.dart';
-import 'package:flutter_application_1/widget/build_button.dart';
-import 'package:flutter_application_1/widget/find_path.dart';
+import 'package:game/models/player_data.dart';
+import 'package:game/widget/build_button.dart';
+import 'package:game/widget/find_path.dart';
 import 'package:provider/provider.dart';
 
 class SkinsMenu extends StatefulWidget {

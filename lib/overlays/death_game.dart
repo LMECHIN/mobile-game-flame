@@ -1,14 +1,14 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/components/game_play.dart';
-import 'package:flutter_application_1/models/level_data.dart';
-import 'package:flutter_application_1/pixel_game.dart';
+import 'package:game/game_play.dart';
+import 'package:game/models/level_data.dart';
+import 'package:game/game_run.dart';
 import 'package:provider/provider.dart';
 
 class DeathGame extends StatefulWidget {
   static const String id = 'DeathGame';
-  final PixelGame game;
+  final GameRun game;
 
   const DeathGame({super.key, required this.game});
 

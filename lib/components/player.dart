@@ -4,17 +4,17 @@ import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_application_1/components/boost_up.dart';
-import 'package:flutter_application_1/components/collisions_block.dart';
-import 'package:flutter_application_1/components/obstacle.dart';
-import 'package:flutter_application_1/components/player_hitbox.dart';
-import 'package:flutter_application_1/components/check_collision.dart';
-import 'package:flutter_application_1/pixel_game.dart';
+import 'package:game/components/boost_up.dart';
+import 'package:game/utils/collisions_block.dart';
+import 'package:game/components/obstacle.dart';
+import 'package:game/utils/player_hitbox.dart';
+import 'package:game/utils/check_collision.dart';
+import 'package:game/game_run.dart';
 
 enum PlayerState { idle, running, jumping, falling, sliding, death, appearing }
 
 class Player extends SpriteAnimationGroupComponent
-    with HasGameRef<PixelGame>, KeyboardHandler, CollisionCallbacks {
+    with HasGameRef<GameRun>, KeyboardHandler, CollisionCallbacks {
   String? character;
   String sizeCharacter;
   Vector2 textureSize;

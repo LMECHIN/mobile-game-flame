@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flame/components.dart';
-import 'package:flutter_application_1/pixel_game.dart';
+import 'package:game/game_run.dart';
 
-class Rope extends SpriteAnimationComponent with HasGameRef<PixelGame> {
+class Rope extends SpriteAnimationComponent with HasGameRef<GameRun> {
   Rope({
     position,
     size,

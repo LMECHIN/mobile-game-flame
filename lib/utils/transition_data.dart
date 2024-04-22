@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/utils/string_to_tuples_list.dart';
-import 'package:flutter_application_1/utils/tuples.dart';
+import 'package:game/utils/string_to_tuples_list.dart';
+import 'package:game/utils/tuples.dart';
 
 List<Tuple6<double, double, Color, Color, Color, Color>> transitionData(
     spawnPointsBlocks) {

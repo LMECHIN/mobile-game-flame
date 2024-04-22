@@ -4,15 +4,15 @@ import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/components/border_blocks.dart';
-import 'package:flutter_application_1/components/ground_effect.dart';
-import 'package:flutter_application_1/components/player.dart';
-import 'package:flutter_application_1/components/texture_blocks.dart';
-import 'package:flutter_application_1/components/texture_cross.dart';
-import 'package:flutter_application_1/pixel_game.dart';
+import 'package:game/components/border_blocks.dart';
+import 'package:game/components/ground_effect.dart';
+import 'package:game/components/player.dart';
+import 'package:game/components/textures/texture_blocks.dart';
+import 'package:game/components/textures/texture_cross.dart';
+import 'package:game/game_run.dart';
 
 class Blocks extends SpriteAnimationComponent
-    with HasGameRef<PixelGame>, CollisionCallbacks {
+    with HasGameRef<GameRun>, CollisionCallbacks {
   int color;
   double speedLoop;
   bool loop;
