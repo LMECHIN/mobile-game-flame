@@ -7,15 +7,15 @@
   <img alt="License" src="https://img.shields.io/github/license/lmechin/game2d?color=c20053">
 </p>
 
-# Game
+# :heart_on_fire: Game
 
 2d runner type platform game like geometry dash made using [Flame](https://flame-engine.org/) engine.
 
-## :white_check_mark: Requirements ##
+## :anger: Requirements ##
 
-Before starting :checkered_flag:, you need to have [Flutter](https://flutter.dev/) installed.
+Before starting, you need to have [Flutter](https://flutter.dev/) installed.
 
-## :checkered_flag: Build steps
+## :heavy_check_mark: Build steps
 
 ```bash
 # Clone this project
