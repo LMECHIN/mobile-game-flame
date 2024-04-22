@@ -14,19 +14,14 @@ Before starting, you need to have [Flutter](https://flutter.dev/) installed.
 ## :heavy_check_mark: Build steps
 
 ```bash
-# Clone this project
-$ git clone https://github.com/LMECHIN/game2d.git
+git clone https://github.com/LMECHIN/game2d.git
 
-# Access
-$ cd game2d
+cd game2d
 
-# Install dependencies
-$ flutter pub get
+flutter pub get
 
-# Run the project (Make sure that a virtual or physical device is connected first)
-$ flutter run --release
+flutter run --release
 
-# The will start the game on any connected device.
 ```
 
 ## :eye_speech_bubble: Supported platforms
