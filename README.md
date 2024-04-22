@@ -30,7 +30,7 @@ flutter run --release
 
 - Android
 - iOS
-- Windows (without audio)
+- Windows
 
 ## :rocket: Technologies ##
 
