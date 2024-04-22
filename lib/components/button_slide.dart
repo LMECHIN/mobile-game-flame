@@ -6,6 +6,7 @@ import 'package:flutter_application_1/pixel_game.dart';
 class ButtonSlide extends SpriteComponent
     with HasGameRef<PixelGame>, TapCallbacks {
   ButtonSlide();
+
   final margin = 64;
   final buttonSize = 64;
 

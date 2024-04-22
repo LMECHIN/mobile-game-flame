@@ -75,7 +75,6 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/Sprites/14-TileSets/
-    - assets/images/Sprites/14-TileSets/Obstacles_Circles/
     - assets/images/Sprites/14-TileSets/Borders/
     - assets/images/Sprites/14-TileSets/Texture_Blocks/
     - assets/images/Sprites/14-TileSets/Texture_Obstacles/
@@ -86,6 +85,7 @@ flutter:
     - assets/images/Sprites/Skins/KingPig/
     - assets/images/Sprites/Skins/KingPig/SkinsMenu/
     - assets/images/Checkpoints/
+    - assets/images/Background/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

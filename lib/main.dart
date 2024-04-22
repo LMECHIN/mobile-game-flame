@@ -36,6 +36,22 @@ Future<void> main() async {
           ),
         ),
       ],
+      builder: (context, child) {
+        return MultiProvider(
+          providers: [
+            ChangeNotifierProvider<PlayerData>.value(
+              value: Provider.of<PlayerData>(context),
+            ),
+            ChangeNotifierProvider<LevelData>.value(
+              value: Provider.of<LevelData>(context),
+            ),
+            ChangeNotifierProvider<SettingData>.value(
+              value: Provider.of<SettingData>(context),
+            ),
+          ],
+          child: child,
+        );
+      },
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         themeMode: ThemeMode.dark,

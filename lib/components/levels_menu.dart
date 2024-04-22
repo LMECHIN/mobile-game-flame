@@ -11,11 +11,14 @@ class LevelProgressData {
   final String levelName;
   final double progress;
 
-  LevelProgressData(this.levelName, this.progress);
+  LevelProgressData(
+    this.levelName,
+    this.progress,
+  );
 }
 
 class LevelsMenu extends StatefulWidget {
-  const LevelsMenu({Key? key}) : super(key: key);
+  const LevelsMenu({super.key});
 
   @override
   State<LevelsMenu> createState() => _LevelsMenuState();
@@ -40,6 +43,7 @@ class _LevelsMenuState extends State<LevelsMenu> {
   Widget build(BuildContext context) {
     final levelData = Provider.of<LevelData>(context);
     String assetFolderPath = 'assets/tiles/';
+
     return FutureBuilder<List<LevelProgressData>>(
       future: getFilesWithProgress(assetFolderPath, '.tmx', levelData),
       builder: (context, AsyncSnapshot<List<LevelProgressData>> snapshot) {
@@ -123,7 +127,8 @@ class _LevelsMenuState extends State<LevelsMenu> {
                                     levelData.selectLevel(level);
                                     Navigator.of(context).pushReplacement(
                                       MaterialPageRoute(
-                                        builder: (context) => GamePlay(context: context,
+                                        builder: (context) => GamePlay(
+                                          context: context,
                                           level: level,
                                         ),
                                       ),

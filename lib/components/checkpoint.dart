@@ -17,6 +17,7 @@ class Checkpoint extends SpriteAnimationComponent
           position: position,
           size: size,
         );
+
   Color color = const Color.fromARGB(255, 0, 0, 0);
 
   @override
@@ -28,8 +29,6 @@ class Checkpoint extends SpriteAnimationComponent
       Vector2(size.x / 2, 0),
     ]);
     add(hitboxShape);
-    // debugMode = true;
-
     animation = SpriteAnimation.fromFrameData(
       game.images.fromCache('Checkpoints/Checkpoint (No Flag)(264x264).png'),
       SpriteAnimationData.sequenced(

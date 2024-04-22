@@ -13,7 +13,8 @@ class GamePlay extends StatelessWidget {
 
   GamePlay({super.key, required this.context, this.level})
       : _game = PixelGame(
-            level: level);
+          level: level,
+        );
 
   @override
   Widget build(BuildContext context) {

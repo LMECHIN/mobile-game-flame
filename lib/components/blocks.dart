@@ -21,6 +21,7 @@ class Blocks extends SpriteAnimationComponent
   bool hasTextureCross;
   bool texture;
   Color bluePaintColor;
+
   Blocks({
     position,
     size,
@@ -52,9 +53,7 @@ class Blocks extends SpriteAnimationComponent
           position: position,
           size: size,
         );
-  // bool _isTransitioning = false;
-  double transitionDuration = 0.5;
-  // double _transitionTimer = 0;
+
   late Paint bluePaint;
 
   @override
@@ -66,7 +65,6 @@ class Blocks extends SpriteAnimationComponent
     );
     add(hitboxShape);
     _restoreOriginalAnimation();
-    // debugMode = true;
 
     return super.onLoad();
   }
@@ -89,20 +87,6 @@ class Blocks extends SpriteAnimationComponent
     super.onCollisionStart(intersectionPoints, other);
   }
 
-  // @override
-  // void update(double dt) {
-  //   super.update(dt);
-
-  //   if (_isTransitioning) {
-  //     _transitionTimer += dt;
-  //     if (_transitionTimer >= transitionDuration) {
-  //       _isTransitioning = false;
-  //       _transitionTimer = 0;
-  //       _restoreOriginalAnimation();
-  //     }
-  //   }
-  // }
-
   @override
   void render(Canvas canvas) {
     priority = -1;
@@ -116,7 +100,6 @@ class Blocks extends SpriteAnimationComponent
   void _reachedBlock() {
     final groundEffect = GroundEffect(size: Vector2.all(16.25));
     add(groundEffect);
-    // _isTransitioning = true;
   }
 
   void _restoreOriginalAnimation() {
@@ -138,6 +121,4 @@ class Blocks extends SpriteAnimationComponent
     );
     add(textureCross);
   }
-
-  void reset() {}
 }

@@ -65,8 +65,7 @@ class _MainMenuState extends State<MainMenu> {
                       child: Center(
                         child: AnimatedDefaultTextStyle(
                           duration: const Duration(seconds: 1),
-                          style: textStyles[
-                              selectedIndex],
+                          style: textStyles[selectedIndex],
                           child: const Text(
                             'Game2d',
                           ),
@@ -93,7 +92,8 @@ class _MainMenuState extends State<MainMenu> {
                         onPressed: () {
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
-                              builder: (context) => GamePlay(context: context,
+                              builder: (context) => GamePlay(
+                                context: context,
                                 level: levelData.selectedLevel,
                               ),
                             ),

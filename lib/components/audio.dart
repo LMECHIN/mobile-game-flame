@@ -10,17 +10,14 @@ class Audio extends Component with HasGameReference<PixelGame> {
     FlameAudio.bgm.initialize();
 
     // await FlameAudio.audioCache
-    //     .loadAll(['laser1.ogg', 'powerUp6.ogg', 'laserSmall_001.ogg']);
+    //     .loadAll(['jump.ogg', 'fall.ogg', 'slide.ogg']);
 
     try {
       await FlameAudio.audioCache.load(
         'Level03.mp3',
       );
     } catch (_) {
-      // ignore: avoid_print
-      print('Missing VOiD1 Gaming music pack: '
-          'https://void1gaming.itch.io/free-synthwave-music-pack '
-          'See assets/audio/README.md for more information.');
+      print('Failed');
     }
 
     return super.onLoad();

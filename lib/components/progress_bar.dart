@@ -6,7 +6,11 @@ import 'package:percent_indicator/percent_indicator.dart';
 
 class ProgressBar extends StatefulWidget {
   final double progress;
-  const ProgressBar({super.key, required this.progress});
+
+  const ProgressBar({
+    super.key,
+    required this.progress,
+  });
 
   @override
   State<ProgressBar> createState() => _ProgressBarState();

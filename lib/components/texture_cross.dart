@@ -64,6 +64,4 @@ class TextureCross extends SpriteAnimationComponent
     }
     super.onCollision(intersectionPoints, other);
   }
-
-  void reset() {}
 }

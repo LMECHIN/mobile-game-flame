@@ -2,15 +2,13 @@ import 'dart:async';
 
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
-import 'package:flame/extensions.dart';
 import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/components/boost_up.dart';
 import 'package:flutter_application_1/components/collisions_block.dart';
 import 'package:flutter_application_1/components/obstacle.dart';
-import 'package:flutter_application_1/components/obstacle_circle.dart';
 import 'package:flutter_application_1/components/player_hitbox.dart';
-import 'package:flutter_application_1/components/utils.dart';
+import 'package:flutter_application_1/components/check_collision.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 
 enum PlayerState { idle, running, jumping, falling, sliding, death, appearing }
@@ -20,6 +18,7 @@ class Player extends SpriteAnimationGroupComponent
   String? character;
   String sizeCharacter;
   Vector2 textureSize;
+
   Player({
     this.character,
     this.sizeCharacter = '2048x2048',
@@ -38,8 +37,12 @@ class Player extends SpriteAnimationGroupComponent
 
   bool isLeftKeyPressed = false;
   bool isRightKeyPressed = false;
+  bool isOnGround = false;
+  bool hasJumped = false;
+  bool hasSlide = false;
+  bool hasDie = false;
+  bool delayExpired = false;
 
-  Color color = const Color.fromARGB(255, 0, 0, 0);
   final double _gravity = 0.77;
   final double _jumpForce = 175;
   final double _terminalVelocity = 270;
@@ -48,20 +51,14 @@ class Player extends SpriteAnimationGroupComponent
   double heightMap = 0;
   double horizontalMovement = 1;
   double moveSpeed = 125;
-  double normalMoveSpeed = 125;
-  Vector2 startingPosition = Vector2.zero();
-  Vector2 velocity = Vector2.zero();
   double fixedDeltaTime = 0.08 / 60;
   double accumulatedTime = 0;
-  bool isOnGround = false;
-  bool hasJumped = false;
-  bool hasSlide = false;
-  bool hasDie = false;
-  int fixCam = 0;
-  // late double _dt;
-  bool delayExpired = false;
+
+  Vector2 startingPosition = Vector2.zero();
+  Vector2 velocity = Vector2.zero();
 
   List<CollisionsBlock> collisionsBlock = [];
+
   PlayerHitbox hitbox = PlayerHitbox(
     offsetX: 13,
     offsetY: 19,
@@ -71,16 +68,9 @@ class Player extends SpriteAnimationGroupComponent
 
   @override
   FutureOr<void> onLoad() {
-    _loadAllAnimations();
-    // debugMode = true;
-    startingPosition = Vector2(position.x, position.y - 20);
-    position = Vector2(position.x, position.y - 20);
-    scale = Vector2(scaleFactor, scaleFactor);
-
     Vector2 sizeHitbox = Vector2(size.x / 4.5, size.y / 3);
     double adjustementX = size.x / widthMap;
     double adjustementY = size.y / heightMap;
-
     Vector2 positionHitbox = Vector2(
       ((position.x * adjustementX) + (size.x * 0.25)) -
           ((sizeHitbox.x / 2) * (adjustementX - 1)),
@@ -90,14 +80,18 @@ class Player extends SpriteAnimationGroupComponent
           (sizeHitbox.y * (adjustementY + 0.20)),
     );
 
+    _loadAllAnimations();
+    startingPosition = Vector2(position.x, position.y - 20);
+    position = Vector2(position.x, position.y - 20);
+    scale = Vector2(scaleFactor, scaleFactor);
     add(RectangleHitbox(position: positionHitbox, size: sizeHitbox));
+
     return super.onLoad();
   }
 
   @override
   void update(double dt) {
     accumulatedTime += dt;
-    // _dt = dt;
 
     while (accumulatedTime >= fixedDeltaTime) {
       if (!hasDie) {
@@ -107,6 +101,7 @@ class Player extends SpriteAnimationGroupComponent
         _applyGravity(fixedDeltaTime);
         _checkVerticalCollisions();
       }
+
       accumulatedTime -= fixedDeltaTime;
     }
 
@@ -146,7 +141,7 @@ class Player extends SpriteAnimationGroupComponent
     Set<Vector2> intersectionPoints,
     PositionComponent other,
   ) {
-    if (other is Obstacle || other is ObstacleCircle) {
+    if (other is Obstacle) {
       respawn();
     }
     if (other is BoostUp) {
@@ -259,6 +254,7 @@ class Player extends SpriteAnimationGroupComponent
       hasSlide = false;
       playerState = PlayerState.running;
     }
+
     if (moveSpeed > 125) {
       playerState = PlayerState.sliding;
     } else if (velocity.y < 0) {
@@ -279,7 +275,6 @@ class Player extends SpriteAnimationGroupComponent
       _playJump(dt);
     }
     if (hasSlide) {
-      // _playTrail();
       _playSlide(400000, dt);
     }
 
@@ -287,8 +282,7 @@ class Player extends SpriteAnimationGroupComponent
       moveSpeed = 125;
       hasSlide = false;
     }
-    // if (velocity.y > _gravity) isOnGround = false; // optional
-    // horizontalMovement = 1;
+
     velocity.x = horizontalMovement * moveSpeed;
     position.x += velocity.x * dt;
   }

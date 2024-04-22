@@ -35,7 +35,6 @@ class Particles extends SpriteAnimationComponent
     final hitboxShape = CircleHitbox();
 
     add(hitboxShape);
-    // debugMode = true;
     animation = SpriteAnimation.fromFrameData(
       game.images.fromCache('Sprites/14-TileSets/particle.png'),
       SpriteAnimationData.sequenced(

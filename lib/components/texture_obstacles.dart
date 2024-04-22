@@ -7,8 +7,8 @@ class TextureObstacles extends SpriteAnimationComponent
     with HasGameRef<PixelGame> {
   bool hasOn;
   String rotate;
-  TextureObstacles
-({
+
+  TextureObstacles({
     position,
     size,
     this.hasOn = false,
@@ -17,6 +17,7 @@ class TextureObstacles extends SpriteAnimationComponent
           position: position,
           size: size,
         );
+
   List<String> texture = [
     "texture_obstacle_up",
     "texture_obstacle_down",
@@ -30,7 +31,8 @@ class TextureObstacles extends SpriteAnimationComponent
 
     if (hasOn) {
       animation = SpriteAnimation.fromFrameData(
-        game.images.fromCache('Sprites/14-TileSets/Texture_Obstacles/texture_obstacle_$rotate.png'),
+        game.images.fromCache(
+            'Sprites/14-TileSets/Texture_Obstacles/texture_obstacle_$rotate.png'),
         SpriteAnimationData.sequenced(
           amount: 9,
           stepTime: 0.05,
@@ -41,6 +43,4 @@ class TextureObstacles extends SpriteAnimationComponent
     }
     return super.onLoad();
   }
-
-  void reset() {}
 }

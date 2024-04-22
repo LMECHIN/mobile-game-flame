@@ -24,6 +24,7 @@ class BuildButton extends StatefulWidget {
   final Map<ColorState, Color> colors;
   final Map<EffectState, List<Effect<dynamic>>> effects;
   final double? size;
+
   const BuildButton({
     super.key,
     required this.text,
@@ -118,7 +119,8 @@ class _BuildButtonState extends State<BuildButton> {
               widget.text,
               style: TextStyle(
                 color: Colors.black,
-                fontSize: (MediaQuery.of(context).size.width * (widget.size ?? 0.03)),
+                fontSize:
+                    (MediaQuery.of(context).size.width * (widget.size ?? 0.03)),
                 fontFamily: 'DripOctober',
               ),
             ),

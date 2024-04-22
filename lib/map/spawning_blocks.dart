@@ -7,7 +7,6 @@ import 'package:flutter_application_1/components/blocks.dart';
 import 'package:flutter_application_1/components/obstacle.dart';
 import 'package:flutter_application_1/components/player.dart';
 import 'package:flutter_application_1/utils/transition.dart';
-// import 'package:flutter_application_1/utils/transition_data.dart';
 
 void spawningBlocks(
   ObjectGroup? spawnPointsBlocks,
@@ -25,7 +24,6 @@ void spawningBlocks(
   List<Blocks> blocksToRemove = [];
   bool changeColor = true;
 
-  // print(spawnPointsBlocks!.properties.getValue('Transition'));
   for (final spawnBlock in spawnPointsBlocks!.objects) {
     final double spawnX = spawnBlock.x;
     final double distanceToPlayer = (spawnX - playerX).abs();

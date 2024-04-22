@@ -1,79 +1,87 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_application_1/models/setting_data.dart';
+import 'package:flutter_application_1/widget/build_button.dart';
 import 'package:provider/provider.dart';
 
-// This class represents the settings menu.
 class SettingsMenu extends StatelessWidget {
-  const SettingsMenu({Key? key}) : super(key: key);
+  const SettingsMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Game title.
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 50.0),
-              child: Text(
-                'Settings',
-                style: TextStyle(
-                  fontSize: 50.0,
-                  color: Colors.black,
-                  shadows: [
-                    Shadow(
-                      blurRadius: 20.0,
-                      color: Colors.white,
-                      offset: Offset(0, 0),
-                    )
-                  ],
+      body: Stack(
+        children: [
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  height: MediaQuery.of(context).size.height * 0.3,
+                  child: ListView(
+                    shrinkWrap: true,
+                    children: [
+                      Selector<SettingData, bool>(
+                        selector: (context, settings) => settings.soundEffects,
+                        builder: (context, value, child) {
+                          return SwitchListTile(
+                            title: const Text('Sound Effects'),
+                            value: value,
+                            onChanged: (newValue) {
+                              Provider.of<SettingData>(context, listen: false)
+                                  .soundEffects = newValue;
+                            },
+                          );
+                        },
+                      ),
+                      Selector<SettingData, bool>(
+                        selector: (context, settings) =>
+                            settings.backgroundMusic,
+                        builder: (context, value, child) {
+                          return SwitchListTile(
+                            title: const Text('Background Music'),
+                            value: value,
+                            onChanged: (newValue) {
+                              Provider.of<SettingData>(context, listen: false)
+                                  .backgroundMusic = newValue;
+                            },
+                          );
+                        },
+                      ),
+                    ],
+                  ),
                 ),
-              ),
+              ],
             ),
-
-            // Switch for sound effects.
-            Selector<SettingData, bool>(
-              selector: (context, settings) => settings.soundEffects,
-              builder: (context, value, child) {
-                return SwitchListTile(
-                  title: const Text('Sound Effects'),
-                  value: value,
-                  onChanged: (newValue) {
-                    Provider.of<SettingData>(context, listen: false).soundEffects =
-                        newValue;
-                  },
-                );
+          ),
+          Positioned(
+            top: 20,
+            left: 20,
+            child: BuildButton(
+              effects: const {
+                EffectState.shimmer: [
+                  ShimmerEffect(
+                    color: Colors.transparent,
+                    duration: Duration(seconds: 0),
+                  ),
+                ],
+              },
+              text: 'Back',
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              colors: const {
+                ColorState.backgroundColor: Color.fromARGB(255, 188, 2, 2),
+                ColorState.backgroundColorOnPressed: Colors.black,
+                ColorState.borderColor: Color.fromARGB(255, 188, 2, 2),
+                ColorState.borderColorOnPressed: Colors.black54,
+                ColorState.shadowColor: Color.fromARGB(255, 188, 2, 2),
+                ColorState.shadowColorOnPressed: Colors.black54,
               },
             ),
-
-            // Switch for background music.
-            Selector<SettingData, bool>(
-              selector: (context, settings) => settings.backgroundMusic,
-              builder: (context, value, child) {
-                return SwitchListTile(
-                  title: const Text('Background Music'),
-                  value: value,
-                  onChanged: (newValue) {
-                    Provider.of<SettingData>(context, listen: false)
-                        .backgroundMusic = newValue;
-                  },
-                );
-              },
-            ),
-
-            // Back button.
-            SizedBox(
-              width: MediaQuery.of(context).size.width / 4,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: const Icon(Icons.arrow_back),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

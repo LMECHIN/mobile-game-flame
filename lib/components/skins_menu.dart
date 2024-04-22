@@ -85,157 +85,158 @@ class _SkinsMenuState extends State<SkinsMenu> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 SingleChildScrollView(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    BuildButton(
-                                      text: 'Death',
-                                      size: 0.01,
-                                      effects: const {
-                                        EffectState.shimmer: [
-                                          ShimmerEffect(
-                                            color: Colors.transparent,
-                                            duration: Duration(seconds: 0),
-                                          ),
-                                        ],
-                                      },
-                                      onPressed: () {
-                                        setState(() {
-                                          skinImages[skin] =
-                                              "assets/images/Sprites/Skins/$skin/SkinsMenu/death.gif";
-                                        });
-                                      },
-                                    ),
-                                    BuildButton(
-                                      text: 'Slide',
-                                      size: 0.01,
-                                      effects: const {
-                                        EffectState.shimmer: [
-                                          ShimmerEffect(
-                                            color: Colors.transparent,
-                                            duration: Duration(seconds: 0),
-                                          ),
-                                        ],
-                                      },
-                                      onPressed: () {
-                                        setState(() {
-                                          skinImages[skin] =
-                                              "assets/images/Sprites/Skins/$skin/SkinsMenu/slide.gif";
-                                        });
-                                      },
-                                    ),
-                                    BuildButton(
-                                      text: 'Jump',
-                                      size: 0.01,
-                                      effects: const {
-                                        EffectState.shimmer: [
-                                          ShimmerEffect(
-                                            color: Colors.transparent,
-                                            duration: Duration(seconds: 0),
-                                          ),
-                                        ],
-                                      },
-                                      onPressed: () {
-                                        setState(() {
-                                          skinImages[skin] =
-                                              "assets/images/Sprites/Skins/$skin/SkinsMenu/jump.gif";
-                                        });
-                                      },
-                                    ),
-                                    BuildButton(
-                                      text: 'Fall',
-                                      size: 0.01,
-                                      effects: const {
-                                        EffectState.shimmer: [
-                                          ShimmerEffect(
-                                            color: Colors.transparent,
-                                            duration: Duration(seconds: 0),
-                                          ),
-                                        ],
-                                      },
-                                      onPressed: () {
-                                        setState(() {
-                                          skinImages[skin] =
-                                              "assets/images/Sprites/Skins/$skin/SkinsMenu/fall.gif";
-                                        });
-                                      },
-                                    ),
-                                    BuildButton(
-                                      text: 'Appearing',
-                                      size: 0.01,
-                                      effects: const {
-                                        EffectState.shimmer: [
-                                          ShimmerEffect(
-                                            color: Colors.transparent,
-                                            duration: Duration(seconds: 0),
-                                          ),
-                                        ],
-                                      },
-                                      onPressed: () {
-                                        setState(() {
-                                          skinImages[skin] =
-                                              "assets/images/Sprites/Skins/$skin/SkinsMenu/appearing.gif";
-                                        });
-                                      },
-                                    ),
-                                    BuildButton(
-                                      text: 'Run',
-                                      size: 0.01,
-                                      effects: const {
-                                        EffectState.shimmer: [
-                                          ShimmerEffect(
-                                            color: Colors.transparent,
-                                            duration: Duration(seconds: 0),
-                                          ),
-                                        ],
-                                      },
-                                      onPressed: () {
-                                        setState(() {
-                                          skinImages[skin] =
-                                              "assets/images/Sprites/Skins/$skin/SkinsMenu/run.gif";
-                                        });
-                                      },
-                                    ),
-                                    BuildButton(
-                                      text: 'Idle',
-                                      size: 0.01,
-                                      effects: const {
-                                        EffectState.shimmer: [
-                                          ShimmerEffect(
-                                            color: Colors.transparent,
-                                            duration: Duration(seconds: 0),
-                                          ),
-                                        ],
-                                      },
-                                      onPressed: () {
-                                        setState(() {
-                                          skinImages[skin] =
-                                              "assets/images/Sprites/Skins/$skin/SkinsMenu/idle.gif";
-                                        });
-                                      },
-                                    ),
-                                  ],
-                                ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      BuildButton(
+                                        text: 'Death',
+                                        size: 0.01,
+                                        effects: const {
+                                          EffectState.shimmer: [
+                                            ShimmerEffect(
+                                              color: Colors.transparent,
+                                              duration: Duration(seconds: 0),
+                                            ),
+                                          ],
+                                        },
+                                        onPressed: () {
+                                          setState(() {
+                                            skinImages[skin] =
+                                                "assets/images/Sprites/Skins/$skin/SkinsMenu/death.gif";
+                                          });
+                                        },
+                                      ),
+                                      BuildButton(
+                                        text: 'Slide',
+                                        size: 0.01,
+                                        effects: const {
+                                          EffectState.shimmer: [
+                                            ShimmerEffect(
+                                              color: Colors.transparent,
+                                              duration: Duration(seconds: 0),
+                                            ),
+                                          ],
+                                        },
+                                        onPressed: () {
+                                          setState(() {
+                                            skinImages[skin] =
+                                                "assets/images/Sprites/Skins/$skin/SkinsMenu/slide.gif";
+                                          });
+                                        },
+                                      ),
+                                      BuildButton(
+                                        text: 'Jump',
+                                        size: 0.01,
+                                        effects: const {
+                                          EffectState.shimmer: [
+                                            ShimmerEffect(
+                                              color: Colors.transparent,
+                                              duration: Duration(seconds: 0),
+                                            ),
+                                          ],
+                                        },
+                                        onPressed: () {
+                                          setState(() {
+                                            skinImages[skin] =
+                                                "assets/images/Sprites/Skins/$skin/SkinsMenu/jump.gif";
+                                          });
+                                        },
+                                      ),
+                                      BuildButton(
+                                        text: 'Fall',
+                                        size: 0.01,
+                                        effects: const {
+                                          EffectState.shimmer: [
+                                            ShimmerEffect(
+                                              color: Colors.transparent,
+                                              duration: Duration(seconds: 0),
+                                            ),
+                                          ],
+                                        },
+                                        onPressed: () {
+                                          setState(() {
+                                            skinImages[skin] =
+                                                "assets/images/Sprites/Skins/$skin/SkinsMenu/fall.gif";
+                                          });
+                                        },
+                                      ),
+                                      BuildButton(
+                                        text: 'Appearing',
+                                        size: 0.01,
+                                        effects: const {
+                                          EffectState.shimmer: [
+                                            ShimmerEffect(
+                                              color: Colors.transparent,
+                                              duration: Duration(seconds: 0),
+                                            ),
+                                          ],
+                                        },
+                                        onPressed: () {
+                                          setState(() {
+                                            skinImages[skin] =
+                                                "assets/images/Sprites/Skins/$skin/SkinsMenu/appearing.gif";
+                                          });
+                                        },
+                                      ),
+                                      BuildButton(
+                                        text: 'Run',
+                                        size: 0.01,
+                                        effects: const {
+                                          EffectState.shimmer: [
+                                            ShimmerEffect(
+                                              color: Colors.transparent,
+                                              duration: Duration(seconds: 0),
+                                            ),
+                                          ],
+                                        },
+                                        onPressed: () {
+                                          setState(() {
+                                            skinImages[skin] =
+                                                "assets/images/Sprites/Skins/$skin/SkinsMenu/run.gif";
+                                          });
+                                        },
+                                      ),
+                                      BuildButton(
+                                        text: 'Idle',
+                                        size: 0.01,
+                                        effects: const {
+                                          EffectState.shimmer: [
+                                            ShimmerEffect(
+                                              color: Colors.transparent,
+                                              duration: Duration(seconds: 0),
+                                            ),
+                                          ],
+                                        },
+                                        onPressed: () {
+                                          setState(() {
+                                            skinImages[skin] =
+                                                "assets/images/Sprites/Skins/$skin/SkinsMenu/idle.gif";
+                                          });
+                                        },
+                                      ),
+                                    ],
+                                  ),
                                 ),
                                 SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width / 2,
-                                  height:
-                                      MediaQuery.of(context).size.height,
+                                  width: MediaQuery.of(context).size.width / 2,
+                                  height: MediaQuery.of(context).size.height,
                                   child: ListView(
                                     shrinkWrap: true,
                                     children: [
-                                        ElevatedButton(
-                                          onPressed: () {
-                                            playerData.selectSkin(skin);
-                                          },
-                                          child: Image.asset(
-                                            skinImages[skin]!,
-                                            key: UniqueKey(),
-                                            height: MediaQuery.of(context).size.width / 2.5,
-                                            width: MediaQuery.of(context).size.width / 2,
-                                          ),
+                                      SizedBox(
+                                        child: Image.asset(
+                                          skinImages[skin]!,
+                                          key: UniqueKey(),
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              2.5,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              2,
                                         ),
+                                      ),
                                       BuildButton(
                                         text: 'Select',
                                         colors: const {
@@ -253,16 +254,12 @@ class _SkinsMenuState extends State<SkinsMenu> {
                                               Colors.black54,
                                         },
                                         onPressed: () {
-                                          // setState(() {
-                                          //   skinImages[skin] =
-                                          //       "assets/images/Sprites/Skins/$skin/SkinsMenu/death.gif";
-                                          // });
+                                          playerData.selectSkin(skin);
                                         },
                                       ),
                                     ],
                                   ),
                                 ),
-                                // ),
                               ],
                             ),
                           );

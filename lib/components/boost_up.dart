@@ -6,6 +6,7 @@ import 'package:flutter_application_1/pixel_game.dart';
 class BoostUp extends SpriteAnimationComponent with HasGameRef<PixelGame> {
   bool isPlatform;
   bool isBoostUp;
+
   BoostUp({
     position,
     size,
@@ -21,7 +22,7 @@ class BoostUp extends SpriteAnimationComponent with HasGameRef<PixelGame> {
     priority = -1;
     final hitboxShape = RectangleHitbox();
     add(hitboxShape);
-    // debugMode = true;
+
     return super.onLoad();
   }
 }

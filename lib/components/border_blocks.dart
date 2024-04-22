@@ -32,14 +32,8 @@ class BorderBlocks extends SpriteAnimationComponent with HasGameRef<PixelGame> {
           position: position,
           size: size,
         );
-  static const int maxIndex = 15;
 
-  // @override
-  // void render(Canvas canvas) {
-  //   super.render(canvas);
-  //   Paint paint = Paint()..color = Colors.white;
-  //   canvas.drawRect(Rect.fromLTWH(position.x, position.y, 4, 65), paint);
-  // }
+  static const int maxIndex = 15;
 
   @override
   Future<void> onLoad() async {
@@ -58,6 +52,4 @@ class BorderBlocks extends SpriteAnimationComponent with HasGameRef<PixelGame> {
     }
     await super.onLoad();
   }
-
-  void reset() {}
 }

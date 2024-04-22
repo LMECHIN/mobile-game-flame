@@ -21,7 +21,7 @@ class TextureBlocks extends SpriteAnimationComponent
 
     if (hasOn) {
       animation = SpriteAnimation.fromFrameData(
-        game.images.fromCache('Sprites/14-TileSets/Texture_Blocks/textur_block.png'),
+        game.images.fromCache('Sprites/14-TileSets/Texture_Blocks/texture_block.png'),
         SpriteAnimationData.sequenced(
           amount: 9,
           stepTime: 0.05,
@@ -32,6 +32,4 @@ class TextureBlocks extends SpriteAnimationComponent
     }
     return super.onLoad();
   }
-
-  void reset() {}
 }

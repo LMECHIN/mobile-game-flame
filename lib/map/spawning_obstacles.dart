@@ -21,7 +21,6 @@ void spawningObstacles(
 ) {
   final double playerX = player.position.x;
   List<Obstacle> obstaclesToRemove = [];
-  bool changeColor = true;
 
   for (final spawnObstacle in spawnPointsObstacles!.objects) {
     final double spawnX = spawnObstacle.x;
@@ -70,19 +69,6 @@ void spawningObstacles(
     for (final obstacleToRemove in obstaclesToRemove) {
       remove(obstacleToRemove);
       generatedObstacles.remove(obstacleToRemove);
-    }
-
-    if (changeColor) {
-      // transition(
-      //   distanceToPlayer,
-      //   updateBackgroundColor,
-      //   updateBackgroundColorBottom,
-      //   generatedBlocks,
-      //   generatedObstacles,
-      //   false,
-      //   true,
-      // );
-      changeColor = false;
     }
   }
 }

@@ -25,11 +25,12 @@ class _DeathGameState extends State<DeathGame> {
     super.didChangeDependencies();
     _levelData = Provider.of<LevelData>(context);
     _timer = Timer.periodic(const Duration(seconds: 1), (_) {
-      if (widget.game.player.hasDie) {
+      if (mounted && widget.game.player.hasDie) {
+        _timer.cancel();
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) => GamePlay(
-                context: context, level: _levelData.selectedLevel),
+            builder: (context) =>
+                GamePlay(context: context, level: _levelData.selectedLevel),
           ),
         );
       }

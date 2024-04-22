@@ -14,6 +14,7 @@ class Obstacle extends SpriteAnimationComponent with HasGameRef<PixelGame> {
   bool hasTextureObstacles;
   Map<String, bool> rotate;
   Color bluePaintColor;
+
   Obstacle({
     position,
     size,
@@ -32,6 +33,7 @@ class Obstacle extends SpriteAnimationComponent with HasGameRef<PixelGame> {
           position: position,
           size: size,
         );
+
   late Paint bluePaint;
 
   @override

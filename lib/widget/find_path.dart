@@ -13,6 +13,7 @@ Future<List<String>> getFoldersInAssetFolder(String folderPath) async {
         .loadString('AssetManifest.json')
         .then((String manifest) {
       Map<String, dynamic> manifestMap = json.decode(manifest);
+
       return manifestMap.keys
           .where((String key) =>
               key.startsWith(folderPath) &&
@@ -48,6 +49,7 @@ Future<List<LevelProgressData>> getFilesWithProgress(
             key.startsWith(folderPath) && key.endsWith(extension))
         .map((String key) {
       String fileName = p.basename(key);
+
       return fileName;
     }).toList();
 
@@ -65,6 +67,7 @@ Future<List<LevelProgressData>> getFilesWithProgress(
 Future<List<String>> getFilesInAssetFolder(
     String folderPath, String extension) async {
   List<String> assetList = [];
+
   if (assetList.isNotEmpty) {
     return assetList;
   }
@@ -72,11 +75,13 @@ Future<List<String>> getFilesInAssetFolder(
   try {
     String manifest = await rootBundle.loadString('AssetManifest.json');
     Map<String, dynamic> manifestMap = json.decode(manifest);
+
     assetList = manifestMap.keys
         .where((String key) =>
             key.startsWith(folderPath) && key.endsWith(extension))
         .map((String key) {
       String fileName = p.basename(key);
+
       return fileName;
     }).toList();
   } catch (e) {

@@ -3,6 +3,7 @@ import 'package:flame/components.dart';
 class CollisionsBlock extends PositionComponent {
   bool isPlatform;
   bool isBoostUp;
+
   CollisionsBlock({
     posX,
     posY,
@@ -13,7 +14,5 @@ class CollisionsBlock extends PositionComponent {
   }) : super(
           position: position,
           size: size,
-        ) {
-    // debugMode = true;
-  }
+        );
 }

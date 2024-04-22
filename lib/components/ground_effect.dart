@@ -3,8 +3,7 @@ import 'dart:async';
 import 'package:flame/components.dart';
 import 'package:flutter_application_1/pixel_game.dart';
 
-class GroundEffect extends SpriteAnimationComponent
-    with HasGameRef<PixelGame> {
+class GroundEffect extends SpriteAnimationComponent with HasGameRef<PixelGame> {
   GroundEffect({
     position,
     size,
@@ -16,7 +15,6 @@ class GroundEffect extends SpriteAnimationComponent
   @override
   FutureOr<void> onLoad() {
     priority = -1;
-
     animation = SpriteAnimation.fromFrameData(
       game.images.fromCache('Sprites/14-TileSets/ground_walk_effect.png'),
       SpriteAnimationData.sequenced(
@@ -28,5 +26,4 @@ class GroundEffect extends SpriteAnimationComponent
     );
     return super.onLoad();
   }
-  void reset() {}
 }
