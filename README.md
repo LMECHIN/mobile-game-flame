@@ -24,7 +24,6 @@ flutter run
 
 # Improve performance (without a mobile device connected)
 flutter run --release
-
 ```
 
 ## :eye_speech_bubble: Supported platforms
