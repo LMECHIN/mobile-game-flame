@@ -19,7 +19,7 @@ class GroundEffect extends SpriteAnimationComponent with HasGameRef<GameRun> {
       game.images.fromCache('Sprites/14-TileSets/ground_walk_effect.png'),
       SpriteAnimationData.sequenced(
         amount: 5,
-        stepTime: 0.02,
+        stepTime: 0.04,
         textureSize: Vector2(66, 66),
         loop: false,
       ),
