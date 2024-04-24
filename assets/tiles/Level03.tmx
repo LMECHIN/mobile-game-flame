@@ -4724,11 +4724,11 @@
     <property name="BorderLeftRight" type="bool" value="false"/>
     <property name="BorderLeftRightDown" type="bool" value="false"/>
     <property name="BorderLeftRightUp" type="bool" value="false"/>
-    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
     <property name="BorderRight" type="bool" value="false"/>
     <property name="BorderUp" type="bool" value="false"/>
     <property name="BorderUpDown" type="bool" value="false"/>
-    <property name="BorderUpDownLeft" type="bool" value="false"/>
+    <property name="BorderUpDownLeft" type="bool" value="true"/>
     <property name="BorderUpDownRight" type="bool" value="false"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
@@ -4904,12 +4904,12 @@
     <property name="BorderLeftRight" type="bool" value="false"/>
     <property name="BorderLeftRightDown" type="bool" value="false"/>
     <property name="BorderLeftRightUp" type="bool" value="false"/>
-    <property name="BorderLeftRightUpDown" type="bool" value="true"/>
+    <property name="BorderLeftRightUpDown" type="bool" value="false"/>
     <property name="BorderRight" type="bool" value="false"/>
     <property name="BorderUp" type="bool" value="false"/>
     <property name="BorderUpDown" type="bool" value="false"/>
     <property name="BorderUpDownLeft" type="bool" value="false"/>
-    <property name="BorderUpDownRight" type="bool" value="false"/>
+    <property name="BorderUpDownRight" type="bool" value="true"/>
     <property name="BorderUpLeft" type="bool" value="false"/>
     <property name="BorderUpRight" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
