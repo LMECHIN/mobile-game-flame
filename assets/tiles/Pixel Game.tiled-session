@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Level03.tmx",
+    "activeFile": "Level02.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -97,34 +97,33 @@
         },
         "Level02.tmx": {
             "expandedObjectLayers": [
-                7,
-                17,
-                16,
-                3,
                 2,
-                29
+                29,
+                3,
+                16,
+                17,
+                7
             ],
-            "scale": 1.5,
+            "scale": 3,
             "selectedLayer": 10,
             "viewCenter": {
-                "x": 3252.6666666666665,
-                "y": 368
+                "x": 1839.6666666666665,
+                "y": 335.33333333333337
             }
         },
         "Level03.tmx": {
             "expandedObjectLayers": [
-                7,
-                17,
-                16,
-                3,
                 2,
-                4
+                3,
+                16,
+                17,
+                7
             ],
-            "scale": 0.5,
-            "selectedLayer": 0,
+            "scale": 1.5,
+            "selectedLayer": 10,
             "viewCenter": {
-                "x": 270,
-                "y": 938
+                "x": 264.6666666666667,
+                "y": 456.6666666666667
             }
         },
         "Level04.tmx": {
@@ -141,14 +140,15 @@
         },
         "Level05.tmx": {
             "expandedObjectLayers": [
+                2,
                 3,
-                4
+                7
             ],
-            "scale": 0.125,
-            "selectedLayer": 2,
+            "scale": 2,
+            "selectedLayer": 10,
             "viewCenter": {
-                "x": 2988,
-                "y": 2624
+                "x": 616.5,
+                "y": 212
             }
         },
         "Level06.tmx": {
@@ -316,31 +316,24 @@
     "map.tileWidth": 227,
     "map.width": 100,
     "openFiles": [
-        "Level08.tmx",
-        "Level09.tmx",
-        "Level10.tmx",
-        "Map (80x10).tmx",
-        "Map (100x100).tmx",
-        "Map (100x23).tmx",
+        "Level02.tmx",
         "Level03.tmx",
-        "Level01.tmx",
-        "Level test.tmx",
-        "Level02.tmx"
+        "light2.tsx"
     ],
     "project": "Pixel Game.tiled-project",
     "property.type": "bool",
     "recentFiles": [
         "light2.tsx",
+        "Level03.tmx",
+        "Level02.tmx",
         "Level08.tmx",
         "Level09.tmx",
         "Level10.tmx",
         "Map (80x10).tmx",
         "Map (100x100).tmx",
         "Map (100x23).tmx",
-        "Level02.tmx",
         "Level test.tmx",
         "Level01.tmx",
-        "Level03.tmx",
         "Pixel Game.tsx"
     ],
     "textEdit.monospace": true,

@@ -129,6 +129,7 @@ class _EndGameState extends State<EndGame> {
                 ColorState.shadowColorOnPressed: Colors.black54,
               },
               onPressed: () {
+                widget.game.audio.stopBgm();
                 widget.game.overlays.remove(PauseMenu.id);
                 widget.game.reset();
                 widget.game.resumeEngine();

@@ -11,6 +11,7 @@ import 'package:game/components/level.dart';
 import 'package:game/components/player.dart';
 import 'package:game/models/player_data.dart';
 import 'package:game/utils/get_player_data.dart';
+import 'package:game/utils/level_to_music.dart';
 
 class GameRun extends FlameGame
     with
@@ -42,6 +43,8 @@ class GameRun extends FlameGame
   static const double zoomSpeed = 0.9;
   double speedBackground = 20;
 
+  // String musicLevel = level!.replaceAll(".tmx", ".mp3");
+
   Color color = Colors.black;
   Color colorBottom = Colors.black;
 
@@ -67,7 +70,7 @@ class GameRun extends FlameGame
   FutureOr<void> onLoad() async {
     FlameAudio.bgm.initialize();
     await images.loadAllImages();
-    audio = Audio(level);
+    audio = Audio(levelToMusic(level));
     PlayerData playerData = await getPlayerData();
     player = Player(character: playerData.selectedSkin);
 
@@ -97,10 +100,8 @@ class GameRun extends FlameGame
 
   @override
   void onAttach() {
-    String musicLevel = level!.replaceAll(".tmx", ".mp3");
-
     if (musicPlaying == false) {
-      audio.playBgm(musicLevel);
+      audio.playBgm(levelToMusic(level));
       musicPlaying = true;
     }
     super.onAttach();
@@ -108,7 +109,7 @@ class GameRun extends FlameGame
 
   @override
   void onDetach() {
-    if (!FlameAudio.bgm.isPlaying && musicPlaying) {
+    if (!FlameAudio.bgm.isPlaying && !musicPlaying) {
       audio.stopBgm();
     }
     super.onDetach();
