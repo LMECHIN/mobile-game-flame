@@ -141,14 +141,15 @@
         "Level05.tmx": {
             "expandedObjectLayers": [
                 2,
+                29,
                 3,
                 7
             ],
-            "scale": 2,
+            "scale": 1.5,
             "selectedLayer": 10,
             "viewCenter": {
-                "x": 616.5,
-                "y": 212
+                "x": 4519.333333333333,
+                "y": 204.66666666666666
             }
         },
         "Level06.tmx": {
