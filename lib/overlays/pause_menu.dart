@@ -127,8 +127,6 @@ class _PauseMenuState extends State<PauseMenu> {
               onPressed: () {
                 widget.game.overlays.remove(PauseMenu.id);
                 widget.game.overlays.add(PauseButton.id);
-                // widget.game.audio.stopBgm();
-                // widget.game.reset();
                 widget.game.resumeEngine();
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
