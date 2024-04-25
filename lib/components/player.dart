@@ -79,7 +79,7 @@ class Player extends SpriteAnimationGroupComponent
       position.y * adjustementY -
           (size.y * 0.25) -
           (sizeHitbox.y / 2) +
-          (sizeHitbox.y * (adjustementY + 0.20)),
+          (sizeHitbox.y * (adjustementY + 0.10)),
     );
 
     _loadAllAnimations();
@@ -370,7 +370,6 @@ class Player extends SpriteAnimationGroupComponent
     animationTicker?.reset();
     position = Vector2(startingPosition.x, startingPosition.y);
     hasDie = false;
-    game.audio.playBgm("Level03.mp3");
   }
 
   void reset() {

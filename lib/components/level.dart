@@ -105,7 +105,6 @@ class Level extends World with HasGameRef<GameRun> {
     if (levelProgress > (_levelData.levelProgress[levelName] ?? 0)) {
       _levelData.selectLevelProgress(levelProgress);
     }
-    print(levelProgress);
   }
 
   void _spawningRopes() {

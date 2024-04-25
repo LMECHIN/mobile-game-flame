@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="300" height="23" tilewidth="16" tileheight="16" infinite="0" nextlayerid="30" nextobjectid="7800">
+<map version="1.10" tiledversion="git" orientation="orthogonal" renderorder="right-down" width="300" height="23" tilewidth="16" tileheight="16" infinite="0" nextlayerid="30" nextobjectid="7800">
  <tileset firstgid="1" source="boost.tsx"/>
  <tileset firstgid="10" source="light.tsx"/>
  <layer id="23" name="Lights" width="300" height="23">
@@ -222,7 +222,7 @@
   <object id="7733" x="3280" y="304" width="16" height="16"/>
   <object id="7737" x="0" y="352" width="3072" height="16">
    <properties>
-    <property name="TextureCross" type="" value=""/>
+    <property name="TextureCross" value=""/>
    </properties>
   </object>
   <object id="7739" x="3536.25" y="352" width="1263.75" height="16"/>
@@ -4401,7 +4401,6 @@
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
     <property name="TextureBlock" type="bool" value="false"/>
-    <property name="TextureCross" type="" value=""/>
    </properties>
   </object>
   <object id="7230" x="2560" y="352" width="16" height="16">
@@ -4528,7 +4527,6 @@
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
-    <property name="TextureBlock" type="bool" value="false"/>
     <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
@@ -4663,7 +4661,6 @@
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
-    <property name="TextureBlock" type="bool" value="false"/>
     <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
@@ -4933,7 +4930,6 @@
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
-    <property name="TextureBlock" type="bool" value="false"/>
     <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
@@ -5196,7 +5192,6 @@
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
-    <property name="TextureBlock" type="bool" value="false"/>
     <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
@@ -5465,7 +5460,6 @@
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
-    <property name="TextureBlock" type="bool" value="false"/>
     <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
@@ -5727,7 +5721,6 @@
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
-    <property name="TextureBlock" type="bool" value="false"/>
     <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
@@ -5996,7 +5989,6 @@
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
-    <property name="TextureBlock" type="bool" value="false"/>
     <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>
@@ -6259,7 +6251,6 @@
    <properties>
     <property name="BorderUp" type="bool" value="true"/>
     <property name="Texture" type="bool" value="false"/>
-    <property name="TextureBlock" type="bool" value="false"/>
     <property name="TextureCross" type="bool" value="true"/>
    </properties>
   </object>

@@ -26,8 +26,8 @@ class SettingData extends ChangeNotifier with HiveObjectMixin {
   }
 
   SettingData({
-    bool soundEffects = false,
-    bool backgroundMusic = false,
+    bool soundEffects = true,
+    bool backgroundMusic = true,
   })  : _bgm = backgroundMusic,
         _sfx = soundEffects;
 }
