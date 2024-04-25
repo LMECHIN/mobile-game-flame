@@ -112,23 +112,8 @@ class Player extends SpriteAnimationGroupComponent
 
   @override
   bool onKeyEvent(KeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
-    // horizontalMovement = 0;
-    // isLeftKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyQ) ||
-    //     keysPressed.contains(LogicalKeyboardKey.arrowLeft);
-    // isRightKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyD) ||
-    //     keysPressed.contains(LogicalKeyboardKey.arrowRight);
-
-    // // if (isLeftKeyPressed) {
-    // //   pressKey = true;
-    // // }
-    // // if (isRightKeyPressed) {
-    // //   pressKey = false;
-    // // }
-    // horizontalMovement += isLeftKeyPressed ? -1 : 0;
-    // horizontalMovement += isRightKeyPressed ? 1 : 0;
-    // horizontalMovement += 1;
-
     hasJumped = keysPressed.contains(LogicalKeyboardKey.space);
+
     if (keysPressed.contains(LogicalKeyboardKey.arrowDown)) {
       hasSlide = true;
     } else {
@@ -369,14 +354,19 @@ class Player extends SpriteAnimationGroupComponent
     if (FlameAudio.bgm.isPlaying) {
       game.audio.stopBgm();
     }
+
     hasDie = true;
     hasJumped = false;
     current = PlayerState.death;
+
     await animationTicker?.completed;
+
     animationTicker?.reset();
     position = Vector2(startingPosition.x, startingPosition.y);
     current = PlayerState.appearing;
+
     await animationTicker?.completed;
+
     animationTicker?.reset();
     position = Vector2(startingPosition.x, startingPosition.y);
     hasDie = false;

@@ -28,6 +28,4 @@ class Rope extends SpriteAnimationComponent with HasGameRef<GameRun> {
 
     return super.onLoad();
   }
-
-  void reset() {}
 }
