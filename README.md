@@ -9,19 +9,19 @@
 
 ## Demo
 
-![Menu](assets/brandings/menu.png)
+![Menu](brandings/menu.png)
 
-![Level](assets/brandings/level.png)
+![Level](brandings/level.png)
 
-![Skin](assets/brandings/skin.png)
+![Skin](brandings/skin.png)
 
-![Setting](assets/brandings/setting.png)
+![Setting](brandings/setting.png)
 
-![Game 0](assets/brandings/game_0.png)
+![Game 0](brandings/game_0.png)
 
-![Game 1](assets/brandings/game_1.png)
+![Game 1](brandings/game_1.png)
 
-![Pause](assets/brandings/pause.png)
+![Pause](brandings/pause.png)
 
 ## :anger: Requirements ##
 
