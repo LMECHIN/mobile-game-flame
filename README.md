@@ -7,6 +7,22 @@
 
 2d runner type platform game like geometry dash made using [Flame](https://flame-engine.org/) engine.
 
+## Demo
+
+![Menu](assets/brandings/menu.png)
+
+![Level](assets/brandings/level.png)
+
+![Skin](assets/brandings/skin.png)
+
+![Setting](assets/brandings/setting.png)
+
+![Game](assets/brandings/game_0.png)
+
+![Game](assets/brandings/game_1.png)
+
+![Pause](assets/brandings/pause.png)
+
 ## :anger: Requirements ##
 
 Before starting, you need to have [Flutter](https://flutter.dev/) installed.
