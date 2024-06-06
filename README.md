@@ -17,9 +17,9 @@
 
 ![Setting](assets/brandings/setting.png)
 
-![Game](assets/brandings/game_0.png)
+![Game 0](assets/brandings/game_0.png)
 
-![Game](assets/brandings/game_1.png)
+![Game 1](assets/brandings/game_1.png)
 
 ![Pause](assets/brandings/pause.png)
 
